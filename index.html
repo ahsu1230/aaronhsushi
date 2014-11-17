@@ -1,5 +1,32 @@
 <html>
-<body>
+<body ng-app="mySushiPortfolio">
+  <title class="main-title">Aaron's Dreams of Sushi</title>
   <h1>Aaron's Dreams of Sushi</h1>
+
+  <!-- Our Website Content Goes Here -->
+  <div ng-view></div>
+
+  <div class="main-logo"></div>
+  <div class="main-menu">
+    <span class="main-menu-option">
+      <a href="/biography">Biography</a>
+    </span>
+    <span class="main-menu-option">
+      <a href="/exhibit">Exhibition</a>
+    </span>
+    <span class="main-menu-option">
+      <a href="/blog">Blog</a>
+    </span>
+    <span class="main-menu-option">
+      <a href="/contact">Contact</a>
+    </span>
+  </div>
+  <div class="left-sidebar"></div>
+  <div class="display-pane"></div>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular-route.min.js"></script>
+  <!-- Our Website Javascripts -->
+  <script src="main.js"></script>
+
 </body>
 </html>
