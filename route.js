@@ -9,15 +9,15 @@
 */
 app.config(['$routeProvider', function ($routeProvider) {
   $routeProvider.when("/", {
-    templateUrl: "mainDisplay/biography.html"
+    templateUrl: "mainDisplay/biography.tpl.html"
   }).when("/biography", {
-    templateUrl: "mainDisplay/biography.html"
+    templateUrl: "mainDisplay/biography.tpl.html"
   }).when("/exhibit", {
-    templateUrl: "mainDisplay/exhibit.html"
+    templateUrl: "mainDisplay/exhibit.tpl.html"
   }).when("/blog", {
-    templateUrl: "mainDisplay/blog.html"
+    templateUrl: "mainDisplay/blog.tpl.html"
   }).when("/contact", {
-    templateUrl: "mainDisplay/contact.html"
+    templateUrl: "mainDisplay/contact.tpl.html"
   });
 
   $routeProvider.otherwise({
