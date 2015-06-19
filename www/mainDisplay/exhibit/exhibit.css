@@ -1,0 +1,281 @@
+/* exhibition filter box */
+
+.exhibit-filter-box {
+  box-sizing: border-box;
+  max-width: 530px;
+  width: 90%;
+  margin: 30px auto 20px auto;
+  border-radius: 5px;
+  background-color: white;
+  border: 1px solid white;
+  cursor: pointer;
+  transition: 0.1s linear all;
+}
+
+.exhibit-filter-box:hover {
+  /*border: 1px solid #39F1C4;*/
+  border: 1px solid #69D2E7;
+}
+
+.exhibit-filter-box.on {
+  z-index: 1;
+  /*border: 1px solid #39F1C4;*/
+  border: 1px solid #69D2E7;
+}
+
+.exhibit-filter-placeholder {
+  margin: 3px 0 0 5px;
+  color: #bbb;
+  font-weight: 200;
+}
+
+.exhibit-filter-clear {
+  float: right;
+  padding-top: 4px;
+  margin-right: 5px;
+  color: #69D2E7;
+}
+
+.exhibit-filter-down {
+  float: right;
+  width: 40px;
+  height: 30px;
+  text-align: center;
+}
+
+.exhibit-filter-menu {
+  background-color: #eeeeee;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  height: 0px;
+  overflow: hidden;
+  transition: 0.2s linear all;
+}
+
+.exhibit-filter-menu.on {
+  height: 150px;
+  padding-top: 15px;
+}
+
+.exhibit-filter-option {
+  display: inline-table;
+  margin: 0px auto;
+  width: 33%;
+}
+
+@media screen and (max-width: 600px) {
+  .exhibit-filter-option {
+    display: inline-table;
+    margin: 0px auto;
+    width: 50%;
+  }
+
+  .exhibit-filter-menu.on {
+    height: 230px;
+    padding-top: 15px;
+  }
+}
+
+.exhibit-filter-option-wrapper {
+  padding-left: 20%;
+}
+
+.exhibit-filter-option-wrapper .exhibit-filter-tag {
+  margin-bottom: 15px;
+}
+
+.exhibit-filter-display {
+  min-height: 30px;
+  padding: 5px 5px 0px 5px;
+}
+
+.exhibit-filter-tag {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 5px ;
+  border-radius: 2px;
+  color: #333333;
+  /*background-color: #39F1C4;*/
+  background-color: #69D2E7;
+  margin: 3px 3px;
+  font-size: 12px;
+  transition: all linear 0.2s;
+}
+.exhibit-filter-tag.inactive {
+  background-color: #bbbbbb;
+  transition: all linear 0.2s;
+}
+
+.exhibit-filter-closer {
+  width: 20px;
+  padding-bottom: 10px;
+  margin: 0px auto;
+}
+.exhibit-filter-closer .close-img {
+  width: 20px;
+  height: 12px;
+  background-image: url('../img/arrow-gray-down.png');
+  background-repeat: no-repeat;
+  transform: rotate(180deg);
+}
+
+
+/* sushi exhibition tiles */
+
+.exhibit-content {
+}
+
+.exhibit-content-row {
+  display: inline-block;
+  margin: 0 auto;
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 3;
+}
+
+@media screen and (max-width: 900px) {
+  .exhibit-content-row {
+    display: inline-block;
+    margin: 0 auto;
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .exhibit-content-row {
+    display: table;
+    margin: 0 auto;
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+  }
+}
+
+
+
+.exhibit-small-tile {
+  display: inline-table;
+  margin: 10px 10px;
+  border-radius: 10px;
+  border: 2px solid #bbbbbb;
+  /*height: 300px;*/
+  /*background-color: #f16639;*/
+  background-color: #F38630;
+  cursor: pointer;
+  transition: 0.2s linear all;
+}
+
+.exhibit-small-tile:hover {
+  /*background-color: #ee4a14;*/
+  background-color: #FA6900;
+}
+
+.exhibit-tile-title {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  line-height: 35px;
+  text-align: center;
+  color: white;
+}
+
+.exhibit-tile-image-wrapper {
+  width: 100%;
+}
+
+.exhibit-tile-image {
+  max-width: 100%;
+}
+
+.exhibit-tile-description {
+  padding: 5px 10px;
+  margin-bottom: 5px;
+  background-color: #999;
+  color: white;
+  font-size: 12px;
+}
+
+.exhibit-tile-tags {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0px 10px;
+  margin-bottom: 5px;
+}
+
+.exhibit-filter-tag:first-child {
+  margin-left: 0px;
+}
+
+.exhibit-filter-tag:last-child {
+  margin-right: 0px;
+}
+
+
+/* sushi large image */
+.translucent-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #333333;
+  opacity: 0.5;
+  z-index: 10;
+}
+
+.exhibit-large-card {
+  position: fixed;
+  top: 50px;
+  left: 10%;
+  width: 80%;
+  max-height: calc(90% - 50px);
+  z-index: 11;
+  /*background-color: #f16639;*/
+  background-color: #FA6900;
+  border-radius: 10px;
+  border: 2px solid #bbbbbb;
+  overflow-y: auto;
+}
+
+.exhibit-large-card .exhibit-tile-title {
+  font-size: 25px;
+  line-height: 40px;
+}
+
+.exhibit-large-card .exhibit-tile-image {
+  width: 100%;
+}
+
+.exhibit-large-card .exhibit-tile-description {
+  font-size: 18px;
+}
+
+.exhibit-large-card .exhibit-filter-tag {
+  font-size: 16px;
+}
+
+.exhibit-large-card-close {
+  position: fixed;
+  top: 35px;
+  left: calc(90% - 20px);
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin-bottom: -40px;
+  border-radius: 50%;
+  border: 2px solid #aaaaaa;
+  background-color: white;
+  cursor: pointer;
+  z-index: 12;
+}
+
+.exhibit-large-card-close .close-img {
+  position: relative;
+  top: 7px;
+  left: 7px;
+  width: 26px;
+  height: 26px;
+  background-image: url('../img/close-x-icon-default.png');
+  background-repeat: no-repeat;
+}

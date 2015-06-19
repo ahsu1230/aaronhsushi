@@ -1,0 +1,144 @@
+body {
+  overflow-x: hidden;
+  margin: 0px;
+  background-color: #f2f2f2;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body a {
+  color: #309df3;
+  text-decoration: none;
+}
+
+body a:hover {
+  text-decoration: underline;
+}
+
+.header-banner {
+  height: 45px;
+  width: 100%;
+  background-color: #f88d3e;
+}
+
+.header-wrapper {
+  height: 100%;
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.header-logo {
+  float: left;
+  height: 40px;
+  width: 135px;
+  margin-top: 3px;
+  margin-left: -17px;
+  background-size: cover;
+  background-image: url('../img/sushi-logo5.png');
+  cursor: pointer;
+}
+
+.main-menu-wrapper {
+  float: right;
+  visibility: visible;
+}
+
+.main-menu-wrapper.off {
+  visibility: hidden;
+}
+
+.main-menu-option {
+  position: relative;
+  top: 11px;
+  padding: 5px 0px;
+  margin: 0px 15px;
+  color: white;
+  font-size: 13px;
+  font-weight: 200;
+  cursor: pointer;
+}
+.main-menu-option:hover {
+  text-decoration: none;
+  border-bottom: 2px solid rgba(255,255,255,0.3);
+}
+.main-menu-option:last-child {
+  margin-right: 0px;
+}
+
+.main-menu-option:active {
+  text-decoration: none;
+}
+
+.main-menu-option.current {
+  border-bottom: 2px solid rgba(255,255,255,1.0);
+}
+
+.main-menu-burger {
+  position: absolute;
+  top: 11px;
+  right: 17px;
+  height: 23px;
+  width: 34px;
+  background-image: url('../img/hamburger-icon.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  visibility: hidden;
+}
+
+.main-menu-burger.on {
+  visibility: visible;
+}
+
+.small-main-menu {
+  position: absolute;
+  top: calc(100% + 5px);
+  right: 0px;
+  height: 0px;
+  width: 150px;
+  background-color: white;
+  border-radius: 10px;
+  transform-origin: top;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  transform: scale(0.9);
+  transition: linear opacity 0.1s, linear visibility 0.1s, linear transform 0.2s;
+}
+
+.small-main-menu.show {
+  height: 120px;
+  padding: 5px 0px;
+  border: 1px solid #ccc;
+  z-index: 8;
+  transform-origin: 80% top;
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1.0);
+}
+
+.small-main-menu ul {
+  padding-left: 0px;
+  margin: 0px;
+  list-style-type: none;
+}
+
+.small-main-menu ul a:hover {
+  text-decoration: none;
+}
+
+.small-main-menu-option {
+  line-height: 30px;
+  text-align: center;
+  font-weight: 100;
+  color: #777;
+}
+
+.small-main-menu-option:hover {
+  background-color: #eee;
+}
+
+/* General */
+.hyperlink {
+  color: #06a47e;
+}

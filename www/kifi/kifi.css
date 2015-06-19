@@ -1,0 +1,323 @@
+/* Kifi Spinner */
+
+.kifi-spinner:hover {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 50px;
+  width: 450px;
+}
+
+.kifi-spinner:hover .kifi-logo {
+  transform: rotate(90deg);
+}
+
+.kifi-spinner:hover .kifi-logo-cover {
+  width: 410px;
+}
+
+.kifi-spinner:hover .kifi-tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.kifi-spinner:hover .kifi-tooltip1-wrapper {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1.0) translateX(0px) translateY(0px);
+}
+
+.kifi-logo {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  background-image: url(../../img/kifi_logo.svg);
+  width: 40px;
+  height: 40px;
+  background-size: cover;
+  transform: rotate(0deg);
+  transition: linear all 0.15s;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.kifi-logo-text {
+  float: right;
+  margin-right: 5px;
+  line-height: 45px;
+  font-size: 12px;
+  font-weight: 100;
+}
+
+.kifi-logo-link a {
+  position: relative;
+  top: 6px;
+  float: right;
+  cursor: pointer;
+}
+
+.kifi-logo-link button {
+  width: 110px;
+  margin: 0 5px 5px 5px;
+  padding: 7px 10px;
+  background-color: #73c785;
+  border-radius: 3px;
+  font-size: 12px;
+  color: white;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.kifi-logo-link button:hover {
+  background-color: #81cd91;
+}
+
+.kifi-logo-link button:focus, button:active {
+  outline: none;
+}
+
+
+/*
+  Kifi new tool tip
+*/
+.kifi-tooltip1-wrapper {
+  position: fixed;
+  bottom: 40px;
+  left: 40px;
+  width: 320px;
+  height: 430px;
+  padding: 10px 30px;
+  box-sizing: border-box;
+  text-align: center;
+  border: 1px solid #0081f1;
+  border-radius: 12px;
+  background-color: white;
+  font-size: 13px;
+  visibility: hidden;
+  opacity: 0.0;
+  transform: scale(0.7) translateX(-80px) translateY(100px);
+  transition: all linear 0.15s;
+}
+
+.kifi-tooltip1-wrapper .kifi-lib-card {
+  margin-top: 20px;
+}
+
+/*
+  Kifi tool tip
+*/
+
+.kifi-tooltip {
+  position: fixed;
+  bottom: 73px;
+  left: 19px;
+  box-sizing: border-box;
+  padding: 13px 15px;
+  width: 190px;
+  border-radius: 8px;
+  background-color: white;
+  border: 1px solid #0081f1;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 100;
+  color: #888;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: linear all 0.15s;
+}
+
+.kifi-tooltip:before, .kifi-tooltip:after {
+  position: absolute;
+  top: 100%;
+  left: 9px;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  pointer-events: none;
+}
+
+.kifi-tooltip:before {
+  border-color: transparent;
+  border-top-color: #0081f1;
+  border-width: 11px;
+}
+
+.kifi-tooltip:after {
+  border-color: transparent;
+  border-top-color: white;
+  border-width: 10px;
+  margin-left: 1px;
+}
+
+.kifi-tooltip img {
+  position: absolute;
+  top: -20px;
+  left: -15px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.kifi-tooltip p {
+  margin: 5px 0px;
+}
+
+.kifi-tooltip-close {
+  position: absolute;
+  top: 2px;
+  right: 5px;
+  font-size: 15px;
+  color: #b2b2b2;
+  cursor: pointer;
+}
+
+
+/* Kifi Bottom Footer */
+.kifi-footer {
+  width: 80%;
+  margin: 100% auto 40px auto;
+  padding: 30px 0;
+  border-top: 1px solid #ccc;
+  text-align: center;
+  font-weight: 100;
+}
+
+@media screen and (max-width: 770px) {
+  .kifi-footer {
+    margin-top: 40px;
+  }
+}
+
+/*.kifi-footer a {
+  float: none;
+}*/
+
+.kifi-footer .kifi-logo {
+  position: relative;
+  left: 0px;
+  bottom: 0px;
+  margin: 0px auto 20px auto;
+  display: inline-block;
+}
+
+.kifi-footer p {
+  margin: 0 auto 10px auto;
+  width: 360px;
+  line-height: 25px;
+}
+
+.kifi-footer .kifi-pitch {
+  width: 255px;
+  margin-bottom: 15px;
+}
+
+/*
+.kifi-footer img {
+  display: block;
+  width: 50px;
+  height: 50px;
+  margin: 10px auto;
+  border-radius: 50%;
+}
+*/
+
+/* Kifi Library Card */
+
+.kifi-lib-card-link {
+  margin-top: 10px;
+}
+
+.kifi-lib-card {
+  position: relative;
+  width: 210px;
+  height: 280px;
+  margin: 30px auto 0 auto;
+  border-radius: 16px;
+  background-color: rgb(221, 92, 96);
+  box-shadow: 0 3px #f5f5f5, 0 4px #c9ccc0, 0 6px #e5e5e5, 0 7px #c4c6cb, 0 8px #d4d4d4;
+  overflow: hidden;
+}
+
+.kifi-lib-card-header {
+}
+
+.kifi-lib-card-title {
+  position: absolute;
+  top: 18px;
+  left: 0;
+  right: 0;
+  height: 66px;
+  line-height: 66px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.kifi-lib-card-author {
+  position: absolute;
+  top: 98px;
+  left: 0;
+  right: 0;
+  padding: 5px 0;
+  color: white;
+  background-color: rgba(255,255,255,0.1);
+}
+
+.kifi-lib-card-author a {
+  color: white;
+  font-size: 13px;
+}
+
+.kifi-lib-card-author a:hover {
+  text-decoration: none;
+}
+
+.kifi-lib-card-author img {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  margin-right: 3px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.kifi-lib-card-by {
+  vertical-align: middle;
+}
+
+.kifi-lib-card-name {
+  vertical-align: middle;
+  letter-spacing: 0.2px;
+}
+
+.kifi-lib-cover {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 50%;
+  width: 100%;
+  background: rgb(0,0,0);
+}
+
+.kifi-lib-cover-img {
+  height: 100%;
+  width: 100%;
+  opacity: 0.8;
+}
+
+.kifi-lib-stats {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 23%;
+  width: 100%;
+  font-size: 13px;
+  font-weight: bold;
+  color: white;
+}
+

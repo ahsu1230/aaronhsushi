@@ -1,0 +1,81 @@
+{
+    "steps": [],
+    "failures": [],
+    "skip": {
+        "plugin.akismet\/akismet.php": "skip",
+        "plugin.hello.php": "skip",
+        "plugin.jetpack\/jetpack.php": "skip",
+        "plugin.mojo-marketplace-wp-plugin\/mojo-marketplace.php": "skip"
+    },
+    "output": {
+        "logs": [
+            "Starting up.",
+            "Starting step addWPDieHandler",
+            "Completed step addWPDieHandler.",
+            "Starting step prepareForInstallationProcess",
+            "Completed step prepareForInstallationProcess.",
+            "Starting step checkRequiredFiles",
+            "Completed step checkRequiredFiles.",
+            "Starting step checkCoreCompatibility",
+            "Completed step checkCoreCompatibility.",
+            "Starting step wp_check_mysql_version",
+            "Completed step wp_check_mysql_version.",
+            "Starting step wp_cache_flush",
+            "Completed step wp_cache_flush.",
+            "Starting step installDatabaseTables",
+            "Applied database changes: \nCreated table wp_dadz_users\nCreated table wp_dadz_usermeta\nCreated table wp_dadz_terms\nCreated table wp_dadz_term_taxonomy\nCreated table wp_dadz_term_relationships\nCreated table wp_dadz_commentmeta\nCreated table wp_dadz_comments\nCreated table wp_dadz_links\nCreated table wp_dadz_options\nCreated table wp_dadz_postmeta\nCreated table wp_dadz_posts",
+            "Completed step installDatabaseTables.",
+            "Starting step populate_options",
+            "Completed step populate_options.",
+            "Starting step populate_roles",
+            "Completed step populate_roles.",
+            "Starting step setUpSiteOptions",
+            "Completed step setUpSiteOptions.",
+            "Starting step createAdminUser",
+            "created admin user {\"userId\":1,\"update\":{\"user_pass\":\"$P$BnL2IwgBVkoCNhqN4caKESNcJqC37v1\"},\"userName\":\"ahsu1230@gmail.com\"}",
+            "Completed step createAdminUser.",
+            "Starting step installDefaults",
+            "Completed step installDefaults.",
+            "Starting step flush_rewrite_rules",
+            "Completed step flush_rewrite_rules.",
+            "Starting step wp_cache_flush",
+            "Completed step wp_cache_flush.",
+            "Starting step theme.activate",
+            "Skipping theme setup",
+            "Completed step theme.activate.",
+            "Starting step plugin.activateAll",
+            "Activating plugin akismet\/akismet.php",
+            "Activated plugin akismet\/akismet.php",
+            "Activating plugin hello.php",
+            "Activated plugin hello.php",
+            "Activating plugin jetpack\/jetpack.php",
+            "Activated plugin jetpack\/jetpack.php",
+            "Activating plugin mojo-marketplace-wp-plugin\/mojo-marketplace.php",
+            {
+                "Hit an error inside step plugin.activateAll": {
+                    "errno": 8,
+                    "errstr": "Undefined index: HTTP_USER_AGENT",
+                    "errfile": "\/home2\/aaronhsu\/public_html\/wp-content\/plugins\/mojo-marketplace-wp-plugin\/inc\/user-experience-tracking.php",
+                    "errline": 33,
+                    "trace": "#0 \/home2\/aaronhsu\/public_html\/wp-content\/plugins\/mojo-marketplace-wp-plugin\/inc\/user-experience-tracking.php(33): MOJOOutput::error_handler(8, 'Undefined index...', '\/home2\/aaronhsu...', 33, Array)\n#1 \/home2\/aaronhsu\/public_html\/wp-content\/plugins\/mojo-marketplace-wp-plugin\/inc\/user-experience-tracking.php(122): mm_ux_log(Array)\n#2 [internal function]: mm_ux_log_activated(false)\n#3 \/home2\/aaronhsu\/public_html\/wp-includes\/plugin.php(505): call_user_func_array('mm_ux_log_activ...', Array)\n#4 \/home2\/aaronhsu\/public_html\/wp-admin\/includes\/plugin.php(575): do_action('activate_mojo-m...', false)\n#5 [internal function]: activate_plugin('mojo-marketplac...', NULL)\n#6 \/home2\/aaronhsu\/public_html\/MOJOWordpressInstaller-eYBtgWVbFA.php(121): call_user_func_array('activate_plugin', Array)\n#7 \/home2\/aaronhsu\/public_html\/MOJOWordpressInstaller-eYBtgWVbFA.php(1649): MOJOControlInverter->__call('mockable_activa...', Array)\n#8 \/home2\/aaronhsu\/public_html\/MOJOWordpressInstaller-eYBtgWVbFA.php(1649): MOJOWordpressPluginHandler->mockable_activate_plugin('mojo-marketplac...', NULL)\n#9 \/home2\/aaronhsu\/public_html\/MOJOWordpressInstaller-eYBtgWVbFA.php(1206): MOJOWordpressPluginHandler->activateAll()\n#10 \/home2\/aaronhsu\/public_html\/MOJOWordpressInstaller-eYBtgWVbFA.php(1259): MOJOBaseHandler->exec('plugin.activate...')\n#11 \/home2\/aaronhsu\/public_html\/MOJOWordpressInstaller-eYBtgWVbFA.php(855): MOJOBaseHandler->runStep()\n#12 \/home2\/aaronhsu\/public_html\/MOJOWordpressInstaller-eYBtgWVbFA.php(829): MOJOProcess->executeSteps(Object(MOJOWordpressHandler))\n#13 \/home2\/aaronhsu\/public_html\/MOJOWordpressInstaller-eYBtgWVbFA.php(1762): MOJOProcess->execute()\n#14 {main}"
+                }
+            },
+            "Activated plugin mojo-marketplace-wp-plugin\/mojo-marketplace.php",
+            "Completed plugin activation",
+            "Completed step plugin.activateAll.",
+            "Starting step sidekick.register",
+            {
+                "Hit an error inside step sidekick.register": {
+                    "errno": 1024,
+                    "errstr": "Offset not found: sidekick",
+                    "errfile": "\/home2\/aaronhsu\/public_html\/MOJOWordpressInstaller-eYBtgWVbFA.php",
+                    "errline": 582,
+                    "trace": "#0 [internal function]: MOJOOutput::error_handler(1024, 'Offset not foun...', '\/home2\/aaronhsu...', 582, Array)\n#1 \/home2\/aaronhsu\/public_html\/MOJOWordpressInstaller-eYBtgWVbFA.php(582): trigger_error('Offset not foun...')\n#2 \/home2\/aaronhsu\/public_html\/MOJOWordpressInstaller-eYBtgWVbFA.php(1687): MOJOConfiguration->offsetGet('sidekick')\n#3 \/home2\/aaronhsu\/public_html\/MOJOWordpressInstaller-eYBtgWVbFA.php(1206): MOJOSidekickPluginHandler->register()\n#4 \/home2\/aaronhsu\/public_html\/MOJOWordpressInstaller-eYBtgWVbFA.php(1259): MOJOBaseHandler->exec('sidekick.regist...')\n#5 \/home2\/aaronhsu\/public_html\/MOJOWordpressInstaller-eYBtgWVbFA.php(855): MOJOBaseHandler->runStep()\n#6 \/home2\/aaronhsu\/public_html\/MOJOWordpressInstaller-eYBtgWVbFA.php(829): MOJOProcess->executeSteps(Object(MOJOWordpressHandler))\n#7 \/home2\/aaronhsu\/public_html\/MOJOWordpressInstaller-eYBtgWVbFA.php(1762): MOJOProcess->execute()\n#8 {main}"
+                }
+            },
+            "Skipping sidekick because the configuration was not found",
+            "Completed step sidekick.register."
+        ],
+        "softFailures": []
+    }
+}
