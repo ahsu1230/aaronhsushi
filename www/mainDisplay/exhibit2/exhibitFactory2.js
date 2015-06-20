@@ -14,7 +14,8 @@ app.factory('exhibitFactory', [
           { name: 'Lobster', value: 'lobster'},
           { name: 'Spicy', value: 'spicy'},
           { name: 'Sweet', value: 'sweet'},
-          { name: 'Vegetarian', value: 'vegetarian'}
+          { name: 'Vegetarian', value: 'vegetarian'},
+          { name: 'Mango', value: 'mango'}
         ];
 
     var exhibitList = [
@@ -185,6 +186,24 @@ app.factory('exhibitFactory', [
             tags: ['shrimp', 'sweet'],
             layout: 'square',
             recommended: ['seasoned-tuna-slider', 'masago-crabmeat-slider']
+          },
+          { id: 'tropical-salmon-blossom',
+            title: 'Tropical Salmon Blossom',
+            imgSrc: '../img/exhibitImg/tropical_salmon_blossom_XS.jpg',
+            description: 'A gorgeous roll formed into a blossom for good luck. Taste and share this unique blend of salmon, mango, avocado and honey!',
+            ingredients: ['1 cup sushi rice', '1 half sheet of nori (roasted seaweed)','1/4 pound salmon', '4 mango thin slices', 'cucumber slices', 'honey', 'sweet chili sauce'],
+            tags: ['salmon', 'sweet', 'mango'],
+            layout: 'square',
+            recommended: ['sunset-delight-roll', 'mango-tango-roll']
+          }
+          { id: 'mango-tango-roll',
+            title: 'Mango Tango',
+            imgSrc: '../img/exhibitImg/mango_tango_XS.jpg',
+            description: 'Introducing summer 2015. Enjoy a mango topped roll with a sweet strawberry sauce drizzle to get a savory dessert-like taste that reminds you of succulent mango ice cream!',
+            ingredients: ['1 cup sushi rice', '1 half sheet of nori (roasted seaweed)','1/4 pound of tuna', '4 mango wide slices', '1 crabmeat stick', '2 slices of avocado', 'strawberry perservatives'],
+            tags: ['salmon', 'mango', 'sweet'],
+            layout: 'landscape',
+            recommended: ['tropical-salmon-blossom', 'sunset-delight-roll']
           }
 
 
