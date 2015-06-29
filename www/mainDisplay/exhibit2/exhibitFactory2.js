@@ -195,7 +195,7 @@ app.factory('exhibitFactory', [
             tags: ['salmon', 'sweet', 'mango'],
             layout: 'square',
             recommended: ['sunset-delight-roll', 'mango-tango-roll']
-          }
+          },
           { id: 'mango-tango-roll',
             title: 'Mango Tango',
             imgSrc: '../img/exhibitImg/mango_tango_XS.jpg',

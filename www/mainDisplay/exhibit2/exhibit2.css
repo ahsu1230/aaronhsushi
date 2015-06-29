@@ -371,6 +371,43 @@
   opacity: 1.0;
 }
 
+.exhibit2-popup-next-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 42px;
+  padding: 0;
+  background-image: url('../../img/arrow-white.svg');
+  background-color: transparent;
+  background-size: cover;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.exhibit2-popup-next-arrow:hover {
+  opacity: 1.0;
+}
+
+.exhibit2-popup-next-arrow.left {
+  left: -80px;
+  transform: translateY(-50%) rotate(-90deg) scale(0.9);
+}
+
+.exhibit2-popup-next-arrow.left:hover {
+  transform: translateY(-50%) rotate(-90deg) scale(1.0);
+}
+
+.exhibit2-popup-next-arrow.right {
+  right: -80px;
+  transform: translateY(-50%) rotate(90deg) scale(0.9);
+}
+
+.exhibit2-popup-next-arrow.right:hover {
+  transform: translateY(-50%) rotate(90deg) scale(1.0);
+}
 
 /* Responsiveness */
 
@@ -421,6 +458,17 @@
     margin-right: 5px;
     margin-left: 5px;
   }
+
+  .exhibit2-popup-next-arrow {
+    width: 35px;
+    height: 37px;
+  }
+  .exhibit2-popup-next-arrow.left {
+    left: -65px;
+  }
+  .exhibit2-popup-next-arrow.right {
+    right: -65px;
+  }
 }
 
 @media screen and (max-width: 550px) {
@@ -444,6 +492,17 @@
 
   .exhibit2-popup .exhibit2-popup-recommended-list li {
     margin-bottom: 10px;
+  }
+
+  .exhibit2-popup-next-arrow {
+    width: 30px;
+    height: 31px;
+  }
+  .exhibit2-popup-next-arrow.left {
+    left: -50px;
+  }
+  .exhibit2-popup-next-arrow.right {
+    right: -50px;
   }
 }
 

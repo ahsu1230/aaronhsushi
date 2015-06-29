@@ -62,4 +62,16 @@
   .blog-post {
     padding: 40px 40px;
   }
+
+  .blog-image-left {
+    float: none;
+    width: 100%;
+    margin-right: 0px;
+  }
+
+  .blog-image-right {
+    float: none;
+    width: 100%;
+    margin-left: 0px;
+  }
 }

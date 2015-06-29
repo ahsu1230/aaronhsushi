@@ -50,6 +50,7 @@
 <!-- Exhibit Large Cards -->
 <div class="translucent-background" ng-class="{show: modalCard.title}"></div>
 <div class="exhibit2-popup" ng-class="{show: modalCard.title}">
+
   <div class="close-img" ng-click="closeCardModal()"></div>
   <div class="exhibit2-header">{{modalCard.title}}</div>
   <div class="exhibit2-body">
@@ -82,6 +83,9 @@
           </li>
         </ul>
       </div>
+
+      <button class="exhibit2-popup-next-arrow left" ng-click="nextModalImage(-1)">
+      <button class="exhibit2-popup-next-arrow right" ng-click="nextModalImage(1)">
 
     </div>
   </div>

@@ -208,7 +208,7 @@ app.directive('exhibitFilterTest', [ '$timeout', '$document', '$window', 'exhibi
         };
 
         scope.changeCardModal = function(newId) {
-          var idx = _.findIndex(scope.allCards, {id: newId})
+          var idx = _.findIndex(scope.allCards, {id: newId});
           if (idx > -1) {
             $timeout(function() {
               scope.modalCard = scope.allCards[idx];
@@ -230,7 +230,14 @@ app.directive('exhibitFilterTest', [ '$timeout', '$document', '$window', 'exhibi
           });
         }
 
-
+        scope.nextModalImage = function (offset) {
+          var idx = _.findIndex(scope.allCards, {id: scope.modalCard.id});
+          var totalNumImages = scope.allCards.length;
+          if (idx > -1) { // if found
+            idx = (idx + offset + totalNumImages) % totalNumImages;
+            scope.modalCard = scope.allCards[idx];
+          }
+        };
 
         // Other
 
