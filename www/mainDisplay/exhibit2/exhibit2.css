@@ -337,8 +337,9 @@
 }
 
 .exhibit2-popup-fish-bullet {
-  position: relative;
-  top: 1px;
+/* fixes weird scroll-bar in chrome  
+  position: relative; 
+  top: 1px;*/
   display: inline-block;
   width: 13px;
   height: 10px;
@@ -364,7 +365,10 @@
 
 .exhibit2-popup .exhibit2-recommendations-section img {
   width: 100%;
+  /* fixes weird scroll-bar in chrome
   opacity: 0.8;
+  */
+  opacity: 1.0;
   transition: opacity linear 0.1s;
 }
 .exhibit2-popup .exhibit2-recommendations-section img:hover {
