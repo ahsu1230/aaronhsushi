@@ -1,5 +1,6 @@
 "use strict";
 var args = require("yargs").argv;
+var babel = require("gulp-babel");
 var browserSync = require("browser-sync").create();
 var concat = require("gulp-concat");
 var del = require("del");
@@ -45,7 +46,11 @@ gulp.task("pug", function() {
 
 gulp.task("jsx", function(){
     return gulp.src(jsxFolder)
-        .pipe(gulp.dest(buildFolder + "/jsx"))
+		.pipe(babel({
+			presets: ["react"]
+		}))
+		.pipe(concat("main.js"))
+        .pipe(gulp.dest(buildFolder + "/js"))
 		.pipe(browserSync.reload({
 			stream:true
 		}));
