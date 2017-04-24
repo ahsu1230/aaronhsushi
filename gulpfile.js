@@ -66,6 +66,11 @@ gulp.task("libs", function() {
     .pipe(gulp.dest(buildFolder + "/libs"));
 });
 
+gulp.task("assets", function() {
+  return gulp.src("src/assets/**/*")
+    .pipe(gulp.dest(buildFolder + "/assets"));
+});
+
 gulp.task("initBrowserSync", function() {
 	browserSync.init({
 		server: {
@@ -81,5 +86,5 @@ gulp.task("watch", function () {
 });
 
 gulp.task("default", function() {
-    runSequence("clean", "libs", "jsx", "pug", "stylus", "initBrowserSync", "watch");
+    runSequence("clean", "libs", "assets", "jsx", "pug", "stylus", "initBrowserSync", "watch");
 });

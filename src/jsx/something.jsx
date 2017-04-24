@@ -1,6 +1,6 @@
 'use strict';
 
-const element = <h1>React ready!</h1>;
+const element = <h5>React ready!</h5>;
 ReactDOM.render(
   element,
   document.getElementById('root')
