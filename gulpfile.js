@@ -1,40 +1,40 @@
-'use strict';
-var args   = require('yargs').argv;
-var browserSync = require('browser-sync').create();
-var concat = require('gulp-concat');
-var del = require('del');
-var gulp = require('gulp');
-var gulpif = require('gulp-if');
-var order = require('gulp-order');
-var pug = require('gulp-pug');
-var runSequence = require('run-sequence');
-var stylus = require('gulp-stylus');
-var uglify = require('gulp-uglify');
+"use strict";
+var args = require("yargs").argv;
+var browserSync = require("browser-sync").create();
+var concat = require("gulp-concat");
+var del = require("del");
+var gulp = require("gulp");
+var gulpif = require("gulp-if");
+var order = require("gulp-order");
+var pug = require("gulp-pug");
+var runSequence = require("run-sequence");
+var stylus = require("gulp-stylus");
+var uglify = require("gulp-uglify");
 
 var release = args.release ? true : false; // (gulp --release)
 
-var buildFolder = 'build';
-var jsFolder = 'src/js/**/*.js';
-var pugFolder = 'src/**/*.pug'
+var buildFolder = "build";
+var jsxFolder = "src/jsx/**/*.jsx";
+var pugFolder = "src/**/*.pug"
 var stylFolder = "src/**/*.styl";
 	
-gulp.task('clean', function() {
+gulp.task("clean", function() {
 	return del.sync(buildFolder);
 });
 
-gulp.task('stylus', function() {
+gulp.task("stylus", function() {
   return gulp.src(stylFolder)
     .pipe(stylus({
-        'include css': true
+        "include css": true
     }))
-    .pipe(concat('out.css'))
+    .pipe(concat("out.css"))
     .pipe(gulp.dest(buildFolder))
     .pipe(browserSync.reload({
       stream:true
     }));
 });
 
-gulp.task('pug', function() {
+gulp.task("pug", function() {
   return gulp.src(pugFolder)
     .pipe(pug())
     .pipe(gulp.dest(buildFolder))
@@ -43,41 +43,38 @@ gulp.task('pug', function() {
     }));
 });
 
-gulp.task('js', function() {
-  return gulp.src(jsFolder)
-    .pipe(concat('main.js'))
-    .pipe(gulpif(release, uglify())) // only minify if production (gulp --release)
-    .pipe(gulp.dest(buildFolder + '/js'))
-    .pipe(browserSync.reload({
-      stream:true
-    }));
+gulp.task("jsx", function(){
+    return gulp.src(jsxFolder)
+        .pipe(gulp.dest(buildFolder + "/jsx"))
+		.pipe(browserSync.reload({
+			stream:true
+		}));
 });
 
-gulp.task('libs', function() {
-  return gulp.src('src/libs/**/*')
+gulp.task("libs", function() {
+  return gulp.src("src/libs/**/*")
     .pipe(order([
       "jquery.js",
-      "lodash.js",
+      "lodash.js"
     ]))
-    .pipe(concat('libs.js'))
-    .pipe(gulp.dest(buildFolder + '/libs'));
+    .pipe(concat("libs.js"))
+    .pipe(gulp.dest(buildFolder + "/libs"));
 });
 
-gulp.task('initBrowserSync', function() {
+gulp.task("initBrowserSync", function() {
 	browserSync.init({
 		server: {
-			baseDir: 'build'
+			baseDir: "build"
 		},
 	});
 });
 
-
-gulp.task('watch', function () {
-	gulp.watch(jsFolder, ['js']);
-	gulp.watch(pugFolder, ['pug']);
-	gulp.watch(stylFolder, ['stylus']);
+gulp.task("watch", function () {
+	gulp.watch(jsxFolder, ["jsx"]);
+	gulp.watch(pugFolder, ["pug"]);
+	gulp.watch(stylFolder, ["stylus"]);
 });
 
-gulp.task('default', function() {
-    runSequence('clean', 'libs', 'js', 'pug', 'stylus', 'initBrowserSync', 'watch');
+gulp.task("default", function() {
+    runSequence("clean", "libs", "jsx", "pug", "stylus", "initBrowserSync", "watch");
 });
