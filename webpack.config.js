@@ -4,16 +4,20 @@ var path = require('path');
 var BUILD_DIR = path.resolve(__dirname, 'src/public');
 var APP_DIR = path.resolve(__dirname, 'src/app');
 
-var config = {
-  entry: APP_DIR + '/index.jsx',
+module.exports = {
+  entry: [APP_DIR + '/jsx/index.jsx', APP_DIR + '/jsx/header.jsx', APP_DIR + '/jsx/gallery.jsx', APP_DIR + '/jsx/about.jsx'],
   output: {
     path: BUILD_DIR,
     filename: 'bundle.js'
   },
+  devServer: {
+	contentBase: "./src",
+	hot: true
+  },
   module: {
     loaders: [
       {
-        test: /\.jsx?/,
+        test: /\.jsx?$/,
         include: APP_DIR,
         loader: 'babel-loader',
       },
@@ -24,5 +28,3 @@ var config = {
     ]
   }
 };
-
-module.exports = config;
