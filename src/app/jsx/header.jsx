@@ -7,6 +7,24 @@ import {
   Link
 } from 'react-router-dom';
 
+const links = [
+	{ id: "about", title: "About Me", url: "/about"},
+	{ id: "gallery", title: "Gallery", url: "/gallery"}
+];
+					
+export class Header extends React.Component {
+	render() {
+		return (
+	  	<div id="header">
+	  		<div id="header-container">
+	  			<HeaderLogo isFullWindow={true} id="header-logo"/>
+	  			<HeaderLinks links={links}/>
+	  		</div>
+			</div>
+		);
+	}
+}
+
 class HeaderLogo extends React.Component {
   render() {
   	const imgSrc = this.props.isFullWindow ? "assets/logo_full.png" : "assets/logo_small.png";
@@ -16,6 +34,15 @@ class HeaderLogo extends React.Component {
 			</a>
 		);
   }
+}
+
+function HeaderLinks(props) {
+	const items = props.links.map((link) => 
+		<HeaderLink key={link.id} title={link.title} url={link.url}/>
+	);
+	return (
+		<div id="header-links">{items}</div>
+	);
 }
 
 class HeaderLink extends React.Component {
@@ -28,29 +55,3 @@ class HeaderLink extends React.Component {
 		);
   }
 }
-
-function HeaderLinks(props) {
-	const items = props.links.map((link) => 
-		<HeaderLink key={link.id} title={link.title} url={link.url}/>
-	);
-	return (
-		<Router>
-			<div>{items}</div>
-		</Router>
-	);
-}
-
-
-ReactDOM.render(
-  <HeaderLogo isFullWindow={true}/>,
-  document.getElementById('header-logo')
-);
-
-const links = [
-	{ id: "about", title: "About Me", url: "/about"},
-	{ id: "gallery", title: "Gallery", url: "/gallery"}
-];
-ReactDOM.render(
-  <HeaderLinks links={links}/>,
-  document.getElementById('header-links')
-);

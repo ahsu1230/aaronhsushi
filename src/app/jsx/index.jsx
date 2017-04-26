@@ -5,8 +5,8 @@ import ReactDOM from 'react-dom';
 import {
   BrowserRouter as Router,
   Route,
-  Link
 } from 'react-router-dom';
+import { Header } from './header.jsx';
 import { GalleryPage } from './gallery.jsx';
 import { AboutPage } from './about.jsx';
 
@@ -16,13 +16,12 @@ class MainContainer extends React.Component {
     return (
     	<Router>
     		<div>
-		      <Route exact path="/" component={Home}/>
-		      <Route path="/gallery" component={Gallery}/>
-		      <Route path="/about" component={About}/>
-		      
-		      <Link to="/">Link1</Link>
-		      <Link to="/gallery">Link2</Link>
-		      <Link to="/about">Link3</Link>
+    			<Header/>
+					<div id="container">
+						<Route exact path="/" component={Home}/>
+			      <Route path="/gallery" component={Gallery}/>
+			      <Route path="/about" component={About}/>
+					</div> 
 	      </div>
       </Router>
 		);
@@ -30,10 +29,10 @@ class MainContainer extends React.Component {
 }
 
 const Home = () => <GalleryPage/>;
-const About = () => <AboutPage/>;
 const Gallery = () => <GalleryPage/>;
+const About = () => <AboutPage/>;
 
 ReactDOM.render(
   <MainContainer/>,
-  document.getElementById('container')
+  document.getElementById('root')
 );

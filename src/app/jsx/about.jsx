@@ -5,7 +5,7 @@ import React from 'react';
 export class AboutPage extends React.Component {
 	render() {
 		return (
-	  	<p>About Me</p>
+	  	<div>About Me</div>
 		);
 	}
 }

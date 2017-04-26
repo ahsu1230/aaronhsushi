@@ -3,6 +3,27 @@ var css = require('./../styles/gallery.styl');
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+export class GalleryPage extends React.Component {
+	render() {
+		var numColumns = 3;
+		var columnList = [[], [], []];
+		for (var i = 0; i < tiles.length; i++) {
+			var columnIndex = i % numColumns;
+			columnList[columnIndex].push(tiles[i]);
+		}
+
+		const columns = columnList.map((column, index) => 
+			<Column key={index} tiles={column}/>
+		);
+
+		return (
+	  	<div id="view-gallery">
+				{columns}
+			</div>
+		);
+	}
+}
+
 class Column extends React.Component {
   render() {
   	const tiles = this.props.tiles.map((tile, index) => 
@@ -54,24 +75,3 @@ const tile3 = {
 	color: "#00ffbb"
 };
 const tiles = [tile2, tile2, tile1, tile3, tile1, tile2, tile2, tile3, tile1, tile3];
-
-export class GalleryPage extends React.Component {
-	render() {
-		var numColumns = 3;
-		var columnList = [[], [], []];
-		for (var i = 0; i < tiles.length; i++) {
-			var columnIndex = i % numColumns;
-			columnList[columnIndex].push(tiles[i]);
-		}
-
-		const columns = columnList.map((column, index) => 
-			<Column key={index} tiles={column}/>
-		);
-
-		return (
-	  	<div id="view-gallery">
-				{columns}
-			</div>
-		);
-	}
-}
