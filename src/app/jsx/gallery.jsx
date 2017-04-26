@@ -4,6 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { ContentList } from './contentList.jsx';
 import { ContentMap } from './contentMap.jsx';
+import { Tile } from './galleryTile.jsx';
 
 export class GalleryPage extends React.Component {
 	render() {
@@ -20,37 +21,11 @@ export class GalleryPage extends React.Component {
 		);
 
 		return (
-	  	<div id="view-gallery">
+		  	<div id="view-gallery">
 				{columns}
 			</div>
 		);
 	}
-}
-
-class Column extends React.Component {
-  render() {
-  	const tiles = this.props.tiles.map((tile, index) => 
-  		<Tile key={index} tile={tile}/>
-		);
-
-    return (
-    	<div className="column">
-				{tiles}
-			</div>
-		);
-  }
-}
-
-class Tile extends React.Component {
-  render() {
-  	const tile = this.props.tile;
-  	const imgSrc = tile.source.thumbnailUrl;
-    return (
-    	<div className="tile" style={{backgroundColor: tile.color}}>
-				<img src={imgSrc}/>
-			</div>
-		);
-  }
 }
 
 function getAllTiles() {
@@ -60,4 +35,18 @@ function getAllTiles() {
 		tiles.push(ContentMap[id]);
 	}
 	return tiles;
+}
+
+class Column extends React.Component {
+  render() {
+  	const tiles = this.props.tiles.map((tile, index) => 
+  		<Tile key={index} tile={tile}/>
+	);
+
+    return (
+		<div className="column">
+			{tiles}
+		</div>
+	);
+  }
 }
