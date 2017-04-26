@@ -15,12 +15,12 @@ var config = {
       {
         test: /\.jsx?/,
         include: APP_DIR,
-        loader: 'babel-loader'
+        loader: 'babel-loader',
       },
-	  {
-		test: /\.styl$/,
-		loader: 'css-loader!stylus-loader?paths=node_modules/bootstrap-stylus/stylus/'
-	  }
+      { 
+        test: /\.styl$/, 
+        loader: 'style-loader!css-loader!stylus-loader' 
+      }
     ]
   }
 };
