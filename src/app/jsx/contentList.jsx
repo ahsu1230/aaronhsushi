@@ -14,5 +14,7 @@ export const ContentList = [
 	"handroll3_rainbow_matcha",
 	"spoon5_scallop",
 	"roll8_rainbow_white",
-	"spoon2_tako"
+	"spoon2_tako",
+	"roll8_crunchy_salmon",
+	"roll8_hamachi_lotus"
 ];

@@ -120,6 +120,22 @@ export const ContentMap = {
 			fullUrl: "https://scontent.fsnc1-5.fna.fbcdn.net/v/t1.0-9/14955898_3294510201427_7936478923707699045_n.jpg?oh=f88ae60267c5cd86451f0cea1957c08a&oe=59896403"
 		},
 		color: colorGreen
+	},
+	"roll8_crunchy_salmon": {
+		title: "Crunchy Salmon",
+		source: {
+			thumbnailUrl: "https://scontent.fsnc1-5.fna.fbcdn.net/v/t1.0-0/p206x206/15032298_3294509801417_808085137281408618_n.jpg?oh=54932d5e5aba7adfce73da0ed8a7730d&oe=598A8182",
+			fullUrl: "https://scontent.fsnc1-5.fna.fbcdn.net/v/t1.0-9/15032298_3294509801417_808085137281408618_n.jpg?oh=0ebc5fb59fb12fe577b729ca78f90806&oe=59906652"
+		},
+		color: colorOrange
+	},
+	"roll8_hamachi_lotus": {
+		title: "Hamachi Lotus Roll",
+		source: {
+			thumbnailUrl: "https://scontent.fsnc1-5.fna.fbcdn.net/v/t1.0-0/p206x206/15032901_3294510681439_6437959699024215782_n.jpg?oh=afbccac1be869ddb117a5f7219288bc3&oe=5982372F",
+			fullUrl: "https://scontent.fsnc1-5.fna.fbcdn.net/v/t1.0-9/15032901_3294510681439_6437959699024215782_n.jpg?oh=dd7275589213dcc2945da4757142ac85&oe=59842C02"
+		},
+		color: colorRed
 	}
 };
 
