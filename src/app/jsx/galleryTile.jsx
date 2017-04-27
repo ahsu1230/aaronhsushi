@@ -78,9 +78,9 @@ class TileImage extends React.Component {
 
 	render() {
 		const imgSrc = this.props.imgSrc;
-		const status = this.state.status;
 		const width = this.state.dimensions.width;
 		const height = this.state.dimensions.height;
+		const status = this.state.status;
 		const loaded = status == 'loaded';
 	    return (
 	    	<div>
@@ -96,7 +96,16 @@ class TileImage extends React.Component {
 	}
 }
 
-function returnSampleBigImageUrl() {
+function fakeTile(tile) {
+	var url = getSampleBigImageUrl();
+	tile.source = {
+		thumbnailUrl: url,
+		fullUrl: url
+	};
+	return tile;
+}
+
+function getSampleBigImageUrl() {
 	var rand = Math.floor((Math.random() * 10)); 
   	var urls = [
   		"http://s1.picswalls.com/wallpapers/2014/07/24/latest-sushi-wallpaper_112712993_82.jpg",
