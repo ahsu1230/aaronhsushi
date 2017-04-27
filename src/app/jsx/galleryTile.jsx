@@ -2,20 +2,55 @@
 var css = require('./../styles/galleryTile.styl'); 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Modal from 'react-modal';
+import { Window } from './galleryWindow.jsx';
+
+const modalStyle = {
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    padding				  : '0',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)',
+    border                : 'none',
+    borderRadius		  : '0px'
+  }
+};
 
 export class Tile extends React.Component {
-	loadImage(img, url) {
-		setTimeout(function() {
+	constructor() {
+	    super();
+	    this.state = {
+	      modalIsOpen: false
+	    };
 
-		}, 5000);
+	    this.openModal = this.openModal.bind(this);
+	    this.closeModal = this.closeModal.bind(this);
+	}
+
+	openModal() {
+	    this.setState({modalIsOpen: true});
+	}
+
+	closeModal() {
+	    this.setState({modalIsOpen: false});
 	}
 
 	render() {
 	  	const tile = this.props.tile;
 	  	const imgUrl = tile.source.thumbnailUrl;
 	    return (
-	    	<div className="gallery-tile" style={{backgroundColor: tile.color}}>
+	    	<div className="gallery-tile" style={{backgroundColor: tile.color}} onClick={this.openModal}>
 				<TileImage imgSrc={imgUrl}/>
+				<Modal
+		          isOpen={this.state.modalIsOpen}
+		          onRequestClose={this.closeModal}
+		          style={modalStyle}
+		          contentLabel="Example Modal">
+		          <Window url={tile.source.fullUrl} color={tile.color} closeWindow={this.closeModal}/>
+		        </Modal>
 			</div>
 		);
 	}

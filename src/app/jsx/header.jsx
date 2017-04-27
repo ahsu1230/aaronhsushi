@@ -30,9 +30,9 @@ class HeaderLogo extends React.Component {
   	const imgSrc = this.props.isFullWindow ? "assets/logo_full.png" : "assets/logo_small.png";
     return (
     	<a href="/">
-				<img src={imgSrc}/>
-			</a>
-		);
+			<img src={imgSrc}/>
+		</a>
+	);
   }
 }
 
