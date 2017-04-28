@@ -6,17 +6,21 @@ import Modal from 'react-modal';
 import { Window } from './galleryWindow.jsx';
 
 const modalStyle = {
-  content : {
-    top                   : '50%',
-    left                  : '50%',
-    right                 : 'auto',
-    bottom                : 'auto',
-    padding				  : '0',
-    marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)',
-    border                : 'none',
-    borderRadius		  : '0px'
-  }
+	overlay: {
+		backgroundColor: 'rgba(255, 255, 255, 0.75)'
+	},
+	content : {
+	    top: '50%',
+	    left: '50%',
+	    right: 'auto',
+	    bottom: 'auto',
+	    transform: 'translate(-50%, -50%)',
+	    padding: '0',
+	    marginRight: '-50%',
+	    border: '0px',
+	    borderRadius: '5px',
+	    backgroundColor: 'transparent'
+	}
 };
 
 export class Tile extends React.Component {
@@ -48,8 +52,8 @@ export class Tile extends React.Component {
 		          isOpen={this.state.modalIsOpen}
 		          onRequestClose={this.closeModal}
 		          style={modalStyle}
-		          contentLabel="Example Modal">
-		          <Window url={tile.source.fullUrl} color={tile.color} closeWindow={this.closeModal}/>
+		          contentLabel="Gallery Modal">
+		          <Window tile={tile} closeWindow={this.closeModal}/>
 		        </Modal>
 			</div>
 		);

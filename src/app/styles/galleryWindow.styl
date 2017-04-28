@@ -3,6 +3,10 @@
 loaderSize = 24px
 
 .gallery-window
+	padding: 0px 64px
+
+.gallery-content
+	position: relative
 	background-color: #fff
 
 .window-img-container
@@ -35,7 +39,7 @@ loaderSize = 24px
 			display: none
 
 .window-closer-container
-	position: fixed !important
+	position: absolute
 	top: 16px
 	right: 16px
 	width: 36px
@@ -48,10 +52,39 @@ loaderSize = 24px
 	&:hover
 		opacity: 0.7
 
-.window-closer
-	position: relative
+	& img
+		position: relative
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+		width: 24px
+		height: 24px
+
+.window-prev-container
+.window-next-container
+	position: fixed !important
 	top: 50%
-	left: 50%
-	transform: translate(-50%, -50%)
-	width: 24px
-	height: 24px
+	transform: translateY(-50%)
+	width: 36px
+	height: 36px
+	border-radius: 100%
+	background-color: white
+	opacity: 0.3
+	cursor: pointer
+
+	&:hover
+		opacity: 0.7
+
+	& img
+		position: relative
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+		width: 100%
+		height: 100%
+
+.window-prev-container
+	left: 0px
+
+.window-next-container
+	right: 0px

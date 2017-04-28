@@ -17,7 +17,7 @@ export class GalleryPage extends React.Component {
 		}
 
 		const columns = columnList.map((column, index) => 
-			<Column key={index} tiles={column}/>
+			<Column key={index} tiles={column} columnIndex={index}/>
 		);
 
 		return (
@@ -38,15 +38,15 @@ function getAllTiles() {
 }
 
 class Column extends React.Component {
-  render() {
-  	const tiles = this.props.tiles.map((tile, index) => 
-  		<Tile key={index} tile={tile}/>
-	);
+  	render() {
+  		const tiles = this.props.tiles.map((tile, index) =>
+  			<Tile key={index} tile={tile}/>
+		);
 
-    return (
-		<div className="column">
-			{tiles}
-		</div>
-	);
-  }
+	    return (
+			<div className="column">
+				{tiles}
+			</div>
+		);
+  	}
 }
