@@ -10,31 +10,17 @@ export class Window extends React.Component {
 	constructor(props) {
 	    super(props);
 	    this.state = {
-	    	dimensions: {},
-	    	status: 'loading',
 	    	tile: props.tile
 	    };
-        this.handleLoaded = this.handleLoaded.bind(this);
         this.handleNext = this.handleNext.bind(this);
         this.handlePrev = this.handlePrev.bind(this);
-	}
-
-	handleLoaded({target:img}) {
-		this.setState({
-			dimensions: {
-				height: img.height,
-				width: img.width
-			},
-	    	status: 'loaded'
-		});
 	}
 
 	handleNext() {
 		const tile = this.state.tile;
 		const nextTile = getNextTile(tile.id);
 		this.setState({
-			tile: nextTile,
-			status: 'loading'
+			tile: nextTile
 		});
 	}
 
@@ -42,18 +28,13 @@ export class Window extends React.Component {
 		const tile = this.state.tile;
 		const prevTile = getPrevTile(tile.id);
 		this.setState({
-			tile: prevTile,
-			status: 'loading'
+			tile: prevTile
 		});
 	}
 
 	render() {
 		const tile = this.state.tile;
 		const imgSrc = tile.source.fullUrl;
-		const width = this.state.dimensions.width;
-		const height = this.state.dimensions.height;
-		const status = this.state.status;
-		const loaded = status == 'loaded';
 		return (
 			<div className="gallery-window">
 
@@ -62,13 +43,7 @@ export class Window extends React.Component {
 						<img className="window-closer" src="assets/close_black.svg"/>
 					</div>
 					<div className="window-img-container">
-						<div className={"loader-container " + (loaded ? 'hide' : '')}></div>
-						<img
-				    		src={imgSrc}
-							onLoad={this.handleLoaded}
-							style={{height: height+"px", width: width+"px"}}
-							className={loaded ? 'loaded' : ''}
-						/>
+						<img src={imgSrc}/>
 					</div>
 				</div>
 

@@ -11,32 +11,10 @@ loaderSize = 24px
 
 .window-img-container
 	& img
-		max-width: 960px
-		max-height: 600px
+		max-width: 720px
+		max-height: 540px
 		width: auto
 		height: auto
-		visibility: hidden
-		opacity: 0.0
-		transition: 0.15s linear opacity, 0.15s linear visibility
-
-		&.loaded
-			visibility: visible
-			opacity: 1.0
-
-	& .loader-container
-		position: absolute
-		top: "calc(50% - %s)" % (loaderSize / 2)
-		left: "calc(50% - %s)" % (loaderSize / 2)
-		transform: translate(-50%, -50%)
-		display: block;
-		width: loaderSize;
-		height: loaderSize;
-		border: 6px solid #333;
-		border-radius: 100%;
-		animation: pulse 1s ease-in infinite;
-
-		&.hide
-			display: none
 
 .window-closer-container
 	position: absolute
