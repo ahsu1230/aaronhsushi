@@ -54,47 +54,18 @@ export class Tile extends React.Component {
 		          style={modalStyle}
 		          contentLabel="Gallery Modal">
 		          <Window tile={tile} closeWindow={this.closeModal}/>
-		        </Modal>
+		    </Modal>
 			</div>
 		);
 	}
 }
 
 class TileImage extends React.Component {
-	constructor(props) {
-	    super(props);
-	    this.state = {
-	    	dimensions: {},
-	    	status: 'loading'
-	    };
-        this.handleLoaded = this.handleLoaded.bind(this);
-	}
-
-	handleLoaded({target:img}) {
-		this.setState({
-			dimensions: {
-				height: img.height,
-				width: img.width
-			},
-	    	status: 'loaded'
-		});
-	}
-
 	render() {
 		const imgSrc = this.props.imgSrc;
-		const width = this.state.dimensions.width;
-		const height = this.state.dimensions.height;
-		const status = this.state.status;
-		const loaded = status == 'loaded';
 	    return (
 	    	<div>
-		    	<div className={"loader-container " + (loaded ? 'hide' : '')}></div>
-		    	<img
-		    		src={imgSrc}
-					onLoad={this.handleLoaded}
-					style={{height: height+"px", width: width+"px"}}
-					className={loaded ? 'loaded' : ''}
-				/>
+		    	<img src={imgSrc}/>
 			</div>
 		);
 	}
