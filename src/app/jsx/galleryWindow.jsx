@@ -58,13 +58,13 @@ export class Window extends React.Component {
 				</div>
 
 				<button className="window-prev-btn" onClick={this.handlePrev}>
-					<img className="window-prev" src="assets/arrow_left_black.svg"/>
+					<img src="assets/arrow_left_black.svg"/>
 				</button>
 				<button className="window-next-btn" onClick={this.handleNext}>
-					<img className="window-next" src="assets/arrow_right_black.svg"/>
+					<img src="assets/arrow_right_black.svg"/>
 				</button>
 				<button className="window-details-btn" onClick={this.handleDetails}>
-					<div>Show More Information {this.state.showDetails}</div>
+					<img src="assets/ellipsis.svg"/>
 				</button>
 			</div>
 		);

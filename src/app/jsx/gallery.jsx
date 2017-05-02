@@ -89,21 +89,25 @@ class Column extends React.Component {
 	  		<Tile key={index} tile={tile}/>
 			);
 
+
+			const marginSpace = 12;
 			const columnIndex = this.props.columnIndex;
 			const numColumns = this.props.numColumns;
+			const totalMargin = (numColumns - 1) * (marginSpace / numColumns);
+			
 			var marginLeft = 0;
 			var marginRight = 0;
 			if (numColumns == 2) {
 				if (columnIndex == 0) {
-					marginRight = 12;
+					marginRight = marginSpace;
 				}
 			} else if (numColumns == 3) {
 				if (columnIndex == 1) {
-					marginLeft = 12;
-					marginRight = 12;
+					marginLeft = marginSpace;
+					marginRight = marginSpace;
 				}
 			}
-			const totalMargin = marginLeft + marginRight;
+			
 			const colWidth = "calc(" + ((100 / numColumns) + '%') + " - " + totalMargin + "px)";
 			
 	    return (
