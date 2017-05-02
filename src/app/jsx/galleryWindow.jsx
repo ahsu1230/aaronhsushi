@@ -10,8 +10,10 @@ export class Window extends React.Component {
 	constructor(props) {
 	    super(props);
 	    this.state = {
-	    	tile: props.tile
+	    	tile: props.tile,
+	    	showDetails: false
 	    };
+	    this.handleDetails = this.handleDetails.bind(this);
         this.handleNext = this.handleNext.bind(this);
         this.handlePrev = this.handlePrev.bind(this);
 	}
@@ -20,7 +22,8 @@ export class Window extends React.Component {
 		const tile = this.state.tile;
 		const nextTile = getNextTile(tile.id);
 		this.setState({
-			tile: nextTile
+			tile: nextTile,
+			showDetails: false
 		});
 	}
 
@@ -28,7 +31,14 @@ export class Window extends React.Component {
 		const tile = this.state.tile;
 		const prevTile = getPrevTile(tile.id);
 		this.setState({
-			tile: prevTile
+			tile: prevTile,
+			showDetails: false
+		});
+	}
+
+	handleDetails() {
+		this.setState({
+			showDetails: true
 		});
 	}
 
@@ -39,20 +49,23 @@ export class Window extends React.Component {
 			<div className="gallery-window">
 
 				<div className="gallery-content">
-					<div className="window-closer-container" onClick={this.props.closeWindow}>
+					<button className="window-closer-btn" onClick={this.props.closeWindow}>
 						<img className="window-closer" src="assets/close_black.svg"/>
-					</div>
+					</button>
 					<div className="window-img-container">
 						<img src={imgSrc}/>
 					</div>
 				</div>
 
-				<div className="window-prev-container" onClick={this.handlePrev}>
+				<button className="window-prev-btn" onClick={this.handlePrev}>
 					<img className="window-prev" src="assets/arrow_left_black.svg"/>
-				</div>
-				<div className="window-next-container" onClick={this.handleNext}>
+				</button>
+				<button className="window-next-btn" onClick={this.handleNext}>
 					<img className="window-next" src="assets/arrow_right_black.svg"/>
-				</div>
+				</button>
+				<button className="window-details-btn1" onClick={this.handleDetails}>
+					<div>Show More Information {this.state.showDetails}</div>
+				</button>
 			</div>
 		);
 	}

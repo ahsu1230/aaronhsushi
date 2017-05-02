@@ -1,4 +1,4 @@
 node_modules/
 src/public/*
-npm-debug.log.*
 src/**/*.bak
+npm-debug.log*

@@ -5,6 +5,10 @@ loaderSize = 24px
 .gallery-window
 	padding: 0px 64px
 
+	& button
+		outline: none
+		border: none
+
 .gallery-content
 	position: relative
 	background-color: #fff
@@ -16,53 +20,76 @@ loaderSize = 24px
 		width: auto
 		height: auto
 
-.window-closer-container
+.window-closer-btn
 	position: absolute
 	top: 16px
 	right: 16px
 	width: 36px
 	height: 36px
+	padding: 0
 	border-radius: 100%
 	background-color: white
 	opacity: 0.3
 	cursor: pointer
 
 	&:hover
+		transform: scale(1.1)
 		opacity: 0.7
 
 	& img
-		position: relative
+		position: absolute
 		top: 50%
 		left: 50%
 		transform: translate(-50%, -50%)
 		width: 24px
 		height: 24px
 
-.window-prev-container
-.window-next-container
-	position: fixed !important
+.window-prev-btn
+.window-next-btn
+	position: absolute
 	top: 50%
-	transform: translateY(-50%)
+	transform: translateY(-50%) scale(1.0)
 	width: 36px
 	height: 36px
+	padding: 0
 	border-radius: 100%
 	background-color: white
 	opacity: 0.3
 	cursor: pointer
 
 	&:hover
+		transform-origin: center center
+		transform: translateY(-50%) scale(1.1)
 		opacity: 0.7
 
 	& img
-		position: relative
+		position: absolute
 		top: 50%
 		left: 50%
 		transform: translate(-50%, -50%)
 		width: 100%
 		height: 100%
 
-.window-prev-container
+.window-prev-btn
 	left: 0px
+	margin-left: 5px
 
-.window-next-container
+.window-next-btn
 	right: 0px
+	margin-right: 5px
+
+.window-details-btn1
+	position: absolute
+	bottom: 6px
+	left: 50%
+	transform: translateX(-50%)
+	height: 30px
+	padding: 0 20px
+	border-radius: 30px
+	background-color: white
+	opacity: 0.3
+	cursor: pointer
+	transition: 0.1s linear opacity
+
+	&:hover
+		opacity: 0.7
