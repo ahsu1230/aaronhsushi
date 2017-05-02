@@ -102,3 +102,22 @@ loaderSize = 24px
 
 		&:hover
 			opacity: 0.8
+
+	.window-details-container
+		position: absolute
+		bottom: 48px
+		left: 50%
+		transform: translate(-50%, 10%)
+		width: 360px
+		padding: 12px 24px
+		border-radius: 6px
+		border: 2px solid colorPrimary
+		background-color: colorWhite
+		opacity: 0.0
+		visibility: hidden
+		transition: 0.15s linear all
+		
+		&.show
+			opacity: 0.9
+			visibility: visible
+			transform: translate(-50%, 0%)

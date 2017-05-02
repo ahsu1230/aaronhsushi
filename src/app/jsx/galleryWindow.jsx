@@ -13,9 +13,10 @@ export class Window extends React.Component {
 	    	tile: props.tile,
 	    	showDetails: false
 	    };
-	    this.handleDetails = this.handleDetails.bind(this);
-        this.handleNext = this.handleNext.bind(this);
-        this.handlePrev = this.handlePrev.bind(this);
+	    this.toggleDetails = this.toggleDetails.bind(this);
+	    this.handleDetailsOff = this.handleDetailsOff.bind(this);
+      this.handleNext = this.handleNext.bind(this);
+      this.handlePrev = this.handlePrev.bind(this);
 	}
 
 	handleNext() {
@@ -36,15 +37,24 @@ export class Window extends React.Component {
 		});
 	}
 
-	handleDetails() {
+	toggleDetails() {
+		const showDetails = this.state.showDetails;
 		this.setState({
-			showDetails: true
+			showDetails: !showDetails
+		});
+	}
+	
+	handleDetailsOff() {
+		this.setState({
+			showDetails: false
 		});
 	}
 
 	render() {
 		const tile = this.state.tile;
 		const imgSrc = tile.source.fullUrl;
+		const showDetails = this.state.showDetails;
+		const windowDetailsClass = this.state.showDetails ? " show" : "";
 		return (
 			<div className="gallery-window">
 					
@@ -63,9 +73,12 @@ export class Window extends React.Component {
 				<button className="window-next-btn" onClick={this.handleNext}>
 					<img src="assets/arrow_right_black.svg"/>
 				</button>
-				<button className="window-details-btn" onClick={this.handleDetails}>
+				<button className="window-details-btn" onClick={this.toggleDetails}>
 					<img src="assets/ellipsis.svg"/>
 				</button>
+				<div className={"window-details-container" + windowDetailsClass}>
+					<p>Blah Be Blah Bleh Blah</p>
+				</div>
 			</div>
 		);
 	}
