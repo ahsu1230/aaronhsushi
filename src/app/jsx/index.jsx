@@ -3,7 +3,7 @@ var css = require('./../styles/home.styl');
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Route,
 } from 'react-router-dom';
 import { Header } from './header.jsx';
@@ -12,7 +12,6 @@ import { AboutPage } from './about.jsx';
 
 class MainContainer extends React.Component {
   render() {
-  	var hashHistory = Router.hashHistory;
     return (
     	<Router>
     		<div>

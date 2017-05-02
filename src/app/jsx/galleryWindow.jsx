@@ -47,13 +47,13 @@ export class Window extends React.Component {
 		const imgSrc = tile.source.fullUrl;
 		return (
 			<div className="gallery-window">
-
+					
 				<div className="gallery-content">
-					<button className="window-closer-btn" onClick={this.props.closeWindow}>
-						<img className="window-closer" src="assets/close_black.svg"/>
-					</button>
-					<div className="window-img-container">
-						<img src={imgSrc}/>
+					<div className="content-container">
+						<img className="content-img" src={imgSrc}></img>
+						<button className="window-closer-btn" onClick={this.props.closeWindow}>
+							<img className="window-closer" src="assets/close_black.svg"/>
+						</button>
 					</div>
 				</div>
 
@@ -63,7 +63,7 @@ export class Window extends React.Component {
 				<button className="window-next-btn" onClick={this.handleNext}>
 					<img className="window-next" src="assets/arrow_right_black.svg"/>
 				</button>
-				<button className="window-details-btn1" onClick={this.handleDetails}>
+				<button className="window-details-btn" onClick={this.handleDetails}>
 					<div>Show More Information {this.state.showDetails}</div>
 				</button>
 			</div>
