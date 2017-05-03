@@ -23,8 +23,7 @@ export class Window extends React.Component {
 		const tile = this.state.tile;
 		const nextTile = getNextTile(tile.id);
 		this.setState({
-			tile: nextTile,
-			showDetails: false
+			tile: nextTile
 		});
 	}
 
@@ -32,8 +31,7 @@ export class Window extends React.Component {
 		const tile = this.state.tile;
 		const prevTile = getPrevTile(tile.id);
 		this.setState({
-			tile: prevTile,
-			showDetails: false
+			tile: prevTile
 		});
 	}
 
@@ -62,7 +60,7 @@ export class Window extends React.Component {
 					<div className="content-container">
 						<img className="content-img" src={imgSrc}></img>
 						<button className="window-closer-btn" onClick={this.props.closeWindow}>
-							<img className="window-closer" src="assets/close_black.svg"/>
+							<img src="assets/close_black.svg"/>
 						</button>
 					</div>
 				</div>
@@ -77,7 +75,10 @@ export class Window extends React.Component {
 					<img src="assets/ellipsis.svg"/>
 				</button>
 				<div className={"window-details-container" + windowDetailsClass}>
-					<p>Blah Be Blah Bleh Blah</p>
+					<button className="window-details-closer-btn" onClick={this.handleDetailsOff}>
+						<img src="assets/close_black.svg"/>
+					</button>
+					<p>{tile.details}</p>
 				</div>
 			</div>
 		);
