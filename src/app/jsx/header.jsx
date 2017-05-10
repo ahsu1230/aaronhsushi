@@ -14,12 +14,13 @@ const links = [
 					
 export class Header extends React.Component {
 	render() {
+		const isTransparent = this.props.isTransparent || false;
 		return (
-	  	<div id="header">
-	  		<div id="header-container">
-	  			<HeaderLogo isFullWindow={true} id="header-logo"/>
-	  			<HeaderLinks links={links}/>
-	  		</div>
+	  		<div id="header" className={isTransparent ? "transparent" : ""}>
+		  		<div id="header-container">
+		  			<HeaderLogo isFullWindow={true} id="header-logo"/>
+		  			<HeaderLinks links={links}/>
+		  		</div>
 			</div>
 		);
 	}

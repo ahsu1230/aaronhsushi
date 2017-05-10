@@ -23,7 +23,8 @@ export class Window extends React.Component {
 		const tile = this.state.tile;
 		const nextTile = getNextTile(tile.id);
 		this.setState({
-			tile: nextTile
+			tile: nextTile,
+			showDetails: false
 		});
 	}
 
@@ -31,7 +32,8 @@ export class Window extends React.Component {
 		const tile = this.state.tile;
 		const prevTile = getPrevTile(tile.id);
 		this.setState({
-			tile: prevTile
+			tile: prevTile,
+			showDetails: false
 		});
 	}
 

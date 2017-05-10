@@ -1,5 +1,55 @@
 @import "constants"
 
 #view-about
-	p
-		color: red
+	position: relative
+	
+	& #header
+		position: absolute
+		top: 0
+		left: 0
+		z-index: 1
+
+	& .banner-container
+		position: relative
+		width: 100%
+		height: 420px
+		background: url("\./assets/cover_photo.jpg")
+		background-size: cover
+		background-position: center
+		border-bottom: 2px solid colorPrimary
+
+		& .banner-overlay
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			background: rgba(55, 55, 55, 0.5)
+
+	& .profile-container
+		position: absolute
+		top: 60%
+		left: 50%
+		transform: translate(-50%, -50%)
+		width: 280px
+
+		& .profile-img-wrapper
+			width: 160px
+			height: 160px
+			margin: 0 auto
+			border-radius: 50%
+			overflow: hidden
+
+			& .profile-img
+				width: 100%
+				height: 100%
+				background: url("\./assets/profile_headshot.jpg")
+				background-size: cover
+				background-position: center
+
+		& h3
+		& h4
+			margin-top: 16px
+			color: colorWhite
+			text-align: center
+			letter-spacing: 1.5

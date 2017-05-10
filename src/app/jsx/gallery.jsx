@@ -2,6 +2,7 @@
 var css = require('./../styles/gallery.styl'); 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Header } from './header.jsx';
 import { ContentList } from './contentList.jsx';
 import { ContentMap } from './contentMap.jsx';
 import { Tile } from './galleryTile.jsx';
@@ -50,8 +51,11 @@ export class GalleryPage extends React.Component {
 		);
 
 		return (
-		  <div id="view-gallery">
-				{columns}
+		  	<div id="view-gallery">
+		  		<Header/>
+		  		<div id="content-gallery">
+					{columns}
+				</div>
 			</div>
 		);
 	}
