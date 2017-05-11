@@ -61,11 +61,18 @@
 
 	& .about-content-section
 		margin-top: 24px
+		margin-bottom: 24px
 
 	& img
-		float: left
+		display: inline-block
 		width: 240px
 		margin-right: 32px
+		vertical-align: top
 
-	& span
-		width: calc(100% - 272px)
+	& p
+		display: inline-block
+		line-height: 32px
+		margin: 0px
+		
+		&.half-section
+			width: calc(100% - 272px)
