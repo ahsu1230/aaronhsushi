@@ -37,7 +37,7 @@ class AboutContent extends React.Component {
 		return (
 			<div id="content-about">
 				<div className="about-content-section">
-					<img src="assets/sushi_boat_ice0.jpg"/>
+					<img className="half-section" src="assets/sushi_boat_ice0.jpg"/>
 					<p className="half-section">
 						{BiographyContent1}
 					</p>
@@ -48,18 +48,17 @@ class AboutContent extends React.Component {
 					</p>
 				</div>
 				<div className="about-content-section">
-					<img src="assets/nigiri_platter0.jpg"/>
-					<img src="assets/sashimi_platter0.jpg"/>
-					<img src="assets/sushi_art0.jpg"/>
+					<img className="collage" src="assets/nigiri_platter0.jpg"/>
+					<img className="collage" src="assets/sashimi_platter0.jpg"/>
+					<img className="collage" src="assets/sushi_art0.jpg"/>
 				</div>
 				<div className="about-content-section">
 					<p>
 						{BiographyContent3}
 					</p>
-				</div>
-				<div className="about-content-section">
-					<h3>Connect with me</h3>
-
+					<p>
+						To continue following my adventure, follow me through my Instagram <a href="https://www.instagram.com/mooseyhsushi/" target="_blank">@mooseyhsushi</a>.
+					</p>
 				</div>
 			</div>
 		);

@@ -13,17 +13,43 @@ const links = [
 ];
 					
 export class Header extends React.Component {
+	constructor() {
+	    super();
+	    this.state = {
+	      condensed: false
+	    };
+	    this.condenseLogo = this.condenseLogo.bind(this);
+	}
 	render() {
+		const isCondensed = this.state.condensed;
 		const isTransparent = this.props.isTransparent || false;
 		return (
 	  		<div id="header" className={isTransparent ? "transparent" : ""}>
 		  		<div id="header-container">
-		  			<HeaderLogo isFullWindow={true} id="header-logo"/>
+		  			<HeaderLogo isFullWindow={!isCondensed} id="header-logo"/>
 		  			<HeaderLinks links={links}/>
 		  		</div>
 			</div>
 		);
 	}
+	condenseLogo() {
+   	var windowWidth = window.innerWidth;
+   	var condensed = windowWidth < 480;
+    if (condensed != this.state.condensed) {
+    	this.setState({
+    		condensed: condensed
+			});    		
+    }
+  }
+  componentWillMount() {
+      this.condenseLogo();
+  }
+  componentDidMount() {
+      window.addEventListener("resize", this.condenseLogo);
+  }
+  componentWillUnmount() {
+      window.removeEventListener("resize", this.condenseLogo);
+  }
 }
 
 class HeaderLogo extends React.Component {
