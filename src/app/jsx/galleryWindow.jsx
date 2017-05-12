@@ -80,7 +80,7 @@ export class Window extends React.Component {
 					<button className="window-details-closer-btn" onClick={this.handleDetailsOff}>
 						<img src="assets/close_black.svg"/>
 					</button>
-					<p>{tile.details}</p>
+					<WindowDetails tile={tile}/>
 				</div>
 			</div>
 		);
@@ -99,4 +99,31 @@ function getPrevTile(currentId) {
 	var listIndex = _.indexOf(ContentList, currentId);
 	var index = (listIndex - 1 + listSize) % listSize;
 	return ContentMap[ContentList[index]];
+}
+
+class WindowDetails extends React.Component {
+	render() {
+		const tile = this.props.tile;
+		const ingredients = tile.ingredients.map((ingredient, index) => 
+			<Ingredient key={index} ingredient={ingredient}/>
+		);
+		return (
+			<div>
+				<h4>Ingredients</h4>
+				{ingredients}
+			</div>
+		);
+	}
+}
+
+class Ingredient extends React.Component {
+	render() {
+		const ingredient = this.props.ingredient;
+		return (
+			<div className="ingredient-row">
+				<div className="ingredient-img"></div>
+				<span>{ingredient}</span>
+			</div>
+		);
+	}
 }

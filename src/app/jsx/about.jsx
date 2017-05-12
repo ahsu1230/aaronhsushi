@@ -67,17 +67,17 @@ class AboutContent extends React.Component {
 
 const BiographyContent1 = "Born and raised in Potomac, Maryland, "
  + "I ate my first sushi at the age of 10 and fell in love with it since. "
- + "It first really started when I started frequently visiting this then quiet restaurant in Germantown city. "
+ + "It began when I started frequently visiting this then quiet restaurant in Germantown city. "
  + "As a kid, I was always there - whether it was to celebrate a huge achievement (like getting an honorable mention from a piano competition - yes it was huge for me) "
  + "or to take advantage of their lunch buffets, I was always there. "
- + "More than 15 years later, the restaurant still has a place in my heart and has been a great inspiration to me. "
+ + "More than 15 years later, this now infamous and constantly-bustling restaurant, Yuraku, still has a place in my heart and has been a great inspiration to me. "
  ;
  
- const BiographyContent2 = "My first roll started when I moved out to California. "
-  + "Thankfully, California markets have sashimi grade fish, so it's an excellent place to make your own sushi. "
+ const BiographyContent2 = "I made my first roll when I moved out to Bay Area, California. "
+  + "Thankfully, many Bay Area markets have sashimi grade fish, so it's an excellent place to make your own sushi. "
   + "I watched a couple of Youtube videos, and started with a few basic maki rolls. "
-  + "From there, I wanted to upgrade my skills and started making my all-time favorite signature rolls, some of which include Yuraku's Triple Salmon rolls or the Rainbow Roll. "
-  + "Since then, my adventure started. I constantly sought to challenge myself to the point of travelling across the Bay Area to specifically go to certain Asian markets in search of particular fish I wanted to work with. "
+  + "From there, I wanted to upgrade my skills and started making my all-time favorite signature rolls, some of which include Yuraku's Triple Salmon rolls and the Rainbow Roll. "
+  + "Since then, my adventure started. I constantly sought to challenge myself to the point of travelling across the Bay Area to specifically go to certain Asian markets in search of particular fish and ingredients I wanted to work with. "
   
   
 const BiographyContent3 = "This site is here to help me remember the dedication I've put into exploring my more creative side. "
