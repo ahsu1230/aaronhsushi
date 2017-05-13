@@ -22,8 +22,8 @@ module.exports = {
         loader: 'babel-loader',
       },
       { 
-        test: /\.styl$/, 
-        loader: 'style-loader!css-loader!stylus-loader?resolve url'
+        test: /\.styl$/,
+	loader: 'style-loader!css-loader?url=false!stylus-loader'
       }
     ]
   }

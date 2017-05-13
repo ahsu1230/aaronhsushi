@@ -1,5 +1,8 @@
 @import "constants"
 
+bannerHeightPx = 600px
+profileSizePx = 160px
+
 #view-about
 	position: relative
 	
@@ -12,7 +15,7 @@
 	& .banner-container
 		position: relative
 		width: 100%
-		height: 420px
+		height: bannerHeightPx
 		background: url("\./assets/cover_photo.jpg")
 		background-size: cover
 		background-position: center
@@ -28,14 +31,14 @@
 
 	& .profile-container
 		position: absolute
-		top: 60%
+		top: 57%
 		left: 50%
 		transform: translate(-50%, -50%)
 		width: 280px
 
 		& .profile-img-wrapper
-			width: 160px
-			height: 160px
+			width: profileSizePx
+			height: profileSizePx
 			margin: 0 auto
 			border-radius: 50%
 			overflow: hidden
@@ -53,6 +56,9 @@
 			color: colorWhite
 			text-align: center
 			letter-spacing: 1.5
+			
+		& h4 
+			font-weight: 100
 
 #content-about
 	width: containerWidthPct
@@ -61,11 +67,25 @@
 
 	& .about-content-section
 		margin-top: 24px
+		margin-bottom: 24px
 
 	& img
-		float: left
-		width: 240px
-		margin-right: 32px
+		display: inline-block
+		
+		&.collage
+			height: 230px
+			margin-right: 0px
+			
+		&.half-section
+			width: 240px	
+			margin-right: 32px
+			vertical-align: top
 
-	& span
-		width: calc(100% - 272px)
+	& p
+		display: inline-block
+		line-height: 32px
+		margin: 0px
+		letter-spacing: 1
+		
+		&.half-section
+			width: calc(100% - 272px)

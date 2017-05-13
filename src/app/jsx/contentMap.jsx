@@ -11,26 +11,56 @@ const colorGold = "#ffec8b";
 const colorUni = "#ffc125";
 const colorWhite = "#fffaf0";
 
+const AMAEBI = "Sweet shrimp (Amaebi)";
+const ANKIMO = "Monkfish Liver (Ankimo)";
+const HAMACHI = "Yellowtail (Hamachi)";
+const HOTATE = "Scallops (Hotate)";
+const IKURA = "Salmon Roe (Ikura)";
+const KANPACHI = "Amberjack (Kanpachi)";
+const MAGURO = "Ahi Tuna (Maguro)";
+const MAGURO_BF = "Bluefin Tuna (Maguro)";
+const SAKE = "Salmon (Sake)";
+const SHRIMP_TEMPURA = "Shrimp Tempura";
+const TAKO = "Octopus (Tako)";
+const UNAGI = "Eel (Unagi)";
+const UNI_SB = "Uni (from Santa Barbara)";
+
+const AVOCADO = "Avocado";
+const CILANTRO = "Cilantro";
+const CUCUMBER = "Cucumber";
+const IMITATION_CRAB = "Imitation Crab";
+const PARSLEY = "Parsley";
+const RED_ONIONS = "Sauteed red onions";
+const SCALLIONS = "Scallions";
+const SEA_SALT = "Sea salt";
+const TOBIKO = "Flying Fish Roe (Tobiko)";
+
+const SAUCE_UNAGI = "Unagi soysauce";
+const SAUCE_CHILI = "Sweet chili sauce";
+const SAUCE_MAYO = "Sweet mayo";
+
 export const ContentMap = {
 	"roll6_tempura_crab": {
 		id: "roll6_tempura_crab",
-		title: "Some Sushi",
+		title: "Crab Shrimp Tempura Roll",
 		source: {
 			thumbnailUrl: "https://scontent.xx.fbcdn.net/v/t1.0-0/p206x206/11156218_2706329777284_910193609496174608_n.jpg?oh=76fe35438770952c78b0e1f2b91c52dd&oe=597E651B",
 			fullUrl: "https://scontent.xx.fbcdn.net/v/t31.0-8/11167681_2706329777284_910193609496174608_o.jpg?oh=7107dadb6820eef866ec2d8abcd5c3a2&oe=59746B51"
 		},
 		color: colorTobiko,
-		details: "asdf asdf"
+		details: "Shrimp Tempura stuff",
+		ingredients: [SHRIMP_TEMPURA, IMITATION_CRAB, CUCUMBER, SAUCE_MAYO, TOBIKO, SCALLIONS]
 	},
 	"roll6_tuna_avocado": {
 		id: "roll6_tuna_avocado",
-		title: "Some other Sushi",
+		title: "Deep Sea Tuna Avocado Roll",
 		source: {
 			thumbnailUrl: "https://scontent.xx.fbcdn.net/v/t1.0-0/p206x206/10352940_2496991263952_1005846077137632990_n.jpg?oh=be408ab3e2c8e5c3c8e19a38cc1b968e&oe=59958A21",
 			fullUrl: "https://scontent.xx.fbcdn.net/v/t1.0-9/10352940_2496991263952_1005846077137632990_n.jpg?oh=fd61d6f68fce12c4f826d2214f62cfba&oe=59909B0C"
 		},
 		color: colorTuna,
-		details: "asdf asdf"
+		details: "", 
+		ingredients: [MAGURO_BF, AVOCADO, CUCUMBER, TOBIKO, SAUCE_CHILI]
 	},
 	"roll8_salmon_guac": {
 		id: "roll8_salmon_guac",
@@ -40,7 +70,8 @@ export const ContentMap = {
 			fullUrl: "https://scontent.xx.fbcdn.net/v/t1.0-9/14956382_3294509081399_7030668803048428247_n.jpg?oh=1faebf193d57e2685d257da30782e62f&oe=59941A96"
 		},
 		color: colorSalmon,
-		details: "asdf asdf"
+		details: "", 
+		ingredients: [SAKE, "Mashed avocado", CUCUMBER, RED_ONIONS, "Lime juice", CILANTRO]
 	},
 	"nigiri10_uni": {
 		id: "nigiri10_uni",
@@ -50,7 +81,8 @@ export const ContentMap = {
 			fullUrl: "https://scontent.fsnc1-1.fna.fbcdn.net/v/t1.0-9/13445465_3120300406291_611181044637490496_n.jpg?oh=b90646e2f0b65e4e5d374b9ba5b162b1&oe=5982B8E3"
 		},
 		color: colorUni,
-		details: "asdf asdf"
+		details: "", 
+		ingredients: [UNI_SB, SEA_SALT, "Sushi rice", "Roasted seaweed"]
 	},
 	"roll8_salmon_garlic": {
 		id: "roll8_salmon_garlic",
@@ -60,7 +92,8 @@ export const ContentMap = {
 			fullUrl: "https://scontent.fsnc1-1.fna.fbcdn.net/v/t1.0-9/14963128_3294509201402_859956427861884567_n.jpg?oh=18aaee1137a0f4c7a345bd0f14338833&oe=598664E2"
 		},
 		color: colorSalmon,
-		details: "asdf asdf"
+		details: "", 
+		ingredients: [SAKE, "Spicy salmon", "Roasted garlic", CUCUMBER, "Tempura flakes", PARSLEY]
 	},
 	"roll8_vegan_asparagus": {
 		id: "roll8_vegan_asparagus",
@@ -70,7 +103,8 @@ export const ContentMap = {
 			fullUrl: "https://scontent.fsnc1-1.fna.fbcdn.net/v/t1.0-9/11139373_2758214994382_5686092001397705530_n.jpg?oh=a58606e1f52cde4a3b97bca8b1820235&oe=59873495"
 		},
 		color: colorGreen,
-		details: "asdf asdf"
+		details: "", 
+		ingredients: ["Shiitake mushrooms", "Asparagus", SAUCE_MAYO, SAUCE_UNAGI]
 	},
 	"roll8_amberjack_tuna": {
 		id: "roll8_amberjack_tuna",
@@ -80,7 +114,8 @@ export const ContentMap = {
 			fullUrl: "https://scontent.fsnc1-5.fna.fbcdn.net/v/t1.0-9/11223503_2799772153285_272937667642782688_n.jpg?oh=92f5ec193c334a78b91e7a8b23d9ea30&oe=598BFCAC"
 		},
 		color: colorGreen,
-		details: "asdf asdf"
+		details: "", 
+		ingredients: [KANPACHI, MAGURO, CUCUMBER, SCALLIONS]
 	},
 	"roll6_monkfish_bites": {
 		id: "roll6_monkfish_bites",
@@ -90,7 +125,8 @@ export const ContentMap = {
 			fullUrl: "https://scontent.fsnc1-1.fna.fbcdn.net/v/t1.0-9/11855810_2820598193923_7528199783678914326_n.jpg?oh=6a1334a2333a80f82f51922738309075&oe=597C105D"
 		},
 		color: colorGold,
-		details: "asdf asdf"
+		details: "", 
+		ingredients: [ANKIMO, SAKE, MAGURO, CUCUMBER]
 	},
 	"roll8_seared_salmon_ikura": {
 		id: "roll8_seared_salmon_ikura",
@@ -100,7 +136,8 @@ export const ContentMap = {
 			fullUrl: "https://scontent.fsnc1-5.fna.fbcdn.net/v/t1.0-9/11150503_2706323017115_7342689363651900143_n.jpg?oh=dbb75627ae7f20edcd7cf22d5ea6fca3&oe=59934E2F"
 		},
 		color: colorTobiko,
-		details: "asdf asdf"
+		details: "", 
+		ingredients: [SAKE, IMITATION_CRAB, CUCUMBER, IKURA, SCALLIONS]
 	},
 	"handroll3_rainbow_matcha": {
 		id: "handroll3_rainbow_matcha",
@@ -110,7 +147,8 @@ export const ContentMap = {
 			fullUrl: "https://scontent.fsnc1-5.fna.fbcdn.net/v/t1.0-9/10376278_2706325177169_3567077577660757834_n.jpg?oh=066b047a811bc50c73eb09084fd6ef3b&oe=5974DB00"
 		},
 		color: colorAvocado,
-		details: "asdf asdf"
+		details: "", 
+		ingredients: [SAKE, MAGURO, AVOCADO, CUCUMBER, TOBIKO, "Matcha chocolate straws"]
 	},
 	"roll8_rainbow_white": {
 		id: "roll8_rainbow_white",
@@ -120,7 +158,8 @@ export const ContentMap = {
 			fullUrl: "https://scontent.fsnc1-1.fna.fbcdn.net/v/t1.0-9/11800207_2820597913916_1628318891640552685_n.jpg?oh=27dee8a3edf45ddbce80870e0689f37c&oe=597998E9"
 		},
 		color: colorWhite,
-		details: "asdf asdf"
+		details: "", 
+		ingredients: [SAKE, MAGURO, CUCUMBER, TOBIKO, SAUCE_UNAGI]
 	},
 	"spoon5_scallop": {
 		id: "spoon5_scallop",
@@ -130,7 +169,8 @@ export const ContentMap = {
 			fullUrl: "https://scontent.fsnc1-1.fna.fbcdn.net/v/t1.0-9/13417550_3120300566295_8967881487037068275_n.jpg?oh=5227a797d3ef3d1253d2accb3d8d5e99&oe=5991FA53"
 		},
 		color: colorWhite,
-		details: "asdf asdf"
+		details: "", 
+		ingredients: [HOTATE, RED_ONIONS, "Ponzu soy sauce"]
 	},
 	"nigiri6_amaebi": {
 		id: "nigiri6_amaebi",
@@ -140,7 +180,8 @@ export const ContentMap = {
 			fullUrl: "https://scontent.fsnc1-1.fna.fbcdn.net/v/t1.0-9/13466507_3120300726299_6651628152071245303_n.jpg?oh=4522514253d5e84f796b1313a4a1733a&oe=59856F65"
 		},
 		color: colorEbi,
-		details: "asdf asdf"
+		details: "", 
+		ingredients: [AMAEBI, "Sushi rice", "Lemon zest and slices"]
 	},
 	"spoon2_tako": {
 		id: "spoon2_tako",
@@ -150,7 +191,8 @@ export const ContentMap = {
 			fullUrl: "https://scontent.fsnc1-5.fna.fbcdn.net/v/t1.0-9/14955898_3294510201427_7936478923707699045_n.jpg?oh=f88ae60267c5cd86451f0cea1957c08a&oe=59896403"
 		},
 		color: colorGreen,
-		details: "asdf asdf"
+		details: "", 
+		ingredients: [TAKO, TOBIKO, "Fried Lotus Roots", PARSLEY]
 	},
 	"roll8_crunchy_salmon": {
 		id: "roll8_crunchy_salmon",
@@ -160,7 +202,8 @@ export const ContentMap = {
 			fullUrl: "https://scontent.fsnc1-5.fna.fbcdn.net/v/t1.0-9/15032298_3294509801417_808085137281408618_n.jpg?oh=0ebc5fb59fb12fe577b729ca78f90806&oe=59906652"
 		},
 		color: colorTobiko,
-		details: "asdf asdf"
+		details: "", 
+		ingredients: [SAKE, AVOCADO, "Tempura flakes", TOBIKO, RED_ONIONS, PARSLEY]
 	},
 	"roll8_hamachi_lotus": {
 		id: "roll8_hamachi_lotus",
@@ -170,7 +213,8 @@ export const ContentMap = {
 			fullUrl: "https://scontent.fsnc1-5.fna.fbcdn.net/v/t1.0-9/15032901_3294510681439_6437959699024215782_n.jpg?oh=dd7275589213dcc2945da4757142ac85&oe=59842C02"
 		},
 		color: colorEbi,
-		details: "asdf asdf"
+		details: "", 
+		ingredients: [HAMACHI, AVOCADO, "Fried Lotus Roots", TOBIKO, CILANTRO]
 	}
 };
 
@@ -182,6 +226,7 @@ export const ContentMap = {
 		fullUrl: ""
 	},
 	color: color,
-	details: ""
+	details: "",
+	ingredients: []
 }
 */
