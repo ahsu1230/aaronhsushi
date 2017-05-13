@@ -8,6 +8,7 @@ export const ContentList = [
 	"roll8_salmon_garlic", 
 	"roll8_salmon_guac", 
 	"roll8_seared_salmon_ikura",
+	"roll8_lobster_volcano",
 	"roll8_vegan_asparagus",
 	"roll8_amberjack_tuna",
 	"roll6_monkfish_bites",

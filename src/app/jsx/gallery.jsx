@@ -93,7 +93,6 @@ class Column extends React.Component {
 	  		<Tile key={index} tile={tile}/>
 			);
 
-
 			const marginSpace = 12;
 			const columnIndex = this.props.columnIndex;
 			const numColumns = this.props.numColumns;

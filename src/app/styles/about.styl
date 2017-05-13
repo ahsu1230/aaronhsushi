@@ -2,6 +2,7 @@
 
 bannerHeightPx = 600px
 profileSizePx = 160px
+responsiveWidthPx = 800px
 
 #view-about
 	position: relative
@@ -16,10 +17,15 @@ profileSizePx = 160px
 		position: relative
 		width: 100%
 		height: bannerHeightPx
-		background: url("\./assets/cover_photo.jpg")
-		background-size: cover
-		background-position: center
+		background: colorPrimary
 		border-bottom: 2px solid colorPrimary
+		
+		& .banner-img
+			width: 100%
+			height: 100%
+			background: url("\./assets/cover_photo.jpg")
+			background-size: cover
+			background-position: center
 
 		& .banner-overlay
 			position: absolute
@@ -74,12 +80,25 @@ profileSizePx = 160px
 		
 		&.collage
 			height: 230px
-			margin-right: 0px
+			margin-right: 12px
+			
+			@media screen and (max-width: responsiveWidthPx)
+				display: block
+				height: initial
+				width: 80%
+				margin: 12px auto
 			
 		&.half-section
+			float: left
 			width: 240px	
-			margin-right: 32px
+			margin: 0 32px 24px 0
 			vertical-align: top
+			
+			@media screen and (max-width: responsiveWidthPx)
+				display: block
+				float: initial
+				width: 80%
+				margin: 24px auto
 
 	& p
 		display: inline-block
@@ -89,3 +108,6 @@ profileSizePx = 160px
 		
 		&.half-section
 			width: calc(100% - 272px)
+			
+			@media screen and (max-width: responsiveWidthPx)
+				width: 100%

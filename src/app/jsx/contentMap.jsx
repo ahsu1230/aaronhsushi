@@ -28,16 +28,18 @@ const UNI_SB = "Uni (from Santa Barbara)";
 const AVOCADO = "Avocado";
 const CILANTRO = "Cilantro";
 const CUCUMBER = "Cucumber";
-const IMITATION_CRAB = "Imitation Crab";
+const IMITATION_CRAB = "Imitation crab";
 const PARSLEY = "Parsley";
 const RED_ONIONS = "Sauteed red onions";
 const SCALLIONS = "Scallions";
 const SEA_SALT = "Sea salt";
 const TOBIKO = "Flying Fish Roe (Tobiko)";
 
-const SAUCE_UNAGI = "Unagi soysauce";
 const SAUCE_CHILI = "Sweet chili sauce";
 const SAUCE_MAYO = "Sweet mayo";
+const SAUCE_SRIRACHA = "Sriracha sauce";
+const SAUCE_SRIRACHA_MAYO = "Sriracha mayo";
+const SAUCE_UNAGI = "Unagi soysauce";
 
 export const ContentMap = {
 	"roll6_tempura_crab": {
@@ -215,6 +217,16 @@ export const ContentMap = {
 		color: colorEbi,
 		details: "", 
 		ingredients: [HAMACHI, AVOCADO, "Fried Lotus Roots", TOBIKO, CILANTRO]
+	},
+	"roll8_lobster_volcano": {
+		title: "",
+		source: {
+			thumbnailUrl: "assets/gallery/roll8_lobster_volcano_XS.jpg",
+			fullUrl: "assets/gallery/roll8_lobster_volcano_XL.jpg"
+		},
+		color: colorTobiko,
+		details: "",
+		ingredients: ["Fried Lobster", IMITATION_CRAB, SAUCE_SRIRACHA, SAUCE_SRIRACHA_MAYO]
 	}
 };
 

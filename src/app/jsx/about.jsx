@@ -19,13 +19,15 @@ class AboutBanner extends React.Component {
 	render() {
 		return (
 			<div className="banner-container">
-				<div className="banner-overlay"></div>
-				<div className="profile-container">
-					<div className="profile-img-wrapper">
-						<div className="profile-img"/>
+				<div className="banner-img">
+					<div className="banner-overlay"></div>
+					<div className="profile-container">
+						<div className="profile-img-wrapper">
+							<div className="profile-img"/>
+						</div>
+						<h3>Aaron Hsu</h3>
+						<h4>A student to the art of sushi</h4>
 					</div>
-					<h3>Aaron Hsu</h3>
-					<h4>A student to the art of sushi</h4>
 				</div>
 			</div>
 		);
@@ -37,10 +39,10 @@ class AboutContent extends React.Component {
 		return (
 			<div id="content-about">
 				<div className="about-content-section">
-					<img className="half-section" src="assets/sushi_boat_ice0.jpg"/>
 					<p className="half-section">
 						{BiographyContent1}
 					</p>
+					<img className="half-section" src="assets/sushi_boat_ice0.jpg"/>
 				</div>
 				<div className="about-content-section">
 					<p>
@@ -49,7 +51,6 @@ class AboutContent extends React.Component {
 				</div>
 				<div className="about-content-section">
 					<img className="collage" src="assets/nigiri_platter0.jpg"/>
-					<img className="collage" src="assets/sashimi_platter0.jpg"/>
 					<img className="collage" src="assets/sushi_art0.jpg"/>
 				</div>
 				<div className="about-content-section">
