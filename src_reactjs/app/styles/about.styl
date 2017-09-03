@@ -1,0 +1,117 @@
+@import "constants"
+
+bannerHeightPx = 600px
+profileSizePx = 160px
+responsiveWidthPx = 800px
+
+#view-about
+	position: relative
+	
+	& #header
+		position: absolute
+		top: 0
+		left: 0
+		z-index: 1
+
+	& .banner-container
+		position: relative
+		width: 100%
+		height: bannerHeightPx
+		background: colorPrimary
+		border-bottom: 2px solid colorPrimary
+		
+		& .banner-img
+			width: 100%
+			height: 100%
+			background: url("\./assets/cover_photo.jpg")
+			background-size: cover
+			background-position: center
+
+		& .banner-overlay
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			background: rgba(55, 55, 55, 0.5)
+
+	& .profile-container
+		position: absolute
+		top: 57%
+		left: 50%
+		transform: translate(-50%, -50%)
+		width: 280px
+
+		& .profile-img-wrapper
+			width: profileSizePx
+			height: profileSizePx
+			margin: 0 auto
+			border-radius: 50%
+			overflow: hidden
+
+			& .profile-img
+				width: 100%
+				height: 100%
+				background: url("\./assets/profile_headshot.jpg")
+				background-size: cover
+				background-position: center
+
+		& h3
+		& h4
+			margin-top: 16px
+			color: colorWhite
+			text-align: center
+			letter-spacing: 1.5
+			
+		& h4 
+			font-weight: 100
+
+#content-about
+	width: containerWidthPct
+	max-width: containerWidthPx
+	margin: 24px auto 240px
+
+	& .about-content-section
+		margin-top: 24px
+		margin-bottom: 24px
+
+	& img
+		display: inline-block
+		
+		&.collage
+			height: 230px
+			margin-right: 12px
+			
+			@media screen and (max-width: responsiveWidthPx)
+				display: block
+				height: initial
+				width: 80%
+				margin: 12px auto
+			
+		&.half-section
+			float: left
+			width: 240px	
+			margin: 0 32px 24px 0
+			vertical-align: top
+			
+			@media screen and (max-width: responsiveWidthPx)
+				display: block
+				float: initial
+				width: 80%
+				margin: 24px auto
+
+	& p
+		display: inline-block
+		line-height: 32px
+		margin: 0px
+		letter-spacing: 1
+		font-size: 16px
+		
+		@media screen and (max-width: responsiveWidthPx)
+			font-size: 14px
+		
+		&.half-section
+			width: calc(100% - 272px)
+			
+			@media screen and (max-width: responsiveWidthPx)
+				width: 100%

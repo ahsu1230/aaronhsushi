@@ -1,0 +1,154 @@
+@import "constants"
+
+contentMaxWidth = 720px
+contentMaxHeight = 540px
+loaderSize = 24px
+
+.gallery-window
+	padding: 0px 64px
+
+	& button
+		outline: none
+		border: none
+
+	.gallery-content
+		width: contentMaxWidth
+		height: contentMaxHeight
+		background-color: transparent
+
+	.content-container
+		position: relative
+		left: 50%
+		transform: translate(-50%)
+		display: inline-block
+		
+		& .content-img
+			max-width: contentMaxWidth
+			max-height: contentMaxHeight
+			width: auto
+
+	.window-closer-btn
+		position: absolute
+		top: 16px
+		right: 16px
+		width: 36px
+		height: 36px
+		padding: 0
+		border-radius: 100%
+		background-color: white
+		opacity: 0.5
+		cursor: pointer
+
+		&:hover
+			transform: scale(1.1)
+			opacity: 0.8
+
+		& img
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+			width: 24px
+			height: 24px
+
+	.window-prev-btn
+	.window-next-btn
+		position: absolute
+		top: 50%
+		transform: translateY(-50%) scale(1.0)
+		width: 36px
+		height: 36px
+		padding: 0
+		border-radius: 100%
+		background-color: white
+		opacity: 0.5
+		cursor: pointer
+
+		&:hover
+			transform-origin: center center
+			transform: translateY(-50%) scale(1.1)
+
+		& img
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+			width: 100%
+			height: 100%
+
+	.window-prev-btn
+		left: 0px
+		margin-left: 5px
+
+	.window-next-btn
+		right: 0px
+		margin-right: 5px
+
+	.window-details-btn
+		position: absolute
+		bottom: 6px
+		left: 50%
+		transform: translateX(-50%)
+		height: 30px
+		padding: 0 20px
+		border-radius: 30px
+		background-color: white
+		opacity: 0.5
+		cursor: pointer
+		transition: 0.1s linear opacity
+
+		& img
+			height: 100%
+
+		&:hover
+			opacity: 0.8
+
+	.window-details-container
+		position: absolute
+		bottom: 48px
+		left: 50%
+		transform: translate(-50%, 10%)
+		width: 160px
+		padding: 12px 24px
+		border-radius: 6px
+		box-shadow: #fafafa 0px 0px 1px 1px
+		background-color: colorWhite
+		opacity: 0.0
+		visibility: hidden
+		transition: 0.15s linear all
+		
+		&.show
+			opacity: 0.9
+			visibility: visible
+			transform: translate(-50%, 0%)
+			
+		& h4
+			margin: 0 0 24px 0
+			
+	.window-details-closer-btn
+		position: absolute
+		top: 8px
+		right: 8px
+		padding: 0
+		background: transparent
+		outline: none
+		cursor: pointer
+		
+		& img
+			width: 20px
+			height: 20px
+			
+	& .ingredient-row
+		height: 22px
+	
+		& .ingredient-img
+			display: inline-block
+			width: 17px
+			height: 10px
+			margin-right: 8px
+			background: url('/assets/icon_fish.png')
+			background-size: cover
+			background-position: center
+		
+		& span
+			font-size: 12px			

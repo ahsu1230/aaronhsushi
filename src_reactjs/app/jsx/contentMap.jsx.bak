@@ -226,7 +226,7 @@ export const ContentMap = {
 		},
 		color: colorTobiko,
 		details: "",
-		ingredients: ["Fried Lobster", IMITATION_CRAB, SAUCE_SRIRACHA, SAUCE_SRIRACHA_MAYO]
+		ingredients: ["Fried Lobster", IMITATION_CRAB, SAUCE_SRIRACHA_MAYO]
 	}
 };
 

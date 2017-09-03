@@ -1,0 +1,7 @@
+colorPrimary = #f77e25
+colorAccent = #51b1f8
+colorWhite = #ffffff
+colorBackground = #f2f2f2
+
+containerWidthPx = 900px
+containerWidthPct = 80%
