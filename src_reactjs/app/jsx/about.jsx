@@ -1,5 +1,5 @@
 'use strict';
-var css = require('./../styles/about.styl'); 
+var css = require('./../styles/about.styl');
 import React from 'react';
 import { Header } from './header.jsx';
 
@@ -68,19 +68,19 @@ class AboutContent extends React.Component {
 
 const BiographyContent1 = "Born and raised in Potomac, Maryland, "
  + "I ate my first sushi at the age of 10 and fell in love with it since. "
- + "It began when I started frequently visiting this then quiet restaurant in Germantown city. "
- + "As a kid, I was always there - whether it was to celebrate a huge achievement (like getting an honorable mention from a piano competition - yes it was huge for me) "
- + "or to take advantage of their lunch buffets, I was always there. "
+ + "It began when I started frequently visiting this quiet restaurant in Germantown city. "
+ + "As a kid, I was always there - whether it was to celebrate a significant achievement in my life, "
+ + "or to take advantage of their lunch buffets. "
  + "More than 15 years later, this now infamous and constantly-bustling restaurant, Yuraku, still has a place in my heart and has been a great inspiration to me. "
  ;
- 
+
  const BiographyContent2 = "I made my first roll when I moved out to Bay Area, California. "
   + "Thankfully, many Bay Area markets have sashimi grade fish, so it's an excellent place to make your own sushi. "
-  + "I watched a couple of Youtube videos, and started with a few basic maki rolls. "
-  + "From there, I wanted to upgrade my skills and started making my all-time favorite signature rolls, some of which include Yuraku's Triple Salmon rolls and the Rainbow Roll. "
-  + "Since then, my adventure started. I constantly sought to challenge myself to the point of travelling across the Bay Area to specifically go to certain Asian markets in search of particular fish and ingredients I wanted to work with. "
-  
-  
+  + "I started by watching a couple of Youtube videos, and began with a few basic maki rolls. "
+  + "From there, I wanted to upgrade my skills by making my all-time favorite signature rolls, some of which include Yuraku's Triple Salmon rolls and the Rainbow Roll. "
+  + "Since then, I embarked on my new adventure. I constantly sought to challenge myself to the point of traveling all across the Bay Area to specifically visit certain Asian markets in search of particular fish and ingredients I wanted to work with. "
+
+
 const BiographyContent3 = "This site is here to help me remember the dedication I've put into exploring my more creative side. "
- + "But I also hope that throughout my journey, as I share my art of sushi with friends and family, that I may also inspire others to also discover a side of them that they've never explored before."
+ + "But I also hope that throughout my journey, as I share my art of sushi with friends and family, I may also inspire others to also discover a more adventurous side of them."
  ;
