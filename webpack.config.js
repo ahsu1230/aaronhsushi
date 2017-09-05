@@ -1,8 +1,8 @@
 var webpack = require('webpack');
 var path = require('path');
 
-var BUILD_DIR = path.resolve(__dirname, 'src/public');
-var APP_DIR = path.resolve(__dirname, 'src/app');
+var BUILD_DIR = path.resolve(__dirname, 'src_react/public');
+var APP_DIR = path.resolve(__dirname, 'src_react/app');
 
 module.exports = {
   entry: [APP_DIR + '/jsx/index.jsx'],
