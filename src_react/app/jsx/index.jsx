@@ -10,17 +10,17 @@ import { GalleryPage } from './gallery.jsx';
 import { AboutPage } from './about.jsx';
 
 class MainContainer extends React.Component {
-  render() {
-    return (
-    	<Router>
-    		<div>
+	render() {
+		return (
+			<Router>
+				<div>
 					<Route exact path="/" component={Home}/>
-		      <Route path="/gallery" component={Gallery}/>
-		      <Route path="/about" component={About}/>
+					<Route path="/gallery" component={Gallery}/>
+					<Route path="/about" component={About}/>
 				</div>
-      </Router>
+			</Router>
 		);
-  }
+	}
 }
 
 const Home = () => <GalleryPage/>;
