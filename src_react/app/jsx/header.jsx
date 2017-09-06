@@ -54,10 +54,13 @@ export class Header extends React.Component {
 
 class HeaderLogo extends React.Component {
   render() {
-  	const imgSrc = this.props.isFullWindow ? "assets/logo_full.png" : "assets/logo_small.png";
-    return (
-    	<a href="/">
-			<img src={imgSrc}/>
+  	// const imgSrc = this.props.isFullWindow ? "assets/logo_full.png" : "assets/logo_small.png";
+    const imgSrc = "assets/logo_small.png";
+	const headerHomeText = this.props.isFullWindow ? "Aaron Hsushi" : "";
+	return (
+    	<a href="/" className="header-home-link">
+			<img src={imgSrc}/> 
+			<span>{headerHomeText}</span>
 		</a>
 	);
   }

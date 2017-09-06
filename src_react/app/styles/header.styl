@@ -3,7 +3,7 @@
 #header
 	width: 100%
 	height: 80px
-	background-color: colorPrimary
+	background-color: colorBlackDark
 
 	&.transparent
 		background: none
@@ -24,6 +24,16 @@
 	float: left
 	height: 100%
 
+.header-home-link
+	font-family: "Oswald"
+	color: colorWhiteLight
+	font-size: 22px
+	text-decoration: none
+	letter-spacing: 1px
+	
+	& img
+		vertical-align: middle	
+	
 #header-links
 	float: right
 	height: 100%
@@ -36,7 +46,9 @@
 		letter-spacing: 0.2px
 		
 		@media screen and (max-width: containerMaxWidth1)
-			font-size: 16px
+			margin-top: 16px
+			margin-left: 12px
+			font-size: 14px
 
 		&:hover .header-link-underline
 			visibility: visible
@@ -44,7 +56,7 @@
 
 	& .header-link-underline
 		margin-top: 4px
-		border-bottom: 2px solid colorWhite
+		border-bottom: 2px solid colorPrimary
 		visibility: invisible
 		opacity: 0.0
 		transition: 0.1s visibility linear, 0.1s opacity linear
