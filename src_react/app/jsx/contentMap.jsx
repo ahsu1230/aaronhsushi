@@ -46,8 +46,8 @@ export const ContentMap = {
 		id: "roll6_tempura_crab",
 		title: "Crab Shrimp Tempura Roll",
 		source: {
-			thumbnailUrl: "assets/gallery/roll8_lobster_volcano_XL.jpg",
-			fullUrl: "assets/gallery/roll8_lobster_volcano_XL.jpg"
+			thumbnailUrl: "assets/gallery/roll6_tempura_crab.jpg",
+			fullUrl: "assets/gallery/roll6_tempura_crab.jpg"
 		},
 		color: colorTobiko,
 		details: "Shrimp Tempura stuff",
@@ -57,8 +57,8 @@ export const ContentMap = {
 		id: "roll6_tuna_avocado",
 		title: "Deep Sea Tuna Avocado Roll",
 		source: {
-			thumbnailUrl: "assets/gallery/roll8_lobster_volcano_XL.jpg",
-			fullUrl: "assets/gallery/roll8_lobster_volcano_XL.jpg"
+			thumbnailUrl: "assets/gallery/roll6_tuna_avocado.jpg",
+			fullUrl: "assets/gallery/roll6_tuna_avocado.jpg"
 		},
 		color: colorTuna,
 		details: "", 
@@ -68,8 +68,8 @@ export const ContentMap = {
 		id: "roll8_salmon_guac",
 		title: "Guac Roll",
 		source: {
-			thumbnailUrl: "assets/gallery/roll8_salmon_guac_XS.jpg",
-			fullUrl: "assets/gallery/roll8_salmon_guac_XL.jpg"
+			thumbnailUrl: "assets/gallery/roll8_salmon_guac.jpg",
+			fullUrl: "assets/gallery/roll8_salmon_guac.jpg"
 		},
 		color: colorSalmon,
 		details: "", 
@@ -79,8 +79,8 @@ export const ContentMap = {
 		id: "nigiri10_uni",
 		title: "Uni Nigiri",
 		source: {
-			thumbnailUrl: "assets/gallery/roll8_lobster_volcano_XL.jpg",
-			fullUrl: "assets/gallery/roll8_lobster_volcano_XL.jpg"
+			thumbnailUrl: "assets/gallery/nigiri10_uni.jpg",
+			fullUrl: "assets/gallery/nigiri10_uni.jpg"
 		},
 		color: colorUni,
 		details: "", 
@@ -90,8 +90,8 @@ export const ContentMap = {
 		id: "roll8_salmon_garlic",
 		title: "Roasted Garlic Salmon Roll",
 		source: {
-			thumbnailUrl: "assets/gallery/roll8_salmon_garlic_XS.jpg",
-			fullUrl: "assets/gallery/roll8_salmon_garlic_XL.jpg"
+			thumbnailUrl: "assets/gallery/roll8_salmon_garlic.jpg",
+			fullUrl: "assets/gallery/roll8_salmon_garlic.jpg"
 		},
 		color: colorSalmon,
 		details: "", 
@@ -101,8 +101,8 @@ export const ContentMap = {
 		id: "roll8_vegan_asparagus",
 		title: "Vegan Umami Asparagus Roll",
 		source: {
-			thumbnailUrl: "assets/gallery/roll8_lobster_volcano_XL.jpg",
-			fullUrl: "assets/gallery/roll8_lobster_volcano_XL.jpg"
+			thumbnailUrl: "assets/gallery/roll8_vegan_asparagus.jpg",
+			fullUrl: "assets/gallery/roll8_vegan_asparagus.jpg"
 		},
 		color: colorGreen,
 		details: "", 
@@ -112,8 +112,8 @@ export const ContentMap = {
 		id: "roll8_amberjack_tuna",
 		title: "Deep Sea Amberjack Roll",
 		source: {
-			thumbnailUrl: "assets/gallery/roll8_lobster_volcano_XL.jpg",
-			fullUrl: "assets/gallery/roll8_lobster_volcano_XL.jpg"
+			thumbnailUrl: "assets/gallery/roll8_amberjack_tuna.jpg",
+			fullUrl: "assets/gallery/roll8_amberjack_tuna.jpg"
 		},
 		color: colorGreen,
 		details: "", 
@@ -123,8 +123,8 @@ export const ContentMap = {
 		id: "roll6_monkfish_bites",
 		title: "Monkfish Liver Roll Bites",
 		source: {
-			thumbnailUrl: "assets/gallery/roll8_lobster_volcano_XL.jpg",
-			fullUrl: "assets/gallery/roll8_lobster_volcano_XL.jpg"
+			thumbnailUrl: "assets/gallery/roll6_monkfish_bites.jpg",
+			fullUrl: "assets/gallery/roll6_monkfish_bites.jpg"
 		},
 		color: colorGold,
 		details: "", 
@@ -134,8 +134,8 @@ export const ContentMap = {
 		id: "roll8_seared_salmon_ikura",
 		title: "Seared Salmon Ikura Roll",
 		source: {
-			thumbnailUrl: "assets/gallery/roll8_lobster_volcano_XL.jpg",
-			fullUrl: "assets/gallery/roll8_lobster_volcano_XL.jpg"
+			thumbnailUrl: "assets/gallery/roll8_seared_salmon_ikura.jpg",
+			fullUrl: "assets/gallery/roll8_seared_salmon_ikura.jpg"
 		},
 		color: colorTobiko,
 		details: "", 
@@ -145,8 +145,8 @@ export const ContentMap = {
 		id: "handroll3_rainbow_matcha",
 		title: "Rainbow Matcha Martini",
 		source: {
-			thumbnailUrl: "assets/gallery/roll8_lobster_volcano_XL.jpg",
-			fullUrl: "assets/gallery/roll8_lobster_volcano_XL.jpg"
+			thumbnailUrl: "assets/gallery/handroll3_rainbow_matcha.jpg",
+			fullUrl: "assets/gallery/handroll3_rainbow_matcha.jpg"
 		},
 		color: colorAvocado,
 		details: "", 
@@ -156,8 +156,8 @@ export const ContentMap = {
 		id: "roll8_rainbow_white",
 		title: "Great White Rainbow Roll",
 		source: {
-			thumbnailUrl: "assets/gallery/roll8_lobster_volcano_XL.jpg",
-			fullUrl: "assets/gallery/roll8_lobster_volcano_XL.jpg"
+			thumbnailUrl: "assets/gallery/roll8_rainbow_white.jpg",
+			fullUrl: "assets/gallery/roll8_rainbow_white.jpg"
 		},
 		color: colorWhite,
 		details: "", 
@@ -167,8 +167,8 @@ export const ContentMap = {
 		id: "spoon5_scallop",
 		title: "Scallop Sashimi Bites",
 		source: {
-			thumbnailUrl: "assets/gallery/roll8_lobster_volcano_XL.jpg",
-			fullUrl: "assets/gallery/roll8_lobster_volcano_XL.jpg"
+			thumbnailUrl: "assets/gallery/spoon5_scallop.jpg",
+			fullUrl: "assets/gallery/spoon5_scallop.jpg"
 		},
 		color: colorWhite,
 		details: "", 
@@ -178,8 +178,8 @@ export const ContentMap = {
 		id: "nigiri6_amaebi",
 		title: "Amaebi Nigiri",
 		source: {
-			thumbnailUrl: "assets/gallery/roll8_lobster_volcano_XL.jpg",
-			fullUrl: "assets/gallery/roll8_lobster_volcano_XL.jpg"
+			thumbnailUrl: "assets/gallery/nigiri6_amaebi.jpg",
+			fullUrl: "assets/gallery/nigiri6_amaebi.jpg"
 		},
 		color: colorEbi,
 		details: "", 
@@ -189,8 +189,8 @@ export const ContentMap = {
 		id: "spoon2_tako",
 		title: "Tako Spring Bites",
 		source: {
-			thumbnailUrl: "assets/gallery/roll8_lobster_volcano_XL.jpg",
-			fullUrl: "assets/gallery/roll8_lobster_volcano_XL.jpg"
+			thumbnailUrl: "assets/gallery/spoon2_tako.jpg",
+			fullUrl: "assets/gallery/spoon2_tako.jpg"
 		},
 		color: colorGreen,
 		details: "", 
@@ -200,8 +200,8 @@ export const ContentMap = {
 		id: "roll8_crunchy_salmon",
 		title: "Crunchy Salmon",
 		source: {
-			thumbnailUrl: "assets/gallery/roll8_lobster_volcano_XL.jpg",
-			fullUrl: "assets/gallery/roll8_lobster_volcano_XL.jpg"
+			thumbnailUrl: "assets/gallery/roll8_crunchy_salmon.jpg",
+			fullUrl: "assets/gallery/roll8_crunchy_salmon.jpg"
 		},
 		color: colorTobiko,
 		details: "", 
@@ -211,8 +211,8 @@ export const ContentMap = {
 		id: "roll8_hamachi_lotus",
 		title: "Hamachi Lotus Roll",
 		source: {
-			thumbnailUrl: "assets/gallery/roll8_lobster_volcano_XL.jpg",
-			fullUrl: "assets/gallery/roll8_lobster_volcano_XL.jpg"
+			thumbnailUrl: "assets/gallery/roll8_hamachi_lotus.jpg",
+			fullUrl: "assets/gallery/roll8_hamachi_lotus.jpg"
 		},
 		color: colorEbi,
 		details: "", 
@@ -222,12 +222,45 @@ export const ContentMap = {
 		id: "roll8_lobster_volcano",
 		title: "",
 		source: {
-			thumbnailUrl: "assets/gallery/roll8_salmon_garlic_XL.jpg",
+			thumbnailUrl: "assets/gallery/roll8_lobster_volcano_XS.jpg",
 			fullUrl: "assets/gallery/roll8_lobster_volcano_XL.jpg"
 		},
 		color: colorTobiko,
 		details: "",
 		ingredients: ["Fried Lobster", IMITATION_CRAB, SAUCE_SRIRACHA, SAUCE_SRIRACHA_MAYO]
+	},
+	"nigiri6_kanpachi_gold": {
+		id: "nigiri6_kanpachi_gold",
+		title: "",
+		source: {
+			thumbnailUrl: "assets/gallery/nigiri6_kanpachi_gold.jpg",
+			fullUrl: "assets/gallery/nigiri6_kanpachi_gold.jpg"
+		},
+		color: colorWhite,
+		details: "",
+		ingredients: [KANPACHI, "Black Tobiko", "Gold flakes"]
+	},
+	"nigiri6_hamachi_ginger": {
+		id: "nigiri6_kanpachi_ginger",
+		title: "",
+		source: {
+			thumbnailUrl: "assets/gallery/nigiri6_hamachi_ginger.jpg",
+			fullUrl: "assets/gallery/nigiri6_hamachi_ginger.jpg"
+		},
+		color: colorToro,
+		details: "",
+		ingredients: [HAMACHI, "Ginger", "Green Onions"]
+	},
+	"nigiri6_tuna_fluke": {
+		id: "nigiri6_tuna_fluke",
+		title: "",
+		source: {
+			thumbnailUrl: "assets/gallery/nigiri6_tuna_fluke.jpg",
+			fullUrl: "assets/gallery/nigiri6_tuna_fluke.jpg"
+		},
+		color: colorTuna,
+		details: "",
+		ingredients: [MAGURO, "Fluke", IKURA, SCALLIONS]
 	}
 };
 
