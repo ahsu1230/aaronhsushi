@@ -11,7 +11,7 @@ module.exports = {
     filename: 'bundle.js'
   },
   devServer: {
-	contentBase: "./src",
+	contentBase: "./src_react",
 	hot: true
   },
   module: {
