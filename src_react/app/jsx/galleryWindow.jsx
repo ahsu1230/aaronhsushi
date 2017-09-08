@@ -15,8 +15,8 @@ export class Window extends React.Component {
 	    };
 	    this.toggleDetails = this.toggleDetails.bind(this);
 	    this.handleDetailsOff = this.handleDetailsOff.bind(this);
-      this.handleNext = this.handleNext.bind(this);
-      this.handlePrev = this.handlePrev.bind(this);
+		this.handleNext = this.handleNext.bind(this);
+		this.handlePrev = this.handlePrev.bind(this);
 	}
 
 	handleNext() {

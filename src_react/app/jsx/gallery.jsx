@@ -47,7 +47,6 @@ class GallerySwitcher extends React.Component {
 		return (
 			<div id="gallery-switchers">
 				<div className="gallery-switches">
-					<span>Layouts</span>
 					<GallerySwitchWide setLayoutFunc={this.props.setLayoutFunc}/>
 					<GallerySwitchTiles setLayoutFunc={this.props.setLayoutFunc}/>
 				</div>

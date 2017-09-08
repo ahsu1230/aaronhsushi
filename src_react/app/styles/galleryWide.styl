@@ -1,6 +1,6 @@
 @import "constants"
 
-mainImageHeight = 400px
+mainImageHeight = 480px
 
 #gallery-wide-view
 	position: absolute
@@ -19,8 +19,54 @@ mainImageHeight = 400px
 		visibility: visible
 
 #gallery-wide-content
+	position: relative
 	width: containerWidthPct
 	max-width: containerWidthPx
 	height: 100%
 	margin: 0 auto
 	background-color: colorGrayMedium
+	
+	.wide-dot
+		display: inline-block
+		width: 4px
+		height: 4px
+		margin: 0 2px
+		border-radius: 100%
+		background-color: colorWhite
+		
+		& .selected
+			transform: scale(1.5)
+			background-color: colorPrimary
+			
+			
+#gallery-wide-footer
+	position: absolute
+	bottom: 12px
+	left: 50%
+	transform: translateX(-50%)
+	
+	#gallery-wide-dots
+		display: inline-block
+		
+		@media screen and (max-width: containerMaxWidth2)
+			display: none
+	
+	.wide-prev-btn
+	.wide-next-btn
+		display: inline-block
+		width: 24px
+		height: 24px
+		padding: 0
+		vertical-align: middle
+		border: none
+		background: none
+		opacity: 0.5
+		cursor: pointer
+		
+		&:hover
+			transform: scale(1.1)
+		
+	.wide-prev-btn
+		margin-right: 12px
+	.wide-next-btn
+		margin-left: 12px
