@@ -1,0 +1,26 @@
+@import "constants"
+
+mainImageHeight = 400px
+
+#gallery-wide-view
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: mainImageHeight
+	padding: 24px 0
+	background-color: colorGrayTinted
+	opacity: 0
+	visibility: hidden
+	transition: opacity 0.1s linear, visibility 0.1s linear
+	
+	&.show
+		opacity: 1
+		visibility: visible
+
+#gallery-wide-content
+	width: containerWidthPct
+	max-width: containerWidthPx
+	height: 100%
+	margin: 0 auto
+	background-color: colorGrayMedium

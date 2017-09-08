@@ -1,5 +1,5 @@
 'use strict';
-require('./../styles/gallery.styl'); 
+require('./../styles/galleryTile.styl'); 
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { ContentList } from './contentList.jsx';
@@ -20,6 +20,8 @@ export class TileLayout extends React.Component {
 	
 	render() {
 		const show = this.props.show;
+		const showClassName = show ? "show" : "";
+		
 		const numColumns = this.state.numColumns;
 		console.log('render: ' + numColumns);
 		var columnList = createColumnList(numColumns);
@@ -34,7 +36,7 @@ export class TileLayout extends React.Component {
 		);
 
 		return (
-			<div id="content-gallery">
+			<div id="gallery-tile-view" className={showClassName}>
 				{columns}
 			</div>
 		);

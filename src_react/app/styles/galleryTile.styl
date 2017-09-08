@@ -2,6 +2,23 @@
 
 loaderSize = 12px
 
+#gallery-tile-view
+	position: relative
+	width: containerWidthPct
+	max-width: containerWidthPx
+	margin: 16px auto
+	opacity: 0
+	visibility: hidden
+	transition: opacity 0.1s linear, visibility 0.1s linear
+	
+	&.show
+		opacity: 1
+		visibility: visible
+	
+	& .column
+		display: inline-block
+		vertical-align: top
+
 .gallery-tile
 	position: relative
 	width: 100%
@@ -16,3 +33,8 @@ loaderSize = 12px
 	& img
 		width: 100%
 		vertical-align: middle;
+
+@keyframes pulse
+	0% { transform: scale(0); }
+	85% { opacity: 1; }
+	100% { transform: scale(1); filter: blur(2px); opacity: 0; }

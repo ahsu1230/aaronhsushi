@@ -33,8 +33,10 @@ export class GalleryPage extends React.Component {
 			<div id="view-gallery">
 				<Header/>
 				<GallerySwitcher setLayoutFunc={this.setLayoutFunc}/>
-				<WideLayout show={showWide}/>
-				<TileLayout show={showTiles}/>
+				<div id="view-gallery-container">
+					<WideLayout show={showWide}/>
+					<TileLayout show={showTiles}/>
+				</div>
 			</div>
 		);
 	}
