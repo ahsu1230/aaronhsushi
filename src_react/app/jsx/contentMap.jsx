@@ -8,6 +8,7 @@ const colorEbi = "#ffc0cb";
 const colorAvocado = "#90ee90";
 const colorGreen = "#00cd66";
 const colorGold = "#ffec8b";
+const colorTako = "#731699";
 const colorUni = "#ffc125";
 const colorWhite = "#fffaf0";
 
@@ -19,6 +20,7 @@ const IKURA = "Salmon Roe (Ikura)";
 const KANPACHI = "Amberjack (Kanpachi)";
 const MAGURO = "Ahi Tuna (Maguro)";
 const MAGURO_BF = "Bluefin Tuna (Maguro)";
+const OTORO = "Fatty Tuna Belly (Oh-toro)"
 const SAKE = "Salmon (Sake)";
 const SHRIMP_TEMPURA = "Shrimp Tempura";
 const TAKO = "Octopus (Tako)";
@@ -185,16 +187,16 @@ export const ContentMap = {
 		details: "", 
 		ingredients: [AMAEBI, "Sushi rice", "Lemon zest and slices"]
 	},
-	"spoon2_tako": {
-		id: "spoon2_tako",
-		title: "Tako Spring Bites",
+	"spoon4_tako_paella": {
+		id: "spoon4_tako_paella",
+		title: "Tako Paella Bites",
 		source: {
-			thumbnailUrl: "assets/gallery/spoon2_tako.jpg",
-			fullUrl: "assets/gallery/spoon2_tako.jpg"
+			thumbnailUrl: "assets/gallery/spoon4_tako_paella.jpg",
+			fullUrl: "assets/gallery/spoon4_tako_paella.jpg"
 		},
 		color: colorGreen,
 		details: "", 
-		ingredients: [TAKO, TOBIKO, "Fried Lotus Roots", PARSLEY]
+		ingredients: [TAKO, "Smoked Paprika", SAKE, PARSLEY]
 	},
 	"roll8_crunchy_salmon": {
 		id: "roll8_crunchy_salmon",
@@ -257,6 +259,28 @@ export const ContentMap = {
 		source: {
 			thumbnailUrl: "assets/gallery/nigiri6_tuna_fluke.jpg",
 			fullUrl: "assets/gallery/nigiri6_tuna_fluke.jpg"
+		},
+		color: colorTuna,
+		details: "",
+		ingredients: [MAGURO, "Fluke", IKURA, SCALLIONS]
+	},
+	"nigiri4_otoro_double": {
+		id: "nigiri4_otoro_double",
+		title: "",
+		source: {
+			thumbnailUrl: "assets/gallery/nigiri4_otoro_double.jpg",
+			fullUrl: "assets/gallery/nigiri4_otoro_double.jpg"
+		},
+		color: colorToro,
+		details: "",
+		ingredients: [OTORO]
+	},
+	"nigiri4_geoduck": {
+		id: "nigiri4_geoduck",
+		title: "",
+		source: {
+			thumbnailUrl: "assets/gallery/nigiri4_geoduck.jpg",
+			fullUrl: "assets/gallery/nigiri4_geoduck.jpg"
 		},
 		color: colorTuna,
 		details: "",
