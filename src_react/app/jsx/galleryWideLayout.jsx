@@ -4,6 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { ContentList } from './contentList.jsx';
 import { ContentMap } from './contentMap.jsx';
+import { GalleryFooter } from './galleryFooter.jsx';
 
 export class WideLayout extends React.Component {
 	constructor() {
@@ -41,6 +42,7 @@ export class WideLayout extends React.Component {
 					<WideImage list={list} currentIndex={currentIndex}/>
 					<WideFooter list={list} currentIndex={currentIndex} handlePrevFunc={this.handlePrev} handleNextFunc={this.handleNext}/>
 				</div>
+				<GalleryFooter/>
 			</div>
 		);
 	}
@@ -81,13 +83,13 @@ class WideFooter extends React.Component {
 		return (
 			<div id="gallery-wide-footer">
 				<button className="wide-prev-btn">
-					<img src="assets/arrow_left_white.svg" onClick={this.props.handlePrevFunc}/>
+					<img src="assets/arrow_left_gray.svg" onClick={this.props.handlePrevFunc}/>
 				</button>
 				<div id="gallery-wide-dots">
 					{dots}
 				</div>
 				<button className="wide-next-btn">
-					<img src="assets/arrow_right_white.svg" onClick={this.props.handleNextFunc}/>
+					<img src="assets/arrow_right_gray.svg" onClick={this.props.handleNextFunc}/>
 				</button>
 			</div>
 		);

@@ -1,5 +1,5 @@
 'use strict';
-var css = require('./../styles/about.styl');
+require('./../styles/about.styl');
 import React from 'react';
 import { Header } from './header.jsx';
 
@@ -57,6 +57,8 @@ class AboutContent extends React.Component {
 					<p>
 						{BiographyContent3}
 					</p>
+				</div>
+				<div className="about-content-section">
 					<p>
 						To continue following my adventure, follow me through my Instagram <a href="https://www.instagram.com/mooseyhsushi/" target="_blank">@mooseyhsushi</a>.
 					</p>
@@ -74,13 +76,13 @@ const BiographyContent1 = "Born and raised in Potomac, Maryland, "
  + "More than 15 years later, this now infamous and constantly-bustling restaurant, Yuraku, still has a place in my heart and has been a great inspiration to me. "
  ;
 
- const BiographyContent2 = "I made my first roll when I moved out to Bay Area, California. "
+ const BiographyContent2 = "I made my first roll in 2013, when I moved out to Bay Area, California. "
   + "Thankfully, many Bay Area markets have sashimi grade fish, so it's an excellent place to make your own sushi. "
   + "I started by watching a couple of Youtube videos, and began with a few basic maki rolls. "
   + "From there, I wanted to upgrade my skills by making my all-time favorite signature rolls, some of which include Yuraku's Triple Salmon rolls and the Rainbow Roll. "
   + "Since then, I embarked on my new adventure. I constantly sought to challenge myself to the point of traveling all across the Bay Area to specifically visit certain Asian markets in search of particular fish and ingredients I wanted to work with. "
 
 
-const BiographyContent3 = "This site is here to help me remember the dedication I've put into exploring my more creative side. "
- + "But I also hope that throughout my journey, as I share my art of sushi with friends and family, I may also inspire others to also discover a more adventurous side of them."
+const BiographyContent3 = "This site is here to help me remember the dedication I've put into exploring my creative side and expressing one of my deep passions. "
+ + "And I also hope that throughout my journey, as I share my art of sushi with friends and family, I may also inspire others to discover and pursue their adventures and dreams."
  ;

@@ -4,6 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { ContentList } from './contentList.jsx';
 import { ContentMap } from './contentMap.jsx';
+import { GalleryFooter } from './galleryFooter.jsx';
 import { Tile } from './galleryTile.jsx';
 
 const columnMaxWidth1 = 600;
@@ -38,6 +39,7 @@ export class TileLayout extends React.Component {
 		return (
 			<div id="gallery-tile-view" className={showClassName}>
 				{columns}
+				<GalleryFooter/>
 			</div>
 		);
 	}
