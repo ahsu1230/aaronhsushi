@@ -8,12 +8,11 @@ mainImageHeight = 480px
 	left: 0
 	width: 100%
 	height: mainImageHeight
-	padding: 24px 0
 	background-color: colorGrayTinted
 	opacity: 0
 	visibility: hidden
 	transition: opacity 0.1s linear, visibility 0.1s linear
-	
+
 	&.show
 		opacity: 1
 		visibility: visible
@@ -24,33 +23,23 @@ mainImageHeight = 480px
 	max-width: containerWidthPx
 	height: 100%
 	margin: 0 auto
-	background-color: colorGrayMedium
-	
-	.wide-dot
-		display: inline-block
-		width: 4px
-		height: 4px
-		margin: 0 2px
-		border-radius: 100%
-		background-color: colorWhite
-		
-		& .selected
-			transform: scale(1.5)
-			background-color: colorPrimary
-			
-			
+
+	& .wide-content-wrapper
+		position: relative
+	& .wide-content-img
+		position: relative
+		left: 50%
+		transform: translate(-50%)
+		max-width: containerWidthPx;
+		max-height: mainImageHeight
+		width: auto
+
 #gallery-wide-footer
 	position: absolute
 	bottom: 12px
 	left: 50%
 	transform: translateX(-50%)
-	
-	#gallery-wide-dots
-		display: inline-block
-		
-		@media screen and (max-width: containerMaxWidth2)
-			display: none
-	
+
 	.wide-prev-btn
 	.wide-next-btn
 		display: inline-block
@@ -60,13 +49,32 @@ mainImageHeight = 480px
 		vertical-align: middle
 		border: none
 		background: none
-		opacity: 0.5
+		outline: none
+		opacity: 0.8
 		cursor: pointer
-		
+
 		&:hover
 			transform: scale(1.1)
-		
+
 	.wide-prev-btn
 		margin-right: 12px
 	.wide-next-btn
 		margin-left: 12px
+
+#gallery-wide-dots
+	display: inline-block
+
+	@media screen and (max-width: containerMaxWidth2)
+		display: none
+
+	& .wide-dot
+		display: inline-block
+		width: 4px
+		height: 4px
+		margin: 0 2px
+		border-radius: 100%
+		background-color: colorWhite
+
+		&.selected
+			transform: scale(1.5)
+			background-color: colorPrimary
