@@ -273,7 +273,7 @@ export const ContentMap = {
 		},
 		color: colorToro,
 		details: "",
-		ingredients: [OTORO]
+		ingredients: [OTORO, SEA_SALT]
 	},
 	"nigiri4_geoduck": {
 		id: "nigiri4_geoduck",
