@@ -1,20 +1,18 @@
 'use strict';
-var css = require('./../styles/galleryWindow.styl'); 
+require('./../styles/galleryWindow.styl');
 var _ = require('lodash/core');
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { ContentList } from './contentList.jsx';
 import { ContentMap } from './contentMap.jsx';
+import { GalleryDetails } from './galleryDetails.jsx';
 
 export class Window extends React.Component {
 	constructor(props) {
-	    super(props);
-	    this.state = {
-	    	tile: props.tile,
-	    	showDetails: false
-	    };
-	    this.toggleDetails = this.toggleDetails.bind(this);
-	    this.handleDetailsOff = this.handleDetailsOff.bind(this);
+    super(props);
+    this.state = {
+    	tile: props.tile
+    };
 		this.handleNext = this.handleNext.bind(this);
 		this.handlePrev = this.handlePrev.bind(this);
 	}
@@ -23,8 +21,7 @@ export class Window extends React.Component {
 		const tile = this.state.tile;
 		const nextTile = getNextTile(tile.id);
 		this.setState({
-			tile: nextTile,
-			showDetails: false
+			tile: nextTile
 		});
 	}
 
@@ -32,34 +29,18 @@ export class Window extends React.Component {
 		const tile = this.state.tile;
 		const prevTile = getPrevTile(tile.id);
 		this.setState({
-			tile: prevTile,
-			showDetails: false
-		});
-	}
-
-	toggleDetails() {
-		const showDetails = this.state.showDetails;
-		this.setState({
-			showDetails: !showDetails
-		});
-	}
-	
-	handleDetailsOff() {
-		this.setState({
-			showDetails: false
+			tile: prevTile
 		});
 	}
 
 	render() {
 		const tile = this.state.tile;
 		const imgSrc = tile.source.fullUrl;
-		const showDetails = this.state.showDetails;
-		const windowDetailsClass = this.state.showDetails ? " show" : "";
 		return (
 			<div className="gallery-window">
-					
-				<div className="gallery-content">
-					<div className="content-container">
+
+				<div className="window-content">
+					<div className="window-content-container">
 						<img className="content-img" src={imgSrc}></img>
 						<button className="window-closer-btn" onClick={this.props.closeWindow}>
 							<img src="assets/close_black.svg"/>
@@ -73,14 +54,9 @@ export class Window extends React.Component {
 				<button className="window-next-btn" onClick={this.handleNext}>
 					<img src="assets/arrow_right_black.svg"/>
 				</button>
-				<button className="window-details-btn" onClick={this.toggleDetails}>
-					<img src="assets/ellipsis.svg"/>
-				</button>
-				<div className={"window-details-container" + windowDetailsClass}>
-					<button className="window-details-closer-btn" onClick={this.handleDetailsOff}>
-						<img src="assets/close_black.svg"/>
-					</button>
-					<WindowDetails tile={tile}/>
+
+				<div className="window-details-container">
+					<GalleryDetails content={tile}/>
 				</div>
 			</div>
 		);
@@ -99,31 +75,4 @@ function getPrevTile(currentId) {
 	var listIndex = _.indexOf(ContentList, currentId);
 	var index = (listIndex - 1 + listSize) % listSize;
 	return ContentMap[ContentList[index]];
-}
-
-class WindowDetails extends React.Component {
-	render() {
-		const tile = this.props.tile;
-		const ingredients = tile.ingredients.map((ingredient, index) => 
-			<Ingredient key={index} ingredient={ingredient}/>
-		);
-		return (
-			<div>
-				<h4>Ingredients</h4>
-				{ingredients}
-			</div>
-		);
-	}
-}
-
-class Ingredient extends React.Component {
-	render() {
-		const ingredient = this.props.ingredient;
-		return (
-			<div className="ingredient-row">
-				<div className="ingredient-img"></div>
-				<span>{ingredient}</span>
-			</div>
-		);
-	}
 }
