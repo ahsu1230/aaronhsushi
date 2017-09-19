@@ -1,19 +1,21 @@
 'use strict';
 require('./../styles/galleryWide.styl');
+require('./../styles/galleryDetails.styl');
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { ContentList } from './contentList.jsx';
 import { ContentMap } from './contentMap.jsx';
+import { GalleryDetails } from './galleryDetails.jsx';
 import { GalleryFooter } from './galleryFooter.jsx';
 
 export class WideLayout extends React.Component {
 	constructor() {
-			super();
-			this.state = {
-				currentIndex: 0
-			};
-			this.handlePrev = this.handlePrev.bind(this);
-			this.handleNext = this.handleNext.bind(this);
+		super();
+		this.state = {
+			currentIndex: 0
+		};
+		this.handlePrev = this.handlePrev.bind(this);
+		this.handleNext = this.handleNext.bind(this);
 	}
 
 	handlePrev() {
@@ -43,6 +45,9 @@ export class WideLayout extends React.Component {
 					<WideFooter list={list} currentIndex={currentIndex} handlePrevFunc={this.handlePrev} handleNextFunc={this.handleNext}/>
 				</div>
 				<GalleryFooter/>
+				<div className="wide-details-container">
+					<GalleryDetails content={list[currentIndex]}/>
+				</div>
 			</div>
 		);
 	}

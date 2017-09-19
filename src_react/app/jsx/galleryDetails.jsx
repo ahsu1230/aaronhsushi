@@ -1,5 +1,7 @@
 'use strict';
 require('./../styles/galleryDetails.styl');
+import React from 'react';
+import ReactDOM from 'react-dom';
 
 export class GalleryDetails extends React.Component {
   constructor(props) {
@@ -24,18 +26,13 @@ export class GalleryDetails extends React.Component {
   }
 
   render() {
-    const content = this.props.content;
-    const ingredients = content.ingredients.map((ingredient, index) =>
-      <Ingredient key={index} ingredient={ingredient}/>
-    );
-
     return (
       <div>
         <button className="details-btn" onClick={this.toggleDetails}>
           <img src="assets/ellipsis.svg"/>
         </button>
         <div className="details-popup"></div>
-        <DetailsPopup content={content} show={show}/>
+        <DetailsPopup content={this.props.content} show={this.state.show} handleDetailsOffFunc={this.handleDetailsOff}/>
       </div>
     );
   }
@@ -45,9 +42,12 @@ class DetailsPopup extends React.Component {
   render() {
     const showClass = this.props.show ? " show" : "";
     const detailsClasses = "details-popup " + showClass;
+	const ingredients = this.props.content.ingredients.map((ingredient, index) =>
+      <Ingredient key={index} ingredient={ingredient}/>
+    );
     return (
       <div className={detailsClasses}>
-        <button className="details-close-btn" onClick={this.handleDetailsOff}>
+        <button className="details-close-btn" onClick={this.props.handleDetailsOffFunc}>
           <img src="assets/close_black.svg"/>
         </button>
         <h4>Ingredients</h4>
