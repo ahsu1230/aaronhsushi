@@ -1,0 +1,50 @@
+@import "constants"
+
+#view-header
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: headerHeightPx
+  background-color: colorBlackDark
+
+  &.transparent
+    background: none
+
+#view-header-container
+  width: containerWidthPct
+  max-width: containerWidthPx
+  height: 100%
+  margin: 0 auto
+
+#header-logo-container
+  float: left
+  position: relative
+  top: 50%
+  transform: translateY(-50%)
+  text-decoration: none
+
+  .header-logo-pic
+    display: inline-block
+    width: 36px
+    height: 36px
+    margin-right: padding2x
+    vertical-align: middle
+    background: url('./assets/logo_triple_sushi.svg')
+    background-size: cover
+
+  .header-logo-text
+    position: relative
+    top: 4px
+    font-family: 'optima'
+    font-size: 24px
+    color: colorWhite
+
+    @media screen and (max-width: containerMaxWidth1)
+      font-size: 20px
+
+#header-nav-container
+  float: right
+  position: relative
+  top: 50%
+  transform: translateY(-50% + 20px)

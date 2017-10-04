@@ -1,45 +1,27 @@
 'use strict';
-var css = require('./../styles/galleryTile.styl'); 
+var css = require('./../styl/galleryTile.styl');
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Modal from 'react-modal';
-import { Window } from './galleryWindow.jsx';
-
-const modalStyle = {
-	overlay: {
-		backgroundColor: 'rgba(230, 230, 230, 0.75)'
-	},
-	content : {
-	    top: '50%',
-	    left: '50%',
-	    right: 'auto',
-	    bottom: 'auto',
-	    transform: 'translate(-50%, -50%)',
-	    padding: '0',
-	    marginRight: '-50%',
-	    border: '0px',
-	    borderRadius: '5px',
-	    backgroundColor: 'transparent'
-	}
-};
+import { Window, MinModalWidth } from './galleryWindow.jsx';
 
 export class Tile extends React.Component {
-	constructor() {
-	    super();
-	    this.state = {
-	      modalIsOpen: false
-	    };
-
-	    this.openModal = this.openModal.bind(this);
-	    this.closeModal = this.closeModal.bind(this);
+	constructor(props) {
+		super(props);
+		this.state = {
+			showModal: false
+    };
+		this.openModal = this.openModal.bind(this);
+		this.closeModal = this.closeModal.bind(this);
 	}
 
 	openModal() {
-	    this.setState({modalIsOpen: true});
+		if (window.innerWidth >= MinModalWidth) {
+			this.setState({showModal: true});
+		}
 	}
 
 	closeModal() {
-	    this.setState({modalIsOpen: false});
+		this.setState({showModal: false});
 	}
 
 	render() {
@@ -48,13 +30,7 @@ export class Tile extends React.Component {
 	    return (
 	    	<div className="gallery-tile" style={{backgroundColor: tile.color}} onClick={this.openModal}>
 				<TileImage imgSrc={imgUrl}/>
-				<Modal
-		          isOpen={this.state.modalIsOpen}
-		          onRequestClose={this.closeModal}
-		          style={modalStyle}
-		          contentLabel="Gallery Modal">
-		          <Window tile={tile} closeWindow={this.closeModal}/>
-		    </Modal>
+				<Window tile={tile} showModal={this.state.showModal} closeModal={this.closeModal}/>
 			</div>
 		);
 	}
@@ -81,7 +57,7 @@ function fakeTile(tile) {
 }
 
 function getSampleBigImageUrl() {
-	var rand = Math.floor((Math.random() * 10)); 
+	var rand = Math.floor((Math.random() * 10));
   	var urls = [
   		"http://s1.picswalls.com/wallpapers/2014/07/24/latest-sushi-wallpaper_112712993_82.jpg",
   		"https://images.alphacoders.com/152/thumb-1920-1523.jpg",

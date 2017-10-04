@@ -1,14 +1,11 @@
 'use strict';
-require('./../styles/galleryTile.styl'); 
+require('./../styl/galleryTile.styl');
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { ColumnMaxWidth1, ColumnMaxWidth2 } from './constants.jsx';
 import { ContentList } from './contentList.jsx';
 import { ContentMap } from './contentMap.jsx';
-import { GalleryFooter } from './galleryFooter.jsx';
 import { Tile } from './galleryTile.jsx';
-
-const columnMaxWidth1 = 600;
-const columnMaxWidth2 = 800;
 
 export class TileLayout extends React.Component {
 	constructor() {
@@ -18,11 +15,8 @@ export class TileLayout extends React.Component {
 	    };
 	    this.updateColumns = this.updateColumns.bind(this);
 	}
-	
+
 	render() {
-		const show = this.props.show;
-		const showClassName = show ? "show" : "";
-		
 		const numColumns = this.state.numColumns;
 		console.log('render: ' + numColumns);
 		var columnList = createColumnList(numColumns);
@@ -31,25 +25,24 @@ export class TileLayout extends React.Component {
 			var columnIndex = i % numColumns;
 			columnList[columnIndex].push(tiles[i]);
 		}
-		
-		const columns = columnList.map((column, index) => 
+
+		const columns = columnList.map((column, index) =>
 			<Column key={index} tiles={column} columnIndex={index} numColumns={numColumns}/>
 		);
 
 		return (
-			<div id="gallery-tile-view" className={showClassName}>
+			<div id="gallery-tile-view">
 				{columns}
-				<GalleryFooter/>
 			</div>
 		);
 	}
-	
+
 	updateColumns() {
 		var numColumns = 0;
 		var windowWidth = window.innerWidth;
-		if (windowWidth < columnMaxWidth1) {
+		if (windowWidth < ColumnMaxWidth1) {
 			numColumns = 1;
-		} else if (windowWidth < columnMaxWidth2) {
+		} else if (windowWidth < ColumnMaxWidth2) {
 			numColumns = 2;
 		} else {
 			numColumns = 3;
@@ -58,7 +51,7 @@ export class TileLayout extends React.Component {
 			console.log('change num columns to ' + numColumns);
 			this.setState({
 				numColumns: numColumns
-				});    		
+				});
 		}
 	}
 	componentWillMount() {
@@ -99,7 +92,7 @@ class Column extends React.Component {
 			const columnIndex = this.props.columnIndex;
 			const numColumns = this.props.numColumns;
 			const totalMargin = (numColumns - 1) * (marginSpace / numColumns);
-			
+
 			var marginLeft = 0;
 			var marginRight = 0;
 			if (numColumns == 2) {
@@ -112,9 +105,9 @@ class Column extends React.Component {
 					marginRight = marginSpace;
 				}
 			}
-			
+
 			const colWidth = "calc(" + ((100 / numColumns) + '%') + " - " + totalMargin + "px)";
-			
+
 	    return (
 				<div className="column" style={{width: colWidth, marginLeft: marginLeft + 'px', marginRight: marginRight + 'px'}}>
 					{tiles}

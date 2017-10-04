@@ -1,5 +1,5 @@
 'use strict';
-require('./../styles/galleryDetails.styl');
+require('./../styl/galleryDetails.styl');
 import React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -62,7 +62,6 @@ class Ingredient extends React.Component {
 		const ingredient = this.props.ingredient;
 		return (
 			<div className="ingredient-row">
-				<div className="ingredient-img"></div>
 				<span>{ingredient}</span>
 			</div>
 		);

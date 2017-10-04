@@ -1,1 +1,15 @@
-<?xml version="1.0" ?><svg data-name="Livello 1" id="Livello_1" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><title/><path fill="#ffffff" d="M64,0a64,64,0,1,0,64,64A64.07,64.07,0,0,0,64,0Zm0,122a58,58,0,1,1,58-58A58.07,58.07,0,0,1,64,122Z"/><path fill="#ffffff" d="M58.12,35.88a3,3,0,0,0-4.24,4.24L77.76,64,53.88,87.88a3,3,0,1,0,4.24,4.24l26-26a3,3,0,0,0,0-4.24Z"/></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="37px" height="70px" viewBox="0 0 37 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>arrow_right</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Home-and-Headers" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+        <g id="Artboard" transform="translate(-240.000000, -399.000000)" stroke="#FFFFFF" stroke-width="4">
+            <g id="arrow_right" transform="translate(258.500000, 434.000000) scale(-1, 1) translate(-258.500000, -434.000000) translate(243.000000, 402.000000)">
+                <path d="M0.5,30.5 L30.5,0.5" id="Line"></path>
+                <path d="M0.5,30.5 L28.5,63.5" id="Line"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -13,16 +13,16 @@ const colorUni = "#ffc125";
 const colorWhite = "#fffaf0";
 
 const AMAEBI = "Sweet shrimp (Amaebi)";
-const ANKIMO = "Monkfish Liver (Ankimo)";
+const ANKIMO = "Monkfish liver (Ankimo)";
 const HAMACHI = "Yellowtail (Hamachi)";
 const HOTATE = "Scallops (Hotate)";
-const IKURA = "Salmon Roe (Ikura)";
+const IKURA = "Salmon roe (Ikura)";
 const KANPACHI = "Amberjack (Kanpachi)";
-const MAGURO = "Ahi Tuna (Maguro)";
-const MAGURO_BF = "Bluefin Tuna (Maguro)";
-const OTORO = "Fatty Tuna Belly (Oh-toro)"
+const MAGURO = "Ahi tuna (Maguro)";
+const MAGURO_BF = "Bluefin tuna (Maguro)";
+const OTORO = "Fatty tuna belly (Oh-toro)"
 const SAKE = "Salmon (Sake)";
-const SHRIMP_TEMPURA = "Shrimp Tempura";
+const SHRIMP_TEMPURA = "Shrimp tempura";
 const TAKO = "Octopus (Tako)";
 const UNAGI = "Eel (Unagi)";
 const UNI_SB = "Uni (from Santa Barbara)";
@@ -35,10 +35,11 @@ const PARSLEY = "Parsley";
 const RED_ONIONS = "Sauteed red onions";
 const SCALLIONS = "Scallions";
 const SEA_SALT = "Sea salt";
-const TOBIKO = "Flying Fish Roe (Tobiko)";
+const TOBIKO = "Flying fish roe (Tobiko)";
 
 const SAUCE_CHILI = "Sweet chili sauce";
 const SAUCE_MAYO = "Sweet mayo";
+const SAUCE_SOY = "Soy sauce";
 const SAUCE_SRIRACHA = "Sriracha sauce";
 const SAUCE_SRIRACHA_MAYO = "Sriracha mayo";
 const SAUCE_UNAGI = "Unagi soysauce";
@@ -52,7 +53,6 @@ export const ContentMap = {
 			fullUrl: "assets/gallery/roll6_tempura_crab.jpg"
 		},
 		color: colorTobiko,
-		details: "Shrimp Tempura stuff",
 		ingredients: [SHRIMP_TEMPURA, IMITATION_CRAB, CUCUMBER, SAUCE_MAYO, TOBIKO, SCALLIONS]
 	},
 	"roll6_tuna_avocado": {
@@ -63,29 +63,27 @@ export const ContentMap = {
 			fullUrl: "assets/gallery/roll6_tuna_avocado.jpg"
 		},
 		color: colorTuna,
-		details: "", 
 		ingredients: [MAGURO_BF, AVOCADO, CUCUMBER, TOBIKO, SAUCE_CHILI]
 	},
 	"roll8_salmon_guac": {
 		id: "roll8_salmon_guac",
-		title: "Guac Roll",
+		title: "Salmon Guac Roll",
 		source: {
 			thumbnailUrl: "assets/gallery/roll8_salmon_guac.jpg",
 			fullUrl: "assets/gallery/roll8_salmon_guac.jpg"
 		},
 		color: colorSalmon,
-		details: "", 
 		ingredients: [SAKE, "Mashed avocado", CUCUMBER, RED_ONIONS, "Lime juice", CILANTRO]
 	},
 	"nigiri10_uni": {
 		id: "nigiri10_uni",
-		title: "Uni Nigiri",
+		title: "Uni",
 		source: {
 			thumbnailUrl: "assets/gallery/nigiri10_uni.jpg",
 			fullUrl: "assets/gallery/nigiri10_uni.jpg"
 		},
 		color: colorUni,
-		details: "", 
+		details: "Uni bulk ordered from Catalina Offshore.",
 		ingredients: [UNI_SB, SEA_SALT, "Sushi rice", "Roasted seaweed"]
 	},
 	"roll8_salmon_garlic": {
@@ -96,18 +94,16 @@ export const ContentMap = {
 			fullUrl: "assets/gallery/roll8_salmon_garlic.jpg"
 		},
 		color: colorSalmon,
-		details: "", 
 		ingredients: [SAKE, "Spicy salmon", "Roasted garlic", CUCUMBER, "Tempura flakes", PARSLEY]
 	},
 	"roll8_vegan_asparagus": {
 		id: "roll8_vegan_asparagus",
-		title: "Vegan Umami Asparagus Roll",
+		title: "Umami Asparagus Roll",
 		source: {
 			thumbnailUrl: "assets/gallery/roll8_vegan_asparagus.jpg",
 			fullUrl: "assets/gallery/roll8_vegan_asparagus.jpg"
 		},
 		color: colorGreen,
-		details: "", 
 		ingredients: ["Shiitake mushrooms", "Asparagus", SAUCE_MAYO, SAUCE_UNAGI]
 	},
 	"roll8_amberjack_tuna": {
@@ -118,7 +114,6 @@ export const ContentMap = {
 			fullUrl: "assets/gallery/roll8_amberjack_tuna.jpg"
 		},
 		color: colorGreen,
-		details: "", 
 		ingredients: [KANPACHI, MAGURO, CUCUMBER, SCALLIONS]
 	},
 	"roll6_monkfish_bites": {
@@ -129,7 +124,6 @@ export const ContentMap = {
 			fullUrl: "assets/gallery/roll6_monkfish_bites.jpg"
 		},
 		color: colorGold,
-		details: "", 
 		ingredients: [ANKIMO, SAKE, MAGURO, CUCUMBER]
 	},
 	"roll8_seared_salmon_ikura": {
@@ -140,7 +134,6 @@ export const ContentMap = {
 			fullUrl: "assets/gallery/roll8_seared_salmon_ikura.jpg"
 		},
 		color: colorTobiko,
-		details: "", 
 		ingredients: [SAKE, IMITATION_CRAB, CUCUMBER, IKURA, SCALLIONS]
 	},
 	"handroll3_rainbow_matcha": {
@@ -151,7 +144,6 @@ export const ContentMap = {
 			fullUrl: "assets/gallery/handroll3_rainbow_matcha.jpg"
 		},
 		color: colorAvocado,
-		details: "", 
 		ingredients: [SAKE, MAGURO, AVOCADO, CUCUMBER, TOBIKO, "Matcha chocolate straws"]
 	},
 	"roll8_rainbow_white": {
@@ -162,19 +154,7 @@ export const ContentMap = {
 			fullUrl: "assets/gallery/roll8_rainbow_white.jpg"
 		},
 		color: colorWhite,
-		details: "", 
 		ingredients: [SAKE, MAGURO, CUCUMBER, TOBIKO, SAUCE_UNAGI]
-	},
-	"spoon5_scallop": {
-		id: "spoon5_scallop",
-		title: "Scallop Sashimi Bites",
-		source: {
-			thumbnailUrl: "assets/gallery/spoon5_scallop.jpg",
-			fullUrl: "assets/gallery/spoon5_scallop.jpg"
-		},
-		color: colorWhite,
-		details: "", 
-		ingredients: [HOTATE, RED_ONIONS, "Ponzu soy sauce"]
 	},
 	"nigiri6_amaebi": {
 		id: "nigiri6_amaebi",
@@ -184,8 +164,8 @@ export const ContentMap = {
 			fullUrl: "assets/gallery/nigiri6_amaebi.jpg"
 		},
 		color: colorEbi,
-		details: "", 
-		ingredients: [AMAEBI, "Sushi rice", "Lemon zest and slices"]
+		details: "Amaebi bulk ordered from Catalina Offshore.",
+		ingredients: [AMAEBI, "sushi rice", "Lemon slices"]
 	},
 	"spoon4_tako_paella": {
 		id: "spoon4_tako_paella",
@@ -195,7 +175,7 @@ export const ContentMap = {
 			fullUrl: "assets/gallery/spoon4_tako_paella.jpg"
 		},
 		color: colorGreen,
-		details: "", 
+		details: "Inspired by Spanish octopus appetizers.",
 		ingredients: [TAKO, "Smoked Paprika", SAKE, PARSLEY]
 	},
 	"roll8_crunchy_salmon": {
@@ -206,7 +186,6 @@ export const ContentMap = {
 			fullUrl: "assets/gallery/roll8_crunchy_salmon.jpg"
 		},
 		color: colorTobiko,
-		details: "", 
 		ingredients: [SAKE, AVOCADO, "Tempura flakes", TOBIKO, RED_ONIONS, PARSLEY]
 	},
 	"roll8_hamachi_lotus": {
@@ -217,74 +196,70 @@ export const ContentMap = {
 			fullUrl: "assets/gallery/roll8_hamachi_lotus.jpg"
 		},
 		color: colorEbi,
-		details: "", 
 		ingredients: [HAMACHI, AVOCADO, "Fried Lotus Roots", TOBIKO, CILANTRO]
 	},
 	"roll8_lobster_volcano": {
 		id: "roll8_lobster_volcano",
-		title: "",
+		title: "Lobster Volcano Roll",
 		source: {
 			thumbnailUrl: "assets/gallery/roll8_lobster_volcano_XS.jpg",
 			fullUrl: "assets/gallery/roll8_lobster_volcano_XL.jpg"
 		},
 		color: colorTobiko,
-		details: "",
 		ingredients: ["Fried Lobster", IMITATION_CRAB, SAUCE_SRIRACHA, SAUCE_SRIRACHA_MAYO]
 	},
 	"nigiri6_kanpachi_gold": {
 		id: "nigiri6_kanpachi_gold",
-		title: "",
+		title: "Kanpachi Nigiri",
 		source: {
 			thumbnailUrl: "assets/gallery/nigiri6_kanpachi_gold.jpg",
 			fullUrl: "assets/gallery/nigiri6_kanpachi_gold.jpg"
 		},
 		color: colorWhite,
-		details: "",
+		details: "Gold flakes inspired by Hinata.",
 		ingredients: [KANPACHI, "Black Tobiko", "Gold flakes"]
 	},
 	"nigiri6_hamachi_ginger": {
-		id: "nigiri6_kanpachi_ginger",
-		title: "",
+		id: "nigiri6_hamachi_ginger",
+		title: "Hamachi Nigiri",
 		source: {
 			thumbnailUrl: "assets/gallery/nigiri6_hamachi_ginger.jpg",
 			fullUrl: "assets/gallery/nigiri6_hamachi_ginger.jpg"
 		},
 		color: colorToro,
-		details: "",
 		ingredients: [HAMACHI, "Ginger", "Green Onions"]
 	},
 	"nigiri6_tuna_fluke": {
 		id: "nigiri6_tuna_fluke",
-		title: "",
+		title: "Tuna and Fluke Nigiri",
 		source: {
 			thumbnailUrl: "assets/gallery/nigiri6_tuna_fluke.jpg",
 			fullUrl: "assets/gallery/nigiri6_tuna_fluke.jpg"
 		},
 		color: colorTuna,
-		details: "",
-		ingredients: [MAGURO, "Fluke", IKURA, SCALLIONS]
+		ingredients: [MAGURO, "Fluke (Hirame)", IKURA, SCALLIONS]
 	},
 	"nigiri4_otoro_double": {
 		id: "nigiri4_otoro_double",
-		title: "",
+		title: "Double layered Otoro Nigiri",
 		source: {
 			thumbnailUrl: "assets/gallery/nigiri4_otoro_double.jpg",
 			fullUrl: "assets/gallery/nigiri4_otoro_double.jpg"
 		},
 		color: colorToro,
-		details: "",
+		details: "Layering nigiri inspired by Ichimura. Otoro bought at Mitsuwa.",
 		ingredients: [OTORO, SEA_SALT]
 	},
 	"nigiri4_geoduck": {
 		id: "nigiri4_geoduck",
-		title: "",
+		title: "Mirugai Nigiri",
 		source: {
 			thumbnailUrl: "assets/gallery/nigiri4_geoduck.jpg",
 			fullUrl: "assets/gallery/nigiri4_geoduck.jpg"
 		},
 		color: colorTuna,
-		details: "",
-		ingredients: [MAGURO, "Fluke", IKURA, SCALLIONS]
+		details: "Mirugai bought at Mitsuwa",
+		ingredients: ["Geoduck Clam (Mirugai)", SAUCE_SOY]
 	}
 };
 
