@@ -15,10 +15,23 @@ export class HomePage extends React.Component {
 }
 
 class HomeBanner extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+      showPic: false
+    };
+		this.showBannerPic = this.showBannerPic.bind(this);
+	}
+
+	showBannerPic() {
+		this.setState({showPic: true});
+	}
+
   render() {
     return (
       <div className="banner-container">
-        <div className="banner-pic"></div>
+				<img className="banner-pic-preloader" src="./assets/covers/roll_dragon.jpg" onLoad={this.showBannerPic}/>
+        <div className={"banner-pic" + (this.state.showPic ? " show" : "")}></div>
         <div className="banner-overlay"></div>
         <div className="profile-container">
           <div className="profile-pic"></div>

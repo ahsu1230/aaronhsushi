@@ -11,10 +11,16 @@ body
     width: 100%
     height: 600px
     z-index: -1
+    background-color: colorBlackDark
     border-bottom: 2px solid colorPrimary
 
     @media screen and (max-width: containerMaxWidth1)
       height: 420px
+
+  .banner-pic-preloader
+    position: fixed
+    top: 999999
+    left: 999999
 
   .banner-pic
     position: absolute
@@ -22,9 +28,14 @@ body
     left: 0
     width: 100%
     height: 100%
-    background: url('./assets/covers/roll_dragon.jpg')
-    background-size: cover
-    background-position: center
+    opacity: 0
+    transition: 0.2s linear opacity
+
+    &.show
+      background: url('./assets/covers/roll_dragon.jpg')
+      background-size: cover
+      background-position: center
+      opacity: 1
 
   .banner-overlay
     position: absolute
