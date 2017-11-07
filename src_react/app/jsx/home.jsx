@@ -36,7 +36,7 @@ class HomeBanner extends React.Component {
         <div className="profile-container">
           <div className="profile-pic"></div>
           <div className="profile-text">Aaron Hsu</div>
-					<div className="profile-text">A student to the art of sushi</div>
+					<div className="profile-text">Sushi Artist</div>
         </div>
       </div>
     );
