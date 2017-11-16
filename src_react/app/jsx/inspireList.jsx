@@ -4,7 +4,7 @@ import React from 'react';
 export const CardsSources = [
   {
     title: "Tokyo Fish Market",
-    subtitle: "Berkeley",
+    subtitle: "Berkeley, CA",
     imgSrc: "./assets/inspire/berkeley_tfm2.jpg",
     description: "My Bae, Tokyo Fish Market, has everything you need when it comes to making sushi. " +
                 "While they sell smaller blocks of sashimi, they also sell sashimi grade fish by the filet, " +
@@ -13,7 +13,7 @@ export const CardsSources = [
   },
   {
     title: "Mitsuwa Marketplace",
-    subtitle: "San Jose",
+    subtitle: "San Jose, CA",
     imgSrc: "./assets/inspire/sj_mitsuwa2.jpg",
     description: "Mitsuwa, is definitely the best place to get cuts of chu-toro and o-toro for an affordable price and in nicely shaped blocks. " +
                   "Their fish suppliers always have unique surprises and their uni is solid, but sell out extremely fast. " +
@@ -21,7 +21,7 @@ export const CardsSources = [
   },
   {
     title: "Nijiya Market",
-    subtitle: "San Francisco",
+    subtitle: "San Francisco, CA",
     imgSrc: "./assets/inspire/sf_nijiya1.jpg",
     description: "This market is probably the source that contributed the most to my sushi career. " +
                   "They are the best place in San Francisco to get sashimi grade fish and " +
@@ -29,7 +29,7 @@ export const CardsSources = [
   },
   {
     title: "Catalina Offshore",
-    subtitle: "San Diego",
+    subtitle: "San Diego, CA",
     imgSrc: "./assets/inspire/catalina.jpg",
     url: "http://catalinaop.com",
     description: "Need to cater sushi? Catalina Offshore is the site to order from for bulk orders. " +
