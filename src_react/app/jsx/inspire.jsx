@@ -1,5 +1,6 @@
 'use strict';
-var css = require('./../styl/inspire.styl');
+require('./../styl/inspire.styl');
+require('./../styl/inspireCard.styl')
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { CardsSources, CardsFavorites } from './inspireList.jsx';
@@ -19,8 +20,11 @@ export class InspirePage extends React.Component {
 		return (
       <div id="view-inspire">
 				<Banner/>
-				{cardsFav}
-				{cardsSource}
+				<div id="inspire-content">
+					<IntroText/>
+					{cardsFav}
+					{cardsSource}
+				</div>
       </div>
 		);
 	}
@@ -31,19 +35,26 @@ class Banner extends React.Component {
 		return (
 			<div id="inspire-banner-container">
 				<div className="banner-overlay"></div>
-				<div className="banner-text">
-					<p className="bold">
-						Two questions I always get asked.
-					</p>
-					<p>
-						"What is your favorite place for sushi?"<br/>
-						"Where do you get your fish?"
-					</p>
-					<p>
-						Here's a list of my favorite places that I've been to<br/>
-						and preferred markets for training and catering.
-					</p>
-				</div>
+			</div>
+		);
+	}
+}
+
+class IntroText extends React.Component {
+	render() {
+		return (
+			<div className="intro-text-container">
+				<p className="bold">
+					Two questions I always get asked.
+				</p>
+				<p>
+					"What is your favorite place for sushi?"<br/>
+					"Where do you get your fish?"
+				</p>
+				<p>
+					Here are my favorite places that I've been to and<br/>
+					preferred markets for training and catering.
+				</p>
 			</div>
 		);
 	}

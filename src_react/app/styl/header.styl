@@ -9,12 +9,13 @@ colorGrayFade = #efefef
   width: 100%
   height: headerHeightPx
   border-top: 2px solid colorPrimary
-  border-bottom: 1px solid colorGrayFade
-  box-shadow: 0px 4px 4px colorGrayFade
+  border-bottom: none
+  box-shadow: none
 
-  &.no-bottom
-    border-bottom: none
-    box-shadow: none
+  &.with-bottom
+    border-bottom: 1px solid colorGrayFade
+    box-shadow: 0px 4px 4px colorGrayFade
+
 
 #view-header-container
   width: containerWidthPct

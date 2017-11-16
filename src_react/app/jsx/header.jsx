@@ -14,8 +14,8 @@ const navMaxWidth = 720;
 
 export class Header extends React.Component {
 	render() {
-    const atHome = isPathAt(getNav("home").url);
-    const classNames = atHome ? "no-bottom" : "";
+    const atGallery = isPathAt(getNav("gallery").url);
+    const classNames = atGallery ? "with-bottom" : "";
 		return (
       <div id="view-header" className={classNames}>
         <div id="view-header-container">
