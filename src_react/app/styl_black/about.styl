@@ -1,0 +1,86 @@
+@import "constants"
+
+bannerHeightPx = 360px
+bannerHeightMiniPx = 320px
+
+#view-about
+  margin-top: headerHeightPx
+
+.about-banner-container
+  position: relative
+  width: 100%
+  height: bannerHeightPx
+
+  @media screen and (max-width: mediaScreenMaxWidth1)
+    height: bannerHeightMiniPx
+
+  &.art
+    background: url('./assets/covers/sushi_art.jpg')
+    background-size: cover
+    background-position: center
+  &.boat
+    background: url('./assets/covers/sushi_boat_ice2.jpg')
+    background-size: cover
+    background-position: center
+  &.guy
+    background: url('./assets/covers/guy.jpg')
+    background-size: cover
+    background-position: center
+  &.nigiri
+    background: url('./assets/covers/nigiri_platter1.jpg')
+    background-size: cover
+    background-position: center
+  &.sashimi
+    background: url('./assets/covers/sashimi_platter0.jpg')
+    background-size: cover
+    background-position: center
+
+  & .banner-overlay
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: rgba(33, 33, 33, 0.7)
+
+  & .banner-text-container
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    width: containerWidthPct
+    max-width: containerWidthPx
+    font-family: fontFamilyCormorant
+    color: colorWhite
+    text-align: left
+
+    & .banner-text-title
+      line-height: 40px
+      font-size: 28px
+      letter-spacing: 1.5px
+
+      @media screen and (max-width: mediaScreenMaxWidth1)
+        font-size: 24px
+
+    & .banner-text-subtitle
+      line-height: 36px
+      font-size: 24px
+      letter-spacing: 1.5px
+
+      @media screen and (max-width: mediaScreenMaxWidth1)
+        font-size: 20px
+
+.about-text-container
+  width: containerWidthPct
+  max-width: containerWidthPx
+  margin: padding8x auto
+
+  @media screen and (max-width: mediaScreenMaxWidth1)
+    margin: padding8x auto
+
+  & p
+    line-height: 28px
+    font-family: fontFamilyCormorant
+    font-size: 18px
+    letter-spacing: 1px
+    color: colorBlackDark

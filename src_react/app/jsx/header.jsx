@@ -6,15 +6,16 @@ import {
   BrowserRouter as Router,
   Link
 } from 'react-router-dom';
-import { NavLinks, getHomeLink, isPathAt } from './constants.jsx';
+import { NavLinks, getNav, isPathAt } from './constants.jsx';
 import { HeaderMenu } from './headerMenu.jsx';
 import { HeaderList } from './headerList.jsx';
 
-const navMaxWidth = 660;
+const navMaxWidth = 720;
 
 export class Header extends React.Component {
 	render() {
-    const classNames = isPathAt(getHomeLink().url) ? "transparent" : "";
+    const atHome = isPathAt(getNav("home").url);
+    const classNames = atHome ? "no-bottom" : "";
 		return (
       <div id="view-header" className={classNames}>
         <div id="view-header-container">

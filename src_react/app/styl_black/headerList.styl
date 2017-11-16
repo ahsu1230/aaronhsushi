@@ -1,0 +1,66 @@
+@import "constants"
+@import "header"
+
+#view-header
+  .header-list-btn
+    width: 26px
+    height: 18px
+    margin-top: -4px
+    outline: none
+    border: none
+    padding: 0
+    background: url('./assets/header_menu4.svg')
+    background-size: cover
+    cursor: pointer
+
+  .list-link-container
+    position: fixed
+    top: 0
+    left: 0
+    background: rgba(33, 33, 33, 0.8)
+    opacity: 0.0
+    visibility: hidden
+    transition: 0.1s linear all
+
+    &.show
+      opacity: 1.0
+      visibility: visible
+
+/* In modal, cannot be nested */
+.header-list-modal
+  opacity: 0.0
+  visibility: hidden
+  transition: all linear 0.25s
+
+  &.show
+    opacity: 1.0
+    visibility: visible
+
+.header-close-btn
+  position: absolute
+  top: 16px
+  right: 0px
+  width: 24px
+  height: 24px
+  padding: 0
+  border: none
+  outline: none
+  background: url('./assets/close_white.svg')
+  background-size: cover
+  cursor: pointer
+
+.header-list-link
+  display: block
+  width: 200px
+  height: headerHeightPx
+  line-height: headerHeightPx
+  border-bottom: 1px solid colorWhite
+  text-decoration: none
+  font-family: 'optima'
+  letter-spacing: 1.0
+  font-size: 16px
+  color: colorWhite
+  cursor: pointer
+
+  &:hover
+    color: colorPrimary

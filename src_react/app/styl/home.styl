@@ -11,10 +11,10 @@ body
     width: 100%
     height: 600px
     z-index: -1
-    background-color: colorBlackDark
+    background-color: colorWhiteLight
     border-bottom: 2px solid colorPrimary
 
-    @media screen and (max-width: containerMaxWidth1)
+    @media screen and (max-width: mediaScreenMaxWidth1)
       height: 420px
 
   .banner-pic-preloader
@@ -43,7 +43,7 @@ body
     left: 0
     width: 100%
     height: 100%
-    background: rgba(26, 26, 26, 0.7)
+    background: rgba(colorBlackValue, colorBlackValue, colorBlackValue, 0.2)
 
   .profile-container
     position: absolute
@@ -63,30 +63,33 @@ body
   .profile-text
     line-height: 30px
     font-family: 'optima'
-    font-size: 22px
+    font-size: fontSizeLarge
     letter-spacing: 1px
     text-align: center
     color: colorWhite
 
-    @media screen and (max-width: containerMaxWidth1)
-      font-size: 18px
+    @media screen and (max-width: mediaScreenMaxWidth1)
+      font-size: fontSizeNormal
 
     &:last-child
-      font-size: 18px
+      font-size: fontSizeNormal
 
-      @media screen and (max-width: containerMaxWidth1)
-        font-size: 14px
+      @media screen and (max-width: mediaScreenMaxWidth1)
+        font-size: fontSizeSmall
 
 
   .home-text-container
-    width: containerWidthPct
-    max-width: containerWidthPx
-    line-height: 24px
+    width: innerMaxWidthPct
+    max-width: innerMaxWidthPx
+    line-height: 32px
     margin: padding8x auto
     font-family: fontFamilyCormorant
-    font-size: 20px
+    font-size: fontSizeNormal
     letter-spacing: 1px
     color: colorBlackDark
+
+    @media screen and (max-width: mediaScreenMaxWidth1)
+      font-size: fontSizeSmall
 
     p
       margin: padding4x 0
@@ -95,6 +98,45 @@ body
       text-decoration: none
       color: colorPrimary
 
-      &:active
       &:hover
         color: colorPrimary
+
+  .home-gallery-container
+    position: relative
+    width: innerMaxWidthPct
+    max-width: innerMaxWidthPx
+    margin: 0 auto
+    background-color: colorBlackDark
+
+    & img
+      width: 100%
+
+    & .home-gallery-overlay
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      background: rgba(colorBlackValue, colorBlackValue, colorBlackValue, 0.5)
+
+    & button
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      padding: padding1x padding2x
+      outline: none
+      border: none
+      border-radius: defaultBorderRadius
+      background-color: colorPrimary
+      color: colorWhite
+      font-family: fontFamilyCormorant
+      font-size: fontSizeNormal
+      letter-spacing: 1px
+      cursor: pointer
+
+      &:hover
+        -webkit-filter: brightness(110%)
+
+      @media screen and (max-width: mediaScreenMaxWidth1)
+        font-size: fontSizeSmall

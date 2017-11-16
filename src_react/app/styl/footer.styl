@@ -1,32 +1,39 @@
 @import "constants"
 
 #view-footer
-  margin: padding16x 0
-  text-align: center
+  margin: padding12x 0
   font-family: fontFamilyCormorant
   color: colorBlackDark
 
-#footer-text-container
-  width: 360px
+#footer-container
+  width: innerMaxWidthPct
+  max-width: innerMaxWidthPx
   margin: 0 auto
   padding-top: padding4x
   border-top: 1px solid colorBlackDark
-  
-  @media screen and (max-width: containerMaxWidth1)
-    width: 240px
 
-  & .footer-line
-    line-height: 24px
-    font-size: 16px
-    letter-spacing: 0.4px
+#footer-text-container
+  float: left
+  line-height: 24px
+  font-size: fontSizeSmall
+  letter-spacing: 0.4px
 
-  & .bold
-    font-size: 20px
+  @media screen and (max-width: mediaScreenMaxWidth1)
+    float: none
+    text-align: center
+
+  & b
+    font-size: fontSizeNormal
     font-weight: bold
     letter-spacing: 0.6px
 
 #footer-social-container
-  margin: 0 auto
+  float: right
+
+  @media screen and (max-width: mediaScreenMaxWidth1)
+    float: none
+    padding-top: padding4x
+    text-align: center
 
   .footer-icon
     position: relative

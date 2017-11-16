@@ -1,0 +1,150 @@
+@import "constants"
+
+#view-inspire
+  margin-top: headerHeightPx
+
+#inspire-banner-container
+  position: relative
+  width: 100%
+  height: 320px
+  border-bottom: 2px solid colorAccent
+  background: url('./assets/covers/sashimi_otoro.jpg')
+  background-size: cover
+  background-position: center
+
+  & .banner-overlay
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: rgba(33, 33, 33, 0.7)
+
+  & .banner-text
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    width: 420px
+    text-align: center
+    font-family: fontFamilyCormorant
+    font-size: 16px
+    color: colorWhite
+    letter-spacing: 1px
+
+    @media screen and (max-width: mediaScreenMaxWidth2)
+      font-size: 13px
+
+  & .bold
+    font-size: 22px
+    letter-spacing: 2px
+    font-weight: bold
+
+    @media screen and (max-width: mediaScreenMaxWidth2)
+      font-size: 20px
+
+#view-inspire
+  .card-container
+    position: relative
+    width: 80%
+    max-width: 600px
+    margin: padding8x auto
+    padding: padding4x padding8x padding6x
+    box-sizing: border-box
+    border-radius: 6px
+    background-color: colorWhite
+    box-shadow: colorGrayDark 0px 2px 4px 0px
+    font-face: fontFaceCormorant
+    color: colorBlackDark
+    text-align: left
+
+    @media screen and (max-width: mediaScreenMaxWidth2)
+      text-align: center
+
+    & .card-header
+      margin-bottom: padding2x
+
+      & .card-header-icon
+        display: inline-block
+        margin-right: 10px
+        vertical-align: middle
+
+        @media screen and (max-width: mediaScreenMaxWidth2)
+          display: none
+
+      &.favorite .card-header-icon
+        width: 24px
+        height: 24px
+        background: url('./assets/heart_red.svg')
+        background-size: cover
+
+      &.source .card-header-icon
+        width: 20px
+        height: 20px
+        margin-top: -6px
+        background: url('./assets/star_red.svg')
+        background-size: cover
+
+      & .card-header-text
+        display: inline-block
+        font-size: 18px
+        font-weight: bold
+        letter-spacing: 1px
+
+    & .card-col1
+      display: inline-block
+      width: 160px
+      margin-right: padding4x
+      margin-top: 4px
+      vertical-align: top
+
+      @media screen and (max-width: mediaScreenMaxWidth2)
+        display: block
+        margin: 0 auto
+        padding: padding4x 0
+        width: 100%
+        max-width: 240px
+
+    & .card-col2
+      display: inline-block
+      width: 'calc(100% - 160px - %s)' % padding4x
+
+      @media screen and (max-width: mediaScreenMaxWidth2)
+        display: block
+        width: 100%
+
+    & img
+      width: 100%
+      border-radius: 6px
+
+    & .card-title
+      line-height: 22px
+      font-size: 16px
+      font-weight: bold
+      letter-spacing: 1px
+
+    & .card-subtitle
+      line-height: 22px
+      font-size: 14px
+      font-weight: bold
+      letter-spacing: 1px
+
+    & .card-url
+      line-height: 20px
+      font-size: 14px
+      letter-spacing: 1px
+      color: colorAccent
+      text-decoration: none
+
+    & .card-description
+      line-height: 18px
+      margin-top: padding2x
+      font-size: 14px
+      letter-spacing: 1px
+
+    & .card-counter
+      position: absolute
+      top: padding4x
+      right: padding4x
+      color: colorAccent
+      font-size: 14px

@@ -1,15 +1,20 @@
 @import "constants"
 
+colorGrayFade = #efefef
+
 #view-header
-  position: absolute
+  position: relative
   top: 0
   left: 0
   width: 100%
   height: headerHeightPx
-  background-color: colorBlackDark
+  border-top: 2px solid colorPrimary
+  border-bottom: 1px solid colorGrayFade
+  box-shadow: 0px 4px 4px colorGrayFade
 
-  &.transparent
-    background: none
+  &.no-bottom
+    border-bottom: none
+    box-shadow: none
 
 #view-header-container
   width: containerWidthPct
@@ -34,17 +39,15 @@
     background-size: cover
 
   .header-logo-text
-    position: relative
-    top: 4px
     font-family: 'optima'
     font-size: 24px
-    color: colorWhite
+    color: colorBlackDark
 
-    @media screen and (max-width: containerMaxWidth1)
+    @media screen and (max-width: mediaScreenMaxWidth1)
       font-size: 20px
 
 #header-nav-container
   float: right
   position: relative
   top: 50%
-  transform: translateY(-50% + 20px)
+  transform: translateY(-50%)

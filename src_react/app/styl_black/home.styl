@@ -1,0 +1,100 @@
+@import "constants"
+
+body
+  margin: 0
+  background-color: colorBackground
+
+#view-home
+
+  .banner-container
+    position: relative
+    width: 100%
+    height: 600px
+    z-index: -1
+    background-color: colorBlackDark
+    border-bottom: 2px solid colorPrimary
+
+    @media screen and (max-width: mediaScreenMaxWidth1)
+      height: 420px
+
+  .banner-pic-preloader
+    position: fixed
+    top: 999999
+    left: 999999
+
+  .banner-pic
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    opacity: 0
+    transition: 0.2s linear opacity
+
+    &.show
+      background: url('./assets/covers/roll_dragon.jpg')
+      background-size: cover
+      background-position: center
+      opacity: 1
+
+  .banner-overlay
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: rgba(26, 26, 26, 0.7)
+
+  .profile-container
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+
+  .profile-pic
+    width: 160px
+    height: 160px
+    margin: 0 auto padding4x
+    background: url('./assets/profile_headshot.jpg')
+    background-size: cover
+    background-position: center
+    border-radius: 100%
+
+  .profile-text
+    line-height: 30px
+    font-family: 'optima'
+    font-size: 22px
+    letter-spacing: 1px
+    text-align: center
+    color: colorWhite
+
+    @media screen and (max-width: mediaScreenMaxWidth1)
+      font-size: 18px
+
+    &:last-child
+      font-size: 18px
+
+      @media screen and (max-width: mediaScreenMaxWidth1)
+        font-size: 14px
+
+
+  .home-text-container
+    width: containerWidthPct
+    max-width: containerWidthPx
+    line-height: 24px
+    margin: padding8x auto
+    font-family: fontFamilyCormorant
+    font-size: 20px
+    letter-spacing: 1px
+    color: colorBlackDark
+
+    p
+      margin: padding4x 0
+
+    a
+      text-decoration: none
+      color: colorPrimary
+
+      &:active
+      &:hover
+        color: colorPrimary

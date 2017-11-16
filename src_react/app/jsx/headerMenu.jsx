@@ -6,12 +6,16 @@ import {
   BrowserRouter as Router,
   Link
 } from 'react-router-dom';
-import { isPathAt } from './constants.jsx';
+import { isPathAt, isLastIndex } from './constants.jsx';
 
 export class HeaderMenu extends React.Component {
   render() {
-    const items = this.props.links.map((link) =>
-      <MenuLink key={link.id} title={link.title} url={link.url}/>
+    const numLinks = this.props.links.length;
+    const items = this.props.links.map((link, i) =>
+      <span key={link.id}>
+        <MenuLink title={link.title} url={link.url}/>
+        <div className={isLastIndex(i, numLinks) ? "" : "menu-link-separator"}></div>
+      </span>
     );
     return (
       <div>{items}</div>

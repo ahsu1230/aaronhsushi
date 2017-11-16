@@ -8,10 +8,10 @@ import {
   Link
 } from 'react-router-dom';
 
-const headerHeight = 64;
+const headerHeight = 80;
 const modalStyle = {
 	overlay: {
-		backgroundColor: 'rgba(26, 26, 26, 0.9)'
+		backgroundColor: 'rgba(255, 255, 255, 0.9)'
 	},
 	content : {
 	    top: headerHeight + 'px',

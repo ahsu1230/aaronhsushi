@@ -22,18 +22,13 @@ export class Footer extends React.Component {
 
 		return (
       <div id="view-footer">
-				<div id="footer-text-container">
-					<p className="footer-line">
-						Designed and created by<br/>
-						<span className="bold">Aaron Hsu</span>
-					</p>
-					<p className="footer-line">
-						To continue keeping up with my adventures,<br/>
-						Follow me on social media!
-					</p>
-				</div>
-				<div id="footer-social-container">
-					{socialFooters}
+				<div id="footer-container">
+					<div id="footer-text-container">
+						Designed and created by <b>Aaron Hsu</b>
+					</div>
+					<div id="footer-social-container">
+						{socialFooters}
+					</div>
 				</div>
       </div>
 		);

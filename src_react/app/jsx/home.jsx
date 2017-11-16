@@ -9,6 +9,7 @@ export class HomePage extends React.Component {
       <div id="view-home">
         <HomeBanner/>
         <HomeText/>
+				<HomeGalleryButton/>
       </div>
 		);
 	}
@@ -58,4 +59,18 @@ class HomeText extends React.Component {
       </div>
     );
   }
+}
+
+class HomeGalleryButton extends React.Component {
+	render() {
+		return (
+			<div className="home-gallery-container">
+				<a href="#/gallery">
+					<img src="./assets/covers/sushi_boat_ice2.jpg"/>
+					<div className="home-gallery-overlay"></div>
+					<button>Gallery</button>
+				</a>
+			</div>
+		);
+	}
 }
