@@ -49,7 +49,7 @@ class HomeText extends React.Component {
     return (
       <div className="home-text-container">
         <p>
-          Welcome, this portfolio is meant to show people what I've achieved and learned throughout my sushi adventures.
+          Welcome, this portfolio is meant to show what I've achieved and learned throughout my sushi adventures.
 					I started making sushi 3 years ago after I moved to Bay Area, California for a software engineer career.
 					And as a hobby, I enjoy making sushi and am always looking to take my skills to the next level.
         </p>
