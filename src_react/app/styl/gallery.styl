@@ -2,8 +2,6 @@
 
 #view-gallery
 	position: relative
-	top: headerHeightPx
-	min-height: 540px
 
 #gallery-content-container
 	opacity: 0
@@ -14,9 +12,17 @@
 		opacity: 1
 		visibility: visible
 
+	& p
+		line-height: padding6x
+		margin: padding2x
+		font-family: fontFamilyOptima
+		font-size: fontSizeNormal
+		letter-spacing: 1px
+		text-align: center
+
 #gallery-load-container
-	position: absolute
-	top: headerHeightPx
+	position: fixed
+	top: 30%
 	left: 50%
 	transform: translate(-50%, 0)
 	opacity: 0

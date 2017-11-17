@@ -42,7 +42,7 @@ class DetailsPopup extends React.Component {
   render() {
     const showClass = this.props.show ? " show" : "";
     const detailsClasses = "details-popup " + showClass;
-	const ingredients = this.props.content.ingredients.map((ingredient, index) =>
+	  const ingredients = this.props.content.ingredients.map((ingredient, index) =>
       <Ingredient key={index} ingredient={ingredient}/>
     );
     return (

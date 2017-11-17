@@ -19,6 +19,7 @@ export class GalleryPage extends React.Component {
       <div id="view-gallery">
 				<Loader show={this.state.showLoading}/>
 				<div id="gallery-content-container" className={this.state.showLoading ? "" : "show"}>
+					<p>My Gallery</p>
 					<TileLayout/>
 				</div>
       </div>

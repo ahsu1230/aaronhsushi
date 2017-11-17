@@ -35,6 +35,7 @@ const PARSLEY = "Parsley";
 const RED_ONIONS = "Sauteed red onions";
 const SCALLIONS = "Scallions";
 const SEA_SALT = "Sea salt";
+const SHISHO = "Shisho leaf";
 const TOBIKO = "Flying fish roe (Tobiko)";
 
 const SAUCE_CHILI = "Sweet chili sauce";
@@ -48,6 +49,7 @@ export const ContentMap = {
 	"roll6_tempura_crab": {
 		id: "roll6_tempura_crab",
 		title: "Crab Shrimp Tempura Roll",
+		date: "April 2015",
 		source: {
 			thumbnailUrl: "assets/gallery/roll6_tempura_crab.jpg",
 			fullUrl: "assets/gallery/roll6_tempura_crab.jpg"
@@ -58,6 +60,7 @@ export const ContentMap = {
 	"roll6_tuna_avocado": {
 		id: "roll6_tuna_avocado",
 		title: "Deep Sea Tuna Avocado Roll",
+		date: "September 2014",
 		source: {
 			thumbnailUrl: "assets/gallery/roll6_tuna_avocado.jpg",
 			fullUrl: "assets/gallery/roll6_tuna_avocado.jpg"
@@ -68,6 +71,7 @@ export const ContentMap = {
 	"roll8_salmon_guac": {
 		id: "roll8_salmon_guac",
 		title: "Salmon Guac Roll",
+		date: "November 2016",
 		source: {
 			thumbnailUrl: "assets/gallery/roll8_salmon_guac.jpg",
 			fullUrl: "assets/gallery/roll8_salmon_guac.jpg"
@@ -78,6 +82,7 @@ export const ContentMap = {
 	"nigiri10_uni": {
 		id: "nigiri10_uni",
 		title: "Uni",
+		date: "June 2016",
 		source: {
 			thumbnailUrl: "assets/gallery/nigiri10_uni.jpg",
 			fullUrl: "assets/gallery/nigiri10_uni.jpg"
@@ -89,6 +94,7 @@ export const ContentMap = {
 	"roll8_salmon_garlic": {
 		id: "roll8_salmon_garlic",
 		title: "Roasted Garlic Salmon Roll",
+		date: "November 2016",
 		source: {
 			thumbnailUrl: "assets/gallery/roll8_salmon_garlic.jpg",
 			fullUrl: "assets/gallery/roll8_salmon_garlic.jpg"
@@ -99,6 +105,7 @@ export const ContentMap = {
 	"roll8_vegan_asparagus": {
 		id: "roll8_vegan_asparagus",
 		title: "Umami Asparagus Roll",
+		date: "May 2015",
 		source: {
 			thumbnailUrl: "assets/gallery/roll8_vegan_asparagus.jpg",
 			fullUrl: "assets/gallery/roll8_vegan_asparagus.jpg"
@@ -109,6 +116,7 @@ export const ContentMap = {
 	"roll8_amberjack_tuna": {
 		id: "roll8_amberjack_tuna",
 		title: "Deep Sea Amberjack Roll",
+		date: "July 2015",
 		source: {
 			thumbnailUrl: "assets/gallery/roll8_amberjack_tuna.jpg",
 			fullUrl: "assets/gallery/roll8_amberjack_tuna.jpg"
@@ -119,6 +127,7 @@ export const ContentMap = {
 	"roll6_monkfish_bites": {
 		id: "roll6_monkfish_bites",
 		title: "Monkfish Liver Roll Bites",
+		date: "August 2015",
 		source: {
 			thumbnailUrl: "assets/gallery/roll6_monkfish_bites.jpg",
 			fullUrl: "assets/gallery/roll6_monkfish_bites.jpg"
@@ -129,6 +138,7 @@ export const ContentMap = {
 	"roll8_seared_salmon_ikura": {
 		id: "roll8_seared_salmon_ikura",
 		title: "Seared Salmon Ikura Roll",
+		date: "April 2015",
 		source: {
 			thumbnailUrl: "assets/gallery/roll8_seared_salmon_ikura.jpg",
 			fullUrl: "assets/gallery/roll8_seared_salmon_ikura.jpg"
@@ -139,6 +149,7 @@ export const ContentMap = {
 	"handroll3_rainbow_matcha": {
 		id: "handroll3_rainbow_matcha",
 		title: "Rainbow Matcha Martini",
+		date: "April 2015",
 		source: {
 			thumbnailUrl: "assets/gallery/handroll3_rainbow_matcha.jpg",
 			fullUrl: "assets/gallery/handroll3_rainbow_matcha.jpg"
@@ -149,6 +160,7 @@ export const ContentMap = {
 	"roll8_rainbow_white": {
 		id: "roll8_rainbow_white",
 		title: "Great White Rainbow Roll",
+		date: "August 2015",
 		source: {
 			thumbnailUrl: "assets/gallery/roll8_rainbow_white.jpg",
 			fullUrl: "assets/gallery/roll8_rainbow_white.jpg"
@@ -159,6 +171,7 @@ export const ContentMap = {
 	"nigiri6_amaebi": {
 		id: "nigiri6_amaebi",
 		title: "Amaebi Nigiri",
+		date: "June 2016",
 		source: {
 			thumbnailUrl: "assets/gallery/nigiri6_amaebi.jpg",
 			fullUrl: "assets/gallery/nigiri6_amaebi.jpg"
@@ -170,6 +183,7 @@ export const ContentMap = {
 	"spoon4_tako_paella": {
 		id: "spoon4_tako_paella",
 		title: "Tako Paella Bites",
+		date: "September 2017",
 		source: {
 			thumbnailUrl: "assets/gallery/spoon4_tako_paella.jpg",
 			fullUrl: "assets/gallery/spoon4_tako_paella.jpg"
@@ -181,6 +195,7 @@ export const ContentMap = {
 	"roll8_crunchy_salmon": {
 		id: "roll8_crunchy_salmon",
 		title: "Crunchy Salmon",
+		date: "November 2016",
 		source: {
 			thumbnailUrl: "assets/gallery/roll8_crunchy_salmon.jpg",
 			fullUrl: "assets/gallery/roll8_crunchy_salmon.jpg"
@@ -191,6 +206,7 @@ export const ContentMap = {
 	"roll8_hamachi_lotus": {
 		id: "roll8_hamachi_lotus",
 		title: "Hamachi Lotus Roll",
+		date: "November 2016",
 		source: {
 			thumbnailUrl: "assets/gallery/roll8_hamachi_lotus.jpg",
 			fullUrl: "assets/gallery/roll8_hamachi_lotus.jpg"
@@ -201,6 +217,7 @@ export const ContentMap = {
 	"roll8_lobster_volcano": {
 		id: "roll8_lobster_volcano",
 		title: "Lobster Volcano Roll",
+		date: "January 2015",
 		source: {
 			thumbnailUrl: "assets/gallery/roll8_lobster_volcano_XS.jpg",
 			fullUrl: "assets/gallery/roll8_lobster_volcano_XL.jpg"
@@ -211,6 +228,7 @@ export const ContentMap = {
 	"nigiri6_kanpachi_gold": {
 		id: "nigiri6_kanpachi_gold",
 		title: "Kanpachi Nigiri",
+		date: "August 2017",
 		source: {
 			thumbnailUrl: "assets/gallery/nigiri6_kanpachi_gold.jpg",
 			fullUrl: "assets/gallery/nigiri6_kanpachi_gold.jpg"
@@ -222,6 +240,7 @@ export const ContentMap = {
 	"nigiri6_hamachi_ginger": {
 		id: "nigiri6_hamachi_ginger",
 		title: "Hamachi Nigiri",
+		date: "August 2017",
 		source: {
 			thumbnailUrl: "assets/gallery/nigiri6_hamachi_ginger.jpg",
 			fullUrl: "assets/gallery/nigiri6_hamachi_ginger.jpg"
@@ -232,6 +251,7 @@ export const ContentMap = {
 	"nigiri6_tuna_fluke": {
 		id: "nigiri6_tuna_fluke",
 		title: "Tuna and Fluke Nigiri",
+		date: "August 2017",
 		source: {
 			thumbnailUrl: "assets/gallery/nigiri6_tuna_fluke.jpg",
 			fullUrl: "assets/gallery/nigiri6_tuna_fluke.jpg"
@@ -242,6 +262,7 @@ export const ContentMap = {
 	"nigiri4_otoro_double": {
 		id: "nigiri4_otoro_double",
 		title: "Double layered Otoro Nigiri",
+		date: "September 2017",
 		source: {
 			thumbnailUrl: "assets/gallery/nigiri4_otoro_double.jpg",
 			fullUrl: "assets/gallery/nigiri4_otoro_double.jpg"
@@ -253,6 +274,7 @@ export const ContentMap = {
 	"nigiri4_geoduck": {
 		id: "nigiri4_geoduck",
 		title: "Mirugai Nigiri",
+		date: "September 2017",
 		source: {
 			thumbnailUrl: "assets/gallery/nigiri4_geoduck.jpg",
 			fullUrl: "assets/gallery/nigiri4_geoduck.jpg"

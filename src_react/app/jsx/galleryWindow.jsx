@@ -143,6 +143,7 @@ class WindowContent extends React.Component {
 						{tile.title}
 					</div>
 					<div className="content-banner footer">
+						{tile.date}<br/>
 						{ingredientsStr}<br/>
 						{tile.details}
 					</div>
