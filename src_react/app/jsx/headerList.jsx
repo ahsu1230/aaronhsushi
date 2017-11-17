@@ -7,6 +7,7 @@ import {
   BrowserRouter as Router,
   Link
 } from 'react-router-dom';
+import { isPathAt } from './constants.jsx';
 
 const headerHeight = 80;
 const modalStyle = {
@@ -75,8 +76,10 @@ export class HeaderList extends React.Component {
 
 class ListLink extends React.Component {
   render() {
+    var classNames = "header-list-link";
+    classNames += isPathAt(this.props.url) ? " active" : "";
     return (
-    	<Link to={this.props.url} className="header-list-link" onClick={this.props.toggleModal}>
+    	<Link to={this.props.url} className={classNames} onClick={this.props.toggleModal}>
     		<span>{this.props.title}</span>
     	</Link>
 		);
