@@ -46,7 +46,8 @@ export const CardsFavorites = [
     url: "http://www.sushiyasuda.com",
     description: "My first real omakase experience was at Yasuda. " +
                 "It was here where I learned what it meant to perfect the basics - " +
-                "rice that holds its form, but dissolves in your mouth and tea that cleanses your soul. "
+                "rice that holds its form, but dissolves in your mouth and tea that cleanses your soul. " +
+                "At the time, I didn't know much about sushi, but here is where it started! "
   },
   {
     title: "Ichimura",

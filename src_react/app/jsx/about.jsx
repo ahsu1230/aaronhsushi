@@ -39,8 +39,10 @@ class Banner extends React.Component {
 			<div className={containerClassName}>
 				<div className="banner-overlay"></div>
 				<div className="banner-text-container">
-					<div className="banner-text-title">{this.props.title}</div>
-					<div className="banner-text-subtitle">{this.props.subtitle}</div>
+					<div className="banner-text">
+						<p>{this.props.title}</p>
+						<p>{this.props.subtitle}</p>
+					</div>
 				</div>
 			</div>
 		);

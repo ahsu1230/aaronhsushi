@@ -60,4 +60,4 @@ export const SectionList = [
 	},
 ];
 
-export const BannerImgList = ['guy', 'boat', 'art', 'nigiri', 'sashimi'];
+export const BannerImgList = ['bluefin1', 'bluefin2', 'bluefin3', 'guy', 'boat', 'art', 'nigiri', 'sashimi'];

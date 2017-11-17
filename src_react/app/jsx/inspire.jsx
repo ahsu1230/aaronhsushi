@@ -77,12 +77,12 @@ class InspireCard extends React.Component {
 
 				<div className="card-col1">
 					<img src={card.imgSrc}/>
-				</div>
-
-				<div className="card-col2">
 					<div className="card-title">{card.title}</div>
 					<div className="card-subtitle">{card.subtitle}</div>
 					<a className="card-url" href={card.url} target="_blank">{card.url}</a>
+				</div>
+
+				<div className="card-col2">
 					<div className="card-description">{card.description}</div>
 					<div className="card-counter">{this.props.categoryIndex} / {this.props.categoryTotal}</div>
 				</div>

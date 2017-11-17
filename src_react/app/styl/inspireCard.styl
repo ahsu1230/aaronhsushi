@@ -77,6 +77,7 @@ mediaWidth2 = innerWidth4x
       width: cardImgWidth
       margin-right: cardImgMargin
       vertical-align: top
+      font-size: fontSizeNormal
 
       @media screen and (max-width: mediaWidth1)
         display: block
@@ -84,6 +85,7 @@ mediaWidth2 = innerWidth4x
         padding: spacing1x 0
         width: 100%
         max-width: 240px
+        font-size: fontSizeSmall
 
     & .card-col2
       display: inline-block
@@ -100,17 +102,18 @@ mediaWidth2 = innerWidth4x
       border-radius: 4px
 
     & .card-title
-      line-height: 24px
+      margin-top: spacing1x
+      line-height: 28px
       font-weight: bold
       letter-spacing: 1px
 
     & .card-subtitle
-      line-height: 24px
+      line-height: 28px
       font-weight: bold
       letter-spacing: 1px
 
     & .card-url
-      line-height: 24px
+      line-height: 28px
       font-size: fontSizeSmall
       letter-spacing: 1px
       color: colorAccent
@@ -118,7 +121,6 @@ mediaWidth2 = innerWidth4x
 
     & .card-description
       line-height: 28px
-      margin-top: spacing1x
       letter-spacing: 1px
 
     & .card-counter
