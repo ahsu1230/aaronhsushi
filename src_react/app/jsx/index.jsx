@@ -16,7 +16,7 @@ import { Footer } from './footer.jsx';
 class MainContainer extends React.Component {
 	render() {
 		return (
-			<Router>
+			<Router onUpdate={() => window.scrollTo(0, 0)}>
 				<div>
           <Header/>
 					<Route exact path="/" component={Home}/>
