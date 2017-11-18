@@ -1,5 +1,5 @@
 'use strict';
-var css = require('./../styl/galleryTile.styl');
+require('./../styl/galleryTile.styl');
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Window, MinModalWidth } from './galleryWindow.jsx';

@@ -1,5 +1,5 @@
 'use strict';
-var css = require('./../styl/header.styl');
+require('./../styl/header.styl');
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {

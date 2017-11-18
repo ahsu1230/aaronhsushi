@@ -1,5 +1,5 @@
 'use strict';
-var css = require('./../styl/about.styl');
+require('./../styl/about.styl');
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { SectionList, BannerImgList, TYPE_BANNER, TYPE_TEXT } from './aboutList.jsx';

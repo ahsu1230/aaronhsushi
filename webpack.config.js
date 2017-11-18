@@ -11,8 +11,8 @@ module.exports = {
     filename: 'bundle.js'
   },
   devServer: {
-	contentBase: "./src_react",
-	hot: true
+  	contentBase: "./src_react",
+  	hot: true
   },
   module: {
     loaders: [
@@ -21,10 +21,11 @@ module.exports = {
         include: APP_DIR,
         loader: 'babel-loader',
       },
-      { 
+      {
         test: /\.styl$/,
-	loader: 'style-loader!css-loader?url=false!stylus-loader'
+	      loader: 'style-loader!css-loader?url=false!stylus-loader'
       }
     ]
   }
+
 };

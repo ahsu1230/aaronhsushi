@@ -1,5 +1,5 @@
 'use strict';
-var css = require('./../styl/gallery.styl');
+require('./../styl/gallery.styl');
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { TileLayout } from './galleryTileLayout.jsx';

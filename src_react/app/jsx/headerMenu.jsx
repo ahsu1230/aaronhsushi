@@ -1,5 +1,5 @@
 'use strict';
-var css = require('./../styl/headerMenu.styl');
+require('./../styl/headerMenu.styl');
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {

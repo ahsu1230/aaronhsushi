@@ -1,5 +1,5 @@
 'use strict';
-var css = require('./../styl/headerList.styl');
+require('./../styl/headerList.styl');
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';

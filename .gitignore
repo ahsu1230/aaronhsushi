@@ -1,3 +1,5 @@
 node_modules/
 **/*.bak
 npm-debug.log*
+
+src_react/public/bundle.js

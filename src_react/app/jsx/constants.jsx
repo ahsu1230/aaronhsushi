@@ -1,5 +1,5 @@
 'use strict';
-import _ from 'lodash';
+var _ = require('lodash/core');
 
 export const NavLinks = [
   { id: "home", title: "Home", url: "/"},
