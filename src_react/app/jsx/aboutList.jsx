@@ -6,11 +6,11 @@ export const TYPE_TEXT = "text";
 export const SectionList = [
 	{
 		type: TYPE_BANNER,
-		title: "Software Engineer by day,",
-		subtitle: "Sushi fanatic always."
+		imgSrc: "./assets/covers/bluefin1.jpg"
 	},
 	{
 		type: TYPE_TEXT,
+		title: "Software Engineer by day, sushi fanatic always",
 		texts: [
 						"The chefs at Yuraku Japanese Restaurant in Germantown, Maryland, first introduced me to sushi at the age of 10. " +
 						"Born and raised in Potomac, my siblings and I loved going there, so our family is there all the time. " +
@@ -23,10 +23,11 @@ export const SectionList = [
 	},
 	{
 		type: TYPE_BANNER,
-		title: "How did you start making sushi?"
+		imgSrc: "./assets/covers/bluefin2.jpg"
 	},
 	{
 		type: TYPE_TEXT,
+		title: "How did you start making sushi?",
 		texts: [
 			"Thankfully, the Bay Area has plenty of large Asian markets that sell sashimi-grade fish. " +
 			"I thought it would be fun and casually bought a few sushi-making tools, but I thought to myself, 'How am I going to learn to do this stuff?'"
@@ -41,11 +42,11 @@ export const SectionList = [
 	},
 	{
 		type: TYPE_BANNER,
-		title: "So now what?",
-		subtitle: "You think you're super cool or something?"
+		imgSrc: "./assets/covers/bluefin3.jpg"
 	},
 	{
 		type: TYPE_TEXT,
+		title: "So now you think you're cool or something?",
 		texts: [
 			"You can't really call yourself an expert when you've only been to a small handful of restaurants and watched a few Youtube videos. "  +
 			"But I have a passion for it, and love watching sushi chefs use different techniques with different fish. " +
@@ -59,5 +60,3 @@ export const SectionList = [
 		]
 	},
 ];
-
-export const BannerImgList = ['bluefin1', 'bluefin2', 'bluefin3', 'guy', 'boat', 'art', 'nigiri', 'sashimi'];

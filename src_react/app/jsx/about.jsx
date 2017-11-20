@@ -2,13 +2,22 @@
 require('./../styl/about.styl');
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { SectionList, BannerImgList, TYPE_BANNER, TYPE_TEXT } from './aboutList.jsx';
+import { SectionList, TYPE_BANNER, TYPE_TEXT } from './aboutList.jsx';
+
+function createBackgroundCss(imgSrc) {
+	return {
+		background: "url(" + imgSrc + ")",
+		backgroundPosition: "center",
+		backgroundSize: "cover",
+		backgroundRepeat: "no-repeat"
+	};
+}
 
 export class AboutPage extends React.Component {
 	render() {
 		const sections = SectionList
 			.map((section, index) =>
-				<Section key={index} index={index} type={section.type} title={section.title} subtitle={section.subtitle} texts={section.texts}/>
+				<Section key={index} index={index} type={section.type} imgSrc={section.imgSrc} title={section.title} texts={section.texts}/>
 			);
 
 		return (
@@ -23,27 +32,23 @@ class Section extends React.Component {
 	render() {
 		const type = this.props.type;
 		if (type == TYPE_BANNER) {
-			return (<Banner index={this.props.index} title={this.props.title} subtitle={this.props.subtitle}/>);
+			return (
+				<Banner index={this.props.index} imgSrc={this.props.imgSrc}/>
+			);
 		} else {
-			return (<Paragraph texts={this.props.texts}/>);
+			return (
+				<Paragraph title={this.props.title} texts={this.props.texts}/>
+			);
 		}
 	}
 }
 
 class Banner extends React.Component {
 	render() {
-		var containerClassName = "about-banner-container";
-		containerClassName += " " + BannerImgList[this.props.index / 2];
-
+		const backgroundCss = createBackgroundCss(this.props.imgSrc);
 		return (
-			<div className={containerClassName}>
-				<div className="banner-overlay"></div>
-				<div className="banner-text-container">
-					<div className="banner-text">
-						<p>{this.props.title}</p>
-						<p>{this.props.subtitle}</p>
-					</div>
-				</div>
+			<div className="about-banner-container">
+				<div className="about-banner-img" style={backgroundCss}/>
 			</div>
 		);
 	}
@@ -56,6 +61,9 @@ class Paragraph extends React.Component {
 		);
 		return (
 			<div className="about-text-container">
+				<div className="about-header-container">
+					<div className="about-header">{this.props.title}</div>
+				</div>
 				{texts}
 			</div>
 		);
