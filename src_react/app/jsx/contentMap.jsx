@@ -113,17 +113,6 @@ export const ContentMap = {
 		color: colorGreen,
 		ingredients: ["Shiitake mushrooms", "Asparagus", SAUCE_MAYO, SAUCE_UNAGI]
 	},
-	"roll8_amberjack_tuna": {
-		id: "roll8_amberjack_tuna",
-		title: "Deep Sea Amberjack Roll",
-		date: "July 2015",
-		source: {
-			thumbnailUrl: "assets/gallery/roll8_amberjack_tuna.jpg",
-			fullUrl: "assets/gallery/roll8_amberjack_tuna.jpg"
-		},
-		color: colorGreen,
-		ingredients: [KANPACHI, MAGURO, CUCUMBER, SCALLIONS]
-	},
 	"roll6_monkfish_bites": {
 		id: "roll6_monkfish_bites",
 		title: "Monkfish Liver Roll Bites",
@@ -192,28 +181,6 @@ export const ContentMap = {
 		details: "Inspired by Spanish octopus appetizers.",
 		ingredients: [TAKO, "Smoked Paprika", SAKE, PARSLEY]
 	},
-	"roll8_crunchy_salmon": {
-		id: "roll8_crunchy_salmon",
-		title: "Crunchy Salmon",
-		date: "November 2016",
-		source: {
-			thumbnailUrl: "assets/gallery/roll8_crunchy_salmon.jpg",
-			fullUrl: "assets/gallery/roll8_crunchy_salmon.jpg"
-		},
-		color: colorTobiko,
-		ingredients: [SAKE, AVOCADO, "Tempura flakes", TOBIKO, RED_ONIONS, PARSLEY]
-	},
-	"roll8_hamachi_lotus": {
-		id: "roll8_hamachi_lotus",
-		title: "Hamachi Lotus Roll",
-		date: "November 2016",
-		source: {
-			thumbnailUrl: "assets/gallery/roll8_hamachi_lotus.jpg",
-			fullUrl: "assets/gallery/roll8_hamachi_lotus.jpg"
-		},
-		color: colorEbi,
-		ingredients: [HAMACHI, AVOCADO, "Fried Lotus Roots", TOBIKO, CILANTRO]
-	},
 	"roll8_lobster_volcano": {
 		id: "roll8_lobster_volcano",
 		title: "Lobster Volcano Roll",
@@ -247,17 +214,6 @@ export const ContentMap = {
 		},
 		color: colorToro,
 		ingredients: [HAMACHI, "Ginger", "Green Onions"]
-	},
-	"nigiri6_tuna_fluke": {
-		id: "nigiri6_tuna_fluke",
-		title: "Tuna and Fluke Nigiri",
-		date: "August 2017",
-		source: {
-			thumbnailUrl: "assets/gallery/nigiri6_tuna_fluke.jpg",
-			fullUrl: "assets/gallery/nigiri6_tuna_fluke.jpg"
-		},
-		color: colorTuna,
-		ingredients: [MAGURO, "Fluke (Hirame)", IKURA, SCALLIONS]
 	},
 	"nigiri4_otoro_double": {
 		id: "nigiri4_otoro_double",

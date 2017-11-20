@@ -15,11 +15,6 @@ export const ContentList = [
 	"roll8_vegan_asparagus",
 	"nigiri6_hamachi_ginger",
 	"nigiri4_geoduck",
-	"roll8_amberjack_tuna",
 	"roll6_monkfish_bites",
-	"handroll3_rainbow_matcha",
-	"nigiri6_tuna_fluke",
 	"roll8_rainbow_white",
-	"roll8_crunchy_salmon",
-	"roll8_hamachi_lotus"
 ];
