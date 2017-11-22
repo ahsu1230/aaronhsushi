@@ -28,6 +28,7 @@ const UNAGI = "Eel (Unagi)";
 const UNI_SB = "Uni (from Santa Barbara)";
 
 const AVOCADO = "Avocado";
+const CHIVES = "Chives";
 const CILANTRO = "Cilantro";
 const CUCUMBER = "Cucumber";
 const IMITATION_CRAB = "Imitation crab";
@@ -39,11 +40,13 @@ const SHISHO = "Shisho leaf";
 const TOBIKO = "Flying fish roe (Tobiko)";
 
 const SAUCE_CHILI = "Sweet chili sauce";
+const SAUCE_LEMON = "Lemon juice";
 const SAUCE_MAYO = "Sweet mayo";
 const SAUCE_SOY = "Soy sauce";
 const SAUCE_SRIRACHA = "Sriracha sauce";
 const SAUCE_SRIRACHA_MAYO = "Sriracha mayo";
 const SAUCE_UNAGI = "Unagi soysauce";
+const SAUCE_YUZU = "Yuzu juice";
 
 export const ContentMap = {
 	"roll6_tempura_crab": {
@@ -238,7 +241,52 @@ export const ContentMap = {
 		color: colorTuna,
 		details: "Mirugai bought at Mitsuwa",
 		ingredients: ["Geoduck Clam (Mirugai)", SAUCE_SOY]
-	}
+	},
+	"nigiri2_albacore_cucumber": {
+		id: "nigiri2_albacore_cucumber",
+		title: "Albacore (Tombo) Nigiri",
+		date: "November 2017",
+		source: {
+			thumbnailUrl: "assets/gallery/nigiri2_albacore_cucumber.jpg",
+			fullUrl: "assets/gallery/nigiri2_albacore_cucumber.jpg"
+		},
+		color: colorWhite,
+		ingredients: ["Canadian Albacore Tuna (Tombo)", CUCUMBER, SAUCE_SOY]
+	},
+	"nigiri1_crab_chives": {
+		id: "nigiri1_crab_chives",
+		title: "Dungeness Crab Nigiri",
+		date: "November 2017",
+		source: {
+			thumbnailUrl: "assets/gallery/nigiri1_crab_chives.jpg",
+			fullUrl: "assets/gallery/nigiri1_crab_chives.jpg"
+		},
+		color: colorEbi,
+		ingredients: ["Dungeness Crab", SAUCE_SOY, SAUCE_YUZU, CHIVES, "Togarashi"]
+	},
+	"spoon2_crab_egg": {
+		id: "spoon2_crab_egg",
+		title: "Dungeness Crab with poached quail egg",
+		date: "November 2017",
+		source: {
+			thumbnailUrl: "assets/gallery/spoon2_crab_egg.jpg",
+			fullUrl: "assets/gallery/spoon2_crab_egg.jpg"
+		},
+		color: colorSalmon,
+		details: "Concept inspired by Kusakabe. Dungeness crab and quail eggs purchased at Tokyo Fish Market.",
+		ingredients: ["Dungeness Crab", "Quail eggs", SAUCE_SOY, SAUCE_LEMON, CHIVES, "Togarashi"]
+	},
+	"nigiri2_seared_salmon_wood": {
+		id: "nigiri2_seared_salmon_wood",
+		title: "Seared Salmon Nigiri with Ikura",
+		date: "November 2017",
+		source: {
+			thumbnailUrl: "assets/gallery/nigiri2_seared_salmon_wood.jpg",
+			fullUrl: "assets/gallery/nigiri2_seared_salmon_wood.jpg"
+		},
+		color: colorSalmon,
+		ingredients: [SAKE, IKURA, SHISHO, SAUCE_SOY, SAUCE_YUZU]
+	},
 };
 
 /*
