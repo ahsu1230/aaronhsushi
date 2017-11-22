@@ -44,9 +44,9 @@ class IntroText extends React.Component {
 	render() {
 		return (
 			<div className="intro-text-container">
-				<p className="bold">
+				<h3>
 					Two questions I always get asked.
-				</p>
+				</h3>
 				<p>
 					"What is your favorite place for sushi?"<br/>
 					"Where do you get your fish?"
