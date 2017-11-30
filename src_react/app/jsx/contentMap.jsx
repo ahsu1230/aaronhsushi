@@ -31,6 +31,7 @@ const AVOCADO = "Avocado";
 const CHIVES = "Chives";
 const CILANTRO = "Cilantro";
 const CUCUMBER = "Cucumber";
+const DAIKON = "Daikon";
 const IMITATION_CRAB = "Imitation crab";
 const PARSLEY = "Parsley";
 const RED_ONIONS = "Sauteed red onions";
@@ -286,6 +287,17 @@ export const ContentMap = {
 		},
 		color: colorSalmon,
 		ingredients: [SAKE, IKURA, SHISHO, SAUCE_SOY, SAUCE_YUZU]
+	},
+	"nigiri6_beef_daikon": {
+		id: "nigiri6_beef_daikon",
+		title: "Seared Brisket with Black Pepper Sauce",
+		date: "December 2017",
+		source: {
+			thumbnailUrl: "assets/gallery/nigiri6_beef_daikon.jpg",
+			fullUrl: "assets/gallery/nigiri6_beef_daikon.jpg"
+		},
+		color: colorWhite,
+		ingredients: ["Beef Brisket", DAIKON, SAUCE_SOY, "Black Pepper"]
 	},
 };
 
