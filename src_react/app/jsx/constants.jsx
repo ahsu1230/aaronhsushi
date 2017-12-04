@@ -27,3 +27,12 @@ export function isPathAt(url) {
 export function isLastIndex(i, num) {
   return i >= num - 1;
 }
+
+export function createBackgroundCss(imgSrc) {
+	return {
+		background: "url(" + imgSrc + ")",
+		backgroundPosition: "center",
+		backgroundSize: "cover",
+		backgroundRepeat: "no-repeat"
+	};
+}

@@ -3,15 +3,7 @@ require('./../styl/about.styl');
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { SectionList, TYPE_BANNER, TYPE_TEXT } from './aboutList.jsx';
-
-function createBackgroundCss(imgSrc) {
-	return {
-		background: "url(" + imgSrc + ")",
-		backgroundPosition: "center",
-		backgroundSize: "cover",
-		backgroundRepeat: "no-repeat"
-	};
-}
+import { createBackgroundCss } from './constants.jsx';
 
 export class AboutPage extends React.Component {
 	render() {

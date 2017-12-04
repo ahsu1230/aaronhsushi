@@ -1,7 +1,16 @@
 'use strict';
 require('./../styl/home.styl');
+var classNames = require('classnames');
+import { createBackgroundCss } from './constants.jsx';
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+var imgSrcList = [
+	"./assets/covers/seared_tombo.jpg",
+	"./assets/covers/octo_plate.jpg",
+	"./assets/covers/make_nigiri.jpg",
+	"./assets/covers/roll_dragon.jpg",
+];
 
 export class HomePage extends React.Component {
 	render() {
@@ -19,21 +28,35 @@ class HomeBanner extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-      showPic: false
-    };
-		this.showBannerPic = this.showBannerPic.bind(this);
+			imgIndex: 0
+		};
+		this.timer = this.timer.bind(this);
 	}
 
-	showBannerPic() {
-		this.setState({showPic: true});
+	componentDidMount() {
+		var intervalId = setInterval(this.timer, 5000);
+		this.setState({intervalId: intervalId});
+	}
+
+	componentWillUnmount() {
+		clearInterval(this.state.intervalId);
+	}
+
+	timer() {
+		var nextIndex = (this.state.imgIndex + 1) % imgSrcList.length;
+		this.setState({
+		 	imgIndex: nextIndex
+		});
 	}
 
   render() {
+		console.log("render: " + this.state.imgIndex);
+		const bannerImgs = imgSrcList.map((src, index) =>
+			<BannerImg key={index} src={src} show={this.state.imgIndex == index}/>
+		);
     return (
       <div className="banner-container">
-				<img className="banner-pic-preloader" src="./assets/covers/roll_dragon.jpg" onLoad={this.showBannerPic}/>
-        <div className={"banner-pic" + (this.state.showPic ? " show" : "")}></div>
-        <div className="banner-overlay"></div>
+				{bannerImgs}
         <div className="profile-container">
           <div className="profile-pic"></div>
           <div className="profile-text">Aaron Hsu</div>
@@ -42,6 +65,34 @@ class HomeBanner extends React.Component {
       </div>
     );
   }
+}
+
+class BannerImg extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			loaded: false
+		};
+		this.handleOnLoad = this.handleOnLoad.bind(this);
+	}
+
+	handleOnLoad() {
+		this.setState({ loaded: true });
+	}
+
+	render() {
+		const imgClasses = classNames("banner-img", {
+			"show": this.props.show && this.state.loaded
+		});
+		const imgSrc = this.props.src;
+		const bannerImgStyle = createBackgroundCss(imgSrc);
+		return(
+			<div>
+				<img className="banner-preloader" src={imgSrc} onLoad={this.handleOnLoad}/>
+				<div className={imgClasses} style={bannerImgStyle}></div>
+			</div>
+		);
+	}
 }
 
 class HomeText extends React.Component {
