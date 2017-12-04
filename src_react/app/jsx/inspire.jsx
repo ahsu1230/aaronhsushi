@@ -4,6 +4,7 @@ require('./../styl/inspireCard.styl')
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { CardsSources, CardsFavorites } from './inspireList.jsx';
+var classNames = require('classnames');
 
 export const CATEGORY_FAVORITE = 'favorite';
 export const CATEGORY_SOURCE = 'source';
@@ -64,12 +65,19 @@ class InspireCard extends React.Component {
 	render() {
 		const card = this.props.card;
 		const header = this.props.category == CATEGORY_FAVORITE ? "Personal Favorites" : "My Markets";
-		const categoryClassName = this.props.category == CATEGORY_FAVORITE ? "favorite" : "source";
-		const containerNames = "card-container " + categoryClassName;
-		const headerNames = "card-header " + categoryClassName;
+
+		const containerNames = classNames("card-container", {
+			"favorite": this.props.category == CATEGORY_FAVORITE,
+			"source": this.props.category == CATEGORY_SOURCE
+		});
+
+		const headerNames = classNames("card-header", {
+			"favorite": this.props.category == CATEGORY_FAVORITE,
+			"source": this.props.category == CATEGORY_SOURCE,
+		});
+
 		return (
 			<div className={containerNames}>
-
 				<div className={headerNames}>
 					<div className="card-header-icon"></div>
 					<div className="card-header-text">{header}</div>

@@ -3,6 +3,7 @@ require('./../styl/gallery.styl');
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { TileLayout } from './galleryTileLayout.jsx';
+var classNames = require('classnames');
 
 var firstLoaded = false;
 
@@ -15,10 +16,13 @@ export class GalleryPage extends React.Component {
 	}
 
 	render() {
+		const contentClasses = classNames({
+			"show": !this.state.showLoading
+		});
 		return (
       <div id="view-gallery">
 				<Loader show={this.state.showLoading}/>
-				<div id="gallery-content-container" className={this.state.showLoading ? "" : "show"}>
+				<div id="gallery-content-container" className={contentClasses}>
 					<p>My Gallery</p>
 					<TileLayout/>
 				</div>
@@ -38,8 +42,11 @@ export class GalleryPage extends React.Component {
 
 class Loader extends React.Component {
 	render() {
+		const loaderClasses = classNames({
+			"show": this.props.show
+		});
 		return (
-			<div id="gallery-load-container" className={this.props.show ? "show" : ""}>
+			<div id="gallery-load-container" className={loaderClasses}>
 				<div className="gallery-load-text">Loading Gallery</div>
 
 				<div className="gallery-load-pulser">

@@ -1,9 +1,9 @@
 'use strict';
 require('./../styl/home.styl');
-var classNames = require('classnames');
-import { createBackgroundCss } from './constants.jsx';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { createBackgroundCss } from './constants.jsx';
+var classNames = require('classnames');
 
 var imgSrcList = [
 	"./assets/covers/seared_tombo.jpg",
@@ -50,7 +50,7 @@ class HomeBanner extends React.Component {
 	}
 
   render() {
-		console.log("render: " + this.state.imgIndex);
+		console.log("banner img render: " + this.state.imgIndex);
 		const bannerImgs = imgSrcList.map((src, index) =>
 			<BannerImg key={index} src={src} show={this.state.imgIndex == index}/>
 		);

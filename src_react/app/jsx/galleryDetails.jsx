@@ -2,6 +2,7 @@
 require('./../styl/galleryDetails.styl');
 import React from 'react';
 import ReactDOM from 'react-dom';
+var classNames = require('classnames');
 
 export class GalleryDetails extends React.Component {
   constructor(props) {
@@ -40,8 +41,9 @@ export class GalleryDetails extends React.Component {
 
 class DetailsPopup extends React.Component {
   render() {
-    const showClass = this.props.show ? " show" : "";
-    const detailsClasses = "details-popup " + showClass;
+    const detailsClasses = classNames("details-popup", {
+      "show": this.props.show
+    });
 	  const ingredients = this.props.content.ingredients.map((ingredient, index) =>
       <Ingredient key={index} ingredient={ingredient}/>
     );

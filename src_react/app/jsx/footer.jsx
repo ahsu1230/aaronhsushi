@@ -2,6 +2,7 @@
 require('./../styl/footer.styl');
 import React from 'react';
 import ReactDOM from 'react-dom';
+var classNames = require('classnames');
 
 const socialLinks = [
 	{
@@ -40,10 +41,10 @@ export class Footer extends React.Component {
 class FooterIcon extends React.Component {
 	render() {
 		const social = this.props.social;
-		const classNames = "footer-icon " + social.id;
+		const buttonClasses = classNames("footer-icon", social.id);
 		return (
 			<a href={social.url} target="_blank">
-				<button className={classNames}></button>
+				<button className={buttonClasses}></button>
 			</a>
 		);
 	}

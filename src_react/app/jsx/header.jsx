@@ -9,15 +9,18 @@ import {
 import { NavLinks, getNav, isPathAt } from './constants.jsx';
 import { HeaderMenu } from './headerMenu.jsx';
 import { HeaderList } from './headerList.jsx';
+var classNames = require('classnames');
 
 const navMaxWidth = 720;
 
 export class Header extends React.Component {
 	render() {
     const atGallery = isPathAt(getNav("gallery").url);
-    const classNames = atGallery ? "with-bottom" : "";
+    const headerClasses = classNames({
+      "with-bottom": atGallery
+    });
 		return (
-      <div id="view-header" className={classNames}>
+      <div id="view-header" className={headerClasses}>
         <div id="view-header-container">
           <HeaderLogo/>
           <HeaderNavigator/>

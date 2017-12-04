@@ -8,6 +8,7 @@ import { ColumnMaxWidth1, ColumnMaxWidth2 } from './constants.jsx';
 import { ContentList } from './contentList.jsx';
 import { ContentMap } from './contentMap.jsx';
 import { GalleryDetails } from './galleryDetails.jsx';
+var classNames = require('classnames');
 
 export const MinModalWidth = ColumnMaxWidth1;
 const WindowStyle = {
@@ -81,8 +82,9 @@ export class Window extends React.Component {
 
 	render() {
 		const tile = this.state.tile;
-		var galleryWindowClassNames = "gallery-window";
-		galleryWindowClassNames += this.state.showContent ? " show " : "";
+		var galleryWindowClasses = classNames("gallery-window", {
+			"show": this.state.showContent
+		});
 
 		return (
 			<Modal
@@ -92,7 +94,7 @@ export class Window extends React.Component {
 						style={WindowStyle}
 						contentLabel="Gallery Modal">
 
-				<div className={galleryWindowClassNames}>
+				<div className={galleryWindowClasses}>
 					<div className="window-container">
 						<WindowContent tile={tile}/>
 						{/*

@@ -8,6 +8,7 @@ import {
   Link
 } from 'react-router-dom';
 import { isPathAt } from './constants.jsx';
+var classNames = require('classnames');
 
 const headerHeight = 80;
 const modalStyle = {
@@ -49,12 +50,15 @@ export class HeaderList extends React.Component {
   }
 
   render() {
-    var listClasses = "list-link-container";
-    listClasses += this.state.showList ? " show " : "";
+    var listClasses = classNames("list-link-container", {
+      "show": this.state.showList
+    });
     const items = this.props.links.map((link) =>
       <ListLink key={link.id} title={link.title} url={link.url} toggleModal={this.toggleModal}/>
     );
-    var showListClasses = "header-list-modal" + (this.state.showList ? " show " : "");
+    var showListClasses = classNames("header-list-modal", {
+      "show": this.state.showList
+    });
     return (
       <div>
         <button className="header-list-btn" onClick={this.toggleModal}></button>
@@ -76,10 +80,11 @@ export class HeaderList extends React.Component {
 
 class ListLink extends React.Component {
   render() {
-    var classNames = "header-list-link";
-    classNames += isPathAt(this.props.url) ? " active" : "";
+    var linkClasses = classNames("header-list-link", {
+      "active": isPathAt(this.props.url)
+    });
     return (
-    	<Link to={this.props.url} className={classNames} onClick={this.props.toggleModal}>
+    	<Link to={this.props.url} className={linkClasses} onClick={this.props.toggleModal}>
     		<span>{this.props.title}</span>
     	</Link>
 		);
