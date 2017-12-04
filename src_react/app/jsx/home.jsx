@@ -6,10 +6,10 @@ import { createBackgroundCss } from './constants.jsx';
 var classNames = require('classnames');
 
 var imgSrcList = [
-	"./assets/covers/seared_tombo.jpg",
-	"./assets/covers/octo_plate.jpg",
-	"./assets/covers/make_nigiri.jpg",
-	"./assets/covers/roll_dragon.jpg",
+	{ src: "./assets/covers/seared_tombo.jpg", "minBgPosition": "80% 50%" },
+	{ src: "./assets/covers/octo_plate.jpg", "minBgPosition": "20% 50%" },
+	{ src: "./assets/covers/make_nigiri.jpg", "minBgPosition": "center" },
+	{ src: "./assets/covers/roll_dragon.jpg", "minBgPosition": "80% 50%" },
 ];
 
 export class HomePage extends React.Component {
@@ -52,7 +52,9 @@ class HomeBanner extends React.Component {
   render() {
 		console.log("banner img render: " + this.state.imgIndex);
 		const bannerImgs = imgSrcList.map((src, index) =>
-			<BannerImg key={index} src={src} show={this.state.imgIndex == index}/>
+			<BannerImg key={index} src={src.src}
+				minBgPosition={src.minBgPosition}
+				show={this.state.imgIndex == index}/>
 		);
     return (
       <div className="banner-container">
@@ -85,7 +87,9 @@ class BannerImg extends React.Component {
 			"show": this.props.show && this.state.loaded
 		});
 		const imgSrc = this.props.src;
-		const bannerImgStyle = createBackgroundCss(imgSrc);
+
+		var bgPosition = window.innerWidth <= 640 ? this.props.minBgPosition : "center"
+		const bannerImgStyle = createBackgroundCss(imgSrc, bgPosition);
 		return(
 			<div>
 				<img className="banner-preloader" src={imgSrc} onLoad={this.handleOnLoad}/>

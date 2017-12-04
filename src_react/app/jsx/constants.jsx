@@ -28,10 +28,11 @@ export function isLastIndex(i, num) {
   return i >= num - 1;
 }
 
-export function createBackgroundCss(imgSrc) {
+export function createBackgroundCss(imgSrc, position) {
+  var bgPosition = position || "center";
 	return {
 		background: "url(" + imgSrc + ")",
-		backgroundPosition: "center",
+		backgroundPosition: bgPosition,
 		backgroundSize: "cover",
 		backgroundRepeat: "no-repeat"
 	};
