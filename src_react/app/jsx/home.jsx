@@ -103,27 +103,24 @@ class HomeText extends React.Component {
   render() {
     return (
       <div className="home-text-container">
-        <p>
-					Often times, when we Americans talk about sushi, we usually think about sushi rolls or at least some rendition of it, like the <a target="_blank" href="https://www.sushirrito.com/">Sushi Burrito</a>.
-					But, having tried <i>omakase (chef's choice)</i> and <i>kaiseki (multi-course)</i> sushi,
-					I've discovered a whole new world where sushi comes from unique fish sourced from different parts of the world, or
-					textures and flavors that are intentionally designed into simple, elegant packages.
+				<p>
+					I’ve been working as a Software Engineer for the past 5 years,
+					but my real passion has been teaching myself the art of sushi.
+					I’ve dedicated a huge portion of time outside of work to hone my sushi crafting,
+					not just as a cuisine, but also as an art form.
+					It’s been a great run in the tech industry,
+					but I’m ready to focus on taking my skills with sushi to a professional level.
+					So I’m looking to start a full-time apprenticeship at a renowned restaurant
+					to learn from the best chefs in the industry.
 				</p>
 				<p>
-					And so, I've embarked on this journey to experience this world as much as I can.
-					However, I'm not just looking for the different flavors chefs put on the table.
-					But also, the stories and inspiration behind them.
-					Answers to questions like, "why is the sushi done in this way and whose idea did this originate from?"
+					I developed this website to showcase both my sushi and software skills.
+					My time in the tech industry has given me experience with customer service,
+					expanding social media presence, and designing websites.
+					And with these skills, I’m more than happy to help manage any website or social media needs.
 				</p>
 				<p>
-					And after listening to these stories, I immediately start developing stories of my own.
-					Whether it is applying newly discovered techniques or using more challenging ingredients, I would always try to take that extra step to try something new.
-					And the best part after applying what I learn, is sharing those creations and stories with friends.
-					My goal is to give people an experience they can remember, and to share what I love and what I've learned on my adventure.
-					And just like how I was inspired to pursue my passion, I hope to inspire others to follow theirs.
-				</p>
-				<p>
-					To follow my adventures, visit my <a href="#/gallery">Gallery</a>.
+					To follow my sushi journey, visit my <a href="#/gallery">Gallery</a>.
 				</p>
       </div>
     );
