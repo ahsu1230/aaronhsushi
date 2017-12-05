@@ -11,7 +11,7 @@ const socialLinks = [
 	},
 	{
 		id: 'li',
-		url: 'https://www.linkedin.com/in/aaron-hsu-7b053238/'
+		url: 'https://www.linkedin.com/in/aaron-hsu-sushi/'
 	}
 ];
 
