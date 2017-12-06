@@ -17,6 +17,7 @@ export class HomePage extends React.Component {
 		return (
       <div id="view-home">
         <HomeBanner/>
+				<HomeProfile/>
         <HomeText/>
 				<HomeGalleryButton/>
       </div>
@@ -59,14 +60,28 @@ class HomeBanner extends React.Component {
     return (
       <div className="banner-container">
 				{bannerImgs}
-        <div className="profile-container">
-          <div className="profile-pic"></div>
-          <div className="profile-text">Aaron Hsu</div>
-					<div className="profile-text">Sushi Artist</div>
-        </div>
+				<div className="banner-text-container">
+					<div className="banner-text-headers">
+						<h3>Software Engineer</h3>
+						<h3>To Sushi Artist</h3>
+					</div>
+				</div>
       </div>
     );
   }
+}
+
+class HomeProfile extends React.Component {
+	render() {
+		return (
+			<div className="profile-container">
+				<div className="profile-pic-wrapper">
+					<div className="profile-pic"></div>
+				</div>
+				<div className="profile-text">Aaron Hsu</div>
+			</div>
+		);
+	}
 }
 
 class BannerImg extends React.Component {
@@ -104,23 +119,23 @@ class HomeText extends React.Component {
     return (
       <div className="home-text-container">
 				<p>
-					I’ve been working as a Software Engineer for the past 5 years,
-					but my real passion has been teaching myself the art of sushi.
-					I’ve dedicated a huge portion of time outside of work to hone my sushi crafting,
-					not just as a cuisine, but also as an art form.
-					It’s been a great run in the tech industry,
-					but I’m ready to focus on taking my skills with sushi to a professional level.
-					So I’m looking to start a full-time apprenticeship at a renowned restaurant
-					to learn from the best chefs in the industry.
+					Often, when we Americans talk about sushi, we’re picturing sushi rolls or at least some rendition, like the Sushi Burrito.
+					Once I tried omakase (chef's choice) and kaiseki (multi-course) sushi, I discovered a whole new world where
+					sushi pieces are sourced from different parts of the world then intentionally constructed intentionally constructed simple, elegant packages with complex textures and flavors.
 				</p>
 				<p>
-					I developed this website to showcase both my sushi and software skills.
-					My time in the tech industry has given me experience with customer service,
-					expanding social media presence, and designing websites.
-					And with these skills, I’m more than happy to help manage any website or social media needs.
+					I've embarked on a personal (soon to be professional!) journey to experience as much of this world as I can.
+					It’s not just about the different flavors chefs put on the table;
+					I’m interested in the stories and inspiration behind each piece.
+					For instance, answers to questions like, "Why is the sushi done in this way and whose idea did this originate from?"
 				</p>
 				<p>
-					To follow my sushi journey, visit my <a href="#/gallery">Gallery</a>.
+					After listening to other’s stories, I’m inspired to continue developing my own.
+					Whether applying newly discovered techniques or using more challenging ingredients,
+					I always try to take that extra step to try something new.
+					And, of course, the best part is sharing my creations and stories with friends.
+					My goal is to give people an experience they can’t forget, while sharing what I love and learn on this adventure.
+					As I was inspired to pursue my passion, I hope to inspire others to follow their own.
 				</p>
       </div>
     );

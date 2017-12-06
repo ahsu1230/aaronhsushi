@@ -20,6 +20,34 @@ body
     @media screen and (max-width: mediaScreenMaxWidth1)
       height: 420px
 
+  .banner-text-container
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    width: 100%
+    max-width: innerWidth4x
+    height: 50%
+    background: rgba(33, 33, 33, 0.2)
+    border-radius: defaultBorderRadius
+
+    .banner-text-headers
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+
+    & h3
+      font-family: 'optima'
+      font-size: fontSizeLarge
+      font-weight: 400
+      letter-spacing: 1px
+      text-align: center
+      color: colorWhite
+
+      @media screen and (max-width: mediaScreenMaxWidth1)
+        font-size: fontSizeNormal
+
   .banner-preloader
     position: absolute
     top: -999999
@@ -38,15 +66,24 @@ body
       opacity: 1
 
   .profile-container
+    margin-top: spacingPx2
+    text-align: center
+
+  .profile-pic-wrapper
+    position: relative
+    width: 164px
+    height: 164px
+    margin: 0 auto padding2x
+    background-color: colorBlackDark
+    border-radius: 100%
+
+  .profile-pic
     position: absolute
     top: 50%
     left: 50%
     transform: translate(-50%, -50%)
-
-  .profile-pic
     width: 160px
     height: 160px
-    margin: 0 auto padding4x
     background: url('./assets/profile_headshot.jpg')
     background-size: cover
     background-position: center
@@ -58,7 +95,7 @@ body
     font-size: fontSizeLarge
     letter-spacing: 1px
     text-align: center
-    color: colorWhite
+    color: colorBlackDark
 
     @media screen and (max-width: mediaScreenMaxWidth1)
       font-size: fontSizeNormal
@@ -72,7 +109,7 @@ body
 
   .home-text-container
     width: innerMaxWidthPct
-    max-width: innerMaxWidthPx1
+    max-width: innerMaxWidthPx2
     line-height: 36px
     margin: spacingPx2 auto
     font-family: fontFamilyCormorant
