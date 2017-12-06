@@ -120,8 +120,8 @@ class HomeText extends React.Component {
     return (
       <div className="home-text-container">
 				<p>
-					Often, when we Americans talk about sushi, we’re picturing sushi rolls or at least some rendition, like the Sushi Burrito.
-					Once I tried omakase (chef's choice) and kaiseki (multi-course) sushi, I discovered a whole new world where
+					Often, when we Americans talk about sushi, we’re picturing sushi rolls or at least some rendition, like the <a target="_blank" href="https://www.sushirrito.com/">Sushi Burrito</a>.
+					Once I tried <i>omakase (chef's choice)</i> and <i>kaiseki (multi-course)</i> sushi, I discovered a whole new world where
 					sushi pieces are sourced from different parts of the world then intentionally constructed intentionally constructed simple, elegant packages with complex textures and flavors.
 				</p>
 				<p>
