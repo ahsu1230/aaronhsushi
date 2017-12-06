@@ -64,6 +64,7 @@ class HomeBanner extends React.Component {
 					<div className="banner-text-headers">
 						<h3>Software Engineer</h3>
 						<h3>To Sushi Artist</h3>
+						<a href="#/gallery">Visit Gallery</a>
 					</div>
 				</div>
       </div>
