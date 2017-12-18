@@ -128,7 +128,7 @@ class HomeText extends React.Component {
 					I've embarked on a personal (soon to be professional!) journey to experience as much of this world as I can.
 					It’s not just about the different flavors chefs put on the table;
 					I’m interested in the stories and inspiration behind each piece.
-					For instance, answers to questions like, "what condiments balance the flavor of this fish?" or "which fish do you want to sear and why?"
+					For instance, answers to questions like, "what toppings balance the flavor of this fish?" or "which fish do you want to sear and why?"
 				</p>
 				<p>
 					After listening to these stories, I get inspired to continue developing my own.

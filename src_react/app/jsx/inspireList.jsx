@@ -40,6 +40,16 @@ export const CardsSources = [
 
 export const CardsFavorites = [
   {
+    title: "Kosaka",
+    subtitle: "West Village, NYC",
+    imgSrc: "./assets/inspire/kosaka.jpg",
+    url: "http://www.kosakanyc.com",
+    description: "Founded two years ago by the New York legend, Chef Yoshihiko Kousaka, this restaurant redefines artistry to a new level. " +
+                "Whether it is the fundamental flavor of the roasted seaweed or even the slight crisp texture of a seared trout, " +
+                "Chef Yoshi-san blew me away with his concepts and his unparalleled execution. " +
+                "I'm proud to announce that I have the opportunity to start my first apprenticeship here!"
+  },
+  {
     title: "Sushi Yasuda",
     subtitle: "Midtown, New York City",
     imgSrc: "./assets/inspire/yasuda.jpg",
