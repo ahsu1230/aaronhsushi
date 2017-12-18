@@ -122,7 +122,7 @@ class HomeText extends React.Component {
 				<p>
 					Often, when we Americans talk about sushi, we’re picturing sushi rolls or at least some rendition, like the <a target="_blank" href="https://www.sushirrito.com/">Sushi Burrito</a>.
 					Once I experienced <i>omakase (chef's choice)</i> and <i>kaiseki (multi-course)</i> sushi, I discovered a whole new world.
-					Pieces, at this level of sushi, are sourced from around the world and then constructed into elegant packages full of complex textures and flavors.
+					Pieces, at this level of sushi, are sourced from around the world and then constructed into elegant packages that are full of complex textures and flavors.
 				</p>
 				<p>
 					I've embarked on a personal (soon to be professional!) journey to experience as much of this world as I can.
