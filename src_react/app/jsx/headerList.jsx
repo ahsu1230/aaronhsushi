@@ -13,7 +13,8 @@ var classNames = require('classnames');
 const headerHeight = 80;
 const modalStyle = {
 	overlay: {
-		backgroundColor: 'rgba(255, 255, 255, 0.9)'
+    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+    zIndex: 9999
 	},
 	content : {
 	    top: headerHeight + 'px',

@@ -121,22 +121,22 @@ class HomeText extends React.Component {
       <div className="home-text-container">
 				<p>
 					Often, when we Americans talk about sushi, we’re picturing sushi rolls or at least some rendition, like the <a target="_blank" href="https://www.sushirrito.com/">Sushi Burrito</a>.
-					Once I tried <i>omakase (chef's choice)</i> and <i>kaiseki (multi-course)</i> sushi, I discovered a whole new world where
-					sushi pieces are sourced from different parts of the world then intentionally constructed intentionally constructed simple, elegant packages with complex textures and flavors.
+					Once I experienced <i>omakase (chef's choice)</i> and <i>kaiseki (multi-course)</i> sushi, I discovered a whole new world.
+					Pieces, at this level of sushi, are sourced from around the world and then constructed into elegant packages full of complex textures and flavors.
 				</p>
 				<p>
 					I've embarked on a personal (soon to be professional!) journey to experience as much of this world as I can.
 					It’s not just about the different flavors chefs put on the table;
 					I’m interested in the stories and inspiration behind each piece.
-					For instance, answers to questions like, "Why is the sushi done in this way and whose idea did this originate from?"
+					For instance, answers to questions like, "what condiments balance the flavor of this fish?" or "which fish do you want to sear and why?"
 				</p>
 				<p>
-					After listening to other’s stories, I’m inspired to continue developing my own.
+					After listening to these stories, I get inspired to continue developing my own.
 					Whether applying newly discovered techniques or using more challenging ingredients,
 					I always try to take that extra step to try something new.
 					And, of course, the best part is sharing my creations and stories with friends.
 					My goal is to give people an experience they can’t forget, while sharing what I love and learn on this adventure.
-					As I was inspired to pursue my passion, I hope to inspire others to follow their own.
+					And as I was inspired to pursue my passion, I hope to inspire others to follow their own.
 				</p>
       </div>
     );
