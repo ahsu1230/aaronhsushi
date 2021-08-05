@@ -1,19 +1,17 @@
+import "./header.sass";
 import { Link } from "react-router-dom";
+import logo from "./../assets/logo_white1.png";
+
 export default function Header() {
     return (
-        <ul>
-            <li>
+        <div id="header">
+            <img src={logo}/>
+            <div className="links">
                 <Link to="/">Gallery</Link>
-            </li>
-            <li>
                 <Link to="/story">Story</Link>
-            </li>
-            <li>
                 <Link to="/inspiration">Inspiration</Link>
-            </li>
-            <li>
-                <Link to="/contact">contact</Link>
-            </li>
-        </ul>
+                <Link to="/contact">Contact</Link>
+            </div> 
+        </div>
     );
 }
