@@ -32,6 +32,7 @@ export default function GalleryPage() {
                 }
                 bannerImgSrc={"/samples/chef_cut_fish_crop.jpg"}
                 buttonText={"Make a reservation"}
+                buttonOnClick={goToContactPage}
             />
 
             <div className="section">
@@ -45,7 +46,12 @@ export default function GalleryPage() {
                 height={"360px"}
                 bannerImgSrc={"/samples/serve_nigiri.jpg"}
                 buttonText={"Make a reservation"}
+                buttonOnClick={goToContactPage}
             />
         </div>
     );
+}
+
+const goToContactPage = () => {
+    window.location.hash = "/contact";
 }
