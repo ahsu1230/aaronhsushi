@@ -50,6 +50,26 @@ export const CardsFavorites = [
                 "I'm proud to announce that I have the opportunity to start my first apprenticeship here!"
   },
   {
+    title: "Kusakabe",
+    subtitle: "Financial District, SF",
+    imgSrc: "./assets/inspire/kusakabe.jpg",
+    url: "http://kusakabe-sf.com",
+    description: "Chef Ken hosted me and while the sushi was amazing, " +
+                "I learned even more from just watching him compose his nigiri. " +
+                "His preparation is extremely clean, organized and efficient. " +
+                "Come here for the soy-sauced cured chutoro and Chef Ken's favorite, the shima aji."
+  },
+  {
+    title: "Hinata Sushi",
+    subtitle: "Tenderloin, San Francisco",
+    imgSrc: "./assets/inspire/hinata.jpg",
+    url: "http://hinatasf.com",
+    description: "I always enjoy talking with the friendly, relaxed chefs here and " +
+                "deeply appreciate their philosophy in providing customers a high quality omakase for an affordable $70. " +
+                "Chef Gavin was a great host and showed me how to smoke and sear fish on cedar wood and " +
+                "the regional tastes of uni."
+  },
+  {
     title: "Sushi Yasuda",
     subtitle: "Midtown, New York City",
     imgSrc: "./assets/inspire/yasuda.jpg",
@@ -66,25 +86,5 @@ export const CardsFavorites = [
     description: "Chef Eiji Ichimura taught me a lot about Japanese tradition " +
                 "and blew me away with his triple layered otoro nigiri. " +
                 "Ichimura at Brushstroke has been recently closed, but rumors are that Chef Ichimura is looking to start a new place in NYC again - look out for him!"
-  },
-  {
-    title: "Hinata Sushi",
-    subtitle: "Tenderloin, San Francisco",
-    imgSrc: "./assets/inspire/hinata.jpg",
-    url: "http://hinatasf.com",
-    description: "I always enjoy talking with the friendly, relaxed chefs here and " +
-                "deeply appreciate their philosophy in providing customers a high quality omakase for an affordable $70. " +
-                "Chef Gavin was a great host and showed me how to smoke and sear fish on cedar wood and " +
-                "the regional tastes of uni."
-  },
-  {
-    title: "Kusakabe",
-    subtitle: "Financial District, SF",
-    imgSrc: "./assets/inspire/kusakabe.jpg",
-    url: "http://kusakabe-sf.com",
-    description: "Chef Ken hosted me and while the sushi was amazing, " +
-                "I learned even more from just watching him compose his nigiri. " +
-                "His preparation is extremely clean, organized and efficient. " +
-                "Come here for the soy-sauced cured chutoro and Chef Ken's favorite, the shima aji."
   }
 ];

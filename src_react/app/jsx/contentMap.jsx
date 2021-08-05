@@ -18,6 +18,7 @@ const HAMACHI = "Yellowtail (Hamachi)";
 const HOTATE = "Scallops (Hotate)";
 const IKURA = "Salmon roe (Ikura)";
 const KANPACHI = "Amberjack (Kanpachi)";
+const MADAI = "Seabream (Madai)";
 const MAGURO = "Ahi tuna (Maguro)";
 const MAGURO_BF = "Bluefin tuna (Maguro)";
 const OTORO = "Fatty tuna belly (Oh-toro)"
@@ -298,6 +299,50 @@ export const ContentMap = {
 		},
 		color: colorWhite,
 		ingredients: ["Beef Brisket", DAIKON, SAUCE_SOY, "Black Pepper"]
+	},
+	"nigiri1_salmon_cucumber": {
+		id: "nigiri1_salmon_cucumber",
+		title: "Salmon Nigiri with Grated Cucumber and Lemon Zest",
+		date: "April 2018",
+		source: {
+			thumbnailUrl: "assets/gallery/nigiri1_salmon_cucumber.jpg",
+			fullUrl: "assets/gallery/nigiri1_salmon_cucumber.jpg"
+		},
+		color: colorSalmon,
+		ingredients: [SAKE, CUCUMBER, SAUCE_SOY, "Lemon Zest"]
+	},
+	"nigiri1_salmon_seared_lemon": {
+		id: "nigiri1_salmon_seared_lemon",
+		title: "Seared Salmon Nigiri with Cucumber and Lemon Zest",
+		date: "April 2018",
+		source: {
+			thumbnailUrl: "assets/gallery/nigiri1_salmon_seared_lemon.jpg",
+			fullUrl: "assets/gallery/nigiri1_salmon_seared_lemon.jpg"
+		},
+		color: colorSalmon,
+		ingredients: [SAKE, CUCUMBER, SAUCE_SOY, "Lemon Zest"]
+	},
+	"sashimi4_madai_pear": {
+		id: "sashimi4_madai_pear",
+		title: "Madai Sashimi with Asian Pear and Sweet Onions",
+		date: "January 2018",
+		source: {
+			thumbnailUrl: "assets/gallery/sashimi4_madai_pear.jpg",
+			fullUrl: "assets/gallery/sashimi4_madai_pear.jpg"
+		},
+		color: colorWhite,
+		ingredients: [MADAI, "Asian Pear", "Caramelized Onions", SAUCE_SOY]
+	},
+	"nigiri4_tuna_scored": {
+		id: "nigiri4_tuna_scored",
+		title: "Maguro with Grated Cucumber",
+		date: "January 2018",
+		source: {
+			thumbnailUrl: "assets/gallery/nigiri4_tuna_scored.jpg",
+			fullUrl: "assets/gallery/nigiri4_tuna_scored.jpg"
+		},
+		color: colorTuna,
+		ingredients: [MAGURO, "Grated Cucumber", SAUCE_SOY]
 	},
 };
 

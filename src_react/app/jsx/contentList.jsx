@@ -2,8 +2,12 @@
 
 export const ContentList = [
 	"nigiri2_albacore_cucumber",
-	"nigiri6_kanpachi_gold",
+	"nigiri1_salmon_seared_lemon",
+	"sashimi4_madai_pear",
+	
 	"roll6_tempura_crab",
+	"nigiri4_tuna_scored",
+	"nigiri6_kanpachi_gold",
 
 	"nigiri2_seared_salmon_wood",
 	"nigiri1_crab_chives",
