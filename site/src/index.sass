@@ -11,15 +11,39 @@ body
 p
   font-family: $fontFamilyOpenSans
   font-size: $fontSizeM
+  line-height: $lineHeightM
+  color: $colorWhite
 
 a
   color: $colorWhite
 
 h1
-h2
-h3
-h4
-h5
+  margin: 0
+  font-family: $fontFamilyOptima
+  font-size: $fontSizeXXL
+  line-height: $lineHeightXXL
+  letter-spacing: 1px
+  color: $colorWhite
+
+h2,
+h3,
+h4,
+h5,
 h6
   margin: 0
   font-family: $fontFamilySourceSans
+  color: $colorWhite
+
+button
+  padding: 16px 24px
+  border: none
+  border-radius: 6px
+  outline: none
+  font-family: $fontFamilyOpenSans
+  font-size: $fontSizeM
+  background-color: $colorLightPurple
+  color: $colorWhite
+  cursor: pointer
+
+  &:hover
+    filter: brightness(1.1)
