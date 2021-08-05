@@ -1,0 +1,52 @@
+@import "constants"
+
+cardWidth = 80%
+cardMaxWidth = innerMaxWidthPx2
+
+#view-inspire
+  position: relative
+
+#inspire-banner-container
+  position: absolute
+  width: 100%
+  height: 480px
+  z-index: -1
+  border-bottom: 2px solid colorAccent
+  background-color: colorBlackDark
+  background: url('./assets/covers/sashimi_otoro.jpg')
+  background-size: cover
+  background-position: center
+
+  & .banner-overlay
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: rgba(colorBlackValue, colorBlackValue, colorBlackValue, 0.5)
+
+#inspire-content
+  padding-top: padding6x
+
+  & .intro-text-container
+    width: cardWidth
+    max-width: cardMaxWidth
+    margin: 0 auto padding8x
+    text-align: left
+    font-family: fontFamilyCormorant
+    font-size: fontSizeNormal
+    color: colorWhite
+    letter-spacing: 1px
+
+    & p
+      line-height: 36px
+
+    @media screen and (max-width: mediaScreenMaxWidth2)
+      font-size: fontSizeSmall
+
+    & h3
+      font-size: fontSizeLarge
+      letter-spacing: 2.4px
+
+      @media screen and (max-width: mediaScreenMaxWidth2)
+        font-size: fontSizeNormal

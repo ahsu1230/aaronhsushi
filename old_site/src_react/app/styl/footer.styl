@@ -1,0 +1,57 @@
+@import "constants"
+
+#view-footer
+  margin: padding12x 0
+  font-family: fontFamilyCormorant
+  color: colorBlackDark
+
+#footer-container
+  width: innerMaxWidthPct
+  max-width: innerMaxWidthPx1
+  margin: 0 auto
+  padding-top: padding4x
+  border-top: 1px solid colorBlackDark
+
+#footer-text-container
+  float: left
+  line-height: 24px
+  font-size: fontSizeSmall
+  letter-spacing: 0.4px
+
+  @media screen and (max-width: mediaScreenMaxWidth1)
+    float: none
+    text-align: center
+
+  & b
+    font-size: fontSizeNormal
+    font-weight: bold
+    letter-spacing: 0.6px
+
+#footer-social-container
+  float: right
+
+  @media screen and (max-width: mediaScreenMaxWidth1)
+    float: none
+    padding-top: padding4x
+    text-align: center
+
+  .footer-icon
+    position: relative
+    margin: 0 padding1x
+    padding: none
+    outline: none
+    border: none
+    cursor: pointer
+
+    &.li
+      top: -2px
+      width: 22px
+      height: 22px
+      background: url('./assets/logo_linkedin.svg')
+      background-size: cover
+
+    &.ig
+      width: 26px
+      height: 26px
+      background: url('./assets/logo_instagram.svg')
+      background-size: cover
