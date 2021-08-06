@@ -8,8 +8,8 @@ class Header extends React.Component {
     static propTypes = {
         match: PropTypes.object.isRequired,
         location: PropTypes.object.isRequired,
-        history: PropTypes.object.isRequired
-      };
+        history: PropTypes.object.isRequired,
+    };
 
     render() {
         const { match, location, history } = this.props;
@@ -18,10 +18,26 @@ class Header extends React.Component {
             <div id="header">
                 <img src={logo} />
                 <div className="links">
-                    <HeaderLink currentPath={currentPath} path="/" name="Gallery"/>
-                    <HeaderLink currentPath={currentPath} path="/story" name="Story"/>
-                    <HeaderLink currentPath={currentPath} path="/inspiration" name="Inspiration"/>
-                    <HeaderLink currentPath={currentPath} path="/contact" name="Contact"/>
+                    <HeaderLink
+                        currentPath={currentPath}
+                        path="/"
+                        name="Gallery"
+                    />
+                    <HeaderLink
+                        currentPath={currentPath}
+                        path="/story"
+                        name="Story"
+                    />
+                    <HeaderLink
+                        currentPath={currentPath}
+                        path="/inspiration"
+                        name="Inspiration"
+                    />
+                    <HeaderLink
+                        currentPath={currentPath}
+                        path="/contact"
+                        name="Contact"
+                    />
                 </div>
             </div>
         );
@@ -39,8 +55,10 @@ const HeaderLink = (props) => {
         activeClass = currentPath.indexOf(path) >= 0 ? "active" : "";
     }
     return (
-        <Link className={activeClass} to={path}>{name}</Link>
+        <Link className={activeClass} to={path}>
+            {name}
+        </Link>
     );
-}
+};
 
 export default withRouter(Header);
