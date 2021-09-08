@@ -1,6 +1,7 @@
 import "./banner.sass";
 
 export default function Banner(props) {
+    const mainTitle = props.mainTitle;
     const title = props.title;
     const description = props.description;
     const height = props.height;
@@ -8,17 +9,16 @@ export default function Banner(props) {
     const buttonText = props.buttonText;
     const buttonOnClick = props.buttonOnClick;
     const overlayAlpha = props.overlayAlpha || 0.7;
-    const hasCaret = props.hasCaret;
     return (
         <div
             className="banner"
             style={{
                 height: `${height}`,
             }}>
-            <div 
-                className="overlay" 
+            <div
+                className="overlay"
                 style={{
-                    opacity: `${overlayAlpha}`
+                    opacity: `${overlayAlpha}`,
                 }}></div>
             <div
                 className="banner-img"
@@ -26,6 +26,7 @@ export default function Banner(props) {
                     backgroundImage: `url("${bannerImgSrc}")`,
                 }}></div>
             <div className="text">
+                {mainTitle && <h1>{mainTitle}</h1>}
                 {title && <h2>{title}</h2>}
                 {description && <p>{description}</p>}
                 {buttonText && (

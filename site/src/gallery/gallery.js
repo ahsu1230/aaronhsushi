@@ -9,7 +9,7 @@ import srcCaretDown from "../assets/caret_down_white.svg";
 class GalleryPage extends React.Component {
     constructor(props) {
         super(props);
-        this.divToFocus = React.createRef()
+        this.divToFocus = React.createRef();
     }
 
     static propTypes = {
@@ -26,7 +26,7 @@ class GalleryPage extends React.Component {
     render() {
         return (
             <div id="gallery">
-                <HomeBanner divToFocus={this.divToFocus}/>
+                <HomeBanner divToFocus={this.divToFocus} />
 
                 <div className="section text">
                     <h2>Concept</h2>
@@ -55,7 +55,7 @@ class GalleryPage extends React.Component {
                     buttonText={"Make a reservation"}
                     buttonOnClick={this.goToContactPage}
                 />
-                
+
                 <div className="section">
                     <Profile />
                 </div>
@@ -76,25 +76,27 @@ export default withRouter(GalleryPage);
 const getWindowDimensions = () => {
     const { innerWidth: width, innerHeight: height } = window;
     return {
-      width,
-      height
+        width,
+        height,
     };
-  }
+};
 
 const useWindowDimensions = () => {
-    const [windowDimensions, setWindowDimensions] = React.useState(getWindowDimensions());
-  
+    const [windowDimensions, setWindowDimensions] = React.useState(
+        getWindowDimensions()
+    );
+
     React.useEffect(() => {
-      function handleResize() {
-        setWindowDimensions(getWindowDimensions());
-      }
-  
-      window.addEventListener('resize', handleResize);
-      return () => window.removeEventListener('resize', handleResize);
+        function handleResize() {
+            setWindowDimensions(getWindowDimensions());
+        }
+
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
     }, []);
-  
+
     return windowDimensions;
-}
+};
 
 const HomeBanner = (props) => {
     const { height, width } = useWindowDimensions();
@@ -102,20 +104,22 @@ const HomeBanner = (props) => {
     return (
         <div id="home-banner">
             <Banner
-                height={(height - 220) + "px"}
+                height={height - 220 + "px"}
                 bannerImgSrc={"/samples/chef_grinding_crop.jpg"}
                 overlayAlpha={0.4}
             />
-            <button className="caret" onClick={() => {
-                if(props.divToFocus && props.divToFocus.current){
-                    props.divToFocus.current.scrollIntoView({ 
-                        behavior: "smooth", 
-                        block: "nearest"
-                    });
-                }
-            }}>
-                <img src={srcCaretDown}/>
+            <button
+                className="caret"
+                onClick={() => {
+                    if (props.divToFocus && props.divToFocus.current) {
+                        props.divToFocus.current.scrollIntoView({
+                            behavior: "smooth",
+                            block: "nearest",
+                        });
+                    }
+                }}>
+                <img src={srcCaretDown} />
             </button>
         </div>
     );
-}
+};

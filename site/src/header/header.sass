@@ -2,27 +2,50 @@
 
 #header
     width: 100%
+    color: $colorWhite
+
+    .links a
+        margin: 0 24px
+        color: $colorWhite
+        font-family: $fontFamilyOptima
+        font-size: 16px
+        letter-spacing: 1px
+        text-decoration: none
+        
+        &:hover
+            color: $colorGold
+
+        &.active
+            color: $colorGold
+    
+#header .header-full
+    position: static
     padding: 40px 0
     background-color: $colorDarkPurple
-    color: $colorWhite
     text-align: center
 
-    img
+    img.logo
         width: 80px
-
+    
     .links
         margin-top: 24px
-    
-        a
-            margin: 0 24px
-            color: $colorWhite
-            font-family: $fontFamilyOptima
-            font-size: 16px
-            letter-spacing: 1px
-            text-decoration: none
-            
-            &:hover
-                color: $colorGold
 
-            &.active
-                color: $colorGold
+#header .header-sticky
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    padding: 12px
+    box-sizing: border-box
+    z-index: 10
+
+    img.logo
+        width: 64px
+
+    .links a
+        @media screen and (max-width: 640px)
+            margin: 0 12px

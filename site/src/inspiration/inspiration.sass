@@ -1,0 +1,59 @@
+@import "../_constants.sass"
+
+#inspiration .selector
+    margin: 64px 0
+
+    .selections
+        display: flex
+        flex-direction: row
+        justify-content: space-evenly  
+
+    .select-container
+        position: relative
+        width: 240px
+        cursor: pointer
+
+        &:hover
+            filter: brightness(1.2)
+
+        .overlay
+            position: absolute
+            width: 100%
+            height: 100%
+            background: rgba(0, 0, 0, 0.5)
+        
+        img
+            width: 100%
+        
+        p
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+            width: 80%
+            margin: 0
+            text-align: center
+            color: $colorWhite
+
+    .select-view
+        margin: 64px 0
+
+        h2
+            text-align: center
+            color: $colorTextGray
+
+        p
+            text-align: center
+            color: $colorBlack
+
+        a
+            color: $colorPurple
+
+        .inspiration-fish 
+            p
+                width: 480px
+                margin: 64px auto
+            img
+                display: block
+                width: 480px
+                margin: 0 auto
