@@ -8,7 +8,7 @@ export default function HeaderFull(props) {
             <a href="/">
                 <img className="logo" src={logo} />
             </a>
-            
+
             <div className="links">
                 <HeaderLink currentPath={currentPath} path="/" name="Gallery" />
                 <HeaderLink

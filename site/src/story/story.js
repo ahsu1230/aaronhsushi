@@ -5,11 +5,7 @@ import { withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import Banner from "../common/banner.js";
 
-const SECTION_CLASS_NAMES = [
-    "white center",
-    "light left",
-    "dark right"
-];
+const SECTION_CLASS_NAMES = ["white center", "light left", "dark right"];
 
 class StoryPage extends React.Component {
     constructor(props) {
@@ -30,12 +26,13 @@ class StoryPage extends React.Component {
     render() {
         const sections = sectionContents.map((section, index) => {
             return (
-                <StorySection 
+                <StorySection
                     key={index}
                     subtitle={section.subtitle}
                     text={section.text}
                     index={index}
-                    imgSrc={section.imgSrc}/>
+                    imgSrc={section.imgSrc}
+                />
             );
         });
         return (
@@ -46,7 +43,7 @@ class StoryPage extends React.Component {
                     bannerImgSrc={"/samples/chef_cut_fish_crop.jpg"}
                 />
                 {sections}
-                <ActionSection onClickAction={this.goToContactPage}/>
+                <ActionSection onClickAction={this.goToContactPage} />
             </div>
         );
     }
@@ -55,7 +52,8 @@ class StoryPage extends React.Component {
 export default withRouter(StoryPage);
 
 function StorySection(props) {
-    const classTypes = SECTION_CLASS_NAMES[props.index % (SECTION_CLASS_NAMES.length)];
+    const classTypes =
+        SECTION_CLASS_NAMES[props.index % SECTION_CLASS_NAMES.length];
     const classNames = "story-section " + classTypes;
 
     return (
@@ -66,7 +64,7 @@ function StorySection(props) {
             </div>
             {props.imgSrc && (
                 <div className="img-container">
-                    <img src={props.imgSrc}/>
+                    <img src={props.imgSrc} />
                 </div>
             )}
         </div>
@@ -89,17 +87,20 @@ function ActionSection(props) {
 const sectionContents = [
     {
         subtitle: "Software Engineer to Sushi Chef",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ornare semper enim, tristique ullamcorper ante posuere in. Ut ac cursus sem, ut consectetur neque. Vestibulum ac augue consectetur libero mattis blandit. Sed dignissim neque iaculis, lacinia erat ultrices, pellentesque purus. Donec ornare justo nec risus convallis aliquam vitae ac nulla.",
-        imgSrc: ""
+        text:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ornare semper enim, tristique ullamcorper ante posuere in. Ut ac cursus sem, ut consectetur neque. Vestibulum ac augue consectetur libero mattis blandit. Sed dignissim neque iaculis, lacinia erat ultrices, pellentesque purus. Donec ornare justo nec risus convallis aliquam vitae ac nulla.",
+        imgSrc: "",
     },
     {
         subtitle: "Section B",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ornare semper enim, tristique ullamcorper ante posuere in. Ut ac cursus sem, ut consectetur neque. Vestibulum ac augue consectetur libero mattis blandit. Sed dignissim neque iaculis, lacinia erat ultrices, pellentesque purus. Donec ornare justo nec risus convallis aliquam vitae ac nulla.",
-        imgSrc: "/samples/gallery1.png"
+        text:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ornare semper enim, tristique ullamcorper ante posuere in. Ut ac cursus sem, ut consectetur neque. Vestibulum ac augue consectetur libero mattis blandit. Sed dignissim neque iaculis, lacinia erat ultrices, pellentesque purus. Donec ornare justo nec risus convallis aliquam vitae ac nulla.",
+        imgSrc: "/samples/gallery1.png",
     },
     {
         subtitle: "Section C",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ornare semper enim, tristique ullamcorper ante posuere in. Ut ac cursus sem, ut consectetur neque. Vestibulum ac augue consectetur libero mattis blandit. Sed dignissim neque iaculis, lacinia erat ultrices, pellentesque purus. Donec ornare justo nec risus convallis aliquam vitae ac nulla.",
-        imgSrc: "/samples/gallery6.png"
+        text:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ornare semper enim, tristique ullamcorper ante posuere in. Ut ac cursus sem, ut consectetur neque. Vestibulum ac augue consectetur libero mattis blandit. Sed dignissim neque iaculis, lacinia erat ultrices, pellentesque purus. Donec ornare justo nec risus convallis aliquam vitae ac nulla.",
+        imgSrc: "/samples/gallery6.png",
     },
 ];
