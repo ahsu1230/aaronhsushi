@@ -102,14 +102,16 @@ function Card(props) {
                 <br />
                 {props.type}
             </p>
-            <a href={props.url} target="_blank">
-                <div className="img-container">
-                    <div className="overlay">
-                        <h5>Visit Website</h5>
+            <div className="img-section buy-fish">
+                <a href={props.url} target="_blank">
+                    <div className="img-container">
+                        <div className="overlay">
+                            <h5>Visit Website</h5>
+                        </div>
+                        <img src={props.imgSrc} />
                     </div>
-                    <img src={props.imgSrc} />
-                </div>
-            </a>
+                </a>
+            </div>
         </div>
     );
 }
