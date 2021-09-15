@@ -9,9 +9,10 @@ export default function Banner(props) {
     const buttonText = props.buttonText;
     const buttonOnClick = props.buttonOnClick;
     const overlayAlpha = props.overlayAlpha || 0.7;
+    const classNames = "banner" + (props.notHeader ? " not-header" : "");
     return (
         <div
-            className="banner"
+            className={classNames}
             style={{
                 height: `${height}`,
             }}>

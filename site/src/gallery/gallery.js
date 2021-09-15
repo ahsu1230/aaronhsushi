@@ -29,16 +29,10 @@ class GalleryPage extends React.Component {
                 <HomeBanner divToFocus={this.divToFocus} />
 
                 <div className="section text">
-                    <h2>Concept</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Aenean ornare semper enim, tristique ullamcorper ante
-                        posuere in. Ut ac cursus sem, ut consectetur neque.
-                        Vestibulum ac augue consectetur libero mattis blandit.
-                        Sed dignissim neque iaculis, lacinia erat ultrices,
-                        pellentesque purus. Donec ornare justo nec risus
-                        convallis aliquam vitae ac nulla.
-                    </p>
+                    <h3 className="first-title">
+                        An elegant omakase brought to you<br/>
+                        at a welcoming home
+                    </h3>
                 </div>
 
                 <div className="section" ref={this.divToFocus}>
@@ -47,13 +41,11 @@ class GalleryPage extends React.Component {
 
                 <Banner
                     height={"360px"}
-                    title={"Cuisine"}
-                    description={
-                        "Donec ornare justo nec risus convallis aliquam vitae ac nulla."
-                    }
+                    title={"Passion, Technique and Connection"}
                     bannerImgSrc={"/samples/chef_cut_fish_crop.jpg"}
                     buttonText={"Make a reservation"}
                     buttonOnClick={this.goToContactPage}
+                    notHeader={true}
                 />
 
                 <div className="section">
@@ -65,6 +57,7 @@ class GalleryPage extends React.Component {
                     bannerImgSrc={"/samples/serve_nigiri.jpg"}
                     buttonText={"Make a reservation"}
                     buttonOnClick={this.goToContactPage}
+                    notHeader={true}
                 />
             </div>
         );

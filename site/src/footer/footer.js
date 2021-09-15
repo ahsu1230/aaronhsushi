@@ -9,7 +9,7 @@ export default function Footer() {
             <p>Designed and Developed by Aaron Hsu</p>
 
             <h4>Contact</h4>
-            <p>ahsu1230@gmail.com</p>
+            <p>aaronhsushi2020@gmail.com</p>
             <div className="icons">
                 <a href="https://www.instagram.com/mooseyhsushi/">
                     <img className="ig" src={iconIG} />

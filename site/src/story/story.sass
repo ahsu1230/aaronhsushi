@@ -27,6 +27,7 @@
         &.left
             .content
                 width: 50%
+                min-height: 360px
                 padding: 64px
                 box-sizing: border-box
             .img-container
@@ -49,7 +50,7 @@
 
         &.center
             max-width: 480px
-            margin: 64px auto
+            margin: 48px auto
             text-align: center
 
             .content
@@ -58,7 +59,9 @@
                 h3
                     display: inline-block
                     padding: 24px 0 8px
-                    border-top: 1px solid $colorBlack
+
+                    &.action
+                        border-top: 1px solid $colorBlack
 
         &.action button
             margin-top: 16px

@@ -1,7 +1,7 @@
 export default function InspirationMyFish(props) {
     return (
         <div className="inspiration-my-fish">
-            <h2>Where do you get your fish?</h2>
+            <h2>Where do you get your fresh Japanese fish?</h2>
             <p>
                 I get most of my specialty Japanese fish from{" "}
                 <a href="https://trueworldfoodsdc.com/">True World Foods</a>.

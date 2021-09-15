@@ -29,7 +29,8 @@ class StoryPage extends React.Component {
                 <StorySection
                     key={index}
                     subtitle={section.subtitle}
-                    text={section.text}
+                    text1={section.text1}
+                    text2={section.text2}
                     index={index}
                     imgSrc={section.imgSrc}
                 />
@@ -60,7 +61,8 @@ function StorySection(props) {
         <div className={classNames}>
             <div className="content">
                 <h3>{props.subtitle}</h3>
-                <p>{props.text}</p>
+                <p>{props.text1}</p>
+                <p>{props.text2}</p>
             </div>
             {props.imgSrc && (
                 <div className="img-container">
@@ -75,7 +77,7 @@ function ActionSection(props) {
     return (
         <div className="story-section white center action">
             <div className="content">
-                <h3>Please join me for your most memorable omakase</h3>
+                <h3 className="action">Please join me for your most memorable omakase</h3>
                 <button onClick={props.onClickAction}>
                     Make a reservation
                 </button>
@@ -86,21 +88,21 @@ function ActionSection(props) {
 
 const sectionContents = [
     {
-        subtitle: "Software Engineer to Sushi Chef",
-        text:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ornare semper enim, tristique ullamcorper ante posuere in. Ut ac cursus sem, ut consectetur neque. Vestibulum ac augue consectetur libero mattis blandit. Sed dignissim neque iaculis, lacinia erat ultrices, pellentesque purus. Donec ornare justo nec risus convallis aliquam vitae ac nulla.",
+        subtitle: "How did you make sushi a hobby in the first place?",
+        text1: "When I moved to the Bay Area for my first Software Engineering job after graduating college, I found that I was surrounded by several Asian markets that sold sushi-grade fresh. Excited to try making sushi at home, I eagerly searched Youtube videos and bought basic equipment from Amazon or local Japanese stores to get started.",
+        text2: "From there, I started replicating my favorite specialty rolls from restaurants and tried to push the boundaries to creatively include ingredients from other cuisines. My favorite Frankenstein creations are my Salmon-Guacamole rolls with crushed Tostitos lime-hinted chips and torched Brazillian-steak roll topped with grilled pineapples. Check out my Inspiration page to view my library of resources for beginners!",
         imgSrc: "",
     },
     {
-        subtitle: "Section B",
-        text:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ornare semper enim, tristique ullamcorper ante posuere in. Ut ac cursus sem, ut consectetur neque. Vestibulum ac augue consectetur libero mattis blandit. Sed dignissim neque iaculis, lacinia erat ultrices, pellentesque purus. Donec ornare justo nec risus convallis aliquam vitae ac nulla.",
+        subtitle: "What made you jump from your day job to becoming a sushi chef?",
+        text1:"After a few years of making sushi as a hobby, I realized I was dawdling too much into superficialities of what I thought sushi was. I realized I knew nothing about the history, art and traditions passed down from generations. And more importantly, I needed to know what it took to become a chef at a restaurant. I wanted the mind, spirit and heart of a sushi chef.",
+        text2: "At the time, I was living in San Francisco, but I thought New York City would be the best place to learn from Japanese sushi chefs who've learned the traditions from their masters in Japan. When the opportunity came, I took it without hesitation and haven't looked back since. I made sure to notify my parents AFTER I took the new job.",
         imgSrc: "/samples/gallery1.png",
     },
     {
-        subtitle: "Section C",
-        text:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ornare semper enim, tristique ullamcorper ante posuere in. Ut ac cursus sem, ut consectetur neque. Vestibulum ac augue consectetur libero mattis blandit. Sed dignissim neque iaculis, lacinia erat ultrices, pellentesque purus. Donec ornare justo nec risus convallis aliquam vitae ac nulla.",
+        subtitle: "What are you doing now?",
+        text1:
+            "Today, I perform multi-course omakase dinners for guests at my home in Washington D.C. I try my best to welcome guests to an intimate dining stage and serve the highest quality sushi course to the best of my ability. This setting gives guests the opportunity to comfortably enjoy a much more affordable omakase experience and to learn what the art of sushi omakase means to me.",
         imgSrc: "/samples/gallery6.png",
     },
 ];
