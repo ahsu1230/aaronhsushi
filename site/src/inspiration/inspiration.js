@@ -17,7 +17,7 @@ export default function InspirationPage() {
             <Banner
                 height={"320px"}
                 mainTitle={"Inspiration"}
-                bannerImgSrc={"/samples/chef_grinding_crop.jpg"}
+                bannerImgSrc={"https://aaronhsushi.b-cdn.net/banner_hotate_nigiri.jpeg"}
             />
             <Selector />
         </div>

@@ -42,7 +42,7 @@ class GalleryPage extends React.Component {
                 <Banner
                     height={"360px"}
                     title={"Passion, Technique and Connection"}
-                    bannerImgSrc={"/samples/chef_cut_fish_crop.jpg"}
+                    bannerImgSrc={"https://aaronhsushi.b-cdn.net/banner_hotate_nigiri.jpeg"}
                     buttonText={"Make a reservation"}
                     buttonOnClick={this.goToContactPage}
                     notHeader={true}
@@ -54,7 +54,7 @@ class GalleryPage extends React.Component {
 
                 <Banner
                     height={"360px"}
-                    bannerImgSrc={"/samples/serve_nigiri.jpg"}
+                    bannerImgSrc={"https://aaronhsushi.b-cdn.net/banner_hotate_nigiri.jpeg"}
                     buttonText={"Make a reservation"}
                     buttonOnClick={this.goToContactPage}
                     notHeader={true}

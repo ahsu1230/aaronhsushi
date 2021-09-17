@@ -41,7 +41,7 @@ class StoryPage extends React.Component {
                 <Banner
                     height="320px"
                     mainTitle={"My Story"}
-                    bannerImgSrc={"/samples/chef_cut_fish_crop.jpg"}
+                    bannerImgSrc={"https://aaronhsushi.b-cdn.net/banner_hotate_nigiri.jpeg"}
                 />
                 {sections}
                 <ActionSection onClickAction={this.goToContactPage} />
@@ -97,12 +97,12 @@ const sectionContents = [
         subtitle: "What made you jump from your day job to becoming a sushi chef?",
         text1:"After a few years of making sushi as a hobby, I realized I was dawdling too much into superficialities of what I thought sushi was. I realized I knew nothing about the history, art and traditions passed down from generations. And more importantly, I needed to know what it took to become a chef at a restaurant. I wanted the mind, spirit and heart of a sushi chef.",
         text2: "At the time, I was living in San Francisco, but I thought New York City would be the best place to learn from Japanese sushi chefs who've learned the traditions from their masters in Japan. When the opportunity came, I took it without hesitation and haven't looked back since. I made sure to notify my parents AFTER I took the new job.",
-        imgSrc: "/samples/gallery1.png",
+        imgSrc: "https://aaronhsushi.b-cdn.net/prep_kohada_skin.jpeg",
     },
     {
         subtitle: "What are you doing now?",
         text1:
             "Today, I perform multi-course omakase dinners for guests at my home in Washington D.C. I try my best to welcome guests to an intimate dining stage and serve the highest quality sushi course to the best of my ability. This setting gives guests the opportunity to comfortably enjoy a much more affordable omakase experience and to learn what the art of sushi omakase means to me.",
-        imgSrc: "/samples/gallery6.png",
+        imgSrc: "https://aaronhsushi.b-cdn.net/knife_name.jpeg",
     },
 ];

@@ -2,33 +2,33 @@ import "./imageGallery.sass";
 
 const GALLERY_IMAGES = [
     {
-        imageSrc: "/samples/gallery1.png",
-        title: "Seasonal Sashimi",
+        imageSrc: "https://aaronhsushi.b-cdn.net/nigiri_kohada_ginger.jpeg",
+        title: "Kohada (Japanese Gizzard Shad) topped with grated ginger",
         description: "",
     },
     {
-        imageSrc: "/samples/gallery2.png",
-        title: "Seared Anago (Sea Eel)",
+        imageSrc: "https://aaronhsushi.b-cdn.net/square_shima_aji_plate.jpeg",
+        title: "Shima-Aji (Trevally Jack) sashimi presentation plate",
         description: "",
     },
     {
-        imageSrc: "/samples/gallery3.png",
-        title: "Hokkaido Uni",
+        imageSrc: "https://aaronhsushi.b-cdn.net/nigiri_sawara_smoked_head.jpeg",
+        title: "Cherry-smoked Sawara (Spanish Mackerel) with grated daikon and scallions",
         description: "",
     },
     {
-        imageSrc: "/samples/gallery4.png",
-        title: "Shima Aji",
+        imageSrc: "https://aaronhsushi.b-cdn.net/sashimi_sawara_smoked.jpeg",
+        title: "Sashimi plate of assorted smoked Sawara (Spanish Mackerel)",
         description: "",
     },
     {
-        imageSrc: "/samples/gallery5.png",
-        title: "Seared Salmon",
+        imageSrc: "https://aaronhsushi.b-cdn.net/nigiri_sawara_oroshi.jpeg",
+        title: "Sawara (Spanish Mackerel) with grated daikon",
         description: "",
     },
     {
-        imageSrc: "/samples/gallery6.png",
-        title: "Maguro Medley",
+        imageSrc: "https://aaronhsushi.b-cdn.net/moosey.jpeg",
+        title: "Complementary after-dinner cuddle sessions available",
         description: "",
     },
 ];
