@@ -1,0 +1,25 @@
+@import "../_constants.sass"
+
+#image-gallery
+
+    .gallery-container
+        display: flex
+        flex-direction: row
+        flex-wrap: wrap
+        justify-content: space-between
+        width: 640px
+        margin: 0 auto
+
+    .gallery-card
+        width: 200px
+        margin-bottom: 16px
+        cursor: pointer
+        transition: 0.3s linear transform
+
+        &:hover
+            transform: scale(1.05)
+
+        img
+            width: 100%
+
+
