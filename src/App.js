@@ -8,28 +8,28 @@ import ContactPage from "./contact/contact.js";
 import FooterComponent from "./footer/footer.js";
 
 function App() {
-    return (
-        <Router>
-            <div>
-                <Header />
-                <Switch>
-                    <Route exact path="/">
-                        <Gallery />
-                    </Route>
-                    <Route path="/story">
-                        <Story />
-                    </Route>
-                    <Route path="/inspiration">
-                        <Inspiration />
-                    </Route>
-                    <Route path="/contact">
-                        <Contact />
-                    </Route>
-                </Switch>
-                <Footer />
-            </div>
-        </Router>
-    );
+  return (
+    <Router>
+      <div>
+        <Header />
+        <Switch>
+          <Route exact path="/">
+            <Gallery />
+          </Route>
+          <Route path="/story">
+            <Story />
+          </Route>
+          <Route path="/inspiration">
+            <Inspiration />
+          </Route>
+          <Route path="/contact">
+            <Contact />
+          </Route>
+        </Switch>
+        <Footer />
+      </div>
+    </Router>
+  );
 }
 
 export default App;

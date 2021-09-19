@@ -1,58 +1,36 @@
 import "./imageGallery.sass";
 
-const GALLERY_IMAGES = [
-    {
-        imageSrc: "https://aaronhsushi.b-cdn.net/nigiri_kohada_ginger.jpeg",
-        title: "Kohada (Japanese Gizzard Shad) topped with grated ginger",
-        description: "",
-    },
-    {
-        imageSrc: "https://aaronhsushi.b-cdn.net/square_shima_aji_plate.jpeg",
-        title: "Shima-Aji (Trevally Jack) sashimi presentation plate",
-        description: "",
-    },
-    {
-        imageSrc: "https://aaronhsushi.b-cdn.net/nigiri_sawara_smoked_head.jpeg",
-        title: "Cherry-smoked Sawara (Spanish Mackerel) with grated daikon and scallions",
-        description: "",
-    },
-    {
-        imageSrc: "https://aaronhsushi.b-cdn.net/sashimi_sawara_smoked.jpeg",
-        title: "Sashimi plate of assorted smoked Sawara (Spanish Mackerel)",
-        description: "",
-    },
-    {
-        imageSrc: "https://aaronhsushi.b-cdn.net/nigiri_sawara_oroshi.jpeg",
-        title: "Sawara (Spanish Mackerel) with grated daikon",
-        description: "",
-    },
-    {
-        imageSrc: "https://aaronhsushi.b-cdn.net/moosey.jpeg",
-        title: "Complementary after-dinner cuddle sessions available",
-        description: "",
-    },
-];
+import React from "react";
+import { GalleryImages, FindIdFromSrc } from "./galleryImages.js";
 
-export default function ImageGallery() {
-    const cards = GALLERY_IMAGES.map((image, index) => (
-        <GalleryCard
-            key={index}
-            imgSrc={image.imageSrc}
-            title={image.title}
-            description={image.description}
-        />
+export default class ImageGallery extends React.Component {
+  render() {
+    const cards = GalleryImages.map((image, index) => (
+      <GalleryCard
+        key={index}
+        image={image}
+        onClickCard={this.props.onClickGalleryImage}
+      />
     ));
     return (
-        <div id="image-gallery">
-            <div className="gallery-container">{cards}</div>
-        </div>
+      <div id="image-gallery">
+        <div className="gallery-container">{cards}</div>
+      </div>
     );
+  }
 }
 
-const GalleryCard = (props) => {
+class GalleryCard extends React.Component {
+  onClickCard = (e) => {
+    const detectedId = FindIdFromSrc(e.target.currentSrc);
+    this.props.onClickCard(detectedId);
+  };
+
+  render() {
     return (
-        <div className="gallery-card">
-            <img src={props.imgSrc} />
-        </div>
+      <div className="gallery-card" onClick={this.onClickCard}>
+        <img src={this.props.image.imageSrc} />
+      </div>
     );
-};
+  }
+}

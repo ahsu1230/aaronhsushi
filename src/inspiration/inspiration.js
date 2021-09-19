@@ -12,77 +12,73 @@ const selectionBuyFish = "buy_fish";
 const selectionHowTo = "how_to";
 
 export default function InspirationPage() {
-    return (
-        <div id="inspiration">
-            <Banner
-                height={"320px"}
-                mainTitle={"Inspiration"}
-                bannerImgSrc={"https://aaronhsushi.b-cdn.net/banner_hotate_nigiri.jpeg"}
-            />
-            <Selector />
-        </div>
-    );
+  return (
+    <div id="inspiration">
+      <Banner
+        height={"320px"}
+        mainTitle={"Inspiration"}
+        bannerImgSrc={"https://aaronhsushi.b-cdn.net/banner_hotate_nigiri.jpeg"}
+      />
+      <Selector />
+    </div>
+  );
 }
 
 class Selector extends React.Component {
-    state = {
-        selection: selectionMyFish,
-    };
+  state = {
+    selection: selectionMyFish,
+  };
 
-    onSelect = (selection) => {
-        this.setState({
-            selection: selection,
-        });
-    };
+  onSelect = (selection) => {
+    this.setState({
+      selection: selection,
+    });
+  };
 
-    render() {
-        return (
-            <div className="selector">
-                <div className="selections">
-                    <div
-                        className="select-container"
-                        onClick={() => this.onSelect(selectionMyFish)}>
-                        <div className="overlay" />
-                        <img src={"/fresh_fish/trueworldfoods.png"} />
-                        <p>Where do you get your fresh fish?</p>
-                    </div>
-                    <div
-                        className="select-container"
-                        onClick={() => this.onSelect(selectionRecs)}>
-                        <div className="overlay" />
-                        <img src={"/restaurants/kosaka_outside.jpg"} />
-                        <p>Favorite Sushi Restaurants</p>
-                    </div>
-                    <div
-                        className="select-container"
-                        onClick={() => this.onSelect(selectionBuyFish)}>
-                        <div className="overlay" />
-                        <img src={"/fresh_fish/people_buying_fish.jpg"} />
-                        <p>Where can I buy fresh fish?</p>
-                    </div>
-                    <div
-                        className="select-container"
-                        onClick={() => this.onSelect(selectionHowTo)}>
-                        <div className="overlay" />
-                        <img src={"/youtube_channels/akira-san1.png"} />
-                        <p>How can I start making sushi?</p>
-                    </div>
-                </div>
-                <div className="select-view">
-                    {this.state.selection == selectionMyFish && (
-                        <InspirationMyFish />
-                    )}
-                    {this.state.selection == selectionRecs && (
-                        <InspirationRestaurants />
-                    )}
-                    {this.state.selection == selectionBuyFish && (
-                        <InspirationBuyFish />
-                    )}
-                    {this.state.selection == selectionHowTo && (
-                        <InspirationHowTo />
-                    )}
-                </div>
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div className="selector">
+        <div className="selections">
+          <div
+            className="select-container"
+            onClick={() => this.onSelect(selectionMyFish)}
+          >
+            <div className="overlay" />
+            <img src={"/fresh_fish/trueworldfoods.png"} />
+            <p>Where do you get your fresh fish?</p>
+          </div>
+          <div
+            className="select-container"
+            onClick={() => this.onSelect(selectionRecs)}
+          >
+            <div className="overlay" />
+            <img src={"/restaurants/kosaka_outside.jpg"} />
+            <p>Favorite Sushi Restaurants</p>
+          </div>
+          <div
+            className="select-container"
+            onClick={() => this.onSelect(selectionBuyFish)}
+          >
+            <div className="overlay" />
+            <img src={"/fresh_fish/people_buying_fish.jpg"} />
+            <p>Where can I buy fresh fish?</p>
+          </div>
+          <div
+            className="select-container"
+            onClick={() => this.onSelect(selectionHowTo)}
+          >
+            <div className="overlay" />
+            <img src={"/youtube_channels/akira-san1.png"} />
+            <p>How can I start making sushi?</p>
+          </div>
+        </div>
+        <div className="select-view">
+          {this.state.selection == selectionMyFish && <InspirationMyFish />}
+          {this.state.selection == selectionRecs && <InspirationRestaurants />}
+          {this.state.selection == selectionBuyFish && <InspirationBuyFish />}
+          {this.state.selection == selectionHowTo && <InspirationHowTo />}
+        </div>
+      </div>
+    );
+  }
 }

@@ -1,0 +1,69 @@
+@import "../_constants.sass"
+
+#gallery-modal
+    display: none
+    border: 1px solid blue
+
+    &.show
+        display: block
+
+        .overlay
+            display: block
+
+    .overlay
+        display: none
+        position: fixed
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background: rgba(0, 0, 0, 0.8)
+
+    .modal
+        position: fixed
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+
+        img
+            width: 480px
+
+        .caption
+            position: absolute
+            bottom: 4px
+            left: 0
+            width: 100%
+            padding: 32px 16px 8px 16px
+            box-sizing: border-box
+            background: linear-gradient(to top, rgba(0,0,0,0.7) 70%, rgba(0,0,0,0))
+
+            p
+                text-align: center
+                color: $colorWhite
+
+    button
+        background: none
+
+    button.close
+        position: fixed
+        top: 16px
+        right: 16px
+        img
+            width: 32px
+    button.left
+        position: fixed
+        top: 50%
+        left: 16px
+        transform: translate(0, -50%)
+        img
+            width: 16px
+    button.right
+        position: fixed
+        top: 50%
+        right: 16px
+        transform: translate(0, -50%)
+        img
+            width: 16px
+
+
+
