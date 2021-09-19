@@ -11,7 +11,6 @@ node_modules
 
 # production
 /build
-src_react/public/bundle.js
 
 # misc
 .DS_Store
