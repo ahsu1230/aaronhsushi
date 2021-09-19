@@ -1,0 +1,35 @@
+@import "../_constants.sass"
+
+#gallery
+    background-color: $colorDarkPurple
+
+    .section
+        margin: 72px 0
+
+        &.text
+            width: 480px
+            margin-left: auto
+            margin-right: auto
+            text-align: center
+            color: $colorWhite
+
+        .first-title
+            line-height: 32px
+        
+    #home-banner
+        position: relative
+
+        .caret
+            position: absolute
+            left: 50%
+            transform: translateX(-50%)
+            bottom: 24px
+            padding: 0
+            background: none
+            transition: 0.3s linear transform
+
+            &:hover
+                transform: translate(-50%, 15%)
+
+            img
+                width: 64px

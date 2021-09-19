@@ -1,0 +1,159 @@
+@import "../_constants.sass"
+
+#inspiration .selector
+    margin: 64px 0
+
+    .selections
+        display: flex
+        flex-direction: row
+        justify-content: space-evenly  
+
+    .select-container
+        position: relative
+        width: 240px
+        height: 240px
+        cursor: pointer
+
+        &:hover
+            filter: brightness(1.2)
+
+        .overlay
+            position: absolute
+            width: 100%
+            height: 100%
+            background: rgba(0, 0, 0, 0.5)
+        
+        img
+            width: 100%
+            height: 100%
+        
+        p
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+            width: 80%
+            margin: 0
+            text-align: center
+            color: $colorWhite
+
+    .select-view
+        margin: 64px 0
+
+        h1, h3, h4, p
+            font-family: $fontFamilySourceSans
+            color: $colorTextBlack
+            text-align: center
+
+        h2
+            text-align: center
+            color: $colorTextGray
+
+        a
+            color: $colorPurple
+
+        .inspiration-my-fish
+            padding-bottom: 32px
+
+            p
+                width: 480px
+                margin: 64px auto
+            img
+                display: block
+                width: 480px
+                margin: 0 auto
+
+        .inspiration-restaurants
+            h1
+                margin: 32px 0
+            
+            .cards
+                margin: 64px 0
+
+            .card
+                margin-bottom: 48px
+
+            h3
+                margin: 8px 0
+                line-height: 24px
+
+            h4
+                color: $colorTextGray
+
+            p
+                width: 480px
+                margin: 16px auto
+                line-height: 24px
+                color: $colorTextGray
+
+        .inspiration-buy-fish 
+            h1
+                margin: 32px 0
+            p
+                width: 480px
+                margin: 16px auto 48px
+
+            .cards
+                margin-bottom: 64px
+            
+            .card
+                padding: 32px
+                text-align: center
+
+                h3
+                    margin: 8px 0
+                    line-height: 24px
+
+                p.description
+                    margin: 0px auto 24px
+                    line-height: 24px
+                    color: $colorTextGray
+        
+        .inspiration-how-to
+            width: 560px
+            margin: 0 auto
+
+            p
+                margin: 32px 0
+
+            .youtube-card
+                width: 560px
+                margin-bottom: 64px
+
+                h3 
+                    margin: 24px 0
+                    text-align: center
+                    color: $colorTextBlack
+
+        .img-section
+            display: block
+            width: 480px
+            margin: 0 auto
+
+        .img-container
+            position: relative
+            cursor: pointer
+
+            img
+                width: 100%
+
+            &:hover
+                .overlay
+                    display: block
+
+            .overlay
+                display: none
+                position: absolute
+                top: 0
+                left: 0
+                width: 100%
+                height: 100%
+                background: rgba(0, 0, 0, 0.3)
+
+                h5
+                    position: absolute
+                    top: 50%
+                    left: 50%
+                    transform: translate(-50%, -50%)
+                    color: $colorWhite
+                    text-align: center
