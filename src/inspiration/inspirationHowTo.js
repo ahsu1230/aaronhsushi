@@ -42,8 +42,6 @@ function YoutubeCard(props) {
       <h3>{title}</h3>
       {description && <p>{description}</p>}
       <iframe
-        width="560"
-        height="315"
         src={url}
         title="YouTube video player"
         frameborder="0"

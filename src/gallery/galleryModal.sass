@@ -55,13 +55,20 @@
         top: 50%
         left: 16px
         transform: translate(0, -50%)
+        @media screen and (max-width: $screenWidthSmall)
+            z-index: 100
+        
         img
             width: 16px
+
     button.right
         position: fixed
         top: 50%
         right: 16px
         transform: translate(0, -50%)
+        @media screen and (max-width: $screenWidthSmall)
+            z-index: 100
+
         img
             width: 16px
 
