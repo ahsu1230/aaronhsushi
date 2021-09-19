@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="216px" height="216px" viewBox="0 0 216 216" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon1_colorsinverted</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="200" height="200" rx="16"></rect>
+    </defs>
+    <g id="Logos" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard-2" transform="translate(-573.000000, -466.000000)">
+            <g id="Icon1_colorsinverted" transform="translate(581.000000, 474.000000)">
+                <g id="Rectangle">
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    <rect stroke="#444444" stroke-width="8" x="-4" y="-4" width="208" height="208" rx="16"></rect>
+                </g>
+                <path d="M171,182 L48.2885369,182 L48.2885369,182 C44.9748284,182 42.2885369,179.313708 42.2885369,176 C42.2885369,174.402943 42.9252479,172.871786 44.0576604,171.745628 L170.769123,45.7339594 L170.769123,45.7339594 C173.118748,43.3973109 176.917724,43.4078303 179.254372,45.7574553 C180.372411,46.8817033 181,48.4027892 181,49.9883318 L181,172 L181,172 C181,177.522847 176.522847,182 171,182 Z" id="Triangle" fill="#F77E25"></path>
+                <path d="M148,157 L25.2885369,157 L25.2885369,157 C21.9748284,157 19.2885369,154.313708 19.2885369,151 C19.2885369,149.402943 19.9252479,147.871786 21.0576604,146.745628 L147.769123,20.7339594 L147.769123,20.7339594 C150.118748,18.3973109 153.917724,18.4078303 156.254372,20.7574553 C157.372411,21.8817033 158,23.4027892 158,24.9883318 L158,147 L158,147 C158,152.522847 153.522847,157 148,157 Z" id="Triangle" fill="#7B060F" transform="translate(89.000000, 88.000000) rotate(180.000000) translate(-89.000000, -88.000000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

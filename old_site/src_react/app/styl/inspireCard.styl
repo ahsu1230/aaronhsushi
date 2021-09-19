@@ -1,0 +1,131 @@
+@import "constants"
+
+cardWidth = 80%
+cardMaxWidth = innerMaxWidthPx2
+
+spacing1x = padding3x
+spacing2x = padding6x
+spacing4x = padding12x
+
+cardImgWidth = 240px
+cardImgMargin = spacing2x
+
+mediaWidth1 = innerWidth8x
+mediaWidth2 = innerWidth4x
+
+#view-inspire
+  .card-container
+    position: relative
+    width: cardWidth
+    max-width: cardMaxWidth
+    margin: spacing2x auto
+    padding: spacing1x spacing2x spacing2x
+    box-sizing: border-box
+    border-radius: 6px
+    border: 1px solid colorGrayLighter
+    box-shadow: colorGrayLight 0px 2px 4px 0px
+    background-color: colorWhite
+    font-family: fontFamilyCormorant
+    color: colorBlackDark
+    text-align: left
+
+    @media screen and (max-width: mediaWidth1)
+      text-align: center
+
+    @media screen and (max-width: mediaWidth2)
+      width: 100%
+      border-radius: 0
+
+    & .card-header
+      line-height: spacing2x
+      margin-bottom: spacing1x
+
+      @media screen and (max-width: mediaWidth1)
+        margin-bottom: 0
+
+      & .card-header-icon
+        display: inline-block
+        margin-right: padding2x
+        vertical-align: middle
+
+        @media screen and (max-width: mediaWidth1)
+          display: none
+
+      &.favorite .card-header-icon
+        position: relative
+        top: 1px
+        width: 24px
+        height: 24px
+        background: url('./assets/heart_red.svg')
+        background-size: cover
+
+      &.source .card-header-icon
+        width: 20px
+        height: 20px
+        background: url('./assets/star_red.svg')
+        background-size: cover
+
+      & .card-header-text
+        display: inline-block
+        vertical-align: middle
+        font-size: fontSizeNormal
+        font-weight: bold
+        letter-spacing: 1px
+
+    & .card-col1
+      display: inline-block
+      width: cardImgWidth
+      margin-right: cardImgMargin
+      vertical-align: top
+      font-size: fontSizeNormal
+
+      @media screen and (max-width: mediaWidth1)
+        display: block
+        margin: 0 auto
+        padding: spacing1x 0
+        width: 100%
+        max-width: 240px
+        font-size: fontSizeSmall
+
+    & .card-col2
+      display: inline-block
+      width: 'calc(100% - %s - %s)' % (cardImgWidth cardImgMargin)
+      font-size: fontSizeNormal
+
+      @media screen and (max-width: mediaWidth1)
+        display: block
+        width: 100%
+        font-size: fontSizeSmall
+
+    & img
+      width: 100%
+      border-radius: 4px
+
+    & .card-title
+      margin-top: spacing1x
+      line-height: 28px
+      font-weight: bold
+      letter-spacing: 1px
+
+    & .card-subtitle
+      line-height: 28px
+      font-weight: bold
+      letter-spacing: 1px
+
+    & .card-url
+      line-height: 28px
+      font-size: fontSizeSmall
+      letter-spacing: 1px
+      color: colorAccent
+      text-decoration: none
+
+    & .card-description
+      line-height: 28px
+      letter-spacing: 1px
+
+    & .card-counter
+      position: absolute
+      top: 36px
+      right: spacing2x
+      color: colorAccent
+      font-size: fontSizeSmall

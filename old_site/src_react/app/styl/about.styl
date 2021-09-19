@@ -1,0 +1,64 @@
+@import "constants"
+
+bannerHeightPx = 400px
+bannerHeightMiniPx = 320px
+
+spacingPx1 = 20px
+spacingPx2 = 40px
+spacingPx4 = 80px
+
+#view-about
+  margin-top: 0
+
+.about-banner-container
+  position: relative
+  width: 100%
+  height: bannerHeightPx
+  background-color: colorBlackDark
+
+  @media screen and (max-width: mediaScreenMaxWidth1)
+    height: bannerHeightMiniPx
+
+  & .about-banner-img
+    width: 100%
+    height: 100%
+
+.about-text-container
+  width: innerMaxWidthPct
+  max-width: innerMaxWidthPx1
+  margin: spacingPx4 auto
+
+  @media screen and (max-width: mediaScreenMaxWidth1)
+    margin: spacingPx2 auto
+
+  & .about-header-container
+    height: spacingPx4
+    border-top: 2px solid colorPrimary
+    box-sizing: border-box
+
+  & .about-header
+    position: relative
+    top: 50%
+    transform: translateY(-50%)
+    line-height: spacingPx4
+    color: colorPrimary
+    font-family: fontFamilyCormorant
+    font-size: fontSizeLarge
+    letter-spacing: 1px
+
+    @media screen and (max-width: mediaScreenMaxWidth1)
+      line-height: 28px
+      font-size: fontSizeNormal
+
+  & p
+    margin: 0 0 spacingPx2
+    line-height: 32px
+    font-family: fontFamilyCormorant
+    font-size: fontSizeNormal
+    letter-spacing: 1px
+    color: colorBlackDark
+
+    @media screen and (max-width: mediaScreenMaxWidth1)
+      margin-bottom: spacingPx1
+      line-height: 28px
+      font-size: fontSizeSmall
