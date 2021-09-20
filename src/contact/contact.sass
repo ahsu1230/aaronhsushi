@@ -47,6 +47,9 @@
     .fill-form
         padding-bottom: 16px
 
+        section
+            margin-bottom: 32px
+
         .buttons
             display: flex
             flex-direction: row
@@ -80,14 +83,15 @@
             font-size: $fontSizeM
         
         &.checkbox
-            margin-bottom: 8px
+            margin: 8px 0
             h4
                 display: inline-block
-                margin: 8px 0
+                font-weight: 400
 
             input
                 display: inline-block
                 margin-right: 8px
+                vertical-align: middle
 
         &.name input
             width: 360px
@@ -103,3 +107,14 @@
     .select-date-time
         h4
             margin-bottom: 8px
+
+    .estimates
+        margin: 24px 0
+        color: $colorTextGray
+
+        h4
+            margin: 0
+        p
+            margin: 8px 0
+        strong
+            color: $colorLightPurple

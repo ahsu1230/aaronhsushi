@@ -19,6 +19,7 @@ export const generateEmailMessage = (data) => {
         "<br/>",
         "<p>Dietary Restrictions: " + data.dietRestrictions + "</p>",
         "<p>Additional Accommodation: " + data.additionalRequests + "</p>",
+        "<p>Estimated Cost Per Guest: $" + data.estimatePerGuest + "</p>",
         "</body>",
         "</html>",
     ].join("\n");

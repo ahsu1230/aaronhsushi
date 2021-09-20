@@ -3,6 +3,12 @@ import React from "react";
 import SampleMenu from "./sampleMenu.js";
 import { generateEmailMessage, sendEmail } from "./email.js";
 
+const COST_UNI_US = 65;
+const COST_UNI_JP = 140;
+const COST_SALMON = 40;
+const COST_SEASONAL = 50;
+const COST_TUNA = 80; // cost for maguro, chutoro, otoro (~2 saku)
+
 class ContactForm extends React.Component {
     state = {
         omakaseType: "",
@@ -21,7 +27,14 @@ class ContactForm extends React.Component {
     };
 
     getAllData = () => {
-        return this.state || {};
+        let data = this.state || {};
+        data.estimatePerGuest = calculateEstimate(
+            this.state.numGuests,
+            this.state.wantsUniUS,
+            this.state.wantsUniJP,
+            this.state.wantsToro
+        );
+        return data;
     };
 
     onChangeField = (propName, newValue) => {
@@ -103,81 +116,101 @@ class FormInformation extends React.Component {
             onChange(fieldName, parseInt(num, 10) || 0);
         const onChangeBool = (fieldName, val) =>
             onChange(fieldName, val || false);
-        const estimateTotal = calculateTotalEstimate();
-        const estimateGuest = estimateTotal / this.props.numGuests;
         return (
-            <section className="fill-form">
-                <FormInput
-                    title={"Full Name"}
-                    classLabel={"name"}
-                    value={this.props.fullName}
-                    placeholder={"Enter your full name"}
-                    fieldName={"fullName"}
-                    onChange={onChange}
-                />
-                <FormInput
-                    title={"Email"}
-                    classLabel={"email"}
-                    value={this.props.email}
-                    placeholder={"email@address.com"}
-                    fieldName={"email"}
-                    onChange={onChange}
-                />
-                <FormInput
-                    title={"Phone Number"}
-                    classLabel={"phone"}
-                    value={this.props.phone}
-                    placeholder={"(___)-___-____"}
-                    fieldName={"phone"}
-                    onChange={onChange}
-                />
-                <FormInput
-                    title={"No. Guests"}
-                    classLabel={"num-guests"}
-                    value={this.props.numGuests}
-                    placeholder={2}
-                    fieldName={"numGuests"}
-                    onChange={onChangeNum}
-                />
-                <FormDateTime
-                    valueDate={"asdf"}
-                    valueTime={"qwer"}
-                    onChange={this.onChangeDateTime}
-                />
-                <FormCheckbox
-                    title={"Add Santa Barbara Uni?"}
-                    value={this.props.wantsUniUS}
-                    fieldName={"wantsUniUS"}
-                    onChange={onChangeBool}
-                />
-                <FormCheckbox
-                    title={"Add Hokkaido Uni?"}
-                    value={this.props.wantsUniJP}
-                    fieldName={"wantsUniJP"}
-                    onChange={onChangeBool}
-                />
-                <FormCheckbox
-                    title={"Add Bluefin Tuna?"}
-                    value={this.props.wantsToro}
-                    fieldName={"wantsToro"}
-                    onChange={onChangeBool}
-                />
-                <FormInput
-                    title={"Any Dietary Restrictions?"}
-                    classLabel={"diet"}
-                    placeholder={"e.g. allergic to shellfish"}
-                    value={this.props.dietRestrictions}
-                    fieldName={"dietRestrictions"}
-                    onChange={onChange}
-                />
-                <FormInput
-                    title={"Additional Accomodation Requests"}
-                    placeholder={"(Optional)"}
-                    value={this.props.additionalRequests}
-                    fieldName={"additionalRequests"}
-                    onChange={onChange}
-                    isTextArea={true}
-                />
+            <div className="fill-form">
+                <section>
+                    <FormInput
+                        title={"Full Name"}
+                        classLabel={"name"}
+                        value={this.props.fullName}
+                        placeholder={"Enter your full name"}
+                        fieldName={"fullName"}
+                        onChange={onChange}
+                    />
+                    <FormInput
+                        title={"Email"}
+                        classLabel={"email"}
+                        value={this.props.email}
+                        placeholder={"email@address.com"}
+                        fieldName={"email"}
+                        onChange={onChange}
+                    />
+                    <FormInput
+                        title={"Phone Number"}
+                        classLabel={"phone"}
+                        value={this.props.phone}
+                        placeholder={"(___)-___-____"}
+                        fieldName={"phone"}
+                        onChange={onChange}
+                    />
+                    <FormInput
+                        title={"No. Guests"}
+                        classLabel={"num-guests"}
+                        value={this.props.numGuests}
+                        placeholder={2}
+                        fieldName={"numGuests"}
+                        onChange={onChangeNum}
+                    />
+                </section>
+
+                <section>
+                    <FormDateTime
+                        valueDate={"asdf"}
+                        valueTime={"qwer"}
+                        onChange={this.onChangeDateTime}
+                    />
+                </section>
+
+                <section>
+                    <h4>Omakase Additions</h4>
+                    <FormCheckbox
+                        title={"Add Santa Barbara Uni?"}
+                        value={this.props.wantsUniUS}
+                        fieldName={"wantsUniUS"}
+                        onChange={onChangeBool}
+                    />
+                    <FormCheckbox
+                        title={"Add Hokkaido Uni?"}
+                        value={this.props.wantsUniJP}
+                        fieldName={"wantsUniJP"}
+                        onChange={onChangeBool}
+                    />
+                    <FormCheckbox
+                        title={"Add Bluefin Tuna?"}
+                        value={this.props.wantsToro}
+                        fieldName={"wantsToro"}
+                        onChange={onChangeBool}
+                    />
+                </section>
+
+                <section>
+                    <FormInput
+                        title={"Any Dietary Restrictions?"}
+                        classLabel={"diet"}
+                        placeholder={"e.g. allergic to shellfish"}
+                        value={this.props.dietRestrictions}
+                        fieldName={"dietRestrictions"}
+                        onChange={onChange}
+                    />
+                    <FormInput
+                        title={"Additional Accomodation Requests"}
+                        placeholder={"(Optional)"}
+                        value={this.props.additionalRequests}
+                        fieldName={"additionalRequests"}
+                        onChange={onChange}
+                        isTextArea={true}
+                    />
+                </section>
+
+                <section>
+                    <EstimatedCosts
+                        numGuests={this.props.numGuests}
+                        wantsUniUS={this.props.wantsUniUS}
+                        wantsUniJP={this.props.wantsUniJP}
+                        wantsToro={this.props.wantsToro}
+                    />
+                </section>
+
                 <div className="buttons">
                     <button className="clear" onClick={this.onClearForm}>
                         Clear Form
@@ -186,11 +219,7 @@ class FormInformation extends React.Component {
                         Submit
                     </button>
                 </div>
-                {/* <div>
-                  <h5>Estimated total: {estimateTotal}</h5>
-                  <h5>Estimated subtotal per guest: {estimateGuest}</h5>
-              </div> */}
-            </section>
+            </div>
         );
     }
 }
@@ -231,10 +260,10 @@ function FormCheckbox(props) {
         <div className={classNames}>
             <input
                 type="checkbox"
-                value={props.value || false}
+                value={Boolean(props.value) || false}
                 checked={Boolean(props.value) || false}
                 onChange={(e) =>
-                    props.onChange(props.fieldName, Boolean(e.target.value))
+                    props.onChange(props.fieldName, e.target.checked)
                 }
             />
             <h4>{props.title}</h4>
@@ -245,18 +274,62 @@ function FormCheckbox(props) {
 function FormDateTime(props) {
     return (
         <div className="select-date-time">
-            <h4>Date Time (Evenings-only)</h4>
+            <h4>Select a date and time (weekends, evenings-only)</h4>
+            <p>
+                Date: <br />
+                Time: <br />
+            </p>
         </div>
     );
 }
 
-function calculateTotalEstimate(
-    omakaseType,
-    numGuests,
-    wantsUniUSA,
-    wantsUniJapan,
-    wantsToro,
-    wantsTakeHome
-) {
-    return 100;
+function EstimatedCosts(props) {
+    const estimate = calculateEstimate(
+        props.numGuests,
+        props.wantsUniUS,
+        props.wantsUniJP,
+        props.wantsToro
+    );
+    return (
+        <div className="estimates">
+            <h4>
+                Estimated cost per guest: <strong>${estimate}</strong>
+            </h4>
+            <p>
+                These are rough estimates as fresh fish and seafood may differ
+                based on market value.
+            </p>
+        </div>
+    );
+}
+
+function calculateEstimate(numGuests, wantsUniUS, wantsUniJP, wantsToro) {
+    // Omakase per person usually includes:
+    // 1 edomame + amuse / unagi ($12 total)
+    // 1 sashimi plate (1 salmon + 2 seasonal OR 2 tuna + 1 seasonal)
+    // 4 nigiri (2 salmon + 2 seasonal OR 3 tuna + 1 seasonal)
+    // 1 ikura ($5pp), 1 botan-ebi ($3pp), 1 scallop ($2pp) = total $10
+    // 1 miso soup
+
+    // These are costs per person
+    const costAmuse = 5;
+    const costFrozen = 10;
+    const costMiso = 5;
+    const presplitDivisor = numGuests <= 2 ? 2 : 1.5;
+
+    let subtotal = costAmuse + costFrozen + costMiso;
+    subtotal += wantsUniUS
+        ? COST_UNI_US / presplitDivisor / (numGuests + 1)
+        : 0;
+    subtotal += wantsUniJP
+        ? COST_UNI_JP / presplitDivisor / (numGuests + 1)
+        : 0;
+    if (wantsToro) {
+        subtotal += COST_TUNA / (numGuests + 1);
+        subtotal += (COST_SEASONAL * 1) / presplitDivisor / (numGuests + 1);
+    } else {
+        subtotal += COST_SALMON / 2 / (numGuests + 1);
+        subtotal += (COST_SEASONAL * 2) / presplitDivisor / (numGuests + 1);
+    }
+    return Math.round(subtotal * 100) / 100;
 }
