@@ -41,11 +41,9 @@ class ContactForm extends React.Component {
         this.setState({
             [propName]: newValue,
         });
-        console.log(propName + "-> " + newValue);
     };
 
     onClearForm = () => {
-        debugger;
         this.setState({
             fullName: "",
             email: "",

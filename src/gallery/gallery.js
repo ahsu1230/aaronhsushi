@@ -70,10 +70,10 @@ class GalleryPage extends React.Component {
                 </div>
 
                 <Banner
-                    height={"360px"}
+                    height={"400px"}
                     title={"Passion, Technique and Connection"}
                     bannerImgSrc={
-                        "https://aaronhsushi.b-cdn.net/banner_hotate_nigiri.jpeg"
+                        "https://aaronhsushi.b-cdn.net/banner_table_setup1.jpg"
                     }
                     buttonText={"Make a reservation"}
                     buttonOnClick={this.goToContactPage}
@@ -138,8 +138,8 @@ const HomeBanner = (props) => {
     return (
         <div id="home-banner">
             <Banner
-                height={height - 220 + "px"}
-                bannerImgSrc={"/samples/chef_grinding_crop.jpg"}
+                height={height + "px"}
+                bannerImgSrc={"https://aaronhsushi.b-cdn.net/home_me1.jpeg"}
                 overlayAlpha={0.4}
             />
             <button
