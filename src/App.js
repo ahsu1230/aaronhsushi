@@ -6,11 +6,13 @@ import StoryPage from "./story/story.js";
 import InspirationPage from "./inspiration/inspiration.js";
 import ContactPage from "./contact/contact.js";
 import FooterComponent from "./footer/footer.js";
+import ScrollToTop from "./common/scrollToTop.js";
 
 function App() {
     return (
         <Router>
             <div>
+                <ScrollToTop />
                 <Header />
                 <Switch>
                     <Route exact path="/">
