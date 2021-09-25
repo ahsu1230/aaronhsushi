@@ -2,6 +2,7 @@ import "./contact.sass";
 import React from "react";
 import SampleMenu from "./sampleMenu.js";
 import { generateEmailMessage, sendEmail } from "./email.js";
+import { InvalidMessages, Validators } from "./validation.js";
 
 class ContactForm extends React.Component {
     onClear = () => {
@@ -163,6 +164,14 @@ export default ContactForm;
 
 function FormInput(props) {
     const isTextArea = props.isTextArea || false;
+    const validator = Validators[props.fieldName];
+    const isEmpty =
+        props.fieldName == "numGuests" ? false : !Boolean(props.value);
+    const isValid = validator ? validator(props.value) : true;
+    const invalidMessage = validator
+        ? InvalidMessages[props.fieldName]
+        : undefined;
+
     const classNames = ["form-input", props.classLabel].join(" ");
     return (
         <div className={classNames}>
@@ -187,6 +196,7 @@ function FormInput(props) {
                     }
                 />
             )}
+            {!isValid && !isEmpty && <p className="error">{invalidMessage}</p>}
         </div>
     );
 }
