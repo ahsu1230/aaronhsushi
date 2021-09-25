@@ -38,5 +38,5 @@ const Header = HeaderComponent;
 const Gallery = GalleryPage;
 const Story = StoryPage;
 const Inspiration = () => InspirationPage();
-const Contact = () => ContactPage();
+const Contact = ContactPage;
 const Footer = () => FooterComponent();

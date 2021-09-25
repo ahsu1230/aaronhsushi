@@ -6,7 +6,11 @@ export default function Footer() {
     return (
         <div id="footer">
             <img className="logo" src={logo} />
-            <p>Design, Development and Photography<br/>by Aaron Hsu</p>
+            <p>
+                Design, Development and Photography
+                <br />
+                by Aaron Hsu
+            </p>
 
             <h4>Contact</h4>
             <p>aaronhsushi2020@gmail.com</p>
