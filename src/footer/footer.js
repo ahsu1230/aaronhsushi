@@ -1,4 +1,9 @@
 import "./footer.sass";
+import {
+    MyEmail,
+    MyInstagramLink,
+    MyLinkedInLink,
+} from "../common/constants.js";
 import logo from "./../assets/logo_white1.png";
 import iconIG from "./../assets/instagram_white.svg";
 import iconLI from "./../assets/linkedin_white.svg";
@@ -13,12 +18,12 @@ export default function Footer() {
             </p>
 
             <h4>Contact</h4>
-            <p>aaronhsushi2020@gmail.com</p>
+            <p>{MyEmail}</p>
             <div className="icons">
-                <a href="https://www.instagram.com/mooseyhsushi/">
+                <a href={MyInstagramLink}>
                     <img className="ig" src={iconIG} />
                 </a>
-                <a href="https://www.linkedin.com/in/aaron-hsu-sushi/">
+                <a href={MyLinkedInLink}>
                     <img className="li" src={iconLI} />
                 </a>
             </div>

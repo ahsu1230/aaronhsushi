@@ -3,6 +3,13 @@ import "./contact.sass";
 import React from "react";
 import { withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
+import {
+    MyEmail,
+    MyInstagram,
+    MyInstagramLink,
+    MyLinkedIn,
+    MyLinkedInLink,
+} from "../common/constants.js";
 import Banner from "../common/banner.js";
 import ContactForm from "./contactForm.js";
 import ContactSuccess from "./contactSuccess.js";
@@ -114,18 +121,18 @@ function ContactMe() {
             <h3>Or contact me:</h3>
             <div className="contact-line email">
                 <img src={iconEmail} />
-                <span>aaronhsushi@gmail.com</span>
+                <span>{MyEmail}</span>
             </div>
             <div className="contact-line ig">
-                <a href="https://www.instagram.com/mooseyhsushi">
+                <a href={MyInstagramLink}>
                     <img src={iconIG} />
-                    <span>@mooseyhsushi</span>
+                    <span>{MyInstagram}</span>
                 </a>
             </div>
             <div className="contact-line li">
-                <a href="https://www.linkedin.com/aaron-hsu-sushi">
+                <a href={MyLinkedInLink}>
                     <img src={iconLI} />
-                    <span>www.linkedin.com/aaron-hsu-sushi</span>
+                    <span>{MyLinkedIn}</span>
                 </a>
             </div>
         </section>
