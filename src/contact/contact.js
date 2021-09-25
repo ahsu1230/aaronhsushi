@@ -27,7 +27,12 @@ class ContactPage extends React.Component {
         wantsUniJP: false,
         wantsToro: false,
         wantsTakeHome: false,
-        expectedCostGuest: 0,
+        estimatedCostPerGuest: calculateEstimatePerGuest(
+            1,
+            false,
+            false,
+            false
+        ),
     };
 
     static propTypes = {
@@ -50,7 +55,7 @@ class ContactPage extends React.Component {
                 this.state.wantsToro
             );
             this.setState({
-                expectedCostGuest: estimate,
+                estimatedCostPerGuest: estimate,
             });
         }
     }

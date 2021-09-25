@@ -52,7 +52,7 @@ class ContactForm extends React.Component {
         } else {
             console.log("Validate failed!");
             window.alert(
-                "Please fill out all fields correctly before submitting."
+                "Please correctly fill out all fields before submitting."
             );
         }
     };
@@ -164,7 +164,7 @@ class ContactForm extends React.Component {
 
                     <section>
                         <EstimatedCosts
-                            estimate={this.props.data.expectedCostGuest}
+                            estimate={this.props.data.estimatedCostPerGuest}
                         />
                     </section>
 

@@ -19,7 +19,7 @@ export const validateEmail = (email) => {
 
 export const validatePhone = (phone) => {
     // return regexPhone.test(phone);
-    return !!phone && phone.match(/\d/g).length === 10; // ez. Just looks for 10 digits.
+    return !!phone && (phone.match(/\d/g) || "").length === 10; // ez. Just looks for 10 digits.
 };
 
 export const validateNumGuests = (num) => {
