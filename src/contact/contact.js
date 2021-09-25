@@ -6,6 +6,7 @@ import PropTypes from "prop-types";
 import Banner from "../common/banner.js";
 import ContactForm from "./contactForm.js";
 import ContactSuccess from "./contactSuccess.js";
+import { getMinDateTime } from "./datetime.js";
 import { calculateEstimatePerGuest } from "./estimate.js";
 
 import iconEmail from "./../assets/email_black.svg";
@@ -19,8 +20,7 @@ class ContactPage extends React.Component {
         email: "",
         phone: "",
         numGuests: 1,
-        date: "",
-        time: "",
+        datetime: getMinDateTime(), // must always be a 'moment' object
         dietRestrictions: "",
         additionalRequests: "",
         wantsUniUS: false,

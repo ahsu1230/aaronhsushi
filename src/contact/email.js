@@ -8,8 +8,9 @@ export const generateEmailMessage = (data) => {
         "<h2>Full Name: " + data.fullName + "</h2>",
         "<h2>Email: " + data.email + "</h2>",
         "<h2>Phone Number: " + data.phone + "</h2>",
-        "<h2>Date: " + data.date + "</h2>",
-        "<h2>Time: " + data.time + "</h2>",
+        "<h2>DateTime: " +
+            data.datetime.format("dddd, MMM Do YYYY, h:mm a") +
+            "</h2>",
         "<h2>Number of Guests: " + data.numGuests + "</h2>",
         "<br/>",
         "<br/>",

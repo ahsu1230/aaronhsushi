@@ -1,6 +1,12 @@
 import "./contact.sass";
 import React from "react";
+import moment from "moment";
+import "react-dates/initialize";
+import "react-dates/lib/css/_datepicker.css";
+import { SingleDatePicker } from "react-dates";
+import Select from "react-select";
 import SampleMenu from "./sampleMenu.js";
+import { getMinDateTime, TimeOptions } from "./datetime.js";
 import { generateEmailMessage, sendEmail } from "./email.js";
 import { InvalidMessages, Validators } from "./validation.js";
 
@@ -11,8 +17,7 @@ class ContactForm extends React.Component {
             email: "",
             phone: "",
             numGuests: 1,
-            date: "",
-            time: "",
+            datetime: getMinDateTime(),
             dietRestrictions: "",
             additionalRequests: "",
             wantsUniUS: false,
@@ -22,14 +27,34 @@ class ContactForm extends React.Component {
         });
     };
 
+    validateAll = () => {
+        return (
+            Validators["fullName"](this.props.data.fullName) &&
+            Validators["email"](this.props.data.email) &&
+            Validators["phone"](this.props.data.phone) &&
+            Validators["numGuests"](this.props.data.numGuests)
+        );
+    };
+
     onSubmit = () => {
         console.log("Submit form!");
-        const data = this.props.data;
-        const message = generateEmailMessage(data);
-        console.log(message);
-        sendEmail(message);
-        console.log("Email sent!");
-        this.props.onSubmitSuccess();
+
+        console.log("Validating...");
+        const validate = this.validateAll();
+        if (validate) {
+            console.log("Validate success!");
+            const data = this.props.data;
+            const message = generateEmailMessage(data);
+            console.log(message);
+            sendEmail(message);
+            console.log("Email sent!");
+            this.props.onSubmitSuccess();
+        } else {
+            console.log("Validate failed!");
+            window.alert(
+                "Please fill out all fields correctly before submitting."
+            );
+        }
     };
 
     onChangeField = (propName, propValue) => {
@@ -43,8 +68,6 @@ class ContactForm extends React.Component {
     onChangeBool = (fieldName, val) => {
         this.props.onChangeField(fieldName, val || false);
     };
-
-    onChangeDateTime = () => {};
 
     render() {
         return (
@@ -93,9 +116,8 @@ class ContactForm extends React.Component {
 
                     <section>
                         <FormDateTime
-                            valueDate={"asdf"}
-                            valueTime={"qwer"}
-                            onChange={this.onChangeDateTime}
+                            datetime={this.props.data.datetime}
+                            onChange={this.onChangeField}
                         />
                     </section>
 
@@ -218,16 +240,80 @@ function FormCheckbox(props) {
     );
 }
 
-function FormDateTime(props) {
-    return (
-        <div className="select-date-time">
-            <h4>Select a date and time (weekends, evenings-only)</h4>
-            <p>
-                Date: <br />
-                Time: <br />
-            </p>
-        </div>
-    );
+class FormDateTime extends React.Component {
+    state = {
+        focused: false,
+    };
+
+    onDateChange = (date) => {
+        let newDateTime = moment(this.props.datetime);
+        newDateTime.year(date.year());
+        newDateTime.month(date.month());
+        newDateTime.date(date.date());
+        this.props.onChange("datetime", newDateTime);
+    };
+
+    onTimeChange = (time) => {
+        let newDateTime = moment(this.props.datetime);
+        newDateTime.hour(time.value);
+        this.props.onChange("datetime", newDateTime);
+    };
+
+    isDayBlocked = (date) => {
+        // Day is blocked if not Saturday or Sunday
+        return date.day() != 6 && date.day() != 0;
+    };
+
+    isOutsideDateRange = (date) => {
+        // Day must be at or after minimum date
+        let minDate = getMinDateTime();
+        minDate.hour(0);
+        minDate.minute(0);
+        return date.isBefore(minDate);
+    };
+
+    isDayHighlighted = (date) => {
+        // Highlight weekend days
+        return date.day() == 6 || date.day() == 0;
+    };
+
+    render() {
+        return (
+            <div className="select-date-time">
+                <h4>Select a date and time (weekends, evenings-only)</h4>
+                <div className="date-picker">
+                    <SingleDatePicker
+                        date={this.props.datetime}
+                        onDateChange={this.onDateChange}
+                        focused={this.state.focused}
+                        onFocusChange={({ focused }) =>
+                            this.setState({ focused })
+                        }
+                        showDefaultInputIcon
+                        isDayBlocked={this.isDayBlocked}
+                        isOutsideRange={this.isOutsideDateRange}
+                        isDayHighlighted={this.isDayHighlighted}
+                        id="date-picker"
+                    />
+                </div>
+                <div className="time-picker">
+                    <Select
+                        defaultValue={TimeOptions[0]}
+                        options={TimeOptions}
+                        onChange={this.onTimeChange}
+                    />
+                </div>
+                <p>
+                    Selected date and time:{" "}
+                    <b>
+                        {this.props.datetime.format(
+                            "dddd, MMM Do YYYY, h:mm a"
+                        )}
+                    </b>
+                </p>
+            </div>
+        );
+    }
 }
 
 function EstimatedCosts(props) {

@@ -26,10 +26,6 @@ export const validateNumGuests = (num) => {
     return num > 0 && num <= 4;
 };
 
-export const validateDate = (date) => {};
-
-export const validateTime = (time) => {};
-
 export const Validators = {
     fullName: validateName,
     email: validateEmail,

@@ -43,11 +43,13 @@ export default function ContactSuccessPage() {
                         For drivers, there are many one-way streets and
                         congested traffic here, so please do plan ahead!
                     </p>
-                    <div className="address">
-                        <div>Highland Park Apartments</div>
-                        <div>1400 Irving St NW</div>
-                        <div>Washington, D.C. 20010</div>
-                    </div>
+                    <p className="address">
+                        Highland Park Apartments
+                        <br />
+                        1400 Irving St NW
+                        <br />
+                        Washington, D.C. 20010
+                    </p>
                     <h4>
                         When you arrive, give me a call at{" "}
                         <strong>240-938-0850</strong> and I will come get you!
