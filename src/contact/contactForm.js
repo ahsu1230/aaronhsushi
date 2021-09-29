@@ -281,6 +281,12 @@ class FormDateTime extends React.Component {
         return (
             <div className="select-date-time">
                 <h4>Select a date and time (weekends, evenings-only)</h4>
+                <p>
+                    The fish and seafood I order are sourced from Japan, so they
+                    can take more than a week to process and be delivered to the
+                    U.S. In addition, I only host guests on weekend evenings, so
+                    please select an evening around two weekends from today.
+                </p>
                 <div className="date-picker">
                     <SingleDatePicker
                         date={this.props.datetime}

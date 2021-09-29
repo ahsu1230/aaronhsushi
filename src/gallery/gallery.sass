@@ -7,7 +7,8 @@
         margin: 72px 0
 
         &.text
-            width: 480px
+            width: 100%
+            max-width: 480px
             margin-left: auto
             margin-right: auto
             text-align: center
@@ -18,6 +19,12 @@
         
     #home-banner
         position: relative
+
+        .banner .banner-img
+            background-position: center center
+
+            @media screen and (max-width: $screenWidthMedium)
+                background-position: 70% center
 
         .caret
             position: absolute
@@ -33,3 +40,6 @@
 
             img
                 width: 64px
+
+                @media screen and (max-width: $screenWidthMedium)
+                    width: 48px

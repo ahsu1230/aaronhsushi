@@ -9,16 +9,13 @@
         text-decoration: underline
         cursor: pointer
 
-    .modal
-        border: 1px solid red
-
     .overlay
         position: fixed
         top: 0
         left: 0
         width: 100%
         height: 100%
-        background: rgba(33, 33, 33, 0.8)
+        background: rgba(33, 33, 33, 0.9)
         z-index: 10
     
     .modal-content
@@ -26,12 +23,17 @@
         top: 50%
         left: 50%
         transform: translate(-50%, -50%)
-        width: 560px
-        max-height: 75%
+        width: 100%
+        max-width: 560px
+        height: 75%
         padding-bottom: 64px
+        box-sizing: border-box
         overflow: auto
         background-color: $colorOffWhite
         z-index: 11
+
+        @media screen and (max-width: $screenWidthMedium)
+            height: 100%
 
         .btn-close
             position: absolute

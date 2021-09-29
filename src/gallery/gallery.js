@@ -134,11 +134,12 @@ const useWindowDimensions = () => {
 
 const HomeBanner = (props) => {
     const { height, width } = useWindowDimensions();
-
+    // 'height - 480px', 480 is approx the height of the banner
+    const bannerHeight = width <= 480 ? height - 480 : height;
     return (
         <div id="home-banner">
             <Banner
-                height={height + "px"}
+                height={bannerHeight + "px"}
                 bannerImgSrc={"https://aaronhsushi.b-cdn.net/home_me1.jpeg"}
                 overlayAlpha={0.4}
             />

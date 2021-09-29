@@ -26,9 +26,15 @@
             align-items: center
             height: 48px
 
+            @media screen and (max-width: $screenWidthMedium)
+                font-size: $fontSizeM
+
             img
                 margin-right: 24px
                 vertical-align: middle
+
+                @media screen and (max-width: $screenWidthMedium)
+                    margin-right: 12px
             
             a
                 color: $colorTextBlack
@@ -95,6 +101,9 @@
 
         &.name input
             width: 360px
+            @media screen and (max-width: $screenWidthMedium)
+                width: 240px
+
         &.email input
             width: 240px
         &.phone input

@@ -17,6 +17,9 @@
 
         &.active
             color: $colorGold
+
+        @media screen and (max-width: $screenWidthSmall)
+            margin: 0 8px
     
 #header .header-full
     position: static
@@ -26,6 +29,9 @@
 
     img.logo
         width: 80px
+
+        @media screen and (max-width: $screenWidthSmall)
+            width: 64px
     
     .links
         margin-top: 24px
@@ -46,6 +52,10 @@
     img.logo
         width: 64px
 
+        @media screen and (max-width: $screenWidthSmall)
+            width: 32px
+
     .links a
-        @media screen and (max-width: 640px)
-            margin: 0 12px
+        @media screen and (max-width: $screenWidthSmall)
+            margin: 0 8px
+            font-size: $fontSizeM
