@@ -15,13 +15,13 @@ export const GalleryImages = [
     {
         id: "square_gunkan_uni",
         imageSrc: "https://aaronhsushi.b-cdn.net/square_gunkan_uni.jpeg",
-        caption: "Kohada (Japanese Gizzard Shad) topped with grated ginger",
+        caption: "East coast Uni from Maine",
     },
     {
         id: "square_salmon_nigiri_seared_kosho",
         imageSrc:
             "https://aaronhsushi.b-cdn.net/square_salmon_nigiri_seared_kosho.jpeg",
-        caption: "Kohada (Japanese Gizzard Shad) topped with grated ginger",
+        caption: "Seared Salmon with yuzu-kosho",
     },
     {
         id: "square_shima_aji_plate",
@@ -38,12 +38,13 @@ export const GalleryImages = [
         id: "square_sawara_nigiri_smoked_head",
         imageSrc:
             "https://aaronhsushi.b-cdn.net/square_sawara_nigiri_smoked_head.jpeg",
-        caption: "Kobujime Madai (kelp-cured Red Seabream)",
+        caption:
+            "Cherry-smoked Sawara (Spanish Mackerel) with spicy grated daikon",
     },
     {
         id: "square_tuna_nigiri",
         imageSrc: "https://aaronhsushi.b-cdn.net/square_tuna_nigiri.jpeg",
-        caption: "Kobujime Madai (kelp-cured Red Seabream)",
+        caption: "Maguro Tuna",
     },
     {
         id: "square_moosey",
