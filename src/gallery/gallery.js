@@ -71,7 +71,7 @@ class GalleryPage extends React.Component {
 
                 <Banner
                     height={"400px"}
-                    title={"Passion, Technique and Connection"}
+                    title={"Passion, Technique, and Connection"}
                     bannerImgSrc={
                         "https://aaronhsushi.b-cdn.net/banner_table_setup.jpg"
                     }
@@ -134,8 +134,13 @@ const useWindowDimensions = () => {
 
 const HomeBanner = (props) => {
     const { height, width } = useWindowDimensions();
-    // 'height - 480px', 480 is approx the height of the banner
-    const bannerHeight = width <= 480 ? height - 480 : height;
+    let bannerHeight;
+    if (height > 640) {
+        // 'height - ???px', 480 is approx the height of the header
+        bannerHeight = width <= 480 ? height - 480 : height;
+    } else {
+        bannerHeight = height - 120;
+    }
     return (
         <div id="home-banner">
             <Banner
