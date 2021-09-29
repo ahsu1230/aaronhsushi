@@ -18,7 +18,7 @@ export default function InspirationPage() {
                 height={"320px"}
                 mainTitle={"Inspiration"}
                 bannerImgSrc={
-                    "https://aaronhsushi.b-cdn.net/banner_hotate_nigiri.jpeg"
+                    "https://aaronhsushi.b-cdn.net/banner_sashimi_medley.jpg"
                 }
             />
             <Selector />

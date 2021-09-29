@@ -91,7 +91,7 @@ class ContactPage extends React.Component {
                     height={"280px"}
                     mainTitle={"Book an Omakase Reservation"}
                     bannerImgSrc={
-                        "https://aaronhsushi.b-cdn.net/highlandpark_dc.jpg"
+                        "https://aaronhsushi.b-cdn.net/banner_highlandpark_dc.jpg"
                     }
                 />
                 {this.state.contactSuccess && (

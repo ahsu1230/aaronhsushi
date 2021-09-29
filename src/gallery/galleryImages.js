@@ -2,8 +2,25 @@ import { find, findIndex } from "lodash";
 
 export const GalleryImages = [
     {
-        id: "nigiri_kohada_ginger",
-        imageSrc: "https://aaronhsushi.b-cdn.net/nigiri_kohada_ginger.jpeg",
+        id: "square_sashimi_medley",
+        imageSrc: "https://aaronhsushi.b-cdn.net/square_sashimi_medley.jpeg",
+        caption:
+            "Sashimi Medley including Tuna, Salmon, Red Seabream and Spanish Mackerel",
+    },
+    {
+        id: "square_kohada_nigiri",
+        imageSrc: "https://aaronhsushi.b-cdn.net/square_kohada_nigiri.jpeg",
+        caption: "Kohada (Japanese Gizzard Shad) topped with grated ginger",
+    },
+    {
+        id: "square_gunkan_uni",
+        imageSrc: "https://aaronhsushi.b-cdn.net/square_gunkan_uni.jpeg",
+        caption: "Kohada (Japanese Gizzard Shad) topped with grated ginger",
+    },
+    {
+        id: "square_salmon_nigiri_seared_kosho",
+        imageSrc:
+            "https://aaronhsushi.b-cdn.net/square_salmon_nigiri_seared_kosho.jpeg",
         caption: "Kohada (Japanese Gizzard Shad) topped with grated ginger",
     },
     {
@@ -12,26 +29,27 @@ export const GalleryImages = [
         caption: "Shima-Aji (Trevally Jack) sashimi presentation plate",
     },
     {
-        id: "nigiri_sawara_smoked_head",
+        id: "square_madai_nigiri_pickup",
         imageSrc:
-            "https://aaronhsushi.b-cdn.net/nigiri_sawara_smoked_head.jpeg",
+            "https://aaronhsushi.b-cdn.net/square_madai_nigiri_pickup.jpeg",
+        caption: "Kobujime Madai (kelp-cured Red Seabream)",
+    },
+    {
+        id: "square_sawara_nigiri_smoked_head",
+        imageSrc:
+            "https://aaronhsushi.b-cdn.net/square_sawara_nigiri_smoked_head.jpeg",
+        caption: "Kobujime Madai (kelp-cured Red Seabream)",
+    },
+    {
+        id: "square_tuna_nigiri",
+        imageSrc: "https://aaronhsushi.b-cdn.net/square_tuna_nigiri.jpeg",
+        caption: "Kobujime Madai (kelp-cured Red Seabream)",
+    },
+    {
+        id: "square_moosey",
+        imageSrc: "https://aaronhsushi.b-cdn.net/square_moosey.jpeg",
         caption:
-            "Cherry-smoked Sawara (Spanish Mackerel) with grated daikon and scallions",
-    },
-    {
-        id: "sashimi_sawara_smoked",
-        imageSrc: "https://aaronhsushi.b-cdn.net/sashimi_sawara_smoked.jpeg",
-        caption: "Sashimi plate of assorted smoked Sawara (Spanish Mackerel)",
-    },
-    {
-        id: "nigiri_sawara_oroshi",
-        imageSrc: "https://aaronhsushi.b-cdn.net/nigiri_sawara_oroshi.jpeg",
-        caption: "Sawara (Spanish Mackerel) with grated daikon",
-    },
-    {
-        id: "moosey",
-        imageSrc: "https://aaronhsushi.b-cdn.net/moosey.jpeg",
-        caption: "Complementary after-dinner cuddle sessions available",
+            "Complementary after-dinner cuddle sessions with Moose available :)",
     },
 ];
 

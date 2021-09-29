@@ -73,7 +73,7 @@ class GalleryPage extends React.Component {
                     height={"400px"}
                     title={"Passion, Technique and Connection"}
                     bannerImgSrc={
-                        "https://aaronhsushi.b-cdn.net/banner_table_setup1.jpg"
+                        "https://aaronhsushi.b-cdn.net/banner_table_setup.jpg"
                     }
                     buttonText={"Make a reservation"}
                     buttonOnClick={this.goToContactPage}
@@ -87,7 +87,7 @@ class GalleryPage extends React.Component {
                 <Banner
                     height={"360px"}
                     bannerImgSrc={
-                        "https://aaronhsushi.b-cdn.net/banner_hotate_nigiri.jpeg"
+                        "https://aaronhsushi.b-cdn.net/banner_tuna_nigiri.jpg"
                     }
                     buttonText={"Make a reservation"}
                     buttonOnClick={this.goToContactPage}
@@ -140,7 +140,9 @@ const HomeBanner = (props) => {
         <div id="home-banner">
             <Banner
                 height={bannerHeight + "px"}
-                bannerImgSrc={"https://aaronhsushi.b-cdn.net/home_me1.jpeg"}
+                bannerImgSrc={
+                    "https://aaronhsushi.b-cdn.net/banner_home_me.jpeg"
+                }
                 overlayAlpha={0.4}
             />
             <button

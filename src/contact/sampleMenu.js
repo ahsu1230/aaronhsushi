@@ -39,10 +39,10 @@ function Popup(props) {
                     <img src={iconClose} />
                 </button>
                 <Banner
-                    height={"120px"}
+                    height={"180px"}
                     mainTitle={"Sample Tasting Menu"}
                     bannerImgSrc={
-                        "https://aaronhsushi.b-cdn.net/banner_hotate_nigiri.jpeg"
+                        "https://aaronhsushi.b-cdn.net/banner_salmon_nigiri_blue.jpg"
                     }
                 />
 
