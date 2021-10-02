@@ -50,11 +50,6 @@ export default function ContactSuccessPage() {
                         <br />
                         Washington, D.C. 20010
                     </p>
-                    <h4>
-                        When you arrive, give me a call at{" "}
-                        <strong>{MyPhone}</strong> and I will come get you! See
-                        you soon!
-                    </h4>
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3103.7989026234272!2d-77.03576654915767!3d38.928573652610766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7c820291dea95%3A0x4f487bf599521aad!2sHighland%20Park%20at%20Columbia%20Heights%20Metro!5e0!3m2!1sen!2sus!4v1632413050796!5m2!1sen!2sus"
                         width="100%"

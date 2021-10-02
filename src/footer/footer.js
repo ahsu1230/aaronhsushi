@@ -17,15 +17,17 @@ export default function Footer() {
                 by Aaron Hsu
             </p>
 
-            <h4>Contact</h4>
-            <p>{MyEmail}</p>
-            <div className="icons">
-                <a href={MyInstagramLink}>
-                    <img className="ig" src={iconIG} />
-                </a>
-                <a href={MyLinkedInLink}>
-                    <img className="li" src={iconLI} />
-                </a>
+            <div id="footer-contact">
+                <h4>Contact</h4>
+                <p>{MyEmail}</p>
+                <div className="icons">
+                    <a href={MyInstagramLink}>
+                        <img className="ig" src={iconIG} />
+                    </a>
+                    <a href={MyLinkedInLink}>
+                        <img className="li" src={iconLI} />
+                    </a>
+                </div>
             </div>
         </div>
     );

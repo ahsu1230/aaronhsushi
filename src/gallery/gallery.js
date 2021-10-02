@@ -59,7 +59,7 @@ class GalleryPage extends React.Component {
                     <h3 className="first-title">
                         An elegant omakase brought to you
                         <br />
-                        at a welcoming home
+                        in a welcoming home
                     </h3>
                 </div>
 
