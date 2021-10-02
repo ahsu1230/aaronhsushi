@@ -1,7 +1,7 @@
 import "./imageGallery.sass";
 
 import React from "react";
-import { GalleryImages, FindIdFromSrc } from "./galleryImages.js";
+import { GalleryImages, GetThumbnailSrc } from "./galleryImages.js";
 
 export default class ImageGallery extends React.Component {
     render() {
@@ -21,15 +21,16 @@ export default class ImageGallery extends React.Component {
 }
 
 class GalleryCard extends React.Component {
-    onClickCard = (e) => {
-        const detectedId = FindIdFromSrc(e.target.currentSrc);
-        this.props.onClickCard(detectedId);
+    onClickCard = () => {
+        this.props.onClickCard(this.props.image.id);
     };
 
     render() {
+        const image = this.props.image;
+        const thumbSrc = GetThumbnailSrc(image.imageSrc);
         return (
             <div className="gallery-card" onClick={this.onClickCard}>
-                <img src={this.props.image.imageSrc} />
+                <img src={thumbSrc} />
             </div>
         );
     }

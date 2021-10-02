@@ -54,15 +54,15 @@ export const GalleryImages = [
     },
 ];
 
-export const FindIdFromSrc = (src) => {
-    const pattern = "b-cdn.net/(.*).jpeg";
-    return src.match(pattern)[1];
-};
-
 export const GetImageById = (imageId) => {
     return find(GalleryImages, { id: imageId });
 };
 
 export const GetImageIndexById = (imageId) => {
     return findIndex(GalleryImages, { id: imageId });
+};
+
+export const GetThumbnailSrc = (imageSrc) => {
+    const thumbSrc = imageSrc.replace(".jpeg", "_thumb.jpeg");
+    return thumbSrc;
 };
