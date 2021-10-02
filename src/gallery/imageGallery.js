@@ -27,7 +27,7 @@ class GalleryCard extends React.Component {
 
     render() {
         const image = this.props.image;
-        const thumbSrc = GetThumbnailSrc(image.imageSrc);
+        const thumbSrc = GetThumbnailSrc(image.id);
         return (
             <div className="gallery-card" onClick={this.onClickCard}>
                 <img src={thumbSrc} />

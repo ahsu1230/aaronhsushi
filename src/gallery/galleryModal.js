@@ -2,6 +2,7 @@ import "./galleryModal.sass";
 import React from "react";
 import {
     GalleryImages,
+    GetFullImageSrc,
     GetImageById,
     GetImageIndexById,
 } from "./galleryImages.js";
@@ -37,6 +38,7 @@ export default class GalleryModal extends React.Component {
         const show = this.props.show;
         const selectedImageId = this.props.selectedImageId;
         const selectedImage = GetImageById(selectedImageId) || {};
+        const fullImageSrc = GetFullImageSrc(selectedImageId);
 
         const modalClassNames = show ? "show" : "";
         return (
@@ -54,7 +56,7 @@ export default class GalleryModal extends React.Component {
                 </button>
 
                 <div className="modal">
-                    <img src={selectedImage.imageSrc} />
+                    <img src={fullImageSrc} />
                     <div className="caption">
                         <p>{selectedImage.caption}</p>
                     </div>
