@@ -1,7 +1,7 @@
 import "./contactSuccess.sass";
 
 import { Link } from "react-router-dom";
-import { MyEmail, MyPhone } from "../common/constants.js";
+import { MyEmail } from "../common/constants.js";
 
 export default function ContactSuccessPage() {
     return (

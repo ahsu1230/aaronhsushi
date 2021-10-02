@@ -62,8 +62,10 @@ const sendProdEmail = (message, onSuccess, onFail) => {
 const sendTestEmail = (success, onSuccess, onFail) => {
     console.log("Sending test email...");
     if (success && onSuccess) {
+        console.log("Successfully sent.");
         onSuccess();
     } else if (onFail) {
+        console.log("Failed to send.");
         onFail();
     }
 };

@@ -9,6 +9,7 @@ import SampleMenu from "./sampleMenu.js";
 import { getMinDateTime, TimeOptions } from "./datetime.js";
 import { generateEmailMessage, sendEmail } from "./email.js";
 import { InvalidMessages, Validators } from "./validation.js";
+import { MyEmail } from "../common/constants.js";
 
 class ContactForm extends React.Component {
     onClear = () => {
@@ -36,6 +37,15 @@ class ContactForm extends React.Component {
         );
     };
 
+    onSubmitFail = () => {
+        console.log("Failed to submit!");
+        window.alert(
+            "An error occured when trying to submit. Please contact me at " +
+                MyEmail +
+                " instead."
+        );
+    };
+
     onSubmit = () => {
         console.log("Submit form!");
 
@@ -46,9 +56,8 @@ class ContactForm extends React.Component {
             const data = this.props.data;
             const message = generateEmailMessage(data);
             console.log(message);
-            sendEmail(message);
+            sendEmail(message, this.props.onSubmitSuccess, this.onSubmitFail);
             console.log("Email sent!");
-            this.props.onSubmitSuccess();
         } else {
             console.log("Validate failed!");
             window.alert(

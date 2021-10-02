@@ -81,6 +81,10 @@ class ContactPage extends React.Component {
         this.setState({
             contactSuccess: true,
         });
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
     };
 
     render() {
