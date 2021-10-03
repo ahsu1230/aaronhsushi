@@ -30,12 +30,14 @@ class ContactPage extends React.Component {
         datetime: getMinDateTime(), // must always be a 'moment' object
         dietRestrictions: "",
         additionalRequests: "",
-        wantsUniUS: false,
+        wantsUniUSEast: false,
+        wantsUniUSWest: false,
         wantsUniJP: false,
         wantsToro: false,
         wantsTakeHome: false,
         estimatedCostPerGuest: calculateEstimatePerGuest(
             1,
+            false,
             false,
             false,
             false
@@ -51,13 +53,15 @@ class ContactPage extends React.Component {
     componentDidUpdate(prevProps, prevState, snapshot) {
         if (
             prevState.numGuests != this.state.numGuests ||
-            prevState.wantsUniUS != this.state.wantsUniUS ||
+            prevState.wantsUniUSEast != this.state.wantsUniUSEast ||
+            prevState.wantsUniUSWest != this.state.wantsUniUSWest ||
             prevState.wantsUniJP != this.state.wantsUniJP ||
             prevState.wantsToro != this.state.wantsToro
         ) {
             const estimate = calculateEstimatePerGuest(
                 this.state.numGuests,
-                this.state.wantsUniUS,
+                this.state.wantsUniUSEast,
+                this.state.wantsUniUSWest,
                 this.state.wantsUniJP,
                 this.state.wantsToro
             );

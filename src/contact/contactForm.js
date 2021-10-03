@@ -27,10 +27,11 @@ class ContactForm extends React.Component {
             datetime: getMinDateTime(),
             dietRestrictions: "",
             additionalRequests: "",
-            wantsUniUS: false,
+            wantsUniUSEast: false,
+            wantsUniUSWest: false,
             wantsUniJP: false,
-            wantsToro: false,
-            wantsTakeHome: false,
+            wantsToro: false, // disabled for now
+            wantsTakeHome: false, // disabled for now
         });
     };
 
@@ -139,23 +140,29 @@ class ContactForm extends React.Component {
                     <section>
                         <h4>Omakase Additions</h4>
                         <FormCheckbox
-                            title={"Add Santa Barbara Uni?"}
-                            value={this.props.data.wantsUniUS}
-                            fieldName={"wantsUniUS"}
+                            title={"Add Uni from Maine? (+$30/tray)"}
+                            value={this.props.data.wantsUniUSEast}
+                            fieldName={"wantsUniUSEast"}
                             onChange={this.onChangeBool}
                         />
                         <FormCheckbox
-                            title={"Add Hokkaido Uni?"}
+                            title={"Add Santa Barbara Uni? (+$65/tray)"}
+                            value={this.props.data.wantsUniUSWest}
+                            fieldName={"wantsUniUSWest"}
+                            onChange={this.onChangeBool}
+                        />
+                        <FormCheckbox
+                            title={"Add Hokkaido Uni? (+$145/tray)"}
                             value={this.props.data.wantsUniJP}
                             fieldName={"wantsUniJP"}
                             onChange={this.onChangeBool}
                         />
-                        <FormCheckbox
+                        {/* <FormCheckbox
                             title={"Add Bluefin Tuna?"}
                             value={this.props.data.wantsToro}
                             fieldName={"wantsToro"}
                             onChange={this.onChangeBool}
-                        />
+                        /> */}
                     </section>
 
                     <section>
