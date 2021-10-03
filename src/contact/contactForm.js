@@ -27,6 +27,7 @@ class ContactForm extends React.Component {
             datetime: getMinDateTime(),
             dietRestrictions: "",
             additionalRequests: "",
+            additionalInfo: "",
             wantsUniUSEast: false,
             wantsUniUSWest: false,
             wantsUniJP: false,
@@ -166,27 +167,41 @@ class ContactForm extends React.Component {
                     </section>
 
                     <section>
+                        <EstimatedCosts
+                            estimate={this.props.data.estimatedCostPerGuest}
+                        />
+                    </section>
+
+                    <section>
                         <FormInput
                             title={"Any Dietary Restrictions?"}
                             classLabel={"diet"}
-                            placeholder={"e.g. allergic to shellfish"}
+                            placeholder={
+                                "e.g. allergic to shellfish, shrimp, scallops, etc."
+                            }
                             value={this.props.data.dietRestrictions}
                             fieldName={"dietRestrictions"}
                             onChange={this.onChangeField}
                         />
                         <FormInput
                             title={"Additional Accomodation Requests"}
-                            placeholder={"(Optional)"}
+                            placeholder={
+                                "(Optional) Is this for a special occasion?"
+                            }
                             value={this.props.data.additionalRequests}
                             fieldName={"additionalRequests"}
                             onChange={this.onChangeField}
                             isTextArea={true}
                         />
-                    </section>
-
-                    <section>
-                        <EstimatedCosts
-                            estimate={this.props.data.estimatedCostPerGuest}
+                        <FormInput
+                            title={"Additional Information"}
+                            placeholder={
+                                "(Optional) Is this for a special occasion? How did you hear about me?"
+                            }
+                            value={this.props.data.additionalInfo}
+                            fieldName={"additionalInfo"}
+                            onChange={this.onChangeField}
+                            isTextArea={true}
                         />
                     </section>
 

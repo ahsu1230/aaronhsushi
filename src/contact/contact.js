@@ -30,6 +30,7 @@ class ContactPage extends React.Component {
         datetime: getMinDateTime(), // must always be a 'moment' object
         dietRestrictions: "",
         additionalRequests: "",
+        additionalInfo: "",
         wantsUniUSEast: false,
         wantsUniUSWest: false,
         wantsUniJP: false,
