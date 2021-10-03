@@ -6,7 +6,13 @@ import "react-dates/lib/css/_datepicker.css";
 import { SingleDatePicker } from "react-dates";
 import Select from "react-select";
 import SampleMenu from "./sampleMenu.js";
-import { getMinDateTime, TimeOptions } from "./datetime.js";
+import {
+    getMinDateTime,
+    isDateHighlighted,
+    isDateOutsideRange,
+    isDateBlocked,
+    TimeOptions,
+} from "./datetime.js";
 import { generateEmailMessage, sendEmail } from "./email.js";
 import { InvalidMessages, Validators } from "./validation.js";
 import { MyEmail } from "../common/constants.js";
@@ -268,24 +274,6 @@ class FormDateTime extends React.Component {
         this.props.onChange("datetime", newDateTime);
     };
 
-    isDayBlocked = (date) => {
-        // Day is blocked if not Saturday or Sunday
-        return date.day() != 6 && date.day() != 0;
-    };
-
-    isOutsideDateRange = (date) => {
-        // Day must be at or after minimum date
-        let minDate = getMinDateTime();
-        minDate.hour(0);
-        minDate.minute(0);
-        return date.isBefore(minDate);
-    };
-
-    isDayHighlighted = (date) => {
-        // Highlight weekend days
-        return date.day() == 6 || date.day() == 0;
-    };
-
     render() {
         return (
             <div className="select-date-time">
@@ -305,9 +293,9 @@ class FormDateTime extends React.Component {
                             this.setState({ focused })
                         }
                         showDefaultInputIcon
-                        isDayBlocked={this.isDayBlocked}
-                        isOutsideRange={this.isOutsideDateRange}
-                        isDayHighlighted={this.isDayHighlighted}
+                        isDayBlocked={isDateBlocked}
+                        isOutsideRange={isDateOutsideRange}
+                        isDayHighlighted={isDateHighlighted}
                         id="date-picker"
                     />
                 </div>
