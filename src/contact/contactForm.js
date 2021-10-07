@@ -192,9 +192,9 @@ class ContactForm extends React.Component {
                             isTextArea={true}
                         />
                         <FormInput
-                            title={"Additional Information"}
+                            title={"Tell me about yourself"}
                             placeholder={
-                                "(Optional) Is this for a special occasion? How did you hear about me?"
+                                "Is this dinner for a special occasion? How did you hear about me?"
                             }
                             value={this.props.data.additionalInfo}
                             fieldName={"additionalInfo"}
