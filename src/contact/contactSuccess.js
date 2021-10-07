@@ -12,7 +12,8 @@ export default function ContactSuccessPage() {
                     <p>
                         Your reservation request has successfully been
                         submitted! I will review your request and reply via
-                        email as soon as possible.
+                        email or text as soon as possible. Please double check
+                        your spam inbox for my email.
                         <br />
                         <br />
                         If you have any questions or want to update your

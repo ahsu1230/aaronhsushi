@@ -177,7 +177,7 @@ class ContactForm extends React.Component {
                             title={"Any Dietary Restrictions?"}
                             classLabel={"diet"}
                             placeholder={
-                                "e.g. allergic to shellfish, shrimp, scallops, etc."
+                                "e.g. allergic to shrimp, scallops, squid, eggs, etc."
                             }
                             value={this.props.data.dietRestrictions}
                             fieldName={"dietRestrictions"}
@@ -185,9 +185,7 @@ class ContactForm extends React.Component {
                         />
                         <FormInput
                             title={"Additional Accomodation Requests"}
-                            placeholder={
-                                "(Optional) Is this for a special occasion?"
-                            }
+                            placeholder={"(Optional)"}
                             value={this.props.data.additionalRequests}
                             fieldName={"additionalRequests"}
                             onChange={this.onChangeField}
