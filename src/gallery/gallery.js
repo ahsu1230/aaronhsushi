@@ -85,9 +85,9 @@ class GalleryPage extends React.Component {
                 </div>
 
                 <Banner
-                    height={"360px"}
+                    height={"560px"}
                     bannerImgSrc={
-                        "https://aaronhsushi.b-cdn.net/banner_tuna_nigiri.jpg"
+                        "https://aaronhsushi.b-cdn.net/banner_homakase1.jpg"
                     }
                     buttonText={"Make a reservation"}
                     buttonOnClick={this.goToContactPage}

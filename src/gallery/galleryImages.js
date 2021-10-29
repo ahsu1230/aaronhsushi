@@ -13,12 +13,13 @@ export const GalleryImages = [
         caption: "Kohada (Japanese Gizzard Shad) topped with grated ginger",
     },
     {
-        id: "square_gunkan_uni",
-        caption: "East coast Uni from Maine",
+        id: "square_uni_jp_gunkan",
+        caption: "Hokkaido Uni",
     },
     {
-        id: "square_salmon_nigiri_seared_kosho",
-        caption: "Seared Salmon with yuzu-kosho",
+        id: "square_kinmedai_nigiri_yuzu",
+        caption:
+            "Kinmedai (Golden Eye Snapper) with Yuzu Kosho and grated Yuzu zest",
     },
     {
         id: "square_shima_aji_plate",
@@ -29,13 +30,25 @@ export const GalleryImages = [
         caption: "Kobujime Madai (kelp-cured Red Seabream)",
     },
     {
-        id: "square_sawara_nigiri_smoked_head",
-        caption:
-            "Cherry-smoked Sawara (Spanish Mackerel) with spicy grated daikon",
+        id: "square_uni_pasta",
+        caption: "Starter dish: Uni Carbonara",
+    },
+    {
+        id: "square_salmon_nigiri_seared_kosho",
+        caption: "Seared Salmon with yuzu-kosho",
+    },
+    {
+        id: "square_madai_niitsuke",
+        caption: "Soy-sauced simmered Madai (red seabream) cheek",
     },
     {
         id: "square_tuna_nigiri",
         caption: "Maguro Tuna",
+    },
+    {
+        id: "square_sawara_nigiri_smoked_head",
+        caption:
+            "Cherry-smoked Sawara (Spanish Mackerel) with spicy grated daikon",
     },
     {
         id: "square_moosey",
