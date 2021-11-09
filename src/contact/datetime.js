@@ -18,8 +18,8 @@ export const TimeOptions = [
 
 // Given a day, is it available for reservation?
 export const isDateHighlighted = (date) => {
-    // Highlight weekend days
-    return date.day() == 6 || date.day() == 0;
+    // Highlight weekend days (Fri, Sat, Sun)
+    return date.day() == 5 || date.day() == 6 || date.day() == 0;
 };
 
 // Given a date, should it even be viewable/selectable?
@@ -31,14 +31,13 @@ export const isDateOutsideRange = (date) => {
 // Given a date, is it blocked or unavailable?
 export const isDateBlocked = (date) => {
     // Day is blocked if not Saturday or Sunday
-    return (date.day() != 6 && date.day() != 0) || isDateBusy(date);
+    return !isDateHighlighted(date) || isDateBusy(date);
 };
 
 const isDateBusy = (date) => {
     let busyDate = find(BOOKED_DATES, (bookedDate) => {
         const momentDate = moment(date);
         const momentBookedDate = moment(bookedDate);
-        // console.log(momentBookedDate.format("l") + " " + momentBookedDate.isSame(momentDate, 'day'));
         return momentBookedDate.isSame(momentDate, "day");
     });
     return !!busyDate;
@@ -46,10 +45,6 @@ const isDateBusy = (date) => {
 
 // YYYY-MM-DD
 const BOOKED_DATES = [
-    "2021-10-16",
-    "2021-10-17",
-    "2021-10-23",
-    "2021-10-24",
     "2021-11-6",
     "2021-11-7",
     "2021-11-13",
@@ -57,6 +52,7 @@ const BOOKED_DATES = [
     "2021-11-20",
     "2021-11-21",
     "2021-12-4",
+    "2021-12-5",
     "2021-12-11",
     "2021-12-18",
 ];
