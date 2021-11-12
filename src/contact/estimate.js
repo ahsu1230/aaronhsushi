@@ -5,7 +5,7 @@ const COST_SALMON = 20;
 const COST_SEASONAL = 60;
 const COST_TUNA = 10; // 1 saku (big eye tuna)
 const COST_BLUE_FIN_TUNA = 120; // cost for maguro, chutoro, otoro (~3 saku)
-const MINIMUM_ESTIMATE = 55;
+const MINIMUM_ESTIMATE = 65;
 
 export const calculateEstimatePerGuest = (
     numGuests,
