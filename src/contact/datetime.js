@@ -6,7 +6,7 @@ export const getMinDateTime = () => {
     date.hour(18);
     date.minute(0);
     date.second(0);
-    date.day(6 + 7 + 7); // Select 2 Saturdays from now
+    date.day(5 + 7 + 7); // Select 2 Fridays from now
     return date;
 };
 
