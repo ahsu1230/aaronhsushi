@@ -1,6 +1,6 @@
 const COST_UNI_US_EAST = 30;
-const COST_UNI_US_WEST = 65;
-const COST_UNI_JP = 145;
+const COST_UNI_US_WEST = 80;
+const COST_UNI_JP = 165;
 const COST_SALMON = 20;
 const COST_SEASONAL = 60;
 const COST_TUNA = 10; // 1 saku (big eye tuna)
