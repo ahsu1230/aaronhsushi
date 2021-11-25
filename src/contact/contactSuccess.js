@@ -1,7 +1,7 @@
 import "./contactSuccess.sass";
 
 import { Link } from "react-router-dom";
-import { MyEmail } from "../common/constants.js";
+import { MyEmail, MyVenmo } from "../common/constants.js";
 
 export default function ContactSuccessPage() {
     return (
@@ -59,6 +59,15 @@ export default function ContactSuccessPage() {
                         allowFullScreen=""
                         loading="lazy"
                     />
+                </section>
+
+                <section>
+                    <h3>Payment Information</h3>
+                    <p>
+                        My most preferred method of payment would be Venmo. You can Venmo me at <u>{MyVenmo}</u>. 
+                        The last 4 digits of my phone number are 0850. 
+                        Please contact me if you prefer another method of payment.
+                    </p>
                 </section>
 
                 <section>
