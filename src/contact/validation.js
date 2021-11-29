@@ -7,6 +7,7 @@ export const InvalidMessages = {
     email: "Please enter a valid email",
     phone: "Please enter a valid phone number",
     numGuests: "Due to limited space, I can only host 1-4 people at a time.",
+    additionalInfo: "Please provide more details.",
 };
 
 export const validateName = (name) => {
@@ -26,9 +27,14 @@ export const validateNumGuests = (num) => {
     return num > 0 && num <= 4;
 };
 
+export const validateAdditionalInfo = (info) => {
+    return info.length >= 20;
+};
+
 export const Validators = {
     fullName: validateName,
     email: validateEmail,
     phone: validatePhone,
     numGuests: validateNumGuests,
+    additionalInfo: validateAdditionalInfo,
 };

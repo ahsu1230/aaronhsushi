@@ -38,7 +38,8 @@ class ContactForm extends React.Component {
             Validators["fullName"](this.props.data.fullName) &&
             Validators["email"](this.props.data.email) &&
             Validators["phone"](this.props.data.phone) &&
-            Validators["numGuests"](this.props.data.numGuests)
+            Validators["numGuests"](this.props.data.numGuests) &&
+            Validators["additionalInfo"](this.props.data.additionalInfo)
         );
     };
 
