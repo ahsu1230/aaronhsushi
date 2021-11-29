@@ -3,6 +3,7 @@ import "./contact.sass";
 import React from "react";
 import { withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
+import { includes, remove, isEqual } from "lodash";
 import {
     MyEmail,
     MyInstagram,
@@ -31,18 +32,8 @@ class ContactPage extends React.Component {
         dietRestrictions: "",
         additionalRequests: "",
         additionalInfo: "",
-        wantsUniUSEast: false,
-        wantsUniUSWest: false,
-        wantsUniJP: false,
-        wantsToro: false,
-        wantsTakeHome: false,
-        estimatedCostPerGuest: calculateEstimatePerGuest(
-            1,
-            false,
-            false,
-            false,
-            false
-        ),
+        omakaseAdditions: [],
+        estimatedCostPerGuest: calculateEstimatePerGuest(1, []),
     };
 
     static propTypes = {
@@ -54,17 +45,14 @@ class ContactPage extends React.Component {
     componentDidUpdate(prevProps, prevState, snapshot) {
         if (
             prevState.numGuests != this.state.numGuests ||
-            prevState.wantsUniUSEast != this.state.wantsUniUSEast ||
-            prevState.wantsUniUSWest != this.state.wantsUniUSWest ||
-            prevState.wantsUniJP != this.state.wantsUniJP ||
-            prevState.wantsToro != this.state.wantsToro
+            !isEqual(
+                JSON.stringify(prevState.omakaseAdditions),
+                JSON.stringify(this.state.omakaseAdditions)
+            )
         ) {
             const estimate = calculateEstimatePerGuest(
                 this.state.numGuests,
-                this.state.wantsUniUSEast,
-                this.state.wantsUniUSWest,
-                this.state.wantsUniJP,
-                this.state.wantsToro
+                this.state.omakaseAdditions
             );
             this.setState({
                 estimatedCostPerGuest: estimate,
@@ -80,6 +68,16 @@ class ContactPage extends React.Component {
 
     onChangeFields = (propValues) => {
         this.setState(propValues);
+    };
+
+    onChangeAddition = (name) => {
+        let additions = Array.from(this.state.omakaseAdditions);
+        if (includes(additions, name)) {
+            remove(additions, (i) => i === name);
+        } else {
+            additions.push(name);
+        }
+        this.setState({ omakaseAdditions: additions });
     };
 
     onSubmitSuccess = () => {
@@ -112,6 +110,7 @@ class ContactPage extends React.Component {
                             data={formData}
                             onChangeField={this.onChangeField}
                             onChangeFields={this.onChangeFields}
+                            onChangeAddition={this.onChangeAddition}
                             onSubmitSuccess={this.onSubmitSuccess}
                         />
                         <ContactMe />

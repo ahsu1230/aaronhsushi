@@ -5,6 +5,7 @@ import "react-dates/initialize";
 import "react-dates/lib/css/_datepicker.css";
 import { SingleDatePicker } from "react-dates";
 import Select from "react-select";
+import ContactFormAdditions from "./contactFormAdditions.js";
 import SampleMenu from "./sampleMenu.js";
 import {
     getMinDateTime,
@@ -28,11 +29,7 @@ class ContactForm extends React.Component {
             dietRestrictions: "",
             additionalRequests: "",
             additionalInfo: "",
-            wantsUniUSEast: false,
-            wantsUniUSWest: false,
-            wantsUniJP: false,
-            wantsToro: false, // disabled for now
-            wantsTakeHome: false, // disabled for now
+            omakaseAdditions: [],
         });
     };
 
@@ -84,6 +81,10 @@ class ContactForm extends React.Component {
 
     onChangeBool = (fieldName, val) => {
         this.props.onChangeField(fieldName, val || false);
+    };
+
+    onChangeAddition = (name) => {
+        this.props.onChangeAddition(name);
     };
 
     render() {
@@ -138,33 +139,10 @@ class ContactForm extends React.Component {
                         />
                     </section>
 
-                    <section>
-                        <h4>Omakase Additions</h4>
-                        <FormCheckbox
-                            title={"Add Uni from Maine? (+$30/tray)"}
-                            value={this.props.data.wantsUniUSEast}
-                            fieldName={"wantsUniUSEast"}
-                            onChange={this.onChangeBool}
-                        />
-                        <FormCheckbox
-                            title={"Add Santa Barbara Uni? (+$65/tray)"}
-                            value={this.props.data.wantsUniUSWest}
-                            fieldName={"wantsUniUSWest"}
-                            onChange={this.onChangeBool}
-                        />
-                        <FormCheckbox
-                            title={"Add Hokkaido Uni? (+$145/tray)"}
-                            value={this.props.data.wantsUniJP}
-                            fieldName={"wantsUniJP"}
-                            onChange={this.onChangeBool}
-                        />
-                        {/* <FormCheckbox
-                            title={"Add Bluefin Tuna?"}
-                            value={this.props.data.wantsToro}
-                            fieldName={"wantsToro"}
-                            onChange={this.onChangeBool}
-                        /> */}
-                    </section>
+                    <ContactFormAdditions
+                        omakaseAdditions={this.props.data.omakaseAdditions}
+                        onChangeAddition={this.onChangeAddition}
+                    />
 
                     <section>
                         <EstimatedCosts
@@ -254,23 +232,6 @@ function FormInput(props) {
                 />
             )}
             {!isValid && !isEmpty && <p className="error">{invalidMessage}</p>}
-        </div>
-    );
-}
-
-function FormCheckbox(props) {
-    const classNames = ["form-input checkbox", props.classLabel].join(" ");
-    return (
-        <div className={classNames}>
-            <input
-                type="checkbox"
-                value={Boolean(props.value) || false}
-                checked={Boolean(props.value) || false}
-                onChange={(e) =>
-                    props.onChange(props.fieldName, e.target.checked)
-                }
-            />
-            <h4>{props.title}</h4>
         </div>
     );
 }

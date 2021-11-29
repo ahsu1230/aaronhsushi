@@ -5,6 +5,9 @@
     h3, h4, p
         color: $colorTextGray
 
+        &.additions
+            margin-bottom: 12px
+
     .contact-container
         width: 480px
         margin: 64px auto 240px
@@ -66,6 +69,9 @@
                 background-color: $colorGrayDark
                 color: $colorWhite
 
+    a
+        color: $colorLightPurple
+
     .form-input
         margin-bottom: 16px
 
@@ -90,14 +96,24 @@
         
         &.checkbox
             margin: 8px 0
-            h4
-                display: inline-block
-                font-weight: 400
 
             input
                 display: inline-block
+                position: relative
+                top: 2px
                 margin-right: 8px
-                vertical-align: middle
+                vertical-align: top
+            
+            .label
+                display: inline-block
+                
+                h4
+                    font-weight: 400
+                    color: $colorTextBlack
+
+                h5
+                    font-weight: 400
+                    color: $colorTextGray
 
         &.name input
             width: 360px

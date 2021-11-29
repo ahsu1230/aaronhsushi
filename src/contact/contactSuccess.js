@@ -64,9 +64,10 @@ export default function ContactSuccessPage() {
                 <section>
                     <h3>Payment Information</h3>
                     <p>
-                        My most preferred method of payment would be Venmo. You can Venmo me at <u>{MyVenmo}</u>. 
-                        The last 4 digits of my phone number are 0850. 
-                        Please contact me if you prefer another method of payment.
+                        My most preferred method of payment would be Venmo. You
+                        can Venmo me at <u>{MyVenmo}</u>. The last 4 digits of
+                        my phone number are 0850. Please contact me if you
+                        prefer another method of payment.
                     </p>
                 </section>
 
