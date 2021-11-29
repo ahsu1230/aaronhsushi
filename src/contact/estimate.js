@@ -7,10 +7,10 @@ const ADDITIONAL_COSTS = {
     [Additions.UNI_US_EAST]: 35,
     [Additions.UNI_US_WEST]: 80,
     [Additions.UNI_JP]: 180,
-    [Additions.SAKE_MIZUBASHO_GINJO]: 33,
-    [Additions.SAKE_NIWA_NO_UGUISU_60]: 31,
-    [Additions.SAKE_DEWAZAKURA_DEWASANSAN]: 41,
-    [Additions.SAKE_IZUMIBASHI_RAKUFUMAI]: 53,
+    [Additions.SAKE_MIZUBASHO_GINJO]: 38,
+    [Additions.SAKE_NIWA_NO_UGUISU_60]: 36,
+    [Additions.SAKE_DEWAZAKURA_DEWASANSAN]: 46,
+    [Additions.SAKE_IZUMIBASHI_RAKUFUMAI]: 58,
 };
 
 export const calculateEstimatePerGuest = (numGuests, omakaseAdditions) => {
