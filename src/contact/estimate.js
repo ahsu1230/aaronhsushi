@@ -27,7 +27,7 @@ export const calculateEstimatePerGuest = (numGuests, omakaseAdditions) => {
 
     // Additionals
     omakaseAdditions.forEach((addition) => {
-        if (addition.findIndex("uni") >= 0) {
+        if (addition.indexOf("uni") >= 0) {
             subtotal += ADDITIONAL_COSTS[addition] / (numGuests + 1);
         } else {
             subtotal += ADDITIONAL_COSTS[addition] / numGuests;

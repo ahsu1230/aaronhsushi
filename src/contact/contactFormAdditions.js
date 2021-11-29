@@ -27,15 +27,17 @@ export default class ContactFormAdditions extends React.Component {
                     value={isChecked(omakaseAdditions, Additions.UNI_JP)}
                     onChange={this.props.onChangeAddition}
                 />
+
+                <h4 className="additions">Sake</h4>
                 <FormCheckbox
                     title={"Sake - Mizubasho Ginjo (+$33)"}
                     description={
                         "Medium body and fruity notes. Pairs well with seafood."
                     }
-                    fieldName={Additions.SAKE_IZUMIBASHI_RAKUFUMAI}
+                    fieldName={Additions.SAKE_MIZUBASHO_GINJO}
                     value={isChecked(
                         omakaseAdditions,
-                        Additions.SAKE_IZUMIBASHI_RAKUFUMAI
+                        Additions.SAKE_MIZUBASHO_GINJO
                     )}
                     onChange={this.props.onChangeAddition}
                 />
@@ -44,10 +46,10 @@ export default class ContactFormAdditions extends React.Component {
                     description={
                         "A fresh and aromatic Junmai Ginjo with a crisp, vibrant melon flavor."
                     }
-                    fieldName={Additions.SAKE_IZUMIBASHI_RAKUFUMAI}
+                    fieldName={Additions.SAKE_NIWA_NO_UGUISU_60}
                     value={isChecked(
                         omakaseAdditions,
-                        Additions.SAKE_IZUMIBASHI_RAKUFUMAI
+                        Additions.SAKE_NIWA_NO_UGUISU_60
                     )}
                     onChange={this.props.onChangeAddition}
                 />
@@ -56,10 +58,10 @@ export default class ContactFormAdditions extends React.Component {
                     description={
                         "Balanced, floral, with a light, smooth fruity essence."
                     }
-                    fieldName={Additions.SAKE_IZUMIBASHI_RAKUFUMAI}
+                    fieldName={Additions.SAKE_DEWAZAKURA_DEWASANSAN}
                     value={isChecked(
                         omakaseAdditions,
-                        Additions.SAKE_IZUMIBASHI_RAKUFUMAI
+                        Additions.SAKE_DEWAZAKURA_DEWASANSAN
                     )}
                     onChange={this.props.onChangeAddition}
                 />
@@ -76,11 +78,12 @@ export default class ContactFormAdditions extends React.Component {
                     onChange={this.props.onChangeAddition}
                 />
                 <p>
-                    For more Sake options, you may order directly from{" "}
+                    For more Sake options, you may visit{" "}
                     <a href="https://dcsake.com/" target="_blank">
                         DC Sake
-                    </a>
-                    .
+                    </a>{" "}
+                    and include which sake you would like in the "Additional
+                    Accomodation" section below.
                 </p>
             </section>
         );

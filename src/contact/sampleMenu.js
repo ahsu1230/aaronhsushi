@@ -21,7 +21,7 @@ export default class SampleMenu extends React.Component {
         return (
             <div id="sample-menu">
                 <a onClick={this.onOpenPopup}>
-                    Click here to view a sample omakase menu.{" "}
+                    Click here to view a sample 14-course omakase menu.{" "}
                     {this.state.showPopup}
                 </a>
                 {this.state.showPopup && <Popup onClose={this.onClosePopup} />}
@@ -47,7 +47,7 @@ function Popup(props) {
                 />
 
                 <section>
-                    <p>
+                    <p className="description">
                         The tasting menu may change based on seasonal
                         availability, customer requests and accomodations. Come
                         often to get a taste of what each seasonal celebrations
@@ -59,12 +59,12 @@ function Popup(props) {
                     <MenuItem
                         title={"Sakizuke"}
                         description={
-                            "Cooked seasonal fish and vegetable appetizer"
+                            "3 cooked seasonal fish and vegetable appetizers"
                         }
                     />
                     <MenuItem
                         title={"Seasonal Sashimi"}
-                        description={"Madai, Salmon, Mackerel"}
+                        description={"Madai, Shima Aji, Katsuo"}
                     />
                 </section>
                 <section>
@@ -74,12 +74,8 @@ function Popup(props) {
                         description={"Red seabream cured in kelp"}
                     />
                     <MenuItem
-                        title={"Pecan-smoked Salmon"}
-                        description={"Salmon belly smoked in pecan wood chips"}
-                    />
-                    <MenuItem
-                        title={"Seared Salmon"}
-                        description={"Tender salmon with a crispy skin finish"}
+                        title={"Shima Aji"}
+                        description={"Japanese yellow-striped jack"}
                     />
                     <MenuItem
                         title={"Pickled Kohada"}
@@ -87,13 +83,21 @@ function Popup(props) {
                             "Pickled Gizzard Shad with sweet oboro egg flakes"
                         }
                     />
-                </section>
-                <section>
+                    <MenuItem
+                        title={"Seared smoked salmon"}
+                        description={
+                            "Pecan-smoked salmon with a crispy skin finish"
+                        }
+                    />
+                    <MenuItem
+                        title={"Kinmedai"}
+                        description={
+                            "Golden Eye Snapper seared and topped with yuzu kosho"
+                        }
+                    />
                     <MenuItem
                         title={"Hotate"}
-                        description={
-                            "Scallops with truffle salt and citrus zest"
-                        }
+                        description={"Scallops with truffle salt"}
                     />
                     <MenuItem
                         title={"Botan Ebi"}
@@ -103,10 +107,13 @@ function Popup(props) {
                         title={"Ikura"}
                         description={"Soy-sauce marinated salmon roe"}
                     />
+                </section>
+                <section>
+                    <h4>Closers</h4>
                     <MenuItem
-                        title={"Miso Soup"}
+                        title={"Clear mushroom soup"}
                         description={
-                            "Umami-packed soup made from 3 different miso"
+                            "Mushroom soup made from assorted Japanese mushrooms"
                         }
                     />
                     <MenuItem
