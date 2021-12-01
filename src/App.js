@@ -9,7 +9,7 @@ import ContactPage from "./contact/contact.js";
 import FooterComponent from "./footer/footer.js";
 import ScrollToTop from "./common/scrollToTop.js";
 
-mixpanel.init('7d8729435743710ec6034a9130ba9bee');
+mixpanel.init("7d8729435743710ec6034a9130ba9bee");
 
 function App() {
     return (

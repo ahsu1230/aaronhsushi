@@ -46,7 +46,9 @@ class ContactPage extends React.Component {
 
     componentDidMount() {
         if (process.env.NODE_ENV === "production") {
-            mixpanel.track("page_gallery");
+            mixpanel.track("page_contact");
+        } else {
+            console.log("track page_contact");
         }
     }
 

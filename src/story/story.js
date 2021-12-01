@@ -21,7 +21,9 @@ class StoryPage extends React.Component {
 
     componentDidMount() {
         if (process.env.NODE_ENV === "production") {
-            mixpanel.track("page_gallery");
+            mixpanel.track("page_story");
+        } else {
+            console.log("track page_story");
         }
     }
 

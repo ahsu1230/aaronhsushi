@@ -32,6 +32,8 @@ export default class TermsOfService extends React.Component {
         let newValue = !oldValue;
         if (process.env.NODE_ENV === "production") {
             mixpanel.track("tos_checked", { checked: newValue });
+        } else {
+            console.log("track tos_checked: " + newValue);
         }
         this.props.onChange("hasAgreedToS", newValue);
     };

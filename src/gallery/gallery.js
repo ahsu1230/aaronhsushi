@@ -28,6 +28,8 @@ class GalleryPage extends React.Component {
     componentDidMount() {
         if (process.env.NODE_ENV === "production") {
             mixpanel.track("page_gallery");
+        } else {
+            console.log("track page_gallery");
         }
     }
 

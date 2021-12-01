@@ -16,7 +16,9 @@ const selectionHowTo = "how_to";
 class InspirationPage extends React.Component {
     componentDidMount() {
         if (process.env.NODE_ENV === "production") {
-            mixpanel.track("page_gallery");
+            mixpanel.track("page_inspiration");
+        } else {
+            console.log("track page_inspiration");
         }
     }
 
