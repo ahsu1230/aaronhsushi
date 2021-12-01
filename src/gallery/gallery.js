@@ -1,6 +1,7 @@
 import "./gallery.sass";
 import React from "react";
 import PropTypes from "prop-types";
+import mixpanel from "mixpanel-browser";
 import { withRouter } from "react-router-dom";
 import Banner from "../common/banner.js";
 import GalleryModal from "./galleryModal.js";
@@ -23,6 +24,12 @@ class GalleryPage extends React.Component {
         location: PropTypes.object.isRequired,
         history: PropTypes.object.isRequired,
     };
+
+    componentDidMount() {
+        if (process.env.NODE_ENV === "production") {
+            mixpanel.track("page_gallery");
+        }
+    }
 
     goToContactPage = () => {
         const { match, location, history } = this.props;

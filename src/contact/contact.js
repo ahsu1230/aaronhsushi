@@ -3,6 +3,7 @@ import "./contact.sass";
 import React from "react";
 import { withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
+import mixpanel from "mixpanel-browser";
 import { includes, remove, isEqual } from "lodash";
 import {
     MyEmail,
@@ -42,6 +43,12 @@ class ContactPage extends React.Component {
         location: PropTypes.object.isRequired,
         history: PropTypes.object.isRequired,
     };
+
+    componentDidMount() {
+        if (process.env.NODE_ENV === "production") {
+            mixpanel.track("page_gallery");
+        }
+    }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
         if (

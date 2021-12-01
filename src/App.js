@@ -39,6 +39,6 @@ export default App;
 const Header = HeaderComponent;
 const Gallery = GalleryPage;
 const Story = StoryPage;
-const Inspiration = () => InspirationPage();
+const Inspiration = InspirationPage;
 const Contact = ContactPage;
 const Footer = () => FooterComponent();

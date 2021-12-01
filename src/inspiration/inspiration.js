@@ -1,5 +1,7 @@
 import "./inspiration.sass";
 import React from "react";
+import { withRouter } from "react-router-dom";
+import mixpanel from "mixpanel-browser";
 import Banner from "../common/banner.js";
 import InspirationMyFish from "./inspirationMyFish.js";
 import InspirationRestaurants from "./inspirationRestaurants.js";
@@ -11,20 +13,30 @@ const selectionRecs = "restaurant_recs";
 const selectionBuyFish = "buy_fish";
 const selectionHowTo = "how_to";
 
-export default function InspirationPage() {
-    return (
-        <div id="inspiration">
-            <Banner
-                height={"320px"}
-                mainTitle={"Inspiration"}
-                bannerImgSrc={
-                    "https://aaronhsushi.b-cdn.net/banner_sashimi_medley.jpg"
-                }
-            />
-            <Selector />
-        </div>
-    );
+class InspirationPage extends React.Component {
+    componentDidMount() {
+        if (process.env.NODE_ENV === "production") {
+            mixpanel.track("page_gallery");
+        }
+    }
+
+    render() {
+        return (
+            <div id="inspiration">
+                <Banner
+                    height={"320px"}
+                    mainTitle={"Inspiration"}
+                    bannerImgSrc={
+                        "https://aaronhsushi.b-cdn.net/banner_sashimi_medley.jpg"
+                    }
+                />
+                <Selector />
+            </div>
+        );
+    }
 }
+
+export default withRouter(InspirationPage);
 
 class Selector extends React.Component {
     state = {

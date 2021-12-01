@@ -3,6 +3,7 @@ import "./story.sass";
 import React from "react";
 import { withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
+import mixpanel from "mixpanel-browser";
 import Banner from "../common/banner.js";
 
 const SECTION_CLASS_NAMES = ["white center", "light left", "dark right"];
@@ -17,6 +18,12 @@ class StoryPage extends React.Component {
         location: PropTypes.object.isRequired,
         history: PropTypes.object.isRequired,
     };
+
+    componentDidMount() {
+        if (process.env.NODE_ENV === "production") {
+            mixpanel.track("page_gallery");
+        }
+    }
 
     goToContactPage = () => {
         const { match, location, history } = this.props;
