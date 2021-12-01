@@ -30,7 +30,7 @@ export default class ContactFormAdditions extends React.Component {
 
                 <h4 className="additions">Sake</h4>
                 <FormCheckbox
-                    title={"Sake - Mizubasho Ginjo (+$33)"}
+                    title={"Sake - Mizubasho Ginjo (+$38)"}
                     description={
                         "Medium body and fruity notes. Pairs well with seafood."
                     }
@@ -42,7 +42,7 @@ export default class ContactFormAdditions extends React.Component {
                     onChange={this.props.onChangeAddition}
                 />
                 <FormCheckbox
-                    title={"Sake - Niwa No Uguisu 60 Junmai Ginjo (+$31)"}
+                    title={"Sake - Niwa No Uguisu 60 Junmai Ginjo (+$36)"}
                     description={
                         "A fresh and aromatic Junmai Ginjo with a crisp, vibrant melon flavor."
                     }
@@ -54,7 +54,7 @@ export default class ContactFormAdditions extends React.Component {
                     onChange={this.props.onChangeAddition}
                 />
                 <FormCheckbox
-                    title={'Sake - Dewazakura "Dewasansan" Junmai Ginjo (+$41)'}
+                    title={'Sake - Dewazakura "Dewasansan" Junmai Ginjo (+$46)'}
                     description={
                         "Balanced, floral, with a light, smooth fruity essence."
                     }
@@ -66,7 +66,7 @@ export default class ContactFormAdditions extends React.Component {
                     onChange={this.props.onChangeAddition}
                 />
                 <FormCheckbox
-                    title={"Sake - Izumibashi Akitonbo Rakufumai (+$53)"}
+                    title={"Sake - Izumibashi Akitonbo Rakufumai (+$58)"}
                     description={
                         "Light, airy, semi-dry. Easy to drink for any occasion."
                     }

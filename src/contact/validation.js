@@ -8,6 +8,8 @@ export const InvalidMessages = {
     phone: "Please enter a valid phone number",
     numGuests: "Due to limited space, I can only host 1-4 people at a time.",
     additionalInfo: "Please provide more details.",
+    hasAgreedToS:
+        "You must agree to the Terms of Services to submit a reservation request.",
 };
 
 export const validateName = (name) => {
@@ -31,10 +33,15 @@ export const validateAdditionalInfo = (info) => {
     return info.length >= 20;
 };
 
+export const validateToS = (val) => {
+    return !!val;
+};
+
 export const Validators = {
     fullName: validateName,
     email: validateEmail,
     phone: validatePhone,
     numGuests: validateNumGuests,
     additionalInfo: validateAdditionalInfo,
+    hasAgreedToS: validateToS,
 };

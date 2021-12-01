@@ -1,7 +1,7 @@
 import { includes } from "lodash";
 import Additions from "./omakaseAdditionConstants.js";
 
-const BASE_COST = 65;
+const BASE_COST = 70;
 
 const ADDITIONAL_COSTS = {
     [Additions.UNI_US_EAST]: 35,

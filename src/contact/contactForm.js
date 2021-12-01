@@ -7,6 +7,7 @@ import { SingleDatePicker } from "react-dates";
 import Select from "react-select";
 import ContactFormAdditions from "./contactFormAdditions.js";
 import SampleMenu from "./sampleMenu.js";
+import TermsOfService from "./tos.js";
 import {
     getMinDateTime,
     isDateHighlighted,
@@ -30,6 +31,7 @@ class ContactForm extends React.Component {
             additionalRequests: "",
             additionalInfo: "",
             omakaseAdditions: [],
+            hasAgreedToS: false,
         });
     };
 
@@ -39,7 +41,8 @@ class ContactForm extends React.Component {
             Validators["email"](this.props.data.email) &&
             Validators["phone"](this.props.data.phone) &&
             Validators["numGuests"](this.props.data.numGuests) &&
-            Validators["additionalInfo"](this.props.data.additionalInfo)
+            Validators["additionalInfo"](this.props.data.additionalInfo) &&
+            Validators["hasAgreedToS"](this.props.data.hasAgreedToS)
         );
     };
 
@@ -66,9 +69,15 @@ class ContactForm extends React.Component {
             console.log("Email sent!");
         } else {
             console.log("Validate failed!");
-            window.alert(
-                "Please correctly fill out all fields before submitting."
-            );
+            if (this.props.data.hasAgreedToS) {
+                window.alert(
+                    "Please correctly fill out all fields before submitting."
+                );
+            } else {
+                window.alert(
+                    "You must agree to the Terms of Service policies to submit a reservation request."
+                );
+            }
         }
     };
 
@@ -179,6 +188,10 @@ class ContactForm extends React.Component {
                             fieldName={"additionalInfo"}
                             onChange={this.onChangeField}
                             isTextArea={true}
+                        />
+                        <TermsOfService
+                            value={this.props.data.hasAgreedToS}
+                            onChange={this.onChangeBool}
                         />
                     </section>
 

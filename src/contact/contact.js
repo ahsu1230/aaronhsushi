@@ -34,6 +34,7 @@ class ContactPage extends React.Component {
         additionalInfo: "",
         omakaseAdditions: [],
         estimatedCostPerGuest: calculateEstimatePerGuest(1, []),
+        hasAgreedToS: false,
     };
 
     static propTypes = {

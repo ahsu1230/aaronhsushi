@@ -23,6 +23,7 @@ export const generateEmailMessage = (data) => {
         "<h3>Estimated Cost Per Guest: $" +
             data.estimatedCostPerGuest +
             "</h3>",
+        "<h4>Agreed to ToS: " + data.hasAgreedToS + "</h4>",
         "</body>",
         "</html>",
     ].join("\n");

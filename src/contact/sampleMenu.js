@@ -1,4 +1,5 @@
 import "./sampleMenu.sass";
+import "../common/simpleModal.sass";
 
 import React from "react";
 import Banner from "../common/banner.js";
@@ -21,8 +22,7 @@ export default class SampleMenu extends React.Component {
         return (
             <div id="sample-menu">
                 <a onClick={this.onOpenPopup}>
-                    Click here to view a sample 14-course omakase menu.{" "}
-                    {this.state.showPopup}
+                    Click here to view a sample 14-course omakase menu.
                 </a>
                 {this.state.showPopup && <Popup onClose={this.onClosePopup} />}
             </div>
@@ -32,7 +32,7 @@ export default class SampleMenu extends React.Component {
 
 function Popup(props) {
     return (
-        <div className="modal">
+        <div className="simple-modal">
             <div className="overlay" onClick={props.onClose}></div>
             <div className="modal-content">
                 <button className="btn-close" onClick={props.onClose}>
