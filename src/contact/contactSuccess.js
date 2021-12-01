@@ -43,6 +43,9 @@ export default function ContactSuccessPage() {
                         Buy (DC USA) has a parking garage available (~ $2/hour).
                         For drivers, there are many one-way streets and
                         congested traffic here, so please do plan ahead!
+                        <br/>
+                        <br/>
+                        If driving, the entrance to the parking garage is next to Mattress Firm near 14th St and Park Rd NW.
                     </p>
                     <p className="address">
                         Highland Park Apartments
