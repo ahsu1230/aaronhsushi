@@ -180,7 +180,7 @@ class ContactForm extends React.Component {
                             isTextArea={true}
                         />
                         <FormInput
-                            title={"Tell me about yourself"}
+                            title={"Please tell me about yourself"}
                             placeholder={
                                 "Is this dinner for a special occasion? How did you hear about me?"
                             }
