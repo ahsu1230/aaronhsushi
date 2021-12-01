@@ -2,6 +2,7 @@ import "./tos.sass";
 import "../common/simpleModal.sass";
 
 import React from "react";
+import mixpanel from "mixpanel-browser";
 import iconClose from "./../assets/close_black.svg";
 
 export default class TermsOfService extends React.Component {
@@ -26,6 +27,15 @@ export default class TermsOfService extends React.Component {
         this.setState({ showPP: false });
     };
 
+    onChange = (e) => {
+        let oldValue = Boolean(this.props.value);
+        let newValue = !oldValue;
+        if (process.env.NODE_ENV === "production") {
+            mixpanel.track("tos_checked", { checked: newValue });
+        }
+        this.props.onChange("hasAgreedToS", newValue);
+    };
+
     render() {
         return (
             <div id="tos">
@@ -33,9 +43,7 @@ export default class TermsOfService extends React.Component {
                     type="checkbox"
                     value={Boolean(this.props.value) || false}
                     checked={Boolean(this.props.value) || false}
-                    onChange={(e) =>
-                        this.props.onChange("hasAgreedToS", !this.props.value)
-                    }
+                    onChange={this.onChange}
                 />
                 <div className="label">
                     <p>

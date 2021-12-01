@@ -1,5 +1,7 @@
 "use strict";
 
+import mixpanel from "mixpanel-browser";
+
 export const generateEmailMessage = (data) => {
     return [
         "<html>",
@@ -51,12 +53,14 @@ const sendProdEmail = (message, onSuccess, onFail) => {
             if (onSuccess) {
                 onSuccess();
             }
+            mixpanel.track("submit_request_success");
         })
         .catch((err) => {
             console.error("Failed to send email. Error: ", err);
             if (onFail) {
                 onFail();
             }
+            mixpanel.track("submit_request_fail");
         });
 };
 

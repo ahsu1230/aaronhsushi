@@ -1,6 +1,7 @@
 import "./contact.sass";
 import React from "react";
 import moment from "moment";
+import mixpanel from "mixpanel-browser";
 import "react-dates/initialize";
 import "react-dates/lib/css/_datepicker.css";
 import { SingleDatePicker } from "react-dates";
@@ -65,6 +66,12 @@ class ContactForm extends React.Component {
             const data = this.props.data;
             const message = generateEmailMessage(data);
             console.log(message);
+            if (process.env.NODE_ENV === "production") {
+                mixpanel.track("submit_request_clicked", {
+                    data: data,
+                    message: message,
+                });
+            }
             sendEmail(message, this.props.onSubmitSuccess, this.onSubmitFail);
             console.log("Email sent!");
         } else {
