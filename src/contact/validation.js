@@ -30,7 +30,7 @@ export const validateNumGuests = (num) => {
 };
 
 export const validateAdditionalInfo = (info) => {
-    return info.length >= 20;
+    return info.length >= 10;
 };
 
 export const validateToS = (val) => {
