@@ -1,7 +1,6 @@
 import "./contact.sass";
 import React from "react";
 import moment from "moment";
-import mixpanel from "mixpanel-browser";
 import "react-dates/initialize";
 import "react-dates/lib/css/_datepicker.css";
 import { SingleDatePicker } from "react-dates";
@@ -19,6 +18,8 @@ import {
 import { generateEmailMessage, sendEmail } from "./email.js";
 import { InvalidMessages, Validators } from "./validation.js";
 import { MyEmail } from "../common/constants.js";
+import { debounce } from "lodash";
+import Analytics from "../common/analytics";
 
 class ContactForm extends React.Component {
     onClear = () => {
@@ -61,21 +62,22 @@ class ContactForm extends React.Component {
 
         console.log("Validating...");
         const validate = this.validateAll();
+        const data = this.props.data;
         if (validate) {
             console.log("Validate success!");
-            const data = this.props.data;
             const message = generateEmailMessage(data);
             console.log(message);
-            if (process.env.NODE_ENV === "production") {
-                mixpanel.track("submit_request_clicked", {
-                    data: data,
-                    message: message,
-                });
-            }
+            Analytics.track("submit_request_clicked", {
+                data: data,
+                message: message,
+            });
             sendEmail(message, this.props.onSubmitSuccess, this.onSubmitFail);
             console.log("Email sent!");
         } else {
             console.log("Validate failed!");
+            Analytics.track("submit_request_failed", {
+                data: data,
+            });
             if (this.props.data.hasAgreedToS) {
                 window.alert(
                     "Please correctly fill out all fields before submitting."
@@ -104,6 +106,23 @@ class ContactForm extends React.Component {
         this.props.onChangeAddition(name);
     };
 
+    onChangeEmail = (name, value) => {
+        this.onChangeField(name, value);
+        // Analytics.track("form_email");
+    };
+
+    onChangeDateTime = (name, value) => {
+        this.onChangeField(name, value);
+        // Analytics.track("form_date_time", {
+        //     datetime: value
+        // });
+    };
+
+    onChangeAdditionalInfo = (name, value) => {
+        this.onChangeField(name, value);
+        // Analytics.track("form_additional_info");
+    };
+
     render() {
         return (
             <div id="contact-form">
@@ -129,7 +148,7 @@ class ContactForm extends React.Component {
                             value={this.props.data.email}
                             placeholder={"email@address.com"}
                             fieldName={"email"}
-                            onChange={this.onChangeField}
+                            onChange={this.onChangeEmail}
                         />
                         <FormInput
                             title={"Phone Number"}
@@ -152,7 +171,7 @@ class ContactForm extends React.Component {
                     <section>
                         <FormDateTime
                             datetime={this.props.data.datetime}
-                            onChange={this.onChangeField}
+                            onChange={this.onChangeDateTime}
                         />
                     </section>
 
@@ -193,7 +212,7 @@ class ContactForm extends React.Component {
                             }
                             value={this.props.data.additionalInfo}
                             fieldName={"additionalInfo"}
-                            onChange={this.onChangeField}
+                            onChange={this.onChangeAdditionalInfo}
                             isTextArea={true}
                         />
                         <TermsOfService

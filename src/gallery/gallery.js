@@ -1,8 +1,8 @@
 import "./gallery.sass";
 import React from "react";
 import PropTypes from "prop-types";
-import mixpanel from "mixpanel-browser";
 import { withRouter } from "react-router-dom";
+import Analytics from "../common/analytics.js";
 import Banner from "../common/banner.js";
 import GalleryModal from "./galleryModal.js";
 import ImageGallery from "./imageGallery.js";
@@ -26,11 +26,7 @@ class GalleryPage extends React.Component {
     };
 
     componentDidMount() {
-        if (process.env.NODE_ENV === "production") {
-            mixpanel.track("page_gallery");
-        } else {
-            console.log("track page_gallery");
-        }
+        Analytics.track("page_gallery");
     }
 
     goToContactPage = () => {

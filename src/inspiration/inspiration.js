@@ -1,7 +1,7 @@
 import "./inspiration.sass";
 import React from "react";
 import { withRouter } from "react-router-dom";
-import mixpanel from "mixpanel-browser";
+import Analytics from "../common/analytics.js";
 import Banner from "../common/banner.js";
 import InspirationMyFish from "./inspirationMyFish.js";
 import InspirationRestaurants from "./inspirationRestaurants.js";
@@ -15,11 +15,7 @@ const selectionHowTo = "how_to";
 
 class InspirationPage extends React.Component {
     componentDidMount() {
-        if (process.env.NODE_ENV === "production") {
-            mixpanel.track("page_inspiration");
-        } else {
-            console.log("track page_inspiration");
-        }
+        Analytics.track("page_inspiration");
     }
 
     render() {

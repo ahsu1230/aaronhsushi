@@ -2,7 +2,7 @@ import "./tos.sass";
 import "../common/simpleModal.sass";
 
 import React from "react";
-import mixpanel from "mixpanel-browser";
+import Analytics from "../common/analytics.js";
 import iconClose from "./../assets/close_black.svg";
 
 export default class TermsOfService extends React.Component {
@@ -30,11 +30,7 @@ export default class TermsOfService extends React.Component {
     onChange = (e) => {
         let oldValue = Boolean(this.props.value);
         let newValue = !oldValue;
-        if (process.env.NODE_ENV === "production") {
-            mixpanel.track("tos_checked", { checked: newValue });
-        } else {
-            console.log("track tos_checked: " + newValue);
-        }
+        Analytics.track("tos_checked", { checked: newValue });
         this.props.onChange("hasAgreedToS", newValue);
     };
 

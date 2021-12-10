@@ -3,7 +3,7 @@ import "./story.sass";
 import React from "react";
 import { withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
-import mixpanel from "mixpanel-browser";
+import Analytics from "../common/analytics.js";
 import Banner from "../common/banner.js";
 
 const SECTION_CLASS_NAMES = ["white center", "light left", "dark right"];
@@ -20,11 +20,7 @@ class StoryPage extends React.Component {
     };
 
     componentDidMount() {
-        if (process.env.NODE_ENV === "production") {
-            mixpanel.track("page_story");
-        } else {
-            console.log("track page_story");
-        }
+        Analytics.track("page_story");
     }
 
     goToContactPage = () => {

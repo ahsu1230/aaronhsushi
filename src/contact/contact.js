@@ -3,7 +3,6 @@ import "./contact.sass";
 import React from "react";
 import { withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
-import mixpanel from "mixpanel-browser";
 import { includes, remove, isEqual } from "lodash";
 import {
     MyEmail,
@@ -12,6 +11,7 @@ import {
     MyLinkedIn,
     MyLinkedInLink,
 } from "../common/constants.js";
+import Analytics from "../common/analytics.js";
 import Banner from "../common/banner.js";
 import ContactForm from "./contactForm.js";
 import ContactSuccess from "./contactSuccess.js";
@@ -45,11 +45,7 @@ class ContactPage extends React.Component {
     };
 
     componentDidMount() {
-        if (process.env.NODE_ENV === "production") {
-            mixpanel.track("page_contact");
-        } else {
-            console.log("track page_contact");
-        }
+        Analytics.track("page_contact");
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
