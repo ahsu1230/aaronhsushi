@@ -13,6 +13,7 @@ export default class TermsOfService extends React.Component {
 
     onOpenTOS = () => {
         this.setState({ showTOS: true });
+        Analytics.track("tos_view");
     };
 
     onCloseTOS = () => {
@@ -21,6 +22,7 @@ export default class TermsOfService extends React.Component {
 
     onOpenPP = () => {
         this.setState({ showPP: true });
+        Analytics.track("pp_view");
     };
 
     onClosePP = () => {
