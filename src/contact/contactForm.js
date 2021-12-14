@@ -18,7 +18,6 @@ import {
 import { generateEmailMessage, sendEmail } from "./email.js";
 import { InvalidMessages, Validators } from "./validation.js";
 import { MyEmail } from "../common/constants.js";
-import { debounce } from "lodash";
 import Analytics from "../common/analytics";
 
 class ContactForm extends React.Component {
@@ -108,19 +107,17 @@ class ContactForm extends React.Component {
 
     onChangeEmail = (name, value) => {
         this.onChangeField(name, value);
-        // Analytics.track("form_email");
+        // Analytics.trackDebounce("form_change_email");
     };
 
     onChangeDateTime = (name, value) => {
         this.onChangeField(name, value);
-        // Analytics.track("form_date_time", {
-        //     datetime: value
-        // });
+        // Analytics.trackDebounce("form_change_date_time", {datetime: value});
     };
 
     onChangeAdditionalInfo = (name, value) => {
         this.onChangeField(name, value);
-        // Analytics.track("form_additional_info");
+        // Analytics.trackDebounce("form_change_additional_info");
     };
 
     render() {
@@ -149,6 +146,9 @@ class ContactForm extends React.Component {
                             placeholder={"email@address.com"}
                             fieldName={"email"}
                             onChange={this.onChangeEmail}
+                            onFocusChange={(e) => {
+                                Analytics.track("form_focus_email");
+                            }}
                         />
                         <FormInput
                             title={"Phone Number"}
@@ -213,6 +213,9 @@ class ContactForm extends React.Component {
                             value={this.props.data.additionalInfo}
                             fieldName={"additionalInfo"}
                             onChange={this.onChangeAdditionalInfo}
+                            onFocusChange={(e) => {
+                                Analytics.track("form_focus_additional_info");
+                            }}
                             isTextArea={true}
                         />
                         <TermsOfService
@@ -259,6 +262,16 @@ function FormInput(props) {
                     onChange={(e) =>
                         props.onChange(props.fieldName, e.target.value)
                     }
+                    onFocus={(e) => {
+                        if (props.onFocusChange) {
+                            props.onFocusChange(e);
+                        }
+                    }}
+                    onBlur={(e) => {
+                        if (props.onBlurChange) {
+                            props.onBlurChange(e);
+                        }
+                    }}
                 />
             )}
             {!isTextArea && (
@@ -269,6 +282,16 @@ function FormInput(props) {
                     onChange={(e) =>
                         props.onChange(props.fieldName, e.target.value)
                     }
+                    onFocus={(e) => {
+                        if (props.onFocusChange) {
+                            props.onFocusChange(e);
+                        }
+                    }}
+                    onBlur={(e) => {
+                        if (props.onBlurChange) {
+                            props.onBlurChange(e);
+                        }
+                    }}
                 />
             )}
             {!isValid && !isEmpty && <p className="error">{invalidMessage}</p>}
@@ -310,9 +333,12 @@ class FormDateTime extends React.Component {
                         date={this.props.datetime}
                         onDateChange={this.onDateChange}
                         focused={this.state.focused}
-                        onFocusChange={({ focused }) =>
-                            this.setState({ focused })
-                        }
+                        onFocusChange={({ focused }) => {
+                            this.setState({ focused });
+                            if (focused) {
+                                Analytics.track("form_focus_date");
+                            }
+                        }}
                         showDefaultInputIcon
                         isDayBlocked={isDateBlocked}
                         isOutsideRange={isDateOutsideRange}
@@ -325,6 +351,9 @@ class FormDateTime extends React.Component {
                         defaultValue={TimeOptions[0]}
                         options={TimeOptions}
                         onChange={this.onTimeChange}
+                        onFocus={(e) => {
+                            Analytics.track("form_focus_time");
+                        }}
                     />
                 </div>
                 <p>
