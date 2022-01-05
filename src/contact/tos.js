@@ -138,6 +138,16 @@ function PopupTOS(props) {
                     We reserve the right to refuse service to anyone for any
                     reason at any time.
                 </p>
+                <p>
+                    Patrons and users of our service acknowledge that consuming
+                    raw or undercooked meats, poultry, seafood, shellfish, or
+                    eggs may increase your risk of foodborne illness, especially
+                    if you have certain medical conditions. By submitting a
+                    reservation request, you agree that consuming the listed
+                    products are at your own risk. <br />
+                    We will not be held liable for any sickness, illnesses, or
+                    diseases that may come from consuming our products.
+                </p>
 
                 <h3>
                     SECTION 3 – ACCURACY, COMPLETENESS AND TIMELINESS OF
@@ -172,6 +182,19 @@ function PopupTOS(props) {
                     the Service (or any part or content thereof) without notice
                     at any time.
                 </p>
+                <p>
+                    Any event cancellations made by guests less than 7 days
+                    before the event will be charged $50 per cancelled guest.
+                    Parties may replace guests as long as the party size is at
+                    or more than the original reserved party size. Minor changes
+                    to the event, such as time, location or event additions,
+                    dietary restrictions and accomodations are allowed.
+                </p>
+                <p>
+                    Chefs may cancel reservations and events for any reason. All
+                    fees to guests and users will be waived if chefs cancel the
+                    event.
+                </p>
 
                 <h3>SECTION 5 – PRODUCTS OR SERVICES</h3>
                 <p>
@@ -191,6 +214,10 @@ function PopupTOS(props) {
                     services, information, or other material purchased or
                     obtained by you will meet your expectations, or that any
                     errors in the Service will be corrected.
+                </p>
+                <p>
+                    Payment to AaronHsushi should be made by users, customers, and clients either before the transaction service event or promptly after. 
+                    Users, customers, and clients must pay the amount specified on the prescribed invoice provided at the end of service. Payment transaction can be done in cash, personal checks, or any online payment system or application.
                 </p>
                 <p>
                     Tips/gratuities are not included in the cost of services and
