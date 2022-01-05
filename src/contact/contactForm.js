@@ -7,6 +7,7 @@ import { SingleDatePicker } from "react-dates";
 import Select from "react-select";
 import ContactFormAdditions from "./contactFormAdditions.js";
 import SampleMenu from "./sampleMenu.js";
+import Disclaimers from "./disclaimers.js";
 import TermsOfService from "./tos.js";
 import {
     getMinDateTime,
@@ -17,7 +18,7 @@ import {
 } from "./datetime.js";
 import { generateEmailMessage, sendEmail } from "./email.js";
 import { InvalidMessages, Validators } from "./validation.js";
-import { MyEmail } from "../common/constants.js";
+import { MyEmail, MyVenmo } from "../common/constants.js";
 import Analytics from "../common/analytics";
 
 class ContactForm extends React.Component {
@@ -184,6 +185,16 @@ class ContactForm extends React.Component {
                         <EstimatedCosts
                             estimate={this.props.data.estimatedCostPerGuest}
                         />
+                        <h4>Cancellation Policy</h4>
+                        <p>
+                            Because ingredients are placed over a week before
+                            events, any event cancellations made less than 7
+                            days before the event will be charged $50 per
+                            cancelled guest. Parties may replace guests as long
+                            as the party size is at or more than the original
+                            reserved party size.
+                            <br />
+                        </p>
                     </section>
 
                     <section>
@@ -232,6 +243,10 @@ class ContactForm extends React.Component {
                             Submit
                         </button>
                     </div>
+
+                    <section>
+                        <Disclaimers />
+                    </section>
                 </div>
             </div>
         );
@@ -378,6 +393,11 @@ function EstimatedCosts(props) {
             <p>
                 These are rough estimates as fresh fish and seafood may differ
                 based on market value.
+            </p>
+            <p>
+                For payment, my most preferred method is through cash, check or
+                Venmo at {MyVenmo}. Please contact me if you have another
+                preferred method of payment.
             </p>
         </div>
     );

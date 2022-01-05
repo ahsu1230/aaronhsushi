@@ -49,8 +49,8 @@ export default class TermsOfService extends React.Component {
                     <p>
                         I have read and agree to the{" "}
                         <a onClick={this.onOpenTOS}>Terms of Service</a> and{" "}
-                        <a onClick={this.onOpenPP}>Privacy Policy</a>{" "}
-                        agreements.
+                        <a onClick={this.onOpenPP}>Privacy Policy</a> agreements
+                        and the Disclaimer statements below.
                     </p>
                 </div>
                 {this.state.showTOS && <PopupTOS onClose={this.onCloseTOS} />}
