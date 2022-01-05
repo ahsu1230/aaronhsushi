@@ -14,22 +14,30 @@ export default function InspirationHowTo(props) {
             <div className="youtube-cards">
                 <YoutubeCard
                     title={"Just One Cookbook "}
-                    description={"Nami-san is a blogger with an extraordinarily extensive knowledge about Japanese cooking. Check out her website to learn more about authentic Japanese recipes!"}
+                    description={
+                        "Nami-san is a blogger with an extraordinarily extensive knowledge about Japanese cooking. Check out her website to learn more about authentic Japanese recipes!"
+                    }
                     url={"https://www.youtube.com/embed/-gsEDlfYxeU"}
                 />
                 <YoutubeCard
                     title={"Akira-san's Home Sushi Channel"}
-                    description={"A fun channel dedicated to sushi made by a Japanese couple who have worked professionally in an established Tokyo sushi restaurant."}
+                    description={
+                        "A fun channel dedicated to sushi made by a Japanese couple who have worked professionally in an established Tokyo sushi restaurant."
+                    }
                     url={"https://www.youtube.com/embed/Myt-BZFyMm8"}
                 />
                 <YoutubeCard
                     title={"Ginza Watari"}
-                    description={"A sushi chef from Tokyo shares his many ideas and techniques in his video series. All of his videos are in Japanese, but some have English translations!"}
+                    description={
+                        "A sushi chef from Tokyo shares his many ideas and techniques in his video series. All of his videos are in Japanese, but some have English translations!"
+                    }
                     url={"https://www.youtube.com/embed/Iqdw93m_gpM"}
                 />
                 <YoutubeCard
                     title={"Samurai Sushi Spirits"}
-                    description={"A Michelin sushi chef demonstrates his techniques with very informed tutorials in his own sushi restaurant in Fukuoka, Japan."}
+                    description={
+                        "A Michelin sushi chef demonstrates his techniques with very informed tutorials in his own sushi restaurant in Fukuoka, Japan."
+                    }
                     url={"https://www.youtube.com/embed/eAagGdAVQHw"}
                 />
             </div>

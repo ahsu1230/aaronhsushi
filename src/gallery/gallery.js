@@ -6,9 +6,11 @@ import Analytics from "../common/analytics.js";
 import Banner from "../common/banner.js";
 import GalleryModal from "./galleryModal.js";
 import ImageGallery from "./imageGallery.js";
+import CommunityGallery from "./community.js";
 import Profile from "./profile.js";
 
 import srcCaretDown from "../assets/caret_down_white.svg";
+import { GalleryImages, CommunityImages } from "./images";
 class GalleryPage extends React.Component {
     constructor(props) {
         super(props);
@@ -16,6 +18,7 @@ class GalleryPage extends React.Component {
         this.state = {
             showModal: false,
             selectedImageId: undefined,
+            images: GalleryImages,
         };
     }
 
@@ -38,10 +41,19 @@ class GalleryPage extends React.Component {
         this.setState({
             showModal: true,
             selectedImageId: imageId,
+            images: GalleryImages,
         });
     };
 
-    onSwitchGalleryImage = (imageId) => {
+    onClickCommunityImage = (imageId) => {
+        this.setState({
+            showModal: true,
+            selectedImageId: imageId,
+            images: CommunityImages,
+        });
+    };
+
+    onSwitchImage = (imageId) => {
         this.setState({
             showModal: true,
             selectedImageId: imageId,
@@ -69,9 +81,27 @@ class GalleryPage extends React.Component {
                 </div>
 
                 <div className="section" ref={this.divToFocus}>
-                    <ImageGallery
-                        onClickGalleryImage={this.onClickGalleryImage}
+                    <ImageGallery onClickImage={this.onClickGalleryImage} />
+                </div>
+
+                <Banner
+                    height={"560px"}
+                    bannerImgSrc={
+                        "https://aaronhsushi.b-cdn.net/banner_homakase1.jpg"
+                    }
+                    buttonText={"Make a reservation"}
+                    buttonOnClick={this.goToContactPage}
+                    notHeader={true}
+                />
+
+                <div className="section">
+                    <CommunityGallery
+                        onClickImage={this.onClickCommunityImage}
                     />
+                </div>
+
+                <div className="section">
+                    <Profile />
                 </div>
 
                 <Banner
@@ -85,24 +115,11 @@ class GalleryPage extends React.Component {
                     notHeader={true}
                 />
 
-                <div className="section">
-                    <Profile />
-                </div>
-
-                <Banner
-                    height={"560px"}
-                    bannerImgSrc={
-                        "https://aaronhsushi.b-cdn.net/banner_homakase1.jpg"
-                    }
-                    buttonText={"Make a reservation"}
-                    buttonOnClick={this.goToContactPage}
-                    notHeader={true}
-                />
-
                 <GalleryModal
                     show={this.state.showModal}
                     selectedImageId={this.state.selectedImageId}
-                    onSwitchImage={this.onSwitchGalleryImage}
+                    onSwitchImage={this.onSwitchImage}
+                    images={this.state.images}
                     onClose={this.onCloseModal}
                 />
             </div>

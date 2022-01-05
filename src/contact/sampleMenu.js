@@ -49,9 +49,9 @@ function Popup(props) {
                 <section>
                     <p className="description">
                         The tasting menu may change based on seasonal
-                        availability, customer requests and accomodations. Come
-                        often to get a taste of what each seasonal celebrations
-                        have to offer!
+                        availability, customer requests and/or accomodations.
+                        Come often to get a taste of what each seasonal
+                        celebrations have to offer!
                     </p>
                 </section>
                 <section>
