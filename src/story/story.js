@@ -102,10 +102,10 @@ const sectionContents = [
             "After a few years working as a Software Engineer, I moved to New York City in 2018 to work at Kosaka (1-star Michelin sushi omakase restaurant) to take my first step into the culinary world.",
         text2: `
             On the side, I was also working shifts at a family-owned restaurant, Daimatsu, in New Jersey, 
-            a few sushi caterings and even a few tuna-cutting shows at Mitsuwa! I moved back to my hometown to be with family in late 2020.
+            a few sushi caterings at special events and even a few tuna-cutting shows at Mitsuwa! I moved back to my hometown to be with family in late 2020.
             Though I am not in the restaurant industry anymore, I gained a
             lifetime of knowledge from my experiences and want to share my
-            craft and my passion with friends.
+            craft and passion with friends.
             `,
     },
     {
@@ -114,8 +114,8 @@ const sectionContents = [
             My fondest childhood memories were celebrating family occasions by ordering
             ridiculous amounts of specialty sushi rolls from our local sushi
             restaurant, Yuraku, in Germantown, Maryland. 
-            When I moved to the Bay Area for my first Software Engineering job after graduating college, thankfully,
-            I was surrounded by many Asian markets so it was easy to watch some Youtube tutorials and get started!`,
+            When I moved to the Bay Area for my first Software Engineering job after graduating college, 
+            I was surrounded by many Asian markets so it was easy to just watch some Youtube tutorials and get started!`,
         text2:
             "From there, I started replicating my favorite specialty rolls from restaurants and tried to push the boundaries to creatively include ingredients from other cuisines. My favorite Frankenstein creations are my Salmon-Guacamole rolls with crushed Tostitos lime-hinted chips and torched Brazillian-steak roll topped with grilled pineapples. Check out my Inspiration page to view my library of resources for beginners!",
         imgSrc: "https://aaronhsushi.b-cdn.net/vert_knife_name.jpeg",
@@ -132,7 +132,7 @@ const sectionContents = [
     {
         subtitle: "What are you doing now?",
         text1:
-            "Today, I perform multi-course omakase dinners for guests at my home in Washington D.C. I welcome guests to an intimate dining stage and serve the highest quality sushi course to the best of my abilities. This setting gives guests the opportunity to comfortably enjoy a much more affordable omakase experience and to learn what the art of sushi omakase means to me.",
+            "Today, I perform multi-course omakase dinners for guests in a community space of my apartment complex located in Washington D.C. I welcome guests to an intimate dining stage and serve the highest quality sushi course to the best of my abilities. This setting gives guests the opportunity to comfortably enjoy an affordable omakase experience and to learn what the art of sushi omakase means to me.",
         imgSrc: "",
     },
 ];

@@ -216,8 +216,13 @@ function PopupTOS(props) {
                     errors in the Service will be corrected.
                 </p>
                 <p>
-                    Payment to AaronHsushi should be made by users, customers, and clients either before the transaction service event or promptly after. 
-                    Users, customers, and clients must pay the amount specified on the prescribed invoice provided at the end of service. Payment transaction can be done in cash, personal checks, or any online payment system or application.
+                    Payment to AaronHsushi should be made by users, customers,
+                    and clients either before the transaction service event or
+                    promptly after. Users, customers, and clients must pay the
+                    amount specified on the prescribed invoice provided at the
+                    end of service. Payment transaction can be done in cash,
+                    personal checks, or any online payment system or
+                    application.
                 </p>
                 <p>
                     Tips/gratuities are not included in the cost of services and
