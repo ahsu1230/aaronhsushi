@@ -6,7 +6,7 @@ export const InvalidMessages = {
     fullName: "Please enter your first and last name",
     email: "Please enter a valid email",
     phone: "Please enter a valid phone number",
-    numGuests: "Due to limited space, I can only host 1-4 people at a time.",
+    numGuests: "Due to limited space, I can only host 2-4 people at a time.",
     additionalInfo: "Please provide more details.",
     hasAgreedToS:
         "You must agree to the Terms of Services to submit a reservation request.",
@@ -26,7 +26,7 @@ export const validatePhone = (phone) => {
 };
 
 export const validateNumGuests = (num) => {
-    return num > 0 && num <= 4;
+    return num >= 2 && num <= 4;
 };
 
 export const validateAdditionalInfo = (info) => {
