@@ -104,5 +104,16 @@ export const GetFullImageSrc = (imageId) => {
 };
 
 export const GetThumbnailSrc = (imageId) => {
-    return CDN_BASE + imageId + "_thumb.jpeg";
+    const thumbWidth = getThumbnailWidth();
+    const width = thumbWidth ? thumbWidth + "" : "";
+    return CDN_BASE + imageId + "_thumb" + width + ".jpeg";
+};
+
+export const getThumbnailWidth = () => {
+    const windowWidth = window.innerWidth;
+    if (windowWidth <= 600) {
+        return 360;
+    } else {
+        return 0; // use regular thumbnail
+    }
 };
