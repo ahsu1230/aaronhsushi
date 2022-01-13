@@ -7,6 +7,10 @@ export const getMinDateTime = () => {
     date.minute(0);
     date.second(0);
     date.day(5 + 7 + 7); // Select 2 Fridays from now
+    
+    while (!isDateAvailable(date)) {
+        date.add(1, 'd');
+    }
     return date;
 };
 
@@ -23,9 +27,9 @@ export const isDateHighlighted = (date) => {
 };
 
 // Given a date, should it even be viewable/selectable?
-export const isDateOutsideRange = (date) => {
+export const isDateOutsideRange = (date, minDate) => {
     // Day must be at or after minimum date
-    return date.isBefore(getMinDateTime(), "day");
+    return date.isBefore(minDate, "day");
 };
 
 // Given a date, is it blocked or unavailable?
@@ -42,6 +46,10 @@ const isDateBusy = (date) => {
     });
     return !!busyDate;
 };
+
+const isDateAvailable = (date) => {
+    return isDateHighlighted(date) && !isDateBlocked(date) && !isDateBusy(date);
+}
 
 // YYYY-MM-DD
 const BOOKED_DATES = [
@@ -60,11 +68,13 @@ const BOOKED_DATES = [
     "2022-01-30",
     "2022-02-04",
     "2022-02-05",
+    "2022-02-06",
     "2022-02-11",
     "2022-02-12",
     "2022-02-18",
     "2022-02-19",
     "2022-03-05",
+    "2022-03-12",
     "2022-03-18",
     "2022-03-19",
     "2022-03-20",
