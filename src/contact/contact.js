@@ -22,14 +22,17 @@ import iconEmail from "./../assets/email_black.svg";
 import iconIG from "./../assets/instagram_black.svg";
 import iconLI from "./../assets/linkedin_black.svg";
 
+const MIN_DATE_TIME = getMinDateTime(); // always 'moment' object
+
 class ContactPage extends React.Component {
     state = {
         contactSuccess: false,
         fullName: "",
         email: "",
         phone: "",
-        numGuests: 1,
-        datetime: getMinDateTime(), // must always be a 'moment' object
+        numGuests: 2,
+        minDateTime: MIN_DATE_TIME,
+        datetime: MIN_DATE_TIME,
         dietRestrictions: "",
         additionalRequests: "",
         additionalInfo: "",

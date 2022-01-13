@@ -7,9 +7,10 @@ export const getMinDateTime = () => {
     date.minute(0);
     date.second(0);
     date.day(5 + 7 + 7); // Select 2 Fridays from now
-    
+
+    // Find next available date
     while (!isDateAvailable(date)) {
-        date.add(1, 'd');
+        date.add(1, "d");
     }
     return date;
 };
@@ -49,7 +50,7 @@ const isDateBusy = (date) => {
 
 const isDateAvailable = (date) => {
     return isDateHighlighted(date) && !isDateBlocked(date) && !isDateBusy(date);
-}
+};
 
 // YYYY-MM-DD
 const BOOKED_DATES = [

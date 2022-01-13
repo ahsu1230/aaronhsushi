@@ -10,7 +10,6 @@ import SampleMenu from "./sampleMenu.js";
 import Disclaimers from "./disclaimers.js";
 import TermsOfService from "./tos.js";
 import {
-    getMinDateTime,
     isDateHighlighted,
     isDateOutsideRange,
     isDateBlocked,
@@ -28,7 +27,7 @@ class ContactForm extends React.Component {
             email: "",
             phone: "",
             numGuests: 1,
-            datetime: getMinDateTime(),
+            datetime: this.props.minDateTime,
             dietRestrictions: "",
             additionalRequests: "",
             additionalInfo: "",
@@ -172,6 +171,7 @@ class ContactForm extends React.Component {
                     <section>
                         <FormDateTime
                             datetime={this.props.data.datetime}
+                            minDateTime={this.props.data.minDateTime}
                             onChange={this.onChangeDateTime}
                         />
                     </section>
@@ -356,7 +356,9 @@ class FormDateTime extends React.Component {
                         }}
                         showDefaultInputIcon
                         isDayBlocked={isDateBlocked}
-                        isOutsideRange={isDateOutsideRange}
+                        isOutsideRange={(date) =>
+                            isDateOutsideRange(date, this.props.minDateTime)
+                        }
                         isDayHighlighted={isDateHighlighted}
                         id="date-picker"
                     />
