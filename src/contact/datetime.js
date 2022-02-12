@@ -6,7 +6,7 @@ export const getMinDateTime = () => {
     date.hour(18);
     date.minute(0);
     date.second(0);
-    date.day(5 + 7 + 7); // Select 2 Fridays from now
+    date.day(4 + 7 + 7); // Select 2 Thursdays from now
 
     // Find next available date
     while (!isDateAvailable(date)) {
@@ -23,8 +23,8 @@ export const TimeOptions = [
 
 // Given a day, is it available for reservation?
 export const isDateHighlighted = (date) => {
-    // Highlight weekend days (Fri, Sat, Sun)
-    return date.day() == 5 || date.day() == 6 || date.day() == 0;
+    // Highlight weekend days (Thurs, Fri, Sat, Sun)
+    return date.day() == 4 || date.day() == 5 || date.day() == 6 || date.day() == 0;
 };
 
 // Given a date, should it even be viewable/selectable?
@@ -91,9 +91,17 @@ const BOOKED_DATES = [
     "2022-03-20",
     "2022-03-25",
     "2022-03-26",
+    "2022-03-27",
+    "2022-03-31",
     "2022-04-01",
     "2022-04-02",
     "2022-04-03",
+    "2022-04-07",
+    "2022-04-08",
+    "2022-04-09",
+    "2022-04-10",
     "2022-04-16",
+    "2022-04-17",
     "2022-04-24",
+    "2022-05-21",
 ];
