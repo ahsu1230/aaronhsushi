@@ -2,15 +2,17 @@ import { includes } from "lodash";
 import Additions from "./omakaseAdditionConstants.js";
 
 const BASE_COST = 80;
+const TEA_COST = 6;
+const BASE_SAKE_COST = 5;
 
 const ADDITIONAL_COSTS = {
-    [Additions.UNI_US_EAST]: 35,
-    [Additions.UNI_US_WEST]: 80,
-    [Additions.UNI_JP]: 180,
-    [Additions.SAKE_MIZUBASHO_GINJO]: 38,
-    [Additions.SAKE_NIWA_NO_UGUISU_60]: 36,
-    [Additions.SAKE_DEWAZAKURA_DEWASANSAN]: 46,
-    [Additions.SAKE_IZUMIBASHI_RAKUFUMAI]: 63,
+    [Additions.UNI_US_EAST]: 40,
+    [Additions.UNI_US_WEST]: 90,
+    [Additions.UNI_JP]: 195,
+    [Additions.SAKE_MIZUBASHO_GINJO]: 33 + BASE_SAKE_COST,
+    [Additions.SAKE_NIWA_NO_UGUISU_60]: 31 + BASE_SAKE_COST,
+    [Additions.SAKE_DEWAZAKURA_DEWASANSAN]: 41 + BASE_SAKE_COST,
+    [Additions.SAKE_IZUMIBASHI_RAKUFUMAI]: 58 + BASE_SAKE_COST,
 };
 
 export const calculateEstimatePerGuest = (numGuests, omakaseAdditions) => {

@@ -24,7 +24,9 @@ export const TimeOptions = [
 // Given a day, is it available for reservation?
 export const isDateHighlighted = (date) => {
     // Highlight weekend days (Thurs, Fri, Sat, Sun)
-    return date.day() == 4 || date.day() == 5 || date.day() == 6 || date.day() == 0;
+    return (
+        date.day() == 4 || date.day() == 5 || date.day() == 6 || date.day() == 0
+    );
 };
 
 // Given a date, should it even be viewable/selectable?
