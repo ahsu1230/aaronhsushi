@@ -4,4 +4,4 @@ export const MyInstagram = "@aaronhsushidc";
 export const MyInstagramLink = "https://www.instagram.com/aaronhsushidc";
 export const MyLinkedIn = "www.linkedin.com/aaron-hsu-sushi";
 export const MyLinkedInLink = "https://www.linkedin.com/aaron-hsu-sushi";
-export const MyVenmo = "@Aaron-Hsu-1";
+export const MyVenmo = "@AaronHsushiDc";
