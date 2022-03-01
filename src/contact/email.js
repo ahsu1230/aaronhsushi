@@ -22,6 +22,7 @@ export const generateEmailMessage = (data) => {
         "<p>Dietary Restrictions: " + data.dietRestrictions + "</p>",
         "<p>Additional Accommodation: " + data.additionalRequests + "</p>",
         "<p>Additional Information: " + data.additionalInfo + "</p>",
+        "<h3>Estimated Final Cost: $" + data.estimatedFinalCost + "</h3>",
         "<h3>Estimated Cost Per Guest: $" +
             data.estimatedCostPerGuest +
             "</h3>",

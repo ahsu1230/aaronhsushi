@@ -183,7 +183,10 @@ class ContactForm extends React.Component {
 
                     <section>
                         <EstimatedCosts
-                            estimate={this.props.data.estimatedCostPerGuest}
+                            estimateFinal={this.props.data.estimatedFinalCost}
+                            estimatePerGuest={
+                                this.props.data.estimatedCostPerGuest
+                            }
                         />
                         <h4>Cancellation Policy</h4>
                         <p>
@@ -390,7 +393,12 @@ function EstimatedCosts(props) {
     return (
         <div className="estimates">
             <h4>
-                Estimated cost per guest: <strong>${props.estimate}</strong>
+                Estimated cost per guest:{" "}
+                <strong>${props.estimatePerGuest}</strong>
+            </h4>
+            <h4>
+                Estimated all-inclusive price:{" "}
+                <strong>${props.estimateFinal}</strong>
             </h4>
             <p>
                 These are rough estimates as fresh fish and seafood may differ

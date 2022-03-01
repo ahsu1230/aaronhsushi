@@ -1,38 +1,42 @@
-import { includes } from "lodash";
 import Additions from "./omakaseAdditionConstants.js";
 
-const BASE_COST = 80;
-const TEA_COST = 6;
-const BASE_SAKE_COST = 5;
+const BASE_COST = 95;
+const BASE_TEA_COST = 5;
+const BASE_SAKE_COST = 10;
 
-const ADDITIONAL_COSTS = {
+export const ADDITIONAL_COSTS = {
     [Additions.UNI_US_EAST]: 40,
-    [Additions.UNI_US_WEST]: 90,
-    [Additions.UNI_JP]: 195,
+    [Additions.UNI_US_WEST]: 80,
+    [Additions.UNI_JP]: 200,
     [Additions.SAKE_MIZUBASHO_GINJO]: 33 + BASE_SAKE_COST,
     [Additions.SAKE_NIWA_NO_UGUISU_60]: 31 + BASE_SAKE_COST,
     [Additions.SAKE_DEWAZAKURA_DEWASANSAN]: 41 + BASE_SAKE_COST,
     [Additions.SAKE_IZUMIBASHI_RAKUFUMAI]: 58 + BASE_SAKE_COST,
+    [Additions.TEA_VB_OOLONG]: BASE_TEA_COST + 1,
+    [Additions.TEA_VB_BLACK]: BASE_TEA_COST + 1,
+    [Additions.TEA_VB_GREEN]: BASE_TEA_COST + 1,
+    [Additions.TEA_GENMAICHA]: BASE_TEA_COST,
+    [Additions.TEA_HOJICHA]: BASE_TEA_COST,
 };
 
 export const calculateEstimatePerGuest = (numGuests, omakaseAdditions) => {
-    // Omakase per person usually includes:
-    // 1 Amuse (3 dishes, $10)
-    // 1 Sashimi (Katsuo + Madai + Shima)
-    // 5 Nigiri (Madai, Shima, Salmon + 2 Seasonal)
-    // 3 Nigiri (Hotate, BotanEbi, Ikura)
-    // 1 Soup ($5)
-    // 1 TamagoYaki ($5)
+    const subtotal =
+        calculateFinalEstimate(numGuests, omakaseAdditions) / numGuests;
+    return Math.round(subtotal * 100) / 100;
+};
 
-    // Base cost per person
-    let subtotal = BASE_COST;
+export const calculateFinalEstimate = (numGuests, omakaseAdditions) => {
+    // Base cost
+    let subtotal = BASE_COST * numGuests;
 
     // Additionals
     omakaseAdditions.forEach((addition) => {
-        if (addition.indexOf("uni") >= 0) {
-            subtotal += ADDITIONAL_COSTS[addition] / (numGuests + 1);
+        if (addition.indexOf("tea") == 0) {
+            // Tea is bought per guest
+            subtotal += ADDITIONAL_COSTS[addition] * numGuests;
         } else {
-            subtotal += ADDITIONAL_COSTS[addition] / numGuests;
+            // Uni tray or sake bottle is bought for whole party
+            subtotal += ADDITIONAL_COSTS[addition];
         }
     });
 

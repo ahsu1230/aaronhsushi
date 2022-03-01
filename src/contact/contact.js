@@ -16,12 +16,16 @@ import Banner from "../common/banner.js";
 import ContactForm from "./contactForm.js";
 import ContactSuccess from "./contactSuccess.js";
 import { getMinDateTime } from "./datetime.js";
-import { calculateEstimatePerGuest } from "./estimate.js";
+import {
+    calculateEstimatePerGuest,
+    calculateFinalEstimate,
+} from "./estimate.js";
 
 import iconEmail from "./../assets/email_black.svg";
 import iconIG from "./../assets/instagram_black.svg";
 import iconLI from "./../assets/linkedin_black.svg";
 
+const DEFAULT_NUM_GUESTS = 2;
 const MIN_DATE_TIME = getMinDateTime(); // always 'moment' object
 
 class ContactPage extends React.Component {
@@ -30,14 +34,18 @@ class ContactPage extends React.Component {
         fullName: "",
         email: "",
         phone: "",
-        numGuests: 2,
+        numGuests: DEFAULT_NUM_GUESTS,
         minDateTime: MIN_DATE_TIME,
         datetime: MIN_DATE_TIME,
         dietRestrictions: "",
         additionalRequests: "",
         additionalInfo: "",
         omakaseAdditions: [],
-        estimatedCostPerGuest: calculateEstimatePerGuest(1, []),
+        estimatedFinalCost: calculateFinalEstimate(DEFAULT_NUM_GUESTS, []),
+        estimatedCostPerGuest: calculateEstimatePerGuest(
+            DEFAULT_NUM_GUESTS,
+            []
+        ),
         hasAgreedToS: false,
     };
 
@@ -59,12 +67,17 @@ class ContactPage extends React.Component {
                 JSON.stringify(this.state.omakaseAdditions)
             )
         ) {
-            const estimate = calculateEstimatePerGuest(
+            const estimateFinal = calculateFinalEstimate(
+                this.state.numGuests,
+                this.state.omakaseAdditions
+            );
+            const estimatePerGuest = calculateEstimatePerGuest(
                 this.state.numGuests,
                 this.state.omakaseAdditions
             );
             this.setState({
-                estimatedCostPerGuest: estimate,
+                estimatedFinalCost: estimateFinal,
+                estimatedCostPerGuest: estimatePerGuest,
             });
         }
     }
