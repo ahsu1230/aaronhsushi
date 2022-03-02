@@ -41,7 +41,10 @@ export default class GalleryModal extends React.Component {
         const selectedImageId = this.props.selectedImageId;
         const selectedImage =
             GetImageById(this.props.images, selectedImageId) || {};
-        const fullImageSrc = GetFullImageSrc(selectedImageId);
+        const fullImageSrc = GetFullImageSrc(
+            selectedImageId,
+            this.props.selectedImagePrefix
+        );
 
         const modalClassNames = show ? "show" : "";
         return (

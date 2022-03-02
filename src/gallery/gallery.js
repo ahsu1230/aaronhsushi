@@ -18,6 +18,7 @@ class GalleryPage extends React.Component {
         this.state = {
             showModal: false,
             selectedImageId: undefined,
+            selectedImagePrefix: "",
             images: GalleryImages,
         };
     }
@@ -41,6 +42,7 @@ class GalleryPage extends React.Component {
         this.setState({
             showModal: true,
             selectedImageId: imageId,
+            selectedImagePrefix: "",
             images: GalleryImages,
         });
     };
@@ -49,6 +51,7 @@ class GalleryPage extends React.Component {
         this.setState({
             showModal: true,
             selectedImageId: imageId,
+            selectedImagePrefix: "community/",
             images: CommunityImages,
         });
     };
@@ -118,6 +121,7 @@ class GalleryPage extends React.Component {
                 <GalleryModal
                     show={this.state.showModal}
                     selectedImageId={this.state.selectedImageId}
+                    selectedImagePrefix={this.state.selectedImagePrefix}
                     onSwitchImage={this.onSwitchImage}
                     images={this.state.images}
                     onClose={this.onCloseModal}

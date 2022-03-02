@@ -27,7 +27,7 @@ class CommunityCard extends React.Component {
 
     render() {
         const image = this.props.image;
-        const thumbSrc = GetThumbnailSrc(image.id);
+        const thumbSrc = GetThumbnailSrc(image.id, "community/");
         return (
             <div className="community-card" onClick={this.onClickCard}>
                 <img src={thumbSrc} />

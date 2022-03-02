@@ -78,16 +78,43 @@ export const CommunityImages = [
         id: "community2",
     },
     {
-        id: "community3",
-    },
-    {
         id: "community4",
     },
     {
-        id: "community6",
+        id: "community7",
+    },
+    {
+        id: "community9",
+    },
+    {
+        id: "community8",
+    },
+    {
+        id: "community10",
+    },
+    {
+        id: "community16",
+    },
+    {
+        id: "community11",
+    },
+    {
+        id: "community13",
+    },
+    {
+        id: "community12",
+    },
+    {
+        id: "community14",
+    },
+    {
+        id: "community15",
     },
     {
         id: "community5",
+    },
+    {
+        id: "community6",
     },
 ];
 
@@ -99,14 +126,14 @@ export const GetImageIndexById = (images, imageId) => {
     return findIndex(images, { id: imageId });
 };
 
-export const GetFullImageSrc = (imageId) => {
-    return CDN_BASE + imageId + ".jpeg";
+export const GetFullImageSrc = (imageId, prefix) => {
+    return CDN_BASE + (prefix || "") + imageId + ".jpeg";
 };
 
-export const GetThumbnailSrc = (imageId) => {
+export const GetThumbnailSrc = (imageId, prefix) => {
     const thumbWidth = getThumbnailWidth();
     const width = thumbWidth ? thumbWidth + "" : "";
-    return CDN_BASE + imageId + "_thumb" + width + ".jpeg";
+    return CDN_BASE + (prefix || "") + imageId + "_thumb" + width + ".jpeg";
 };
 
 export const getThumbnailWidth = () => {
