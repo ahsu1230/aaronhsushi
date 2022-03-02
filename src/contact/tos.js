@@ -71,13 +71,13 @@ function PopupTOS(props) {
                 <h2>Terms of service and conditions for use of this website</h2>
                 <h3>Overview</h3>
                 <p>
-                    This website is operated by Aaron Hsu. Throughout the site,
-                    the terms “we”, “us” and “our” refer to Aaron Hsu and any
-                    subsidiaries or affiliates under Aaron Hsushi. We offer this
-                    website, including all information, tools and services
-                    available from this site to you, the user, conditioned upon
-                    your acceptance of all terms, conditions, policies and
-                    notices stated here.
+                    This website is operated by AaronHsushi LLC. Throughout the
+                    site, the terms “we”, “us” and “our” refer to AaronHsushi
+                    LLC and any subsidiaries or affiliates under AaronHsushi
+                    LLC. We offer this website, including all information, tools
+                    and services available from this site to you, the user,
+                    conditioned upon your acceptance of all terms, conditions,
+                    policies and notices stated here.
                 </p>
                 <p>
                     By visiting our site and/ or purchasing something from us,
@@ -216,12 +216,12 @@ function PopupTOS(props) {
                     errors in the Service will be corrected.
                 </p>
                 <p>
-                    Payment to AaronHsushi should be made by users, customers,
-                    and clients either before the transaction service event or
-                    promptly after. Users, customers, and clients must pay the
-                    amount specified on the prescribed invoice provided at the
-                    end of service. Payment transaction can be done in cash,
-                    personal checks, or any online payment system or
+                    Payment to AaronHsushi LLC should be made by users,
+                    customers, and clients either before the transaction service
+                    event or promptly after. Users, customers, and clients must
+                    pay the amount specified on the prescribed invoice provided
+                    at the end of service. Payment transaction can be done in
+                    cash, personal checks, or any online payment system or
                     application.
                 </p>
                 <p>
@@ -268,7 +268,7 @@ function PopupTOS(props) {
                     particular purpose, durability, title, and non-infringement.
                 </p>
                 <p>
-                    In no case shall Aaron Hsushi, our directors, officers,
+                    In no case shall AaronHsushi LLC, our directors, officers,
                     employees, affiliates, agents, contractors, interns,
                     suppliers, service providers or licensors be liable for any
                     injury, loss, claim, or any direct, indirect, incidental,
@@ -293,16 +293,15 @@ function PopupTOS(props) {
 
                 <h3>SECTION 8 – INDEMNIFICATION</h3>
                 <p>
-                    You agree to indemnify, defend and hold harmless Aaron Hsu,
-                    AaronHsushi and our parent, subsidiaries, affiliates,
-                    partners, officers, directors, agents, contractors,
-                    licensors, service providers, subcontractors, suppliers,
-                    interns and employees, harmless from any claim or demand,
-                    including reasonable attorneys’ fees, made by any
-                    third-party due to or arising out of your breach of these
-                    Terms of Service or the documents they incorporate by
-                    reference, or your violation of any law or the rights of a
-                    third-party.
+                    You agree to indemnify, defend and hold harmless AaronHsushi
+                    LLC, our parent, subsidiaries, affiliates, partners,
+                    officers, directors, agents, contractors, licensors, service
+                    providers, subcontractors, suppliers, interns and employees,
+                    harmless from any claim or demand, including reasonable
+                    attorneys’ fees, made by any third-party due to or arising
+                    out of your breach of these Terms of Service or the
+                    documents they incorporate by reference, or your violation
+                    of any law or the rights of a third-party.
                 </p>
 
                 <h3>SECTION 9 – SEVERABILITY</h3>
