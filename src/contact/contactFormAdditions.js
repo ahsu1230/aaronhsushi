@@ -154,6 +154,20 @@ export default class ContactFormAdditions extends React.Component {
                     value={isChecked(omakaseAdditions, Additions.TEA_VB_BLACK)}
                     onChange={this.props.onChangeAddition}
                 />
+                <FormCheckbox
+                    title={
+                        "Tea - Valley Brook Green " +
+                        getPriceStringPerPerson(
+                            ADDITIONAL_COSTS[Additions.TEA_VB_GREEN]
+                        )
+                    }
+                    description={
+                        "Dragon Well has an iconic tender green color with a prominent bean aroma."
+                    }
+                    fieldName={Additions.TEA_VB_GREEN}
+                    value={isChecked(omakaseAdditions, Additions.TEA_VB_GREEN)}
+                    onChange={this.props.onChangeAddition}
+                />
                 <p>
                     For more Tea options, you may visit{" "}
                     <a href="https://www.valleybrooktea.com/" target="_blank">
