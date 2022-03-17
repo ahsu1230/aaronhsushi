@@ -47,30 +47,30 @@ export default class ContactFormAdditions extends React.Component {
                 <h4 className="additions">Sake</h4>
                 <FormCheckbox
                     title={
-                        "Sake - Mizubasho Ginjo " +
+                        "Kubota Senju Ginjo " +
                         getPriceString(
-                            ADDITIONAL_COSTS[Additions.SAKE_MIZUBASHO_GINJO]
+                            ADDITIONAL_COSTS[Additions.SAKE_KUBOTA_SENJU]
                         )
                     }
                     description={
-                        "Medium body and fruity notes. Pairs well with seafood."
+                        "A great beginner's Junmai Ginjo with a medium body and velvety texture."
                     }
-                    fieldName={Additions.SAKE_MIZUBASHO_GINJO}
+                    fieldName={Additions.SAKE_KUBOTA_SENJU}
                     value={isChecked(
                         omakaseAdditions,
-                        Additions.SAKE_MIZUBASHO_GINJO
+                        Additions.SAKE_KUBOTA_SENJU
                     )}
                     onChange={this.props.onChangeAddition}
                 />
                 <FormCheckbox
                     title={
-                        "Sake - Niwa No Uguisu 60 Junmai Ginjo " +
+                        "Niwa no Uguisu 60 Junmai Ginjo " +
                         getPriceString(
                             ADDITIONAL_COSTS[Additions.SAKE_NIWA_NO_UGUISU_60]
                         )
                     }
                     description={
-                        "A fresh and aromatic Junmai Ginjo with a crisp, vibrant melon flavor."
+                        "Fresh and aromatic with a crisp, vibrant melon flavor. Delicious beginner sake for those who enjoy sweet tones."
                     }
                     fieldName={Additions.SAKE_NIWA_NO_UGUISU_60}
                     value={isChecked(
@@ -81,39 +81,58 @@ export default class ContactFormAdditions extends React.Component {
                 />
                 <FormCheckbox
                     title={
-                        'Sake - Dewazakura "Dewasansan" Junmai Ginjo ' +
+                        "Ginban Bansho Daiginjo " +
                         getPriceString(
-                            ADDITIONAL_COSTS[
-                                Additions.SAKE_DEWAZAKURA_DEWASANSAN
-                            ]
+                            ADDITIONAL_COSTS[Additions.SAKE_GINBAN_BANSHU_50]
                         )
                     }
                     description={
-                        "Balanced, floral, with a light, smooth fruity essence."
+                        "A smooth and dry sake with grape tones and soft acidity. Easy to drink for any occasion and has many wine-like qualities."
                     }
-                    fieldName={Additions.SAKE_DEWAZAKURA_DEWASANSAN}
+                    fieldName={Additions.SAKE_GINBAN_BANSHU_50}
                     value={isChecked(
                         omakaseAdditions,
-                        Additions.SAKE_DEWAZAKURA_DEWASANSAN
+                        Additions.SAKE_GINBAN_BANSHU_50
                     )}
                     onChange={this.props.onChangeAddition}
                 />
                 <FormCheckbox
                     title={
-                        "Sake - Izumibashi Akitonbo Rakufumai " +
+                        "Chef's Choice Premium Sweet Sake " +
                         getPriceString(
-                            ADDITIONAL_COSTS[
-                                Additions.SAKE_IZUMIBASHI_RAKUFUMAI
-                            ]
+                            ADDITIONAL_COSTS[Additions.SAKE_PREMIUM_SWEET],
+                            "approx. "
                         )
                     }
                     description={
-                        "Light, airy, semi-dry. Easy to drink for any occasion."
+                        "A premium sake with a slightly sweet taste. " +
+                        "Choices may be one of " +
+                        "Fukuju Blue, Niwa no Uguisu 50 Daiginjo, Dewazakura Dewasansan or more!"
                     }
-                    fieldName={Additions.SAKE_IZUMIBASHI_RAKUFUMAI}
+                    fieldName={Additions.SAKE_PREMIUM_SWEET}
                     value={isChecked(
                         omakaseAdditions,
-                        Additions.SAKE_IZUMIBASHI_RAKUFUMAI
+                        Additions.SAKE_PREMIUM_SWEET
+                    )}
+                    onChange={this.props.onChangeAddition}
+                />
+                <FormCheckbox
+                    title={
+                        "Chef's Choice Premium Dry Sake " +
+                        getPriceString(
+                            ADDITIONAL_COSTS[Additions.SAKE_PREMIUM_DRY],
+                            "approx. "
+                        )
+                    }
+                    description={
+                        "A premium sake with a slightly dry taste. " +
+                        "Choices may be one of " +
+                        "Izumibashi Rakufumai, Shichida Junmai, Yuho Yama-Oroshi, or more!"
+                    }
+                    fieldName={Additions.SAKE_PREMIUM_DRY}
+                    value={isChecked(
+                        omakaseAdditions,
+                        Additions.SAKE_PREMIUM_DRY
                     )}
                     onChange={this.props.onChangeAddition}
                 />
@@ -128,7 +147,7 @@ export default class ContactFormAdditions extends React.Component {
                 <h4 className="additions">Tea</h4>
                 <FormCheckbox
                     title={
-                        "Tea - Valley Brook Oolong " +
+                        "Valley Brook Oolong " +
                         getPriceStringPerPerson(
                             ADDITIONAL_COSTS[Additions.TEA_VB_OOLONG]
                         )
@@ -142,7 +161,7 @@ export default class ContactFormAdditions extends React.Component {
                 />
                 <FormCheckbox
                     title={
-                        "Tea - Valley Brook Black " +
+                        "Valley Brook Black " +
                         getPriceStringPerPerson(
                             ADDITIONAL_COSTS[Additions.TEA_VB_BLACK]
                         )
@@ -156,7 +175,7 @@ export default class ContactFormAdditions extends React.Component {
                 />
                 <FormCheckbox
                     title={
-                        "Tea - Valley Brook Green " +
+                        "Valley Brook Green " +
                         getPriceStringPerPerson(
                             ADDITIONAL_COSTS[Additions.TEA_VB_GREEN]
                         )
@@ -185,8 +204,10 @@ function isChecked(omakaseAdditions, fieldName) {
     return includes(omakaseAdditions, fieldName);
 }
 
-function getPriceString(price) {
-    return "(+$" + price + ")";
+function getPriceString(price, prefix, suffix) {
+    const pre = prefix || "";
+    const post = suffix || "";
+    return "(" + pre + "+$" + price + post + ")";
 }
 
 function getPriceStringPerTray(price) {
