@@ -1,6 +1,6 @@
 import Additions from "./omakaseAdditionConstants.js";
 
-const BASE_COST = 95;
+const BASE_COST = 105;
 const BASE_TEA_COST = 5;
 const BASE_SAKE_COST = 10;
 
