@@ -339,7 +339,7 @@ class FormDateTime extends React.Component {
     render() {
         return (
             <div className="select-date-time">
-                <h4>Select a date and time (weekends, evenings-only)</h4>
+                <h4>Select a date and time</h4>
                 <p>
                     The fish and seafood I order are sourced from Japan, so they
                     can take around a week to process and be delivered to the
