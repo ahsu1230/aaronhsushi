@@ -37,8 +37,9 @@ export const isDateOutsideRange = (date, minDate) => {
 
 // Given a date, is it blocked or unavailable?
 export const isDateBlocked = (date) => {
-    // Day is blocked if not Saturday or Sunday
-    return !isDateHighlighted(date) || isDateBusy(date);
+    return (
+        !isDateHighlighted(date) || isDateRestaurant(date) || isDateBusy(date)
+    );
 };
 
 const isDateBusy = (date) => {
@@ -52,6 +53,14 @@ const isDateBusy = (date) => {
 
 const isDateAvailable = (date) => {
     return isDateHighlighted(date) && !isDateBlocked(date) && !isDateBusy(date);
+};
+
+const isDateRestaurant = (date) => {
+    const momentDate = moment(date);
+    return (
+        (momentDate.month() >= 7 && momentDate.year() == 2022) ||
+        momentDate.year() >= 2023
+    ); // Month starts at 0, so 7 means August.
 };
 
 // YYYY-MM-DD
@@ -104,6 +113,7 @@ const BOOKED_DATES = [
     "2022-06-28",
     "2022-06-29",
     "2022-06-30",
+    "2022-07-01",
     "2022-07-28",
     "2022-07-29",
     "2022-07-30",
