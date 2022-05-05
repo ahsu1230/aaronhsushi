@@ -57,10 +57,7 @@ const isDateAvailable = (date) => {
 
 const isDateRestaurant = (date) => {
     const momentDate = moment(date);
-    return (
-        (momentDate.month() >= 7 && momentDate.year() == 2022) ||
-        momentDate.year() >= 2023
-    ); // Month starts at 0, so 7 means August.
+    return momentDate.isAfter('2022-08-8');
 };
 
 // YYYY-MM-DD
@@ -97,20 +94,25 @@ const BOOKED_DATES = [
     "2022-05-22",
     "2022-05-27",
     "2022-05-28",
+    "2022-06-02",
     "2022-06-03",
     "2022-06-04",
-    "2022-06-05",
     "2022-06-09",
     "2022-06-10",
     "2022-06-16",
     "2022-06-17",
+    "2022-06-23",
+    "2022-06-24",
     "2022-06-25",
     "2022-06-28",
     "2022-06-29",
     "2022-06-30",
     "2022-07-01",
+    "2022-07-02",
+    "2022-07-03",
     "2022-07-28",
     "2022-07-29",
     "2022-07-30",
     "2022-07-31",
+    "2022-08-05",
 ];
