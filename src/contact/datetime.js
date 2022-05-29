@@ -6,7 +6,8 @@ export const getMinDateTime = () => {
     date.hour(18);
     date.minute(0);
     date.second(0);
-    date.day(3 + 7); // Select 1 Wednesday from now
+    date.day(1); // can only book tomorrow
+    // date.day(3 + 7); // Select 1 Wednesday from now
 
     // Find next available date
     while (!isDateAvailable(date)) {
@@ -52,12 +53,12 @@ const isDateBusy = (date) => {
 };
 
 const isDateAvailable = (date) => {
-    return isDateHighlighted(date) && !isDateBlocked(date) && !isDateBusy(date);
+    return isDateHighlighted(date) && !isDateBlocked(date) && !isDateBusy(date) && !isDateRestaurant(date);
 };
 
 const isDateRestaurant = (date) => {
     const momentDate = moment(date);
-    return momentDate.isAfter('2022-08-8');
+    return momentDate.isAfter('2022-08-30');
 };
 
 // YYYY-MM-DD
@@ -101,6 +102,8 @@ const BOOKED_DATES = [
     "2022-06-10",
     "2022-06-16",
     "2022-06-17",
+    "2022-06-18",
+    "2022-06-19",
     "2022-06-23",
     "2022-06-24",
     "2022-06-25",
@@ -110,9 +113,12 @@ const BOOKED_DATES = [
     "2022-07-01",
     "2022-07-02",
     "2022-07-03",
+    "2022-07-09",
     "2022-07-28",
     "2022-07-29",
     "2022-07-30",
     "2022-07-31",
     "2022-08-05",
+    "2022-08-06",
+    "2022-08-20",
 ];
