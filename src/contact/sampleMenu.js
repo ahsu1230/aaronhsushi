@@ -22,7 +22,7 @@ export default class SampleMenu extends React.Component {
         return (
             <div id="sample-menu">
                 <a onClick={this.onOpenPopup}>
-                    Click here to view a sample 16-course omakase menu.
+                    Click here to view a sample 17-course omakase menu.
                 </a>
                 {this.state.showPopup && <Popup onClose={this.onClosePopup} />}
             </div>
@@ -112,6 +112,10 @@ function Popup(props) {
                     <MenuItem
                         title={"Ikura"}
                         description={"Soy-sauce marinated salmon roe"}
+                    />
+                    <MenuItem
+                        title={"Extra Sushi"}
+                        description={"Any sushi piece of customer's choice"}
                     />
                 </section>
                 <section>

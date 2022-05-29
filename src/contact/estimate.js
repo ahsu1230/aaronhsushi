@@ -1,6 +1,7 @@
 import Additions from "./omakaseAdditionConstants.js";
 
 const BASE_COST = 105;
+const BASE_COST_LARGE_PARTY = 110;
 const BASE_TEA_COST = 5;
 const BASE_SAKE_COST = 10;
 
@@ -29,7 +30,12 @@ export const calculateEstimatePerGuest = (numGuests, omakaseAdditions) => {
 
 export const calculateFinalEstimate = (numGuests, omakaseAdditions) => {
     // Base cost
-    let subtotal = BASE_COST * numGuests;
+    let subtotal = 0;
+    if (numGuests >= 5) {
+        subtotal = BASE_COST_LARGE_PARTY * numGuests;
+    } else {
+        subtotal = BASE_COST * numGuests;
+    }
 
     // Additionals
     omakaseAdditions.forEach((addition) => {
