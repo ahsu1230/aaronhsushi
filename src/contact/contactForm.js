@@ -188,15 +188,27 @@ class ContactForm extends React.Component {
                                 this.props.data.estimatedCostPerGuest
                             }
                         />
-                        <h4>Cancellation Policy</h4>
+                        <h4>Deposit and Cancellation Policy</h4>
                         <p>
-                            Because ingredients are placed over a week before
-                            events, any event cancellations made less than 7
-                            days before the event will be charged $50 per
-                            cancelled guest. Parties may replace guests as long
-                            as the party size is at or more than the original
-                            reserved party size.
-                            <br />
+                            In order to secure your reservation request, a
+                            non-refundable deposit of $80 per person plus the
+                            total cost of seafood supplements is required. Once
+                            the deposit is received, your booking will be
+                            confirmed and the deposit will go towards your final
+                            event cost. If the deposit is not received, your
+                            reserved time slot will be available for other
+                            clients to book and the reservation will be given to
+                            whoever makes the deposit first. Deposit payment
+                            information will be included in a reservation
+                            confirmation email, which you will receive shortly
+                            after submitting this form.
+                        </p>
+                        <p>
+                            Parties may replace guests at no cost as long as the
+                            party size is at or more than the original reserved
+                            party size. If the party size becomes less than the
+                            reserved party size, the deposit will NOT be
+                            refunded.
                         </p>
                     </section>
 

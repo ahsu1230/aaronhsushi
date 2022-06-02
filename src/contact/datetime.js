@@ -53,12 +53,17 @@ const isDateBusy = (date) => {
 };
 
 const isDateAvailable = (date) => {
-    return isDateHighlighted(date) && !isDateBlocked(date) && !isDateBusy(date) && !isDateRestaurant(date);
+    return (
+        isDateHighlighted(date) &&
+        !isDateBlocked(date) &&
+        !isDateBusy(date) &&
+        !isDateRestaurant(date)
+    );
 };
 
 const isDateRestaurant = (date) => {
     const momentDate = moment(date);
-    return momentDate.isAfter('2022-08-30');
+    return momentDate.isAfter("2022-08-30");
 };
 
 // YYYY-MM-DD
