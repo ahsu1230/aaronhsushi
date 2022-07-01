@@ -409,7 +409,7 @@ function EstimatedCosts(props) {
                 <strong>${props.estimatePerGuest}</strong>
             </h4>
             <h4>
-                Estimated all-inclusive price:{" "}
+                Total all-inclusive cost for party:{" "}
                 <strong>${props.estimateFinal}</strong>
             </h4>
             <p>
