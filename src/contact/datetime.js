@@ -63,7 +63,7 @@ const isDateAvailable = (date) => {
 
 const isDateRestaurant = (date) => {
     const momentDate = moment(date);
-    return momentDate.isAfter("2022-09-05");
+    return momentDate.isAfter("2022-09-19");
 };
 
 // YYYY-MM-DD
