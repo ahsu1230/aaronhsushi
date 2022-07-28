@@ -187,6 +187,7 @@ class ContactForm extends React.Component {
                             estimatePerGuest={
                                 this.props.data.estimatedCostPerGuest
                             }
+                            numGuests={this.props.data.numGuests}
                         />
                         <h4>Deposit and Cancellation Policy</h4>
                         <p>
@@ -410,6 +411,7 @@ function EstimatedCosts(props) {
             </h4>
             <h4>
                 Total all-inclusive cost for party:{" "}
+                ${props.estimatePerGuest}{"x"}${props.numGuests}{"="}
                 <strong>${props.estimateFinal}</strong>
             </h4>
             <p>
