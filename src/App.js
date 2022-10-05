@@ -4,7 +4,7 @@ import HeaderComponent from "./header/header.js";
 import GalleryPage from "./gallery/gallery.js";
 import StoryPage from "./story/story.js";
 import InspirationPage from "./inspiration/inspiration.js";
-import ContactPage from "./contact/contact.js";
+import ReservationsPage from "./reservations/reservations.js";
 import FooterComponent from "./footer/footer.js";
 import ScrollToTop from "./common/scrollToTop.js";
 
@@ -24,8 +24,8 @@ function App() {
                     <Route path="/inspiration">
                         <Inspiration />
                     </Route>
-                    <Route path="/contact">
-                        <Contact />
+                    <Route path="/reservations">
+                        <Reservations />
                     </Route>
                 </Switch>
                 <Footer />
@@ -40,5 +40,5 @@ const Header = HeaderComponent;
 const Gallery = GalleryPage;
 const Story = StoryPage;
 const Inspiration = InspirationPage;
-const Contact = ContactPage;
+const Reservations = ReservationsPage;
 const Footer = () => FooterComponent();

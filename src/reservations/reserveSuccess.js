@@ -1,12 +1,12 @@
-import "./contactSuccess.sass";
+import "./reserveSuccess.sass";
 
 import { Link } from "react-router-dom";
 import { MyEmail, MyVenmo } from "../common/constants.js";
 
-export default function ContactSuccessPage() {
+export default function ReserveSuccessPage() {
     return (
-        <div id="contact-success">
-            <div className="contact-container">
+        <div id="reserve-success">
+            <div className="reserve-container">
                 <section>
                     <h1>Thank you for your submission!</h1>
                     <p>

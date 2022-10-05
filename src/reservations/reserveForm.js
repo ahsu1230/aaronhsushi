@@ -1,31 +1,39 @@
-import "./contact.sass";
+import "./reserveForm.sass";
 import React from "react";
 import moment from "moment";
 import "react-dates/initialize";
 import "react-dates/lib/css/_datepicker.css";
 import { SingleDatePicker } from "react-dates";
 import Select from "react-select";
-import ContactFormAdditions from "./contactFormAdditions.js";
-import SampleMenu from "./sampleMenu.js";
-import Disclaimers from "./disclaimers.js";
-import TermsOfService from "./tos.js";
+import ReserveFormAdditions from "./reserveFormAdditions.js";
+import SampleMenu from "./utils/sampleMenu/sampleMenu.js";
+import Disclaimers from "./utils/disclaimers/disclaimers.js";
+import TermsOfService from "./utils/tos/tos.js";
 import {
     isDateHighlighted,
     isDateOutsideRange,
     isDateBlocked,
     TimeOptions,
-} from "./datetime.js";
-import { generateEmailMessage, sendEmail } from "./email.js";
-import { InvalidMessages, Validators } from "./validation.js";
+} from "./utils/scheduler/datetime.js";
+import { generateEmailMessage, sendEmail } from "./utils/email/email.js";
+import {
+    InvalidMessages,
+    Validators,
+} from "./utils/formValidation/validation.js";
 import { MyEmail, MyVenmo } from "../common/constants.js";
 import Analytics from "../common/analytics";
 
-class ContactForm extends React.Component {
+import iconDine from "./../assets/dine_white.svg";
+import iconHome from "./../assets/home_white.svg";
+import iconContact from "./../assets/social_white.svg";
+
+class ReserveForm extends React.Component {
     onClear = () => {
         this.props.onChangeFields({
             fullName: "",
             email: "",
             phone: "",
+            location: "",
             numGuests: 1,
             datetime: this.props.minDateTime,
             dietRestrictions: "",
@@ -41,6 +49,7 @@ class ContactForm extends React.Component {
             Validators["fullName"](this.props.data.fullName) &&
             Validators["email"](this.props.data.email) &&
             Validators["phone"](this.props.data.phone) &&
+            Validators["location"](this.props.data.location) &&
             Validators["numGuests"](this.props.data.numGuests) &&
             Validators["additionalInfo"](this.props.data.additionalInfo) &&
             Validators["hasAgreedToS"](this.props.data.hasAgreedToS)
@@ -122,14 +131,17 @@ class ContactForm extends React.Component {
 
     render() {
         return (
-            <div id="contact-form">
-                <p>
-                    Please fill the following form to request an omakase
-                    reservation. Once the form is filled out and submitted, I
-                    will confirm the reservation as soon as possible.
-                </p>
-                <SampleMenu />
+            <div id="reserve-form">
+                <FormIntro
+                    view={this.props.data.view} />
                 <div className="fill-form">
+                    <section>
+                        <FormDateTime
+                            datetime={this.props.data.datetime}
+                            minDateTime={this.props.data.minDateTime}
+                            onChange={this.onChangeDateTime}
+                        />
+                    </section>
                     <section>
                         <FormInput
                             title={"Full Name"}
@@ -159,6 +171,16 @@ class ContactForm extends React.Component {
                             onChange={this.onChangeField}
                         />
                         <FormInput
+                            title={"Location"}
+                            classLabel={"location"}
+                            value={this.props.data.location}
+                            placeholder={
+                                "City, State i.e. 'Rockville, Maryland'"
+                            }
+                            fieldName={"location"}
+                            onChange={this.onChangeField}
+                        />
+                        <FormInput
                             title={"No. Guests"}
                             classLabel={"num-guests"}
                             value={this.props.data.numGuests}
@@ -168,15 +190,7 @@ class ContactForm extends React.Component {
                         />
                     </section>
 
-                    <section>
-                        <FormDateTime
-                            datetime={this.props.data.datetime}
-                            minDateTime={this.props.data.minDateTime}
-                            onChange={this.onChangeDateTime}
-                        />
-                    </section>
-
-                    <ContactFormAdditions
+                    <ReserveFormAdditions
                         omakaseAdditions={this.props.data.omakaseAdditions}
                         onChangeAddition={this.onChangeAddition}
                     />
@@ -269,7 +283,58 @@ class ContactForm extends React.Component {
     }
 }
 
-export default ContactForm;
+export default ReserveForm;
+
+function FormIntro(props) {
+    return (
+        <section className="reserve-form-intro">
+            {props.view === "view_dine_in" && (
+                <div>
+                    <div className="title-container">
+                        <div className="icon-wrapper">
+                            <img src={iconDine}/>
+                        </div>
+                        <h3>Dine-in at Chef's home</h3>
+                    </div>
+                    <p>
+                        The Chef welcomes you to his home in Columbia Heights, Washington D.C. to enjoy a full sushi omakase dinner. 
+                        Celebrate your event here and browse his extensive sake and tea collection to find a perfect pairing to your meal.
+                    </p>
+                    <SampleMenu view={props.view}/>
+                    <h4>$105+ per person</h4>
+                </div>
+            )}
+            {props.view === "view_catering" && (
+                <div>
+                    <div className="title-container">
+                        <div className="icon-wrapper">
+                            <img src={iconHome}/>
+                        </div>
+                        <h3>Catered to your home</h3>
+                    </div>
+                    <p>
+                        Enjoy a full sushi omakase dinner brought to the comfort of your home.
+                    </p>
+                    <SampleMenu view={props.view}/>
+                    <h4>$175+ per person</h4>
+                    <div className="alert">
+                        <h4>
+                            Please Read!
+                        </h4>
+                        <p>
+                            Due to logistical limitations, caterings are only for diners who live at most 20 miles away from Columbia Heights, Washington D.C. and can guarantee a free parking space at most 30 feet away from the building throughout the duration of the dinner. <b>Diners who are unable to satisfy these conditions will not be catered to, no exceptions!</b>
+                        </p>
+                    </div>
+                </div>
+            )}
+            <p>
+                Please fill the following form to request an omakase
+                reservation. Once the form is filled out and submitted, I
+                will confirm the reservation as soon as possible.
+            </p>
+        </section>
+    );
+}
 
 function FormInput(props) {
     const isTextArea = props.isTextArea || false;
@@ -410,8 +475,10 @@ function EstimatedCosts(props) {
                 <strong>${props.estimatePerGuest}</strong>
             </h4>
             <h4>
-                Total all-inclusive cost for party:{" "}
-                ${props.estimatePerGuest}{"x"}{props.numGuests}{" = "}
+                Total all-inclusive cost for party: ${props.estimatePerGuest}
+                {" x "}
+                {props.numGuests}
+                {" = "}
                 <strong>${props.estimateFinal}</strong>
             </h4>
             <p>

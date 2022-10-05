@@ -1,0 +1,35 @@
+@import "../_constants.sass"
+
+#reservations
+
+    h3, h4, p
+        color: $colorTextGray
+
+        &.additions
+            margin-bottom: 12px
+
+    .reservations-container
+        width: 480px
+        margin: 64px auto 240px
+
+        .reserve-view-selector
+            display: flex
+            flex-direction: row
+            justify-content: space-evenly
+            align-items: center
+            margin: 64px 0
+
+            button
+                display: flex
+                align-items: center
+
+            button.active
+                background-color: $colorDarkPurple
+
+            button img
+                width: 24px
+                margin-right: 8px
+
+        @media screen and (max-width: $screenWidthMedium)
+            max-width: 80%
+                

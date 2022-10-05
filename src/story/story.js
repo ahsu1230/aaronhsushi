@@ -23,9 +23,9 @@ class StoryPage extends React.Component {
         Analytics.track("page_story");
     }
 
-    goToContactPage = () => {
+    goToReservationsPage = () => {
         const { match, location, history } = this.props;
-        history.push("contact");
+        history.push("reservations");
     };
 
     render() {
@@ -51,7 +51,7 @@ class StoryPage extends React.Component {
                     }
                 />
                 {sections}
-                <ActionSection onClickAction={this.goToContactPage} />
+                <ActionSection onClickAction={this.goToReservationsPage} />
             </div>
         );
     }
@@ -98,8 +98,7 @@ function ActionSection(props) {
 const sectionContents = [
     {
         subtitle: "Where did you work and train at?",
-        text1:
-            "After a few years working as a Software Engineer, I moved to New York City in 2018 to work at Kosaka (1-star Michelin sushi omakase restaurant) to take my first step into the culinary world.",
+        text1: "After a few years working as a Software Engineer, I moved to New York City in 2018 to work at Kosaka (1-star Michelin sushi omakase restaurant) to take my first step into the culinary world.",
         text2: `
             On the side, I was also working shifts at a family-owned restaurant, Daimatsu, in New Jersey, 
             a few sushi caterings at special events and even a few tuna-cutting shows at Mitsuwa! I moved back to my hometown to be with family in late 2020.
@@ -116,23 +115,19 @@ const sectionContents = [
             restaurant, Yuraku, in Germantown, Maryland. 
             When I moved to the Bay Area for my first Software Engineering job after graduating college, 
             I was surrounded by many Asian markets so it was easy to just watch some Youtube tutorials and get started!`,
-        text2:
-            "From there, I started replicating my favorite specialty rolls from restaurants and tried to push the boundaries to creatively include ingredients from other cuisines. My favorite Frankenstein creations are my Salmon-Guacamole rolls with crushed Tostitos lime-hinted chips and torched Brazillian-steak roll topped with grilled pineapples. Check out my Inspiration page to view my library of resources for beginners!",
+        text2: "From there, I started replicating my favorite specialty rolls from restaurants and tried to push the boundaries to creatively include ingredients from other cuisines. My favorite Frankenstein creations are my Salmon-Guacamole rolls with crushed Tostitos lime-hinted chips and torched Brazillian-steak roll topped with grilled pineapples. Check out my Inspiration page to view my library of resources for beginners!",
         imgSrc: "https://aaronhsushi.b-cdn.net/vert_knife_name.jpeg",
     },
     {
         subtitle:
             "What made you jump from your day job to becoming a sushi chef?",
-        text1:
-            "After a few years of making sushi as a hobby, I realized I was dawdling too much into superficialities without truly appreciating the craft. I realized I knew nothing about the history, art and traditions passed down from generations. And more importantly, I needed to know what it took to become a chef at a restaurant. I wanted the mind, spirit and heart of a sushi chef.",
-        text2:
-            "At the time, I thought New York City would be the best place to learn from Japanese sushi chefs who've learned the traditions from their masters in Japan. When the opportunity came, I took it without hesitation and haven't looked back since. I made sure to notify my parents AFTER I took the new job.",
+        text1: "After a few years of making sushi as a hobby, I realized I was dawdling too much into superficialities without truly appreciating the craft. I realized I knew nothing about the history, art and traditions passed down from generations. And more importantly, I needed to know what it took to become a chef at a restaurant. I wanted the mind, spirit and heart of a sushi chef.",
+        text2: "At the time, I thought New York City would be the best place to learn from Japanese sushi chefs who've learned the traditions from their masters in Japan. When the opportunity came, I took it without hesitation and haven't looked back since. I made sure to notify my parents AFTER I took the new job.",
         imgSrc: "https://aaronhsushi.b-cdn.net/vert_kohada_skin.jpeg",
     },
     {
         subtitle: "What are you doing now?",
-        text1:
-            "Today, I perform multi-course omakase dinners for guests in a community space of my apartment complex located in Washington D.C. I welcome guests to an intimate dining stage and serve the highest quality sushi course to the best of my abilities. This setting gives guests the opportunity to comfortably enjoy an affordable omakase experience and to learn what the art of sushi omakase means to me.",
+        text1: "Today, I perform multi-course omakase dinners for guests in a community space of my apartment complex located in Washington D.C. I welcome guests to an intimate dining stage and serve the highest quality sushi course to the best of my abilities. This setting gives guests the opportunity to comfortably enjoy an affordable omakase experience and to learn what the art of sushi omakase means to me.",
         imgSrc: "",
     },
 ];

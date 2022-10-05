@@ -1,6 +1,6 @@
 "use strict";
 
-import Analytics from "../common/analytics.js";
+import Analytics from "../../../common/analytics.js";
 
 export const generateEmailMessage = (data) => {
     return [

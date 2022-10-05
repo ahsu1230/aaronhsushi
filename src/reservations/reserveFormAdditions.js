@@ -1,10 +1,10 @@
-import "./contact.sass";
+import "./reservations.sass";
 import React from "react";
 import { includes } from "lodash";
-import Additions from "./omakaseAdditionConstants.js";
-import { ADDITIONAL_COSTS } from "./estimate.js";
+import Additions from "./utils/estimates/omakaseAdditionConstants.js";
+import { ADDITIONAL_COSTS } from "./utils/estimates/estimate.js";
 
-export default class ContactFormAdditions extends React.Component {
+export default class ReserveFormAdditions extends React.Component {
     render() {
         const omakaseAdditions = this.props.omakaseAdditions;
         return (

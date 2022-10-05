@@ -33,9 +33,9 @@ class GalleryPage extends React.Component {
         Analytics.track("page_gallery");
     }
 
-    goToContactPage = () => {
+    goToReservationsPage = () => {
         const { match, location, history } = this.props;
-        history.push("contact");
+        history.push("reservations");
     };
 
     onClickGalleryImage = (imageId) => {
@@ -93,7 +93,7 @@ class GalleryPage extends React.Component {
                         "https://aaronhsushi.b-cdn.net/banner_homakase1.jpg"
                     }
                     buttonText={"Make a reservation"}
-                    buttonOnClick={this.goToContactPage}
+                    buttonOnClick={this.goToReservationsPage}
                     notHeader={true}
                 />
 
@@ -114,7 +114,7 @@ class GalleryPage extends React.Component {
                         "https://aaronhsushi.b-cdn.net/banner_table_setup.jpg"
                     }
                     buttonText={"Make a reservation"}
-                    buttonOnClick={this.goToContactPage}
+                    buttonOnClick={this.goToReservationsPage}
                     notHeader={true}
                 />
 
@@ -185,7 +185,8 @@ const HomeBanner = (props) => {
                             block: "nearest",
                         });
                     }
-                }}>
+                }}
+            >
                 <img src={srcCaretDown} />
             </button>
         </div>

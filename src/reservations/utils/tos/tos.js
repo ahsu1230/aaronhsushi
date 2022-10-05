@@ -1,9 +1,9 @@
 import "./tos.sass";
-import "../common/simpleModal.sass";
+import "../../../common/simpleModal.sass";
 
 import React from "react";
-import Analytics from "../common/analytics.js";
-import iconClose from "./../assets/close_black.svg";
+import Analytics from "../../../common/analytics.js";
+import iconClose from "./../../../assets/close_black.svg";
 
 export default class TermsOfService extends React.Component {
     state = {

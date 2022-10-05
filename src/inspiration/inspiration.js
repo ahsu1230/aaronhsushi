@@ -53,28 +53,32 @@ class Selector extends React.Component {
                 <div className="selections">
                     <div
                         className="select-container"
-                        onClick={() => this.onSelect(selectionMyFish)}>
+                        onClick={() => this.onSelect(selectionMyFish)}
+                    >
                         <div className="overlay" />
                         <img src={"/fresh_fish/trueworldfoods.png"} />
                         <p>Where do you get your fresh fish?</p>
                     </div>
                     <div
                         className="select-container"
-                        onClick={() => this.onSelect(selectionRecs)}>
+                        onClick={() => this.onSelect(selectionRecs)}
+                    >
                         <div className="overlay" />
                         <img src={"/restaurants/kosaka_outside.jpg"} />
                         <p>Favorite Sushi Restaurants</p>
                     </div>
                     <div
                         className="select-container"
-                        onClick={() => this.onSelect(selectionBuyFish)}>
+                        onClick={() => this.onSelect(selectionBuyFish)}
+                    >
                         <div className="overlay" />
                         <img src={"/fresh_fish/people_buying_fish.jpg"} />
                         <p>Where can I buy fresh fish?</p>
                     </div>
                     <div
                         className="select-container"
-                        onClick={() => this.onSelect(selectionHowTo)}>
+                        onClick={() => this.onSelect(selectionHowTo)}
+                    >
                         <div className="overlay" />
                         <img src={"/youtube_channels/akira-san1.png"} />
                         <p>How can I start making sushi?</p>

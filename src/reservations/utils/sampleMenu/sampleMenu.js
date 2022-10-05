@@ -1,9 +1,9 @@
 import "./sampleMenu.sass";
-import "../common/simpleModal.sass";
+import "../../../common/simpleModal.sass";
 
 import React from "react";
-import Banner from "../common/banner.js";
-import iconClose from "./../assets/close_white.svg";
+import Banner from "../../../common/banner.js";
+import iconClose from "./../../../assets/close_white.svg";
 
 export default class SampleMenu extends React.Component {
     state = {
@@ -22,7 +22,7 @@ export default class SampleMenu extends React.Component {
         return (
             <div id="sample-menu">
                 <a onClick={this.onOpenPopup}>
-                    Click here to view a sample 17-course omakase menu.
+                    Click here to view a sample multi-course omakase menu.
                 </a>
                 {this.state.showPopup && <Popup onClose={this.onClosePopup} />}
             </div>

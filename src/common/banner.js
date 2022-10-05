@@ -15,17 +15,20 @@ export default function Banner(props) {
             className={classNames}
             style={{
                 height: `${height}`,
-            }}>
+            }}
+        >
             <div
                 className="overlay"
                 style={{
                     opacity: `${overlayAlpha}`,
-                }}></div>
+                }}
+            ></div>
             <div
                 className="banner-img"
                 style={{
                     backgroundImage: `url("${bannerImgSrc}")`,
-                }}></div>
+                }}
+            ></div>
             <div className="text">
                 {mainTitle && <h1>{mainTitle}</h1>}
                 {title && <h2>{title}</h2>}

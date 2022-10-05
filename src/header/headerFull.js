@@ -23,8 +23,8 @@ export default function HeaderFull(props) {
                 />
                 <HeaderLink
                     currentPath={currentPath}
-                    path="/contact"
-                    name="Contact"
+                    path="/reservations"
+                    name="Reservations"
                 />
             </div>
         </div>
