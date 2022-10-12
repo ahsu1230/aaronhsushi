@@ -35,6 +35,7 @@ class ReserveForm extends React.Component {
             email: "",
             phone: "",
             location: "",
+            parkingInstructions: "",
             numGuests: 1,
             datetime: this.props.minDateTime,
             dietRestrictions: "",
@@ -46,15 +47,24 @@ class ReserveForm extends React.Component {
     };
 
     validateAll = () => {
-        return (
+        const generalValidation =
             Validators["fullName"](this.props.data.fullName) &&
             Validators["email"](this.props.data.email) &&
             Validators["phone"](this.props.data.phone) &&
-            Validators["location"](this.props.data.location) &&
-            Validators["numGuests"](this.props.data.numGuests) &&
+            Validators["numGuests"](
+                this.props.data.view,
+                this.props.data.numGuests
+            ) &&
             Validators["additionalInfo"](this.props.data.additionalInfo) &&
-            Validators["hasAgreedToS"](this.props.data.hasAgreedToS)
-        );
+            Validators["hasAgreedToS"](this.props.data.hasAgreedToS);
+        const cateringOnlyValidation =
+            Validators["location"](this.props.data.location) &&
+            Validators["parkingInstructions"](
+                this.props.data.parkingInstructions
+            );
+        return this.props.data.view == Constants.VIEW_CATERING
+            ? generalValidation && cateringOnlyValidation
+            : generalValidation;
     };
 
     onSubmitFail = () => {
@@ -201,6 +211,7 @@ class ReserveForm extends React.Component {
                             value={this.props.data.numGuests}
                             placeholder={2}
                             fieldName={"numGuests"}
+                            reserveView={this.props.data.view}
                             onChange={this.onChangeNum}
                         />
                     </section>
@@ -371,9 +382,15 @@ function FormIntro(props) {
 function FormInput(props) {
     const isTextArea = props.isTextArea || false;
     const validator = Validators[props.fieldName];
-    const isEmpty =
-        props.fieldName == "numGuests" ? false : !Boolean(props.value);
-    const isValid = validator ? validator(props.value) : true;
+    let isEmpty;
+    let isValid;
+    if (props.fieldName == "numGuests") {
+        isEmpty = false;
+        isValid = validator(props.reserveView, props.value);
+    } else {
+        isEmpty = !Boolean(props.value);
+        isValid = validator ? validator(props.value) : true;
+    }
     const invalidMessage = validator
         ? InvalidMessages[props.fieldName]
         : undefined;

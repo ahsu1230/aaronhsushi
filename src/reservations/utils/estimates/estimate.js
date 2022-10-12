@@ -1,7 +1,10 @@
 import Additions from "../additions/omakaseAdditions.js";
+import Constants from "../../reserveConstants.js";
 
 const BASE_COST = 105;
-const BASE_COST_LARGE_PARTY = 110;
+const BASE_CATERING_COST = 175;
+const ADD_COST_LARGE_PARTY = 5;
+const ADD_COST_LARGE_PARTY_CATERING = 10;
 const BASE_TEA_COST = 5;
 const BASE_SAKE_COST = 10;
 
@@ -24,19 +27,30 @@ export const ADDITIONAL_COSTS = {
     // [Additions.TEA_HOJICHA]: BASE_TEA_COST,
 };
 
-export const calculateEstimatePerGuest = (numGuests, omakaseAdditions) => {
+export const calculateEstimatePerGuest = (
+    view,
+    numGuests,
+    omakaseAdditions
+) => {
     const subtotal =
-        calculateFinalEstimate(numGuests, omakaseAdditions) / numGuests;
+        calculateFinalEstimate(view, numGuests, omakaseAdditions) / numGuests;
     return Math.round(subtotal * 100) / 100;
 };
 
-export const calculateFinalEstimate = (numGuests, omakaseAdditions) => {
+export const calculateFinalEstimate = (view, numGuests, omakaseAdditions) => {
     // Base cost
+    const baseCost =
+        view == Constants.VIEW_DINE_IN ? BASE_COST : BASE_CATERING_COST;
     let subtotal = 0;
     if (numGuests >= 5) {
-        subtotal = BASE_COST_LARGE_PARTY * numGuests;
+        subtotal =
+            (baseCost +
+                (view == Constants.VIEW_DINE_IN
+                    ? ADD_COST_LARGE_PARTY
+                    : ADD_COST_LARGE_PARTY_CATERING)) *
+            numGuests;
     } else {
-        subtotal = BASE_COST * numGuests;
+        subtotal = baseCost * numGuests;
     }
 
     // Additionals

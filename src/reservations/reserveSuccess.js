@@ -1,5 +1,6 @@
 import "./reserveSuccess.sass";
 
+import moment from "moment";
 import { Link } from "react-router-dom";
 import { MyEmail, MyVenmo } from "../common/constants.js";
 import Constants from "./reserveConstants.js";
@@ -23,22 +24,30 @@ export default function ReserveSuccessPage(props) {
                     </p>
                 </section>
 
-                {(props.data.view == Constants.VIEW_CATERING) &&
-                    (
-                        <section>
-                            <h3>Instructions before Chef comes</h3>
-                            <ul>
-                                <li>Please have a free parking space available throughout the duration of the dinner. Please allot for around 4 hours of parking time.</li>
-                                <li>Please clear 2 refridgerator shelves.</li>
-                                <li>Please clear sink and leave at least 36 inches wide counter space or provide a separate table for the chef.</li>
-                                <li>Feel free to enjoy own drinks and desserts! Thank you and see you soon!</li>
-                            </ul>
-                        </section>
-                    )
-                }
+                {props.data.view == Constants.VIEW_CATERING && (
+                    <section>
+                        <h3>Instructions before Chef comes</h3>
+                        <ul>
+                            <li>
+                                Please have a free parking space available
+                                throughout the duration of the dinner. Please
+                                allot for around 4 hours of parking time.
+                            </li>
+                            <li>Please clear 2 refridgerator shelves.</li>
+                            <li>
+                                Please clear sink and leave at least 36 inches
+                                wide counter space or provide a separate table
+                                for the chef.
+                            </li>
+                            <li>
+                                Feel free to enjoy own drinks and desserts!
+                                Thank you and see you soon!
+                            </li>
+                        </ul>
+                    </section>
+                )}
 
-                {(props.data.view == Constants.VIEW_DINE_IN) &&
-                (
+                {props.data.view == Constants.VIEW_DINE_IN && (
                     <div>
                         <section>
                             <h3>Want to bring something?</h3>
@@ -95,6 +104,33 @@ export default function ReserveSuccessPage(props) {
                         can Venmo me at <u>{MyVenmo}</u>. The last 4 digits of
                         my phone number are 0850. Please contact me if you
                         prefer another method of payment.
+                    </p>
+                </section>
+
+                <section>
+                    <h4>Review your reservation request</h4>
+                    <p>
+                        You have requested a{" "}
+                        {props.data.view == Constants.VIEW_CATERING
+                            ? "catering"
+                            : "dine-in"}{" "}
+                        reservation on
+                        <br />
+                        {moment(props.data.datetime).format(
+                            "dddd, MMM Do YYYY, h:mm a"
+                        )}{" "}
+                        for {props.data.numGuests} guests.
+                    </p>
+                    <p>Dietary Restrictions: {props.data.dietRestrictions}</p>
+                    <p>Additional Requests: {props.data.additionalRequests}</p>
+                    <p>
+                        The chef will contact you by email at {props.data.email}
+                        <br />
+                        or by phone at {props.data.phone}.
+                    </p>
+                    <p>
+                        If any of this information is incorrect, please email me
+                        at aaronhsushidc@gmail.com.
                     </p>
                 </section>
 

@@ -26,7 +26,7 @@ const MIN_DATE_TIME = getMinDateTime(); // always 'moment' object
 class ReservationsPage extends React.Component {
     state = {
         view: Constants.VIEW_DINE_IN,
-        reserveSuccess: true,
+        reserveSuccess: false,
         fullName: "",
         email: "",
         phone: "",
@@ -39,8 +39,13 @@ class ReservationsPage extends React.Component {
         additionalRequests: "",
         additionalInfo: "",
         omakaseAdditions: [],
-        estimatedFinalCost: calculateFinalEstimate(DEFAULT_NUM_GUESTS, []),
+        estimatedFinalCost: calculateFinalEstimate(
+            Constants.VIEW_DINE_IN,
+            DEFAULT_NUM_GUESTS,
+            []
+        ),
         estimatedCostPerGuest: calculateEstimatePerGuest(
+            Constants.VIEW_DINE_IN,
             DEFAULT_NUM_GUESTS,
             []
         ),
@@ -60,6 +65,7 @@ class ReservationsPage extends React.Component {
 
     componentDidUpdate(prevProps, prevState, snapshot) {
         if (
+            prevState.view != this.state.view ||
             prevState.numGuests != this.state.numGuests ||
             !isEqual(
                 JSON.stringify(prevState.omakaseAdditions),
@@ -67,10 +73,12 @@ class ReservationsPage extends React.Component {
             )
         ) {
             const estimateFinal = calculateFinalEstimate(
+                this.state.view,
                 this.state.numGuests,
                 this.state.omakaseAdditions
             );
             const estimatePerGuest = calculateEstimatePerGuest(
+                this.state.view,
                 this.state.numGuests,
                 this.state.omakaseAdditions
             );

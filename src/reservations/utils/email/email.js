@@ -1,18 +1,28 @@
 "use strict";
 
 import Analytics from "../../../common/analytics.js";
+import ReserveConstants from "../../reserveConstants.js";
 
 export const generateEmailMessage = (data) => {
     return [
         "<html>",
         "<body>",
-        "<h1>New Omakase Request</h>",
+        "<h1>" +
+            (data.view == ReserveConstants.VIEW_DINE_IN
+                ? "New Omakase DineIn Request"
+                : "New Omakase Catering Request") +
+            "</h>",
         "<h2>Full Name: " + data.fullName + "</h2>",
         "<h2>Email: " + data.email + "</h2>",
         "<h2>Phone Number: " + data.phone + "</h2>",
+        "<h2>Phone Number (formatted): " +
+            formatPhoneNumber(data.phone) +
+            "</h2>",
         "<h2>DateTime: " +
             data.datetime.format("dddd, MMM Do YYYY, h:mm a") +
             "</h2>",
+        "<h2>Location: " + data.location + "</h2>",
+        "<h2>ParkingInstructions: " + data.parkingInstructions + "</h2>",
         "<h2>Number of Guests: " + data.numGuests + "</h2>",
         "<br/>",
         "<br/>",
@@ -74,4 +84,11 @@ const sendTestEmail = (success, onSuccess, onFail) => {
         console.log("Failed to send.");
         onFail();
     }
+};
+
+const formatPhoneNumber = (numStr) => {
+    let a = numStr.substring(0, 3);
+    let b = numStr.substring(3, 6);
+    let c = numStr.substring(6);
+    return "(" + a + ")" + b + "-" + c;
 };
