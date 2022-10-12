@@ -10,7 +10,7 @@ export const InvalidMessages = {
     email: "Please enter a valid email",
     phone: "Please enter a valid phone number",
     numGuests:
-        "Only 2-6 people can be hosted for dine-in and 4-8 for catering.",
+        "Only 2-6 people can be hosted for dine-in and 3-8 for catering.",
     additionalInfo: "Please provide more details.",
     hasAgreedToS:
         "You must agree to the Terms of Services to submit a reservation request.",
@@ -57,7 +57,7 @@ export const validateLocation = (loc) => {
 };
 
 export const validateParkingInstructions = (instruct) => {
-    return instruct && instruct.length >= 5;
+    return instruct && instruct.length >= 10;
 };
 
 export const Validators = {
