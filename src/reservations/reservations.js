@@ -7,6 +7,7 @@ import { includes, remove, isEqual } from "lodash";
 import Analytics from "../common/analytics.js";
 import Banner from "../common/banner.js";
 import ContactMe from "./utils/contact/contact.js";
+import Constants from "./reserveConstants.js";
 import ReserveForm from "./reserveForm.js";
 import ReserveSuccess from "./reserveSuccess.js";
 import { getMinDateTime } from "./utils/scheduler/datetime.js";
@@ -19,10 +20,7 @@ import iconDine from "./../assets/dine_white.svg";
 import iconHome from "./../assets/home_white.svg";
 import iconContact from "./../assets/social_white.svg";
 
-const VIEW_CONTACT = "view_contact";
-const VIEW_DINE_IN = "view_dine_in";
-const VIEW_CATERING = "view_catering";
-const DEFAULT_VIEW = VIEW_DINE_IN;
+const DEFAULT_VIEW = Constants.VIEW_DINE_IN;
 const DEFAULT_NUM_GUESTS = 2;
 const MIN_DATE_TIME = getMinDateTime(); // always 'moment' object
 
@@ -34,6 +32,7 @@ class ReservationsPage extends React.Component {
         email: "",
         phone: "",
         location: "",
+        parkingInstructions: "",
         numGuests: DEFAULT_NUM_GUESTS,
         minDateTime: MIN_DATE_TIME,
         datetime: MIN_DATE_TIME,
@@ -138,41 +137,47 @@ class ReservationsPage extends React.Component {
                         <section className="reserve-view-selector">
                             <button
                                 className={
-                                    this.state.view === VIEW_DINE_IN
+                                    this.state.view === Constants.VIEW_DINE_IN
                                         ? "active"
                                         : ""
                                 }
-                                onClick={() => this.changeView(VIEW_DINE_IN)}
+                                onClick={() =>
+                                    this.changeView(Constants.VIEW_DINE_IN)
+                                }
                             >
-                                <img src={iconDine}/>
+                                <img src={iconDine} />
                                 Dine-In
                             </button>
                             <button
                                 className={
-                                    this.state.view === VIEW_CATERING
+                                    this.state.view === Constants.VIEW_CATERING
                                         ? "active"
                                         : ""
                                 }
-                                onClick={() => this.changeView(VIEW_CATERING)}
+                                onClick={() =>
+                                    this.changeView(Constants.VIEW_CATERING)
+                                }
                             >
-                                <img src={iconHome}/>
+                                <img src={iconHome} />
                                 Catering
                             </button>
                             <button
                                 className={
-                                    this.state.view === VIEW_CONTACT
+                                    this.state.view === Constants.VIEW_CONTACT
                                         ? "active"
                                         : ""
                                 }
-                                onClick={() => this.changeView(VIEW_CONTACT)}
+                                onClick={() =>
+                                    this.changeView(Constants.VIEW_CONTACT)
+                                }
                             >
-                                <img src={iconContact}/>
+                                <img src={iconContact} />
                                 Contact
                             </button>
                         </section>
                         <section className="reserve-form-container">
-                            {(this.state.view == VIEW_DINE_IN ||
-                                this.state.view == VIEW_CATERING) && (
+                            {(this.state.view == Constants.VIEW_DINE_IN ||
+                                this.state.view == Constants.VIEW_CATERING) && (
                                 <ReserveForm
                                     data={formData}
                                     onChangeField={this.onChangeField}
@@ -181,7 +186,9 @@ class ReservationsPage extends React.Component {
                                     onSubmitSuccess={this.onSubmitSuccess}
                                 />
                             )}
-                            {this.state.view == VIEW_CONTACT && <ContactMe />}
+                            {this.state.view == Constants.VIEW_CONTACT && (
+                                <ContactMe />
+                            )}
                         </section>
                     </section>
                 )}

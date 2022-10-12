@@ -18,9 +18,10 @@ export default class ContactMe extends React.Component {
         return (
             <section className="contact-me">
                 <h3>Contact me</h3>
-                <img className="profile" src={imgProfile}/>
+                <img className="profile" src={imgProfile} />
                 <p>
-                    For any other inquiries, questions or concerns, please contact me through email or social media.
+                    For any other inquiries, questions or concerns, please
+                    contact me through email or social media.
                 </p>
                 <div className="contact-line email">
                     <img src={iconEmail} />

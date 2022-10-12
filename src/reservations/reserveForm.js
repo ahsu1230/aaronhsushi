@@ -5,7 +5,7 @@ import "react-dates/initialize";
 import "react-dates/lib/css/_datepicker.css";
 import { SingleDatePicker } from "react-dates";
 import Select from "react-select";
-import ReserveFormAdditions from "./reserveFormAdditions.js";
+import ReserveFormAdditions from "./utils/additions/reserveFormAdditions.js";
 import SampleMenu from "./utils/sampleMenu/sampleMenu.js";
 import Disclaimers from "./utils/disclaimers/disclaimers.js";
 import TermsOfService from "./utils/tos/tos.js";
@@ -20,6 +20,7 @@ import {
     InvalidMessages,
     Validators,
 } from "./utils/formValidation/validation.js";
+import Constants from "./reserveConstants.js";
 import { MyEmail, MyVenmo } from "../common/constants.js";
 import Analytics from "../common/analytics";
 
@@ -132,8 +133,7 @@ class ReserveForm extends React.Component {
     render() {
         return (
             <div id="reserve-form">
-                <FormIntro
-                    view={this.props.data.view} />
+                <FormIntro view={this.props.data.view} />
                 <div className="fill-form">
                     <section>
                         <FormDateTime
@@ -170,16 +170,31 @@ class ReserveForm extends React.Component {
                             fieldName={"phone"}
                             onChange={this.onChangeField}
                         />
-                        <FormInput
-                            title={"Location"}
-                            classLabel={"location"}
-                            value={this.props.data.location}
-                            placeholder={
-                                "City, State i.e. 'Rockville, Maryland'"
-                            }
-                            fieldName={"location"}
-                            onChange={this.onChangeField}
-                        />
+                        {this.props.data.view == Constants.VIEW_CATERING && (
+                            <div>
+                                <FormInput
+                                    title={"Your Location"}
+                                    classLabel={"location"}
+                                    value={this.props.data.location}
+                                    placeholder={
+                                        "Valid address or City, State i.e. 'Rockville, MD'"
+                                    }
+                                    fieldName={"location"}
+                                    onChange={this.onChangeField}
+                                />
+                                <FormInput
+                                    title={"Parking Instructions for Chef"}
+                                    classLabel={"parking"}
+                                    value={this.props.data.parkingInstructions}
+                                    placeholder={
+                                        "Free street parking, driveway, garage, etc."
+                                    }
+                                    fieldName={"parkingInstructions"}
+                                    onChange={this.onChangeField}
+                                />
+                            </div>
+                        )}
+
                         <FormInput
                             title={"No. Guests"}
                             classLabel={"num-guests"}
@@ -205,10 +220,16 @@ class ReserveForm extends React.Component {
                         />
                         <h4>Deposit and Cancellation Policy</h4>
                         <p>
-                            In order to secure your reservation request, a
-                            non-refundable deposit of $80 per person plus the
-                            total cost of seafood supplements is required. Once
-                            the deposit is received, your booking will be
+                            In order to secure your reservation request,{" "}
+                            <b>
+                                a non-refundable deposit of $
+                                {this.props.data.view == Constants.VIEW_DINE_IN
+                                    ? 80
+                                    : 100}{" "}
+                                per person plus the total cost of seafood
+                                supplements is required
+                            </b>
+                            . Once the deposit is received, your booking will be
                             confirmed and the deposit will go towards your final
                             event cost. If the deposit is not received, your
                             reserved time slot will be available for other
@@ -288,49 +309,60 @@ export default ReserveForm;
 function FormIntro(props) {
     return (
         <section className="reserve-form-intro">
-            {props.view === "view_dine_in" && (
+            {props.view === Constants.VIEW_DINE_IN && (
                 <div>
                     <div className="title-container">
                         <div className="icon-wrapper">
-                            <img src={iconDine}/>
+                            <img src={iconDine} />
                         </div>
                         <h3>Dine-in at Chef's home</h3>
                     </div>
                     <p>
-                        The Chef welcomes you to his home in Columbia Heights, Washington D.C. to enjoy a full sushi omakase dinner. 
-                        Celebrate your event here and browse his extensive sake and tea collection to find a perfect pairing to your meal.
+                        The Chef welcomes you to his home in Columbia Heights,
+                        Washington D.C. to enjoy a full sushi omakase dinner.
+                        Celebrate your event here and browse his extensive sake
+                        and tea collection to find a perfect pairing to your
+                        meal.
                     </p>
-                    <SampleMenu view={props.view}/>
+                    <SampleMenu view={props.view} />
                     <h4>$105+ per person</h4>
                 </div>
             )}
-            {props.view === "view_catering" && (
+            {props.view === Constants.VIEW_CATERING && (
                 <div>
                     <div className="title-container">
                         <div className="icon-wrapper">
-                            <img src={iconHome}/>
+                            <img src={iconHome} />
                         </div>
                         <h3>Catered to your home</h3>
                     </div>
                     <p>
-                        Enjoy a full sushi omakase dinner brought to the comfort of your home.
+                        Enjoy a full sushi omakase dinner brought to the comfort
+                        of your home.
                     </p>
-                    <SampleMenu view={props.view}/>
+                    <SampleMenu view={props.view} />
                     <h4>$175+ per person</h4>
                     <div className="alert">
-                        <h4>
-                            Please Read!
-                        </h4>
+                        <h4>Please Read!</h4>
                         <p>
-                            Due to logistical limitations, caterings are only for diners who live at most 20 miles away from Columbia Heights, Washington D.C. and can guarantee a free parking space at most 30 feet away from the building throughout the duration of the dinner. <b>Diners who are unable to satisfy these conditions will not be catered to, no exceptions!</b>
+                            Due to logistical limitations, caterings are only
+                            for diners who live at most 20 miles away from
+                            Columbia Heights, Washington D.C. and can guarantee
+                            a free parking space at most 30 feet away from the
+                            building throughout the duration of the dinner.{" "}
+                            <b>
+                                Diners who are unable to satisfy these
+                                conditions will not be catered to, no
+                                exceptions!
+                            </b>
                         </p>
                     </div>
                 </div>
             )}
             <p>
                 Please fill the following form to request an omakase
-                reservation. Once the form is filled out and submitted, I
-                will confirm the reservation as soon as possible.
+                reservation. Once the form is filled out and submitted, I will
+                confirm the reservation as soon as possible.
             </p>
         </section>
     );
