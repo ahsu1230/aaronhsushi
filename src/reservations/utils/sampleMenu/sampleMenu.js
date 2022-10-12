@@ -2,6 +2,7 @@ import "./sampleMenu.sass";
 import "../../../common/simpleModal.sass";
 
 import React from "react";
+import Analytics from "../../../common/analytics.js";
 import Banner from "../../../common/banner.js";
 import Constants from "../../reserveConstants.js";
 import iconClose from "./../../../assets/close_white.svg";
@@ -12,6 +13,9 @@ export default class SampleMenu extends React.Component {
     };
 
     onOpenPopup = () => {
+        Analytics.track("page_reservations_sample_menu", {
+            view: this.props.reserveView
+        });
         this.setState({ showPopup: true });
     };
 

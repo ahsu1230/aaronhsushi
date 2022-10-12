@@ -20,12 +20,13 @@ import iconDine from "./../assets/dine_white.svg";
 import iconHome from "./../assets/home_white.svg";
 import iconContact from "./../assets/social_white.svg";
 
+const DEFAULT_VIEW = Constants.VIEW_DINE_IN;
 const DEFAULT_NUM_GUESTS = 2;
 const MIN_DATE_TIME = getMinDateTime(); // always 'moment' object
 
 class ReservationsPage extends React.Component {
     state = {
-        view: Constants.VIEW_DINE_IN,
+        view: DEFAULT_VIEW,
         reserveSuccess: false,
         fullName: "",
         email: "",
@@ -59,8 +60,10 @@ class ReservationsPage extends React.Component {
     };
 
     componentDidMount() {
-        /* This must stay as `page_contact` to be back-compat with analytics */
-        Analytics.track("page_contact");
+        Analytics.track("page_reservations");
+        Analytics.track("page_reservations_view", {
+            view: DEFAULT_VIEW
+        });
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
@@ -119,9 +122,12 @@ class ReservationsPage extends React.Component {
         });
     };
 
-    changeView = (newView) => {
+    onChangeView = (newView) => {
         this.setState({
             view: newView,
+        });
+        Analytics.track("page_reservations_view", {
+            view: newView
         });
     };
 
@@ -149,7 +155,7 @@ class ReservationsPage extends React.Component {
                                         : ""
                                 }
                                 onClick={() =>
-                                    this.changeView(Constants.VIEW_DINE_IN)
+                                    this.onChangeView(Constants.VIEW_DINE_IN)
                                 }
                             >
                                 <img src={iconDine} />
@@ -162,7 +168,7 @@ class ReservationsPage extends React.Component {
                                         : ""
                                 }
                                 onClick={() =>
-                                    this.changeView(Constants.VIEW_CATERING)
+                                    this.onChangeView(Constants.VIEW_CATERING)
                                 }
                             >
                                 <img src={iconHome} />
@@ -175,7 +181,7 @@ class ReservationsPage extends React.Component {
                                         : ""
                                 }
                                 onClick={() =>
-                                    this.changeView(Constants.VIEW_CONTACT)
+                                    this.onChangeView(Constants.VIEW_CONTACT)
                                 }
                             >
                                 <img src={iconContact} />

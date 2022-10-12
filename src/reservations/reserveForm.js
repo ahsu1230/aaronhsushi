@@ -127,17 +127,14 @@ class ReserveForm extends React.Component {
 
     onChangeEmail = (name, value) => {
         this.onChangeField(name, value);
-        // Analytics.trackDebounce("form_change_email");
     };
 
     onChangeDateTime = (name, value) => {
         this.onChangeField(name, value);
-        // Analytics.trackDebounce("form_change_date_time", {datetime: value});
     };
 
     onChangeAdditionalInfo = (name, value) => {
         this.onChangeField(name, value);
-        // Analytics.trackDebounce("form_change_additional_info");
     };
 
     render() {
@@ -160,6 +157,9 @@ class ReserveForm extends React.Component {
                             placeholder={"Enter your full name"}
                             fieldName={"fullName"}
                             onChange={this.onChangeField}
+                            onFocusChange={(e) => {
+                                Analytics.track("form_focus_name");
+                            }}
                         />
                         <FormInput
                             title={"Email"}
@@ -179,6 +179,9 @@ class ReserveForm extends React.Component {
                             placeholder={"(___)-___-____"}
                             fieldName={"phone"}
                             onChange={this.onChangeField}
+                            onFocusChange={(e) => {
+                                Analytics.track("form_focus_phone");
+                            }}
                         />
                         {this.props.data.view == Constants.VIEW_CATERING && (
                             <div>
@@ -191,6 +194,9 @@ class ReserveForm extends React.Component {
                                     }
                                     fieldName={"location"}
                                     onChange={this.onChangeField}
+                                    onFocusChange={(e) => {
+                                        Analytics.track("form_focus_location");
+                                    }}
                                 />
                                 <FormInput
                                     title={"Parking Instructions for Chef"}
@@ -201,6 +207,9 @@ class ReserveForm extends React.Component {
                                     }
                                     fieldName={"parkingInstructions"}
                                     onChange={this.onChangeField}
+                                    onFocusChange={(e) => {
+                                        Analytics.track("form_focus_parking_instructions");
+                                    }}
                                 />
                             </div>
                         )}
@@ -213,6 +222,9 @@ class ReserveForm extends React.Component {
                             fieldName={"numGuests"}
                             reserveView={this.props.data.view}
                             onChange={this.onChangeNum}
+                            onFocusChange={(e) => {
+                                Analytics.track("form_focus_num_guests");
+                            }}
                         />
                     </section>
 
@@ -269,6 +281,9 @@ class ReserveForm extends React.Component {
                             value={this.props.data.dietRestrictions}
                             fieldName={"dietRestrictions"}
                             onChange={this.onChangeField}
+                            onFocusChange={(e) => {
+                                Analytics.track("form_focus_diet_restrictions");
+                            }}
                         />
                         <FormInput
                             title={"Additional Accomodation Requests"}
