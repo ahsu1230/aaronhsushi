@@ -3,6 +3,7 @@ import "../../../common/simpleModal.sass";
 
 import React from "react";
 import Banner from "../../../common/banner.js";
+import Constants from "../../reserveConstants.js";
 import iconClose from "./../../../assets/close_white.svg";
 
 export default class SampleMenu extends React.Component {
@@ -24,13 +25,24 @@ export default class SampleMenu extends React.Component {
                 <a onClick={this.onOpenPopup}>
                     Click here to view a sample multi-course omakase menu.
                 </a>
-                {this.state.showPopup && <Popup onClose={this.onClosePopup} />}
+                {this.state.showPopup && (
+                    <Popup
+                        reserveView={this.props.reserveView}
+                        onClose={this.onClosePopup}
+                    />
+                )}
             </div>
         );
     }
 }
 
 function Popup(props) {
+    const bannerImgSrc =
+        props.reserveView == Constants.VIEW_DINE_IN
+            ? "https://aaronhsushi.b-cdn.net/banner_kaiseki1b.jpg"
+            : "https://aaronhsushi.b-cdn.net/banner_salmon_nigiri_blue.jpg";
+    const bannerHeight =
+        props.reserveView == Constants.VIEW_DINE_IN ? "240px" : "180px";
     return (
         <div className="simple-modal">
             <div className="overlay" onClick={props.onClose}></div>
@@ -39,11 +51,9 @@ function Popup(props) {
                     <img src={iconClose} />
                 </button>
                 <Banner
-                    height={"180px"}
+                    height={bannerHeight}
                     mainTitle={"Sample Tasting Menu"}
-                    bannerImgSrc={
-                        "https://aaronhsushi.b-cdn.net/banner_salmon_nigiri_blue.jpg"
-                    }
+                    bannerImgSrc={bannerImgSrc}
                 />
 
                 <section>

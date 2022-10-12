@@ -20,6 +20,7 @@ export default function Banner(props) {
             <div
                 className="overlay"
                 style={{
+                    height: `${height}`,
                     opacity: `${overlayAlpha}`,
                 }}
             ></div>

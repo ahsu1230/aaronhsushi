@@ -335,7 +335,7 @@ function FormIntro(props) {
                         and tea collection to find a perfect pairing to your
                         meal.
                     </p>
-                    <SampleMenu view={props.view} />
+                    <SampleMenu reserveView={props.view} />
                     <h4>$105+ per person</h4>
                 </div>
             )}
@@ -351,7 +351,7 @@ function FormIntro(props) {
                         Enjoy a full sushi omakase dinner brought to the comfort
                         of your home.
                     </p>
-                    <SampleMenu view={props.view} />
+                    <SampleMenu reserveView={props.view} />
                     <h4>$175+ per person</h4>
                     <div className="alert">
                         <h4>Please Read!</h4>

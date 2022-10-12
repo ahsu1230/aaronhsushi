@@ -9,42 +9,43 @@ export const GalleryImages = [
             "Sashimi Medley including Tuna, Salmon, Red Seabream and Spanish Mackerel",
     },
     {
-        id: "square_kamasu_nigiri",
-        caption: "Kamasu (Japanese Barracuda)",
+        id: "square_isaki_nigiri",
+        caption:
+            "Isaki (Japanese Gruntfish) topped with Hawaiian charcoal salt",
     },
     {
         id: "square_uni_jp_gunkan",
         caption: "Hokkaido Uni",
     },
     {
-        id: "square_salmon_nigiri_yuzu",
-        caption: "Seared Salmon with yuzu-kosho",
+        id: "square_kaiseki1",
+        caption:
+            "Sakizuke - Fall appetizer specialties with Kabocha Japanese pumpkin",
     },
     {
         id: "square_ikura",
         caption: "Marinated Ikura (Salmon Roe)",
     },
     {
-        id: "square_madai_nigiri_pickup",
-        caption: "Kobujime Madai (kelp-cured Red Seabream)",
+        id: "square_dessert_fruitjelly",
+        caption: "Lychee-Mango agar fruit jelly with assorted seasonal fruits",
     },
     {
-        id: "square_sakizuke_kabocha",
-        caption:
-            "Sakizuke - Fall appetizer specialties with Kabocha Japanese pumpkin",
+        id: "square_salmon_nigiri_yuzu",
+        caption: "Seared Salmon with yuzu-kosho",
     },
+
     {
         id: "square_shima_aji_plate",
         caption: "Shima-Aji (Trevally Jack) sashimi presentation plate",
     },
     {
-        id: "square_kohada_nigiri",
-        caption: "Kohada (Japanese Gizzard Shad) topped with grated ginger",
+        id: "square_madai_nigiri_pickup",
+        caption: "Kobujime Madai (kelp-cured Red Seabream)",
     },
     {
-        id: "square_kinmedai_nigiri_yuzu",
-        caption:
-            "Kinmedai (Golden Eye Snapper) with Yuzu Kosho and grated Yuzu zest",
+        id: "square_kamasu_nigiri",
+        caption: "Kamasu (Japanese Barracuda)",
     },
     {
         id: "square_hotate_nigiri_uni",
@@ -52,9 +53,8 @@ export const GalleryImages = [
             "Hokkaido Hotate (scallops) topped with uni and black truffle salt",
     },
     {
-        id: "square_chawanmushi",
-        caption:
-            "Chawanmushi (steamed egg custard) with shiitake mushrooms and ikura (salmon roe)",
+        id: "square_kohada_nigiri",
+        caption: "Kohada (Japanese Gizzard Shad) topped with grated ginger",
     },
     {
         id: "square_fish_bonzaru",

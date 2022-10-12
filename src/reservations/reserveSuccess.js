@@ -33,7 +33,10 @@ export default function ReserveSuccessPage(props) {
                                 throughout the duration of the dinner. Please
                                 allot for around 4 hours of parking time.
                             </li>
-                            <li>Please clear at least 2 shelves in your refridgerator.</li>
+                            <li>
+                                Please clear at least 2 shelves in your
+                                refridgerator.
+                            </li>
                             <li>
                                 Please clear sink and leave at least 36 inches
                                 wide counter space or provide a separate table
