@@ -23,18 +23,21 @@
     
 #header .header-full
     position: static
-    padding: 40px 0
+    padding: 32px 0
     background-color: $colorDarkPurple
     text-align: center
 
     img.logo
-        width: 80px
+        width: 64px
 
         @media screen and (max-width: $screenWidthSmall)
-            width: 64px
+            width: 48px
     
     .links
         margin-top: 24px
+
+        @media screen and (max-width: $screenWidthSmall)
+            margin-top: 16px
 
 #header .header-sticky
     display: flex

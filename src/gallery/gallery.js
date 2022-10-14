@@ -73,15 +73,10 @@ class GalleryPage extends React.Component {
     render() {
         return (
             <div id="gallery">
-                <HomeBanner divToFocus={this.divToFocus} />
-
-                <div className="section text">
-                    <h3 className="first-title">
-                        An elegant omakase brought to you
-                        <br />
-                        in a welcoming home
-                    </h3>
-                </div>
+                <HomeBanner
+                    divToFocus={this.divToFocus}
+                    goToReservationsPage={this.goToReservationsPage}
+                />
 
                 <div className="section" ref={this.divToFocus}>
                     <ImageGallery onClickImage={this.onClickGalleryImage} />
@@ -160,21 +155,29 @@ const useWindowDimensions = () => {
 
 const HomeBanner = (props) => {
     const { height, width } = useWindowDimensions();
+    const headerHeight = 180;
     let bannerHeight;
-    if (height > 640) {
-        // 'height - ???px', 480 is approx the height of the header
-        bannerHeight = width <= 480 ? height - 480 : height;
+    if (width < 640) {
+        // mobile view
+        bannerHeight = 480;
+    } else if (height < 480) {
+        // short window view
+        bannerHeight = height - headerHeight;
     } else {
-        bannerHeight = height - 120;
+        // normal view
+        bannerHeight = height - headerHeight - 120;
     }
     return (
         <div id="home-banner">
             <Banner
                 height={bannerHeight + "px"}
+                title={"An elegant omakase brought to you in a welcoming home"}
+                buttonText={"Make a reservation"}
+                buttonOnClick={props.goToReservationsPage}
                 bannerImgSrc={
                     "https://aaronhsushi.b-cdn.net/banner_home_me.jpeg"
                 }
-                overlayAlpha={0.4}
+                overlayAlpha={0.65}
             />
             <button
                 className="caret"

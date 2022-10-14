@@ -6,6 +6,9 @@
     .section
         margin: 72px 0
 
+        @media screen and (max-width: $screenWidthMedium)
+            margin: 36px
+
         &.text
             width: 100%
             max-width: 480px
@@ -13,17 +16,35 @@
             margin-right: auto
             text-align: center
             color: $colorWhite
-
-        .first-title
-            line-height: 32px
         
     #home-banner
         position: relative
 
-        .banner .banner-img
-            background-position: center center
+        h2
+            max-width: 360px
+            line-height: 32px
+            font-family: $fontFamilyOptima
+            font-weight: 400
+            letter-spacing: 1px
 
             @media screen and (max-width: $screenWidthMedium)
+                max-width: 480px
+                font-size: 16px
+            
+        button
+            margin-top: 32px
+            font-size: 20px
+
+            @media screen and (max-width: $screenWidthMedium)
+                margin-top: 24px
+                font-size: 16px
+
+        .banner .banner-img
+            background-size: contain
+            background-position: center center
+
+            @media screen and (max-width: $screenWidthLarge)
+                background-size: cover
                 background-position: 70% center
 
         .caret
@@ -39,7 +60,7 @@
                 transform: translate(-50%, 15%)
 
             img
-                width: 64px
+                width: 48px
 
                 @media screen and (max-width: $screenWidthMedium)
-                    width: 48px
+                    width: 36px
