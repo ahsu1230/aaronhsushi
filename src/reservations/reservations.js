@@ -62,7 +62,7 @@ class ReservationsPage extends React.Component {
     componentDidMount() {
         Analytics.track("page_reservations");
         Analytics.track("page_reservations_view", {
-            view: DEFAULT_VIEW
+            view: DEFAULT_VIEW,
         });
     }
 
@@ -127,7 +127,7 @@ class ReservationsPage extends React.Component {
             view: newView,
         });
         Analytics.track("page_reservations_view", {
-            view: newView
+            view: newView,
         });
     };
 

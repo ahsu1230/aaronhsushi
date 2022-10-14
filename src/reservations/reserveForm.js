@@ -208,7 +208,9 @@ class ReserveForm extends React.Component {
                                     fieldName={"parkingInstructions"}
                                     onChange={this.onChangeField}
                                     onFocusChange={(e) => {
-                                        Analytics.track("form_focus_parking_instructions");
+                                        Analytics.track(
+                                            "form_focus_parking_instructions"
+                                        );
                                     }}
                                 />
                             </div>

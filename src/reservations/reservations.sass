@@ -18,14 +18,21 @@
 
             button
                 display: flex
+                flex-direction: row
                 align-items: center
+
+                @media screen and (max-width: $screenWidthMedium)
+                    flex-direction: column
 
             button.active
                 background-color: $colorDarkPurple
 
             button img
                 width: 24px
-                margin-right: 8px
+                margin: 0 8px 0 0
+
+                @media screen and (max-width: $screenWidthMedium)
+                    margin: 0 0 4px 0
 
         @media screen and (max-width: $screenWidthMedium)
             max-width: 80%

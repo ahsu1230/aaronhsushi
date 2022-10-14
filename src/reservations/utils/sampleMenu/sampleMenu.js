@@ -14,7 +14,7 @@ export default class SampleMenu extends React.Component {
 
     onOpenPopup = () => {
         Analytics.track("page_reservations_sample_menu", {
-            view: this.props.reserveView
+            view: this.props.reserveView,
         });
         this.setState({ showPopup: true });
     };
