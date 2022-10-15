@@ -9,12 +9,18 @@
         width: 480px
         margin: 64px auto 240px
 
+        @media screen and (max-width: $screenWidthMedium)
+            margin: 32px auto 120px
+
         .reserve-view-selector
             display: flex
             flex-direction: row
             justify-content: space-between
             align-items: center
             margin: 64px 0
+
+            @media screen and (max-width: $screenWidthMedium)
+                margin: 32px 0
 
             button
                 display: flex

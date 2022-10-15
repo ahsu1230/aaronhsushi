@@ -6,7 +6,7 @@ export const getMinDateTime = () => {
     date.hour(18);
     date.minute(0);
     date.second(0);
-    date.day(1); // can only book tomorrow
+    date.add(1, "d"); // cannot book today, must book at least tomorrow
     // date.day(3 + 7); // Select 1 Wednesday from now
 
     // Find next available date
@@ -77,7 +77,6 @@ const BOOKED_DATES = [
     "2022-10-16",
     "2022-10-21",
     "2022-10-22",
-    "2022-10-23",
     "2022-10-27",
     "2022-10-29",
     "2022-10-30",

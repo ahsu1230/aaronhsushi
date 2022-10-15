@@ -9,9 +9,13 @@
 
         img.profile
             display: block
-            width: 240px
+            width: 80%
+            max-width: 360px
             margin: 32px auto
             border-radius: 8px
+
+            @media screen and (max-width: $screenWidthMedium)
+                margin: 24px auto
 
         h3
             margin-bottom: 16px
@@ -22,7 +26,8 @@
             flex-direction: row
             justify-content: flex-start
             align-items: center
-            height: 48px
+            height: 36px
+            margin: 12px 0
 
             @media screen and (max-width: $screenWidthMedium)
                 font-size: $fontSizeM
@@ -32,7 +37,7 @@
                 vertical-align: middle
 
                 @media screen and (max-width: $screenWidthMedium)
-                    margin-right: 12px
+                    margin-right: 8px
             
             a
                 color: $colorTextBlack
