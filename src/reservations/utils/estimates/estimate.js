@@ -3,7 +3,7 @@ import Constants from "../../reserveConstants.js";
 
 const BASE_COST = 105;
 const BASE_CATERING_COST = 175;
-const ADD_COST_LARGE_PARTY = 5;
+const ADD_COST_LARGE_PARTY = 4;
 const ADD_COST_LARGE_PARTY_CATERING = 10;
 const BASE_TEA_COST = 5;
 const BASE_SAKE_COST = 10;
