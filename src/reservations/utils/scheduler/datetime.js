@@ -63,7 +63,7 @@ const isDateAvailable = (date) => {
 
 const isDateRestaurant = (date) => {
     const momentDate = moment(date);
-    return momentDate.isAfter("2023-01-01");
+    return momentDate.isAfter("2023-01-30");
 };
 
 // YYYY-MM-DD
@@ -94,5 +94,20 @@ const BOOKED_DATES = [
     "2022-12-29",
     "2022-12-30",
     "2022-12-31",
-    "2023-01-01"
+
+    "2023-01-01",
+    "2023-01-05",
+    "2023-01-06",
+    "2023-01-07",
+    "2023-01-08",
+    
+    "2023-01-12",
+    "2023-01-13",
+    "2023-01-14",
+    "2023-01-15",
+
+    "2023-01-19",
+    "2023-01-20",
+    "2023-01-21",
+    "2023-01-22",
 ];
