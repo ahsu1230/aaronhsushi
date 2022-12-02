@@ -507,7 +507,7 @@ class FormDateTime extends React.Component {
                             isDateOutsideRange(date, this.props.minDateTime)
                         }
                         isDayHighlighted={isDateHighlighted}
-                        numberOfMonths={1}
+                        numberOfMonths={1} // fixes ios safari mobile bug
                         id="date-picker"
                     />
                 </div>
