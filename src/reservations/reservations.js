@@ -21,7 +21,6 @@ import iconDine from "./../assets/dine_white.svg";
 import iconHome from "./../assets/home_white.svg";
 import iconContact from "./../assets/social_white.svg";
 
-
 // const DEFAULT_VIEW = Constants.VIEW_DINE_IN;
 const DEFAULT_VIEW = Constants.VIEW_SUBSCRIBE;
 
@@ -151,31 +150,36 @@ class ReservationsPage extends React.Component {
                 )}
                 {!this.state.reserveSuccess && (
                     <section className="reservations-container">
-                        {(this.state.view == Constants.VIEW_SUBSCRIBE) && (
-                            <SubscribeView/>
+                        {this.state.view == Constants.VIEW_SUBSCRIBE && (
+                            <SubscribeView />
                         )}
-                        {(this.state.view != Constants.VIEW_SUBSCRIBE) && (
+                        {this.state.view != Constants.VIEW_SUBSCRIBE && (
                             <div>
-                            <ReserveViewSelector 
-                                view={this.state.view} 
-                                onChangeView={this.onChangeView}
-                            />
-                            <section className="reserve-form-container">
-                                {(this.state.view == Constants.VIEW_DINE_IN ||
-                                    this.state.view == Constants.VIEW_CATERING) && (
-                                    <ReserveForm
-                                        data={formData}
-                                        onChangeField={this.onChangeField}
-                                        onChangeFields={this.onChangeFields}
-                                        onChangeAddition={this.onChangeAddition}
-                                        onSubmitSuccess={this.onSubmitSuccess}
-                                    />
-                                )}
-                                {this.state.view == Constants.VIEW_CONTACT && (
-                                    <ContactMe />
-                                )}
-                            </section>
-                        </div>
+                                <ReserveViewSelector
+                                    view={this.state.view}
+                                    onChangeView={this.onChangeView}
+                                />
+                                <section className="reserve-form-container">
+                                    {(this.state.view ==
+                                        Constants.VIEW_DINE_IN ||
+                                        this.state.view ==
+                                            Constants.VIEW_CATERING) && (
+                                        <ReserveForm
+                                            data={formData}
+                                            onChangeField={this.onChangeField}
+                                            onChangeFields={this.onChangeFields}
+                                            onChangeAddition={
+                                                this.onChangeAddition
+                                            }
+                                            onSubmitSuccess={
+                                                this.onSubmitSuccess
+                                            }
+                                        />
+                                    )}
+                                    {this.state.view ==
+                                        Constants.VIEW_CONTACT && <ContactMe />}
+                                </section>
+                            </div>
                         )}
                     </section>
                 )}
@@ -189,9 +193,7 @@ const ReserveViewSelector = (props) => {
         <section className="reserve-view-selector">
             <button
                 className={
-                    props.view === Constants.VIEW_DINE_IN
-                        ? "active"
-                        : ""
+                    props.view === Constants.VIEW_DINE_IN ? "active" : ""
                 }
                 onClick={() => props.onChangeView(Constants.VIEW_DINE_IN)}
             >
@@ -200,33 +202,25 @@ const ReserveViewSelector = (props) => {
             </button>
             <button
                 className={
-                    props.view === Constants.VIEW_CATERING
-                        ? "active"
-                        : ""
+                    props.view === Constants.VIEW_CATERING ? "active" : ""
                 }
-                onClick={() =>
-                    props.onChangeView(Constants.VIEW_CATERING)
-                }
+                onClick={() => props.onChangeView(Constants.VIEW_CATERING)}
             >
                 <img src={iconHome} />
                 Catering
             </button>
             <button
                 className={
-                    props.view === Constants.VIEW_CONTACT
-                        ? "active"
-                        : ""
+                    props.view === Constants.VIEW_CONTACT ? "active" : ""
                 }
-                onClick={() =>
-                    props.onChangeView(Constants.VIEW_CONTACT)
-                }
+                onClick={() => props.onChangeView(Constants.VIEW_CONTACT)}
             >
                 <img src={iconContact} />
                 Contact
             </button>
         </section>
     );
-}
+};
 
 const SubscribeView = () => {
     return (
@@ -234,18 +228,39 @@ const SubscribeView = () => {
             <div className="text-container">
                 <h2>Announcement</h2>
                 <p>
-                    Thank you so much for your interest in making a reservation with me. As much as I would be honored to host your special evening... 
-                    all my available dates in December 2022 and January 2023 are completely booked and I, unfortunately, will no longer be accepting new reservations.
+                    Thank you so much for your interest in making a reservation
+                    with me. As much as I would be honored to host your special
+                    evening... all my available dates in December 2022 and
+                    January 2023 are completely booked and I, unfortunately,
+                    will no longer be accepting new reservations.
                 </p>
                 <p>
-                    In the meantime, I will be focusing my efforts to help build a new sushi restaurant called&nbsp;
-                    <a target="_blank" href="https://www.instagram.com/29omakase.dc/">Two Nine Omakase</a>. Coming soon to Georgetown, DC in Spring 2023! Please visit me there when we open!
+                    In the meantime, I will be focusing my efforts to help build
+                    a new sushi restaurant called&nbsp;
+                    <a
+                        target="_blank"
+                        href="https://www.instagram.com/29omakase.dc/"
+                    >
+                        Two Nine Omakase
+                    </a>
+                    . Coming soon to Georgetown, DC in Spring 2023! Please visit
+                    me there when we open!
                 </p>
             </div>
-            {/* <Subscriber/> */}
-            <ContactMe/>
+            <p>
+                Feel free to contact me directly through email or social media
+                platforms.
+            </p>
+            <ContactMe />
+            <p>
+                If you would like to stay up to date with my journey in sushi,
+                please leave your email contact information to be added to my
+                subscriber list! When I have new updates, I will email you with
+                new updates.
+            </p>
+            <Subscriber />
         </div>
     );
-}
+};
 
 export default withRouter(ReservationsPage);
