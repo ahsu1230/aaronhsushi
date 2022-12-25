@@ -12,18 +12,28 @@
     "lodash": "^4.17.21",
     "mixpanel-browser": "^2.42.0",
     "moment": "^2.29.1",
-    "node-sass": "^6.0.1",
     "react": "^17.0.2",
     "react-dates": "^21.8.0",
     "react-dom": "^17.0.2",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.3",
+    "react-scripts": "5.0.1",
     "react-select": "^5.0.0",
+    "sass": "^1.57.1",
     "web-vitals": "^1.1.2"
   },
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-import-resolver-meteor": "^0.3.4",
+    "eslint-plugin-graphql": "^0.4.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-meteor": "^4.0.1",
+    "eslint-plugin-react": "^7.5.1"
+  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "react-scripts start --openssl-legacy-provider",
+    "build": "react-scripts build --openssl-legacy-provider",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "prettify": "prettier --write \"**/*.js\""
