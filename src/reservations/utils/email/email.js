@@ -42,6 +42,20 @@ export const generateEmailMessage = (data) => {
     ].join("\n");
 };
 
+export const generateSubscribedEmailMessage = (data) => {
+    return [
+        "<html>",
+        "<body>",
+        "<h1>New Subscriber</h>",
+        "<h2>Name: " + data.name + "</h2>",
+        "<h2>Email: " + data.email + "</h2>",
+        "<p>How do you know me? " + data.howYouKnowMe + "</p>",
+        "<p>Additional Information: " + data.additionalInfo + "</p>",
+        "</body>",
+        "</html>",
+    ].join("\n");
+};
+
 export const sendEmail = (message, onSuccess, onFail) => {
     if (process.env.NODE_ENV === "development") {
         sendTestEmail(true, onSuccess, onFail);
