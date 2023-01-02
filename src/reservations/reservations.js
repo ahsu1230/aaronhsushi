@@ -225,7 +225,7 @@ const SubscribeView = () => {
     return (
         <div className="subscribe-container">
             <div className="text-container">
-                <h2>Announcement</h2>
+                <h2>All Reservations Full!</h2>
                 <p>
                     Thank you so much for your interest in making a reservation
                     with me. As much as I would be honored to host your special
@@ -234,16 +234,16 @@ const SubscribeView = () => {
                     will no longer be accepting new reservations.
                 </p>
                 <p>
-                    In the meantime, I will be focusing my efforts to help build
+                    In the meantime, I will be focusing my efforts to work at&nbsp;
                     a new sushi restaurant called&nbsp;
                     <a
                         target="_blank"
                         href="https://www.instagram.com/29omakase.dc/"
                     >
-                        Two Nine Omakase
+                        Two-Nine Omakase
                     </a>
                     . Coming soon to Georgetown, DC in Spring 2023! Please visit
-                    me there when we open!
+                    me there when it's open!
                 </p>
             </div>
             <p>
