@@ -63,7 +63,7 @@ const isDateAvailable = (date) => {
 
 const isDateRestaurant = (date) => {
     const momentDate = moment(date);
-    return momentDate.isAfter("2023-01-30");
+    return momentDate.isAfter("2023-03-01");
 };
 
 // YYYY-MM-DD
