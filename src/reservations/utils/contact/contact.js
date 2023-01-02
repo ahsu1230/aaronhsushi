@@ -28,13 +28,13 @@ export default class ContactMe extends React.Component {
                     <span>{MyEmail}</span>
                 </div>
                 <div className="contact-line ig">
-                    <a href={MyInstagramLink}>
+                    <a target="_blank" href={MyInstagramLink}>
                         <img src={iconIG} />
                         <span>{MyInstagram}</span>
                     </a>
                 </div>
                 <div className="contact-line li">
-                    <a href={MyLinkedInLink}>
+                    <a target="_blank" href={MyLinkedInLink}>
                         <img src={iconLI} />
                         <span>{MyLinkedIn}</span>
                     </a>
