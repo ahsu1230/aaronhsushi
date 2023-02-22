@@ -234,6 +234,13 @@ const SubscribeView = () => {
                     will no longer be accepting new reservations.
                 </p>
                 <p>
+                    In the meantime, I will be focusing my efforts to work at
+                    <a target="_blank" href="https://www.perrysam.com/">
+                        Perry's
+                    </a>
+                    in Adam's Morgan, DC! Please come visit us and say hi!
+                </p>
+                {/* <p>
                     In the meantime, I will be focusing my efforts to work at&nbsp;
                     a new sushi restaurant called&nbsp;
                     <a
@@ -244,7 +251,7 @@ const SubscribeView = () => {
                     </a>
                     . Coming soon to Georgetown, DC in Spring 2023! Please visit
                     me there when it's open!
-                </p>
+                </p> */}
             </div>
             <p>
                 Feel free to contact me directly through email or social media
