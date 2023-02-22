@@ -234,11 +234,13 @@ const SubscribeView = () => {
                     will no longer be accepting new reservations.
                 </p>
                 <p>
-                    In the meantime, I will be focusing my efforts to work at
+                    In the meantime, I will be focusing my efforts to work
+                    at&nbsp;
                     <a target="_blank" href="https://www.perrysam.com/">
                         Perry's
                     </a>
-                    in Adam's Morgan, DC! Please come visit us and say hi!
+                    &nbsp; in Adam's Morgan, DC! Please come visit us and say
+                    hi!
                 </p>
                 {/* <p>
                     In the meantime, I will be focusing my efforts to work at&nbsp;
