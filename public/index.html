@@ -4,10 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aaron Hsu</title>
+<meta name="description" content="Aaron Hsu — sushi chef and sake adviser. Former software engineer turned omakase chef, building intimate dining experiences in the Bay Area.">
 <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400&display=swap"></noscript>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 picture { display: contents; }
@@ -112,7 +114,7 @@ nav.scrolled .nav-sub { color: rgba(196,154,74,0.38); }
   content: '';
   position: absolute;
   inset: -6%;
-  background-image: url('assets/images/me_pass_nigiri1.JPG');
+  background-image: url('assets/images/me_pass_nigiri1.webp');
   background-size: cover;
   background-position: center 30%;
   transform: rotate(1deg);
@@ -235,7 +237,7 @@ nav.scrolled .nav-sub { color: rgba(196,154,74,0.38); }
   font-size: 0.62rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba(154,184,164,0.52);
+  color: var(--celadon-lt);
   margin-top: 0.4rem;
   display: block;
 }
@@ -684,7 +686,7 @@ footer {
   justify-content: space-between;
   align-items: center;
 }
-footer span { font-size: 0.68rem; color: rgba(196,154,74,0.22); letter-spacing: 0.1em; }
+footer span { font-size: 0.68rem; color: var(--oolong); letter-spacing: 0.1em; }
 
 /* ── ANIMATIONS ── */
 @keyframes fadeUp {
@@ -961,26 +963,26 @@ footer span { font-size: 0.68rem; color: rgba(196,154,74,0.22); letter-spacing: 
   <p class="section-label fade-in">The Table</p>
   <h2 class="section-title fade-in">Nights at my <em>counter.</em></h2>
   <div class="gallery-placeholder fade-in">
-    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_hero1.jpg"><img src="assets/images/hero1.jpg" style="width:100%;height:100%;object-fit:cover;"></picture></div>
-    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_me_tuna_nigiri.jpg"><img src="assets/images/me_tuna_nigiri.JPG" style="width:100%;height:100%;object-fit:cover;"></picture></div>
-    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_me_making_nigiri.jpg"><img src="assets/images/me_making_nigiri.jpg" style="width:100%;height:100%;object-fit:cover;"></picture></div>
-    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_hero_sake1.jpg"><img src="assets/images/hero_sake1.jpg" style="width:100%;height:100%;object-fit:cover;"></picture></div>
-    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_dish_fruits.jpg"><img src="assets/images/dish_fruits.jpg" style="width:100%;height:100%;object-fit:cover;"></picture></div>
-    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_dish_croquette.jpg"><img src="assets/images/dish_croquette.jpg" style="width:100%;height:100%;object-fit:cover;"></picture></div>
-    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_square_shima_aji_plate.jpg"><img src="assets/images/square_shima_aji_plate.jpeg" style="width:100%;height:100%;object-fit:cover;"></picture></div>
-    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_dish_shirako.jpg"><img src="assets/images/dish_shirako.jpg" style="width:100%;height:100%;object-fit:cover;"></picture></div>
-    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_me_strawberry.jpg"><img src="assets/images/me_strawberry.jpg" style="width:100%;height:100%;object-fit:cover;"></picture></div>
-    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_omakasebr_team2.jpg"><img src="assets/images/omakasebr_team2.JPG" style="width:100%;height:100%;object-fit:cover;"></picture></div>
-    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_me_uni.jpg"><img src="assets/images/me_uni.jpg" style="width:100%;height:100%;object-fit:cover;"></picture></div>
-    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_omakasebr_team1.jpg"><img src="assets/images/omakasebr_team1.jpg" style="width:100%;height:100%;object-fit:cover;"></picture></div>
-    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_me_masako_rm1.jpg"><img src="assets/images/me_masako_rm1.jpg" style="width:100%;height:100%;object-fit:cover;"></picture></div>
-    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_me_rice_market.jpg"><img src="assets/images/me_rice_market.jpg" style="width:100%;height:100%;object-fit:cover;"></picture></div>
-    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_me_perrys1.jpg"><img src="assets/images/me_perrys1.jpg" style="width:100%;height:100%;object-fit:cover;"></picture></div>
-    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_dinner_30eunice.jpg"><img src="assets/images/dinner_30eunice.jpg" style="width:100%;height:100%;object-fit:cover;"></picture></div>
-    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_dinner_chonky.jpg"><img src="assets/images/dinner_chonky.jpg" style="width:100%;height:100%;object-fit:cover;"></picture></div>
-    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_dinner_67.jpg"><img src="assets/images/dinner_67.jpg" style="width:100%;height:100%;object-fit:cover;"></picture></div>
-    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_dinner_albert.jpg"><img src="assets/images/dinner_albert.png" style="width:100%;height:100%;object-fit:cover;"></picture></div>
-    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_dinner_april.jpg"><img src="assets/images/dinner_april.jpeg" style="width:100%;height:100%;object-fit:cover;"></picture></div>
+    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_hero1.jpg"><img src="assets/images/hero1.jpg" alt="Aaron at work" style="width:100%;height:100%;object-fit:cover;"></picture></div>
+    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_me_tuna_nigiri.jpg"><img src="assets/images/me_tuna_nigiri.JPG" alt="Tuna nigiri" style="width:100%;height:100%;object-fit:cover;"></picture></div>
+    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_me_making_nigiri.jpg"><img src="assets/images/me_making_nigiri.jpg" alt="Making nigiri" style="width:100%;height:100%;object-fit:cover;"></picture></div>
+    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_hero_sake1.jpg"><img src="assets/images/hero_sake1.jpg" alt="Sake selection" style="width:100%;height:100%;object-fit:cover;"></picture></div>
+    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_dish_fruits.jpg"><img src="assets/images/dish_fruits.jpg" alt="Fruit course" style="width:100%;height:100%;object-fit:cover;"></picture></div>
+    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_dish_croquette.jpg"><img src="assets/images/dish_croquette.jpg" alt="Croquette dish" style="width:100%;height:100%;object-fit:cover;"></picture></div>
+    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_square_shima_aji_plate.jpg"><img src="assets/images/square_shima_aji_plate.jpeg" alt="Shima aji plate" style="width:100%;height:100%;object-fit:cover;"></picture></div>
+    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_dish_shirako.jpg"><img src="assets/images/dish_shirako.jpg" alt="Shirako dish" style="width:100%;height:100%;object-fit:cover;"></picture></div>
+    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_me_strawberry.jpg"><img src="assets/images/me_strawberry.jpg" alt="Strawberry dessert" style="width:100%;height:100%;object-fit:cover;"></picture></div>
+    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_omakasebr_team2.jpg"><img src="assets/images/omakasebr_team2.JPG" alt="Omakase Berkeley team" style="width:100%;height:100%;object-fit:cover;"></picture></div>
+    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_me_uni.jpg"><img src="assets/images/me_uni.jpg" alt="Preparing uni" style="width:100%;height:100%;object-fit:cover;"></picture></div>
+    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_omakasebr_team1.jpg"><img src="assets/images/omakasebr_team1.jpg" alt="Omakase Berkeley kitchen team" style="width:100%;height:100%;object-fit:cover;"></picture></div>
+    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_me_masako_rm1.jpg"><img src="assets/images/me_masako_rm1.jpg" alt="With Masako Morishita at Rice Market" style="width:100%;height:100%;object-fit:cover;"></picture></div>
+    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_me_rice_market.jpg"><img src="assets/images/me_rice_market.jpg" alt="At Rice Market" style="width:100%;height:100%;object-fit:cover;"></picture></div>
+    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_me_perrys1.jpg"><img src="assets/images/me_perrys1.jpg" alt="At Perry's" style="width:100%;height:100%;object-fit:cover;"></picture></div>
+    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_dinner_30eunice.jpg"><img src="assets/images/dinner_30eunice.jpg" alt="Private dinner at 30 Eunice" style="width:100%;height:100%;object-fit:cover;"></picture></div>
+    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_dinner_chonky.jpg"><img src="assets/images/dinner_chonky.jpg" alt="Dinner gathering" style="width:100%;height:100%;object-fit:cover;"></picture></div>
+    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_dinner_67.jpg"><img src="assets/images/dinner_67.jpg" alt="Dinner at 67" style="width:100%;height:100%;object-fit:cover;"></picture></div>
+    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_dinner_albert.jpg"><img src="assets/images/dinner_albert.png" alt="Dinner with Albert" style="width:100%;height:100%;object-fit:cover;"></picture></div>
+    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_dinner_april.jpg"><img src="assets/images/dinner_april.jpeg" alt="April dinner" style="width:100%;height:100%;object-fit:cover;"></picture></div>
   </div>
   </div>
 </section>
