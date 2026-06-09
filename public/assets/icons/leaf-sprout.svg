@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 110" fill="none">
+  <!-- Left leaf -->
+  <path d="M50 80 C50 80 15 70 10 40 C10 40 35 38 50 65 Z" fill="#9ab8a4"/>
+  <!-- Right leaf -->
+  <path d="M50 80 C50 80 85 70 90 40 C90 40 65 38 50 65 Z" fill="#b8d0c0"/>
+  <!-- Center top leaf -->
+  <path d="M50 78 C50 78 30 45 35 15 C35 15 58 28 50 72 Z" fill="#7a9e8a"/>
+  <!-- Stem -->
+  <path d="M50 110 C50 110 48 85 50 65 C52 85 50 110 50 110 Z" fill="#7a9e8a"/>
+  <!-- Vein left leaf -->
+  <path d="M50 75 C40 65 22 55 12 42" stroke="#c8ddd0" stroke-width="1" fill="none" opacity="0.5"/>
+  <!-- Vein right leaf -->
+  <path d="M50 75 C60 65 78 55 88 42" stroke="#c8ddd0" stroke-width="1" fill="none" opacity="0.5"/>
+  <!-- Vein center leaf -->
+  <path d="M50 72 C46 55 38 35 36 18" stroke="#c8ddd0" stroke-width="1" fill="none" opacity="0.5"/>
+</svg>

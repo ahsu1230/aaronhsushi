@@ -1,57 +1,1059 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#221F2B" />
-    <meta
-      name="description"
-      content="Aaron Hsu's Sushi Adventures"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aaron Hsu</title>
+<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+picture { display: contents; }
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
+:root {
+  --stone:        #2a2420;
+  --stone-soft:   #4a3e36;
+  --stone-muted:  #7a6a5a;
+  --ivory:        #f0ebe0;
+  --ivory-dark:   #e0d8c8;
+  --ivory-deep:   #c8bea8;
+  --oolong:       #c49a4a;
+  --oolong-lt:    #d4b468;
+  --oolong-pale:  #ecdba8;
+  --celadon:      #9ab8a4;
+  --celadon-lt:   #b8d0c0;
+  --celadon-pale: #e4f0e8;
+  --serif:        'Shippori Mincho', 'Cormorant Garamond', Georgia, serif;
+  --italic:       'Cormorant Garamond', Georgia, serif;
+  --sans:         'DM Sans', system-ui, sans-serif;
+}
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+html { scroll-behavior: smooth; }
 
-    <!-- EmailJs -->
-    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.1.0/email.min.js"></script>
-    <script type="text/javascript">
-    (function(){
-        emailjs.init("user_CcaLEXQyofoCGzDI2JELn");
-    })();
-    </script>
+body {
+  background: var(--ivory);
+  color: var(--stone);
+  font-family: var(--sans);
+  font-weight: 300;
+  overflow-x: hidden;
+}
 
-    <title>AaronHsushi</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+/* Subtle grain */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 180px;
+}
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 3.5rem;
+  border-bottom: 1px solid transparent;
+  transition: background 0.4s, border-color 0.4s;
+}
+nav.scrolled {
+  background: rgba(240,235,224,0.95);
+  border-color: var(--ivory-dark);
+  backdrop-filter: blur(10px);
+}
+nav.scrolled .nav-name { color: var(--stone); }
+nav.scrolled .nav-links a { color: var(--stone-soft); }
+nav.scrolled .nav-name svg path { fill: var(--stone); }
+nav.scrolled .nav-sub { color: rgba(196,154,74,0.38); }
+.nav-name {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--ivory);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a {
+  font-size: 0.74rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(240,235,224,0.78);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--oolong-lt); }
+.nav-sub {
+  font-family: var(--serif);
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  color: rgba(196,154,74,0.42);
+}
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background: var(--stone);
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: -6%;
+  background-image: url('assets/images/me_pass_nigiri1.JPG');
+  background-size: cover;
+  background-position: center 30%;
+  transform: rotate(1deg);
+  z-index: 0;
+}
+.hero-canvas { position: absolute; inset: 0; z-index: 0; }
+.hero-wl {
+  position: absolute;
+  right: 4%; bottom: 6%;
+  z-index: 1;
+  opacity: 0.06;
+  width: 36vw;
+  max-width: 500px;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 4rem 3.5rem 6rem;
+  max-width: 820px;
+}
+.hero-eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  color: var(--celadon-lt);
+  margin-bottom: 1.2rem;
+  opacity: 0;
+  animation: fadeUp 1s 0.3s forwards;
+}
+.hero-title {
+  font-family: var(--italic);
+  font-size: clamp(3.2rem, 6.5vw, 6rem);
+  font-weight: 300;
+  line-height: 1.05;
+  color: var(--ivory);
+  margin-bottom: 1.8rem;
+  opacity: 0;
+  animation: fadeUp 1s 0.55s forwards;
+}
+.hero-title em { font-style: italic; color: var(--oolong-lt); }
+.hero-title .jp {
+  display: block;
+  font-size: 0.36em;
+  letter-spacing: 0.3em;
+  color: rgba(196,154,74,0.48);
+  font-style: normal;
+  margin-top: 0.7rem;
+  font-family: var(--serif);
+}
+.hero-sub {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgba(240,235,224,0.68);
+  max-width: 44ch;
+  margin-bottom: 2.8rem;
+  opacity: 0;
+  animation: fadeUp 1s 0.8s forwards;
+}
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 2rem;
+  border: 1px solid rgba(196,154,74,0.42);
+  color: var(--oolong-lt);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.3s, border-color 0.3s;
+  opacity: 0;
+  animation: fadeUp 1s 1s forwards;
+}
+.hero-cta:hover { background: rgba(196,154,74,0.1); border-color: var(--oolong-lt); }
+.hero-cta-arr { transition: transform 0.3s; }
+.hero-cta:hover .hero-cta-arr { transform: translateX(4px); }
+.hero-line {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--oolong) 25%, var(--celadon) 65%, transparent);
+  opacity: 0.3;
+  z-index: 2;
+}
+
+/* ── STATS BAND ── */
+.stats-band {
+  background: var(--stone);
+  padding: 2rem 3.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr 1px 1fr;
+  align-items: center;
+  position: relative;
+}
+.stats-band::before, .stats-band::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  height: 1px;
+}
+.stats-band::before {
+  top: 0;
+  background: linear-gradient(to right, transparent, var(--oolong) 35%, var(--celadon) 65%, transparent);
+  opacity: 0.28;
+}
+.stats-band::after {
+  bottom: 0;
+  background: linear-gradient(to right, transparent, var(--celadon) 35%, var(--oolong) 65%, transparent);
+  opacity: 0.28;
+}
+.stat { text-align: center; }
+.stat-num {
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--oolong-lt);
+  display: block;
+  line-height: 1;
+}
+.stat-lbl {
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(154,184,164,0.52);
+  margin-top: 0.4rem;
+  display: block;
+}
+.stat-div {
+  width: 1px; height: 36px;
+  background: linear-gradient(to bottom, transparent, rgba(196,154,74,0.22), transparent);
+}
+
+/* ── SHARED ── */
+.section-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--celadon);
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.section-label::after {
+  content: '';
+  display: block;
+  width: 28px; height: 1px;
+  background: var(--celadon);
+  opacity: 0.42;
+}
+.section-title {
+  font-family: var(--italic);
+  font-size: clamp(2rem, 3.8vw, 3rem);
+  font-weight: 300;
+  line-height: 1.15;
+  color: var(--stone);
+}
+.section-title em { font-style: italic; color: var(--oolong); }
+
+/* ── ABOUT ── */
+#about {
+  display: grid;
+  grid-template-columns: 1fr 1.65fr;
+  gap: 5rem;
+  align-items: start;
+  padding: 5rem 3.5rem 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.about-left { position: sticky; top: 7rem; }
+.about-left .section-title { margin-bottom: 1rem; }
+
+.logo-placeholder {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+.logo-placeholder-box {
+  width: 72px; height: 72px;
+  border: 1px dashed rgba(196,154,74,0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo-placeholder-box span {
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(196,154,74,0.28);
+}
+.logo-placeholder-hint {
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  color: rgba(122,106,90,0.35);
+}
+.daini-whisper {
+  margin-top: 1.5rem;
+  font-family: var(--serif);
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  color: rgba(196,154,74,0.28);
+}
+
+.about-body p {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--stone-soft);
+  margin-bottom: 1.6rem;
+}
+.about-body p strong { color: var(--stone); font-weight: 400; }
+.about-pull {
+  font-family: var(--italic);
+  font-size: 1.5rem;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.55;
+  color: var(--stone);
+  position: relative;
+  padding: 1.5rem 0 1.5rem 2rem;
+  margin: 2rem 0;
+}
+.about-pull::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 2px;
+  background: var(--oolong);
+}
+
+/* Inline wind+leaf divider */
+.wl-inline {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2.5rem 0;
+}
+.wl-inline-line {
+  flex: 1; height: 1px;
+  background: linear-gradient(to right, var(--ivory-deep), transparent);
+  opacity: 0.5;
+}
+.wl-inline-line.rev {
+  background: linear-gradient(to left, var(--ivory-deep), transparent);
+}
+
+/* ── BRUSH DIVIDER ── */
+.brush-divider {
+  background: var(--ivory-dark);
+  padding: 2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── PHOTO STRIP ── */
+.photo-strip {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: 520px;
+  gap: 2px;
+  background: var(--stone);
+}
+.ps-cell {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.4s;
+}
+.ps-cell:hover { opacity: 0.85; }
+.ps-cell span {
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(196,154,74,0.22);
+}
+
+/* ── TIMELINE ── */
+#work {
+  background: var(--stone);
+  padding: 5rem 0 4rem;
+  position: relative;
+  overflow: hidden;
+}
+.work-bg-char {
+  position: absolute;
+  right: -2rem;
+  font-family: var(--serif);
+  font-size: 40vw;
+  color: rgba(154,184,164,0.025);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  transform: translateY(-50%);
+}
+.work-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 3.5rem;
+  position: relative;
+  z-index: 1;
+}
+#work .section-label { color: var(--celadon-lt); }
+#work .section-label::after { background: var(--celadon-lt); }
+#work .section-title { color: var(--ivory); margin-bottom: 5rem; }
+#work .section-title em { color: var(--oolong-lt); }
+
+.timeline { position: relative; padding-left: 1.8rem; }
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0.5rem; bottom: 4.5rem;
+  width: 1px;
+  background: var(--oolong);
+}
+.tl-item {
+  position: relative;
+  padding: 0 0 3rem 3rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.tl-item.visible { opacity: 1; transform: translateY(0); }
+.tl-dot {
+  position: absolute;
+  left: -0.38rem; top: 0.4rem;
+  width: 0.76rem; height: 0.76rem;
+  border-radius: 50%;
+  border: 1px solid var(--oolong);
+  background: var(--stone);
+  transition: background 0.25s, transform 0.2s;
+}
+.tl-item:hover .tl-dot { background: var(--oolong); transform: scale(1.3); }
+.tl-period {
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--celadon);
+  margin-bottom: 0.5rem;
+}
+.tl-role {
+  font-family: var(--italic);
+  font-size: 1.75rem;
+  font-weight: 300;
+  color: var(--ivory);
+  line-height: 1.15;
+  margin-bottom: 0.25rem;
+}
+.tl-place {
+  font-size: 0.8rem;
+  color: rgba(154,184,164,0.46);
+  letter-spacing: 0.06em;
+  margin-bottom: 1.1rem;
+}
+.tl-note {
+  font-size: 0.92rem;
+  line-height: 1.85;
+  color: rgba(240,235,224,0.62);
+  max-width: 52ch;
+}
+.tl-note em { color: var(--oolong-lt); font-style: italic; }
+.tl-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.9rem;
+  padding: 0.28rem 0.85rem;
+  border: 1px solid rgba(196,154,74,0.35);
+  color: var(--oolong-lt);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.tl-badge-c {
+  border-color: rgba(154,184,164,0.35);
+  color: var(--celadon-lt);
+}
+.tl-img-wrap { margin-top: 1.4rem; max-width: 380px; }
+.tl-img {
+  width: 100%; height: 210px;
+  display: flex; align-items: center; justify-content: center;
+}
+.tl-img-cap {
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(154,184,164,0.3);
+  margin-top: 0.5rem;
+}
+
+/* ── VISION ── */
+#concept {
+  display: grid;
+  grid-template-columns: 1fr 1.65fr;
+  gap: 5rem;
+  align-items: start;
+  padding: 5rem 3.5rem 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.concept-left { position: sticky; top: 7rem; }
+.concept-left .section-title { margin-bottom: 1rem; }
+.vision-heading {
+  font-family: var(--italic);
+  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--stone);
+  margin-bottom: 2.5rem;
+}
+.vision-heading em { font-style: italic; color: var(--oolong); }
+.vision-body p {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--stone-soft);
+  margin-bottom: 1.4rem;
+  max-width: 62ch;
+}
+.vision-divider {
+  width: 40px; height: 1px;
+  background: var(--oolong);
+  opacity: 0.4;
+  margin: 2rem 0;
+}
+.vision-daini {
+  font-family: var(--serif);
+  font-size: 2rem;
+  letter-spacing: 0.3em;
+  color: var(--oolong);
+  margin-top: 2rem;
+  display: block;
+}
+.vision-swallow {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  opacity: 0.7;
+}
+
+.arts-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1px;
+  background: var(--ivory-dark);
+  border: 1px solid var(--ivory-dark);
+  margin-top: 4rem;
+}
+.art-cell {
+  background: var(--ivory);
+  padding: 1.8rem 1rem;
+  text-align: center;
+  cursor: default;
+}
+.art-jp {
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  color: var(--celadon);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.art-en {
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--stone-muted);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+.art-note {
+  font-size: 0.7rem;
+  color: var(--stone-muted);
+  opacity: 0.6;
+  font-style: italic;
+  font-family: var(--italic);
+}
+
+/* ── CONTACT ── */
+#contact {
+  background: var(--stone);
+  padding: 5rem 3.5rem 4rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+#contact::before {
+  content: '燕';
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--serif);
+  font-size: clamp(200px, 28vw, 360px);
+  color: rgba(154,184,164,0.022);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+}
+#contact .section-label { justify-content: center; color: var(--celadon-lt); }
+#contact .section-label::after { background: var(--celadon-lt); }
+#contact .section-title { color: var(--ivory); max-width: none; margin-bottom: 0.8rem; }
+.contact-sub {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: rgba(240,235,224,0.46);
+  max-width: 42ch;
+  margin: 0 auto 3rem;
+}
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  z-index: 1;
+  margin-top: 2.5rem;
+}
+.contact-list a {
+  font-family: var(--italic);
+  font-size: 1.4rem;
+  font-style: italic;
+  color: var(--oolong-lt);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(196,154,74,0.3);
+  padding-bottom: 0.2rem;
+  transition: color 0.2s, border-color 0.2s;
+}
+.contact-list a:hover { color: var(--oolong-pale); border-color: var(--oolong); }
+
+/* ── GALLERY ── */
+#gallery {
+  padding: 5rem 3.5rem 4rem;
+  background: var(--stone);
+}
+#gallery .section-label { color: var(--celadon-lt); }
+#gallery .section-label::after { background: var(--celadon-lt); }
+#gallery .section-title { color: var(--ivory); margin-bottom: 3rem; }
+#gallery .section-title em { color: var(--oolong-lt); }
+.gallery-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.gallery-placeholder {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3px;
+  background: var(--stone-soft);
+  border: 1px solid var(--stone-soft);
+}
+.gallery-placeholder-cell {
+  background: var(--stone-soft);
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gallery-placeholder-cell span {
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(196,154,74,0.25);
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--stone);
+  border-top: 1px solid rgba(196,154,74,0.08);
+  padding: 1.8rem 3.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer span { font-size: 0.68rem; color: rgba(196,154,74,0.22); letter-spacing: 0.1em; }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-in {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* ── RESPONSIVE ── */
+
+/* ── DESKTOP (1200px+) ── default styles above apply here */
+/* Gallery: 4 columns — already set as default */
+
+/* ── STORY EXCEPTION: 2-col kicks in earlier at 960px ── */
+@media (min-width: 960px) {
+  #about { grid-template-columns: 1fr 1.65fr; gap: 5rem; }
+  .about-left { position: sticky; top: 7rem; }
+  #concept { grid-template-columns: 1fr 1.65fr; gap: 5rem; }
+  .concept-left { position: sticky; top: 7rem; }
+}
+
+/* ── TABLET (768px – 1199px) ── */
+@media (max-width: 1199px) {
+  .hero::before { background-position: center 40%; }
+  .photo-strip { height: 420px; }
+  /* TODO: tablet nav */
+  #about { grid-template-columns: 1fr; gap: 2rem; }
+  .about-left { position: static; }
+  #concept { grid-template-columns: 1fr; gap: 2rem; }
+  .concept-left { position: static; }
+  .gallery-placeholder { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ── MOBILE LANDSCAPE / SMALL TABLET (480px – 767px) ── */
+@media (max-width: 767px) {
+  .hero::before { background-position: 75% 50%; }
+  .photo-strip { height: auto; }
+  .ps-cell { aspect-ratio: 3/4; }
+  #about { grid-template-columns: 1fr; gap: 1.5rem; padding: 4rem 1.5rem 3rem; }
+  .about-left { position: static; }
+  #concept { grid-template-columns: 1fr; gap: 1.5rem; padding: 4rem 1.5rem 3rem; }
+  .concept-left { position: static; }
+  nav {
+    padding: 1rem 1.5rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .nav-sub { display: none; }
+  .nav-links { gap: 1.2rem; justify-content: center; flex-wrap: wrap; }
+  .gallery-placeholder { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ── MOBILE PORTRAIT (< 480px) ── */
+@media (max-width: 479px) {
+  nav {
+    padding: 1rem 1.5rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .nav-sub { display: none; }
+  .nav-links { gap: 1.2rem; justify-content: center; flex-wrap: wrap; }
+  .hero-content { padding: 3rem 1.5rem 5rem; }
+  #about { grid-template-columns: 1fr; gap: 2.5rem; padding: 5rem 1.5rem; }
+  .about-left { position: static; }
+  .concept-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .arts-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-placeholder { grid-template-columns: repeat(2, 1fr); }
+  .photo-strip { grid-template-columns: 1fr 1fr; }
+  .photo-strip .ps-cell:last-child { display: none; }
+  #concept { grid-template-columns: 1fr; gap: 2.5rem; padding: 5rem 1.5rem; }
+  .concept-left { position: static; }
+  #contact { padding: 5rem 1.5rem; }
+  footer { padding: 1.5rem; flex-direction: column; gap: 0.8rem; text-align: center; }
+  .work-inner { padding: 0 1.5rem; }
+  .stats-band { padding: 1.5rem; flex-wrap: wrap; gap: 1.2rem; justify-content: center; }
+  /* TODO: more mobile portrait fixes */
+}
+</style>
+</head>
+<body>
+
+
+<nav id="nav">
+  <a href="#" class="nav-name" style="display:flex;align-items:center;gap:0.7rem;">
+    <svg width="26" height="26" viewBox="100 85 160 170" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;opacity:0.85;">
+      <path d="M0 0 C17.25823202 5.86971292 30.26012147 23.46588915 38.53125 38.84765625 C46.79057995 55.94547648 47.17520686 72.48198256 47 91 C47.92296875 91.12761719 48.8459375 91.25523437 49.796875 91.38671875 C54.20459792 92.23063643 57.65822917 94.0544323 60.25 97.8125 C63 105.83333333 63 105.83333333 63 110 C61.02 109.01 59.04 108.02 57 107 C56.6596875 107.86625 56.6596875 107.86625 56.3125 108.75 C54.29128088 112.21494706 51.95132162 114.42585368 48.03515625 115.578125 C44.84100266 116.12535429 42.50040735 116.21267312 39.5 114.9375 C38 113 38 113 37.5625 110 C38.05006073 106.65672646 38.39606446 105.99903901 41 104 C43.26171875 103.48828125 43.26171875 103.48828125 45.6875 103.3125 C46.49574219 103.24675781 47.30398437 103.18101562 48.13671875 103.11328125 C48.75160156 103.07589844 49.36648437 103.03851563 50 103 C41.12019099 101.97540665 34.3937599 105.80570448 27.32421875 110.9453125 C20.3045102 116.86239187 12.94395025 125.16814925 10 134 C17.27907842 136.42635947 25.11299027 135.16070495 32 132 C36.74166262 128.69471022 40.60156272 124.67285126 44 120 C43.22520129 126.18762856 39.71637222 129.21740617 35 133 C28.260522 136.85427663 21.93442431 138.11944718 14.25 138.5625 C13.55261719 138.60568359 12.85523438 138.64886719 12.13671875 138.69335938 C10.42468078 138.79889596 8.71236439 138.8998991 7 139 C-0.15488103 153.72132601 -3.58062715 170.28298117 -6.359375 186.33203125 C-7 189 -7 189 -9 191 C-8.26907632 174.36518527 -6.28180419 157.84541256 -1 142 C-5.60382061 144.57442865 -9.99608475 147.3024493 -14.375 150.25 C-25.14415259 157.27735309 -36.66651941 162.39671961 -48.8125 166.5625 C-49.95090332 166.95828247 -49.95090332 166.95828247 -51.11230469 167.36206055 C-54.84601211 168.58113546 -57.25437457 169.18367353 -61 168 C-60.35417969 167.75507813 -59.70835938 167.51015625 -59.04296875 167.2578125 C-40.9163123 160.06666288 -24.10251297 150.47689437 -9.27734375 137.78515625 C-7 136 -7 136 -4 135 C-3.30605933 133.68065601 -2.64359915 132.34461978 -2 131 C-0.76203562 129.59533401 0.51238497 128.22234675 1.8125 126.875 C8.78760753 119.07406007 11.81571898 112.5200694 11.35546875 101.921875 C10.48425583 94.76069624 6.52172589 90.86685951 1.109375 86.4609375 C-2.7644523 83.45946062 -6.56815976 81.13081366 -11 79 C-10.29875 79.4846875 -9.5975 79.969375 -8.875 80.46875 C6.95819054 91.65524332 6.95819054 91.65524332 9.1875 98.8125 C9 102 9 102 7.72265625 103.6875 C6 105 6 105 2.25 105.1875 C-11.30689296 103.0767157 -24.26168445 92.10295573 -35.39746094 84.72314453 C-52.1757245 73.61423419 -68.83051499 62.70679482 -87 54 C-87 53.67 -87 53.34 -87 53 C-76.20076149 52.66549204 -65.54802899 53.65585615 -54.8125 54.6875 C-53.88136383 54.77680786 -52.95022766 54.86611572 -51.99087524 54.95812988 C-26.26451924 57.4665635 0.42525673 60.56323253 22 76 C21.401875 75.4225 20.80375 74.845 20.1875 74.25 C13.56345496 64.40856165 14.73379648 52.18538488 15.13696289 40.8425293 C15.54253268 28.41813854 13.79486251 19.12476221 6.375 9 C5.98054688 8.45472656 5.58609375 7.90945312 5.1796875 7.34765625 C4.12704506 5.89316044 3.06407358 4.44615406 2 3 C1.01 1.515 1.01 1.515 0 0 Z" fill="rgba(240,235,224,0.85)" transform="translate(187,85)"/>
+    </svg>
+    Aaron Hsu
+  </a>
+  <ul class="nav-links">
+    <li><a href="#work">Work</a></li>
+    <li><a href="#about">Story</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#concept">Vision</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <span class="nav-sub">第二の風</span>
+</nav>
+
+<div class="hero">
+  <div style="position: absolute; inset: 0; background: linear-gradient(to right, rgba(26,20,16,0.88) 50%, rgba(26,20,16,0.4) 100%); z-index: 1;"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">第二の風 &nbsp;·&nbsp; Daini no Kaze &nbsp;·&nbsp; My Second Wind</p>
+    <h1 class="hero-title">
+      Engineer<br>turned<br><em>Itamae.</em>
+      <span class="jp">Aaron Hsu</span>
+    </h1>
+    <p class="hero-sub">My second wind is a rebirth — a first life spent in code, a second devoted to creating artistry, intimacy and unforgettable moments.</p>
+    <a href="#about" class="hero-cta">Read my story <span class="hero-cta-arr">→</span></a>
+  </div>
+  <div class="hero-line"></div>
+</div>
+
+<div class="stats-band">
+  <div class="stat"><span class="stat-num">★</span><span class="stat-lbl">Michelin Star<br>· 4 years</span></div>
+  <div class="stat-div"></div>
+  <div class="stat"><span class="stat-num">2</span><span class="stat-lbl">Restaurant<br>opening teams</span></div>
+  <div class="stat-div"></div>
+  <div class="stat">
+    <svg width="40" height="34" viewBox="80 55 200 175" fill="var(--oolong-lt)" style="display:block;margin:0 auto 0.35rem;">
+      <path d="M0 0 C0.84477905 0.00202423 1.68955811 0.00404846 2.55993652 0.00613403 C3.42179565 0.00517731 4.28365479 0.00422058 5.17163086 0.00323486 C6.99751864 0.00255304 8.82340884 0.00440749 10.64929199 0.00857544 C13.45419731 0.01392367 16.25894248 0.00863054 19.06384277 0.00222778 C20.83337438 0.00288856 22.60290588 0.00416973 24.37243652 0.00613403 C25.21721558 0.0041098 26.06199463 0.00208557 26.93237305 0 C32.85123621 0.02399622 32.85123621 0.02399622 33.96618652 1.13894653 C34.43113091 6.71827913 33.9001658 10.64055048 31.96618652 15.88894653 C28.4252314 26.85820969 27.45476424 39.90341034 32.43103027 50.54837036 C33.81235698 53.17126218 35.27536162 55.72788578 36.81970215 58.25808716 C38.71779298 61.37199086 40.47480937 64.56039164 42.21618652 67.76394653 C42.55150391 68.37826538 42.88682129 68.99258423 43.2322998 69.6255188 C46.51765473 75.83712407 48.42777705 82.2922628 49.96618652 89.13894653 C50.14206299 89.83246216 50.31793945 90.52597778 50.49914551 91.24050903 C52.14574012 98.30424618 52.30538221 105.24451124 52.28186035 112.47879028 C52.27870191 114.50407922 52.30223759 116.52789956 52.32751465 118.55300903 C52.33347951 130.72133331 50.99890757 143.62859338 42.29821777 152.92019653 C33.42806712 160.90920639 24.72771887 161.35545129 13.27868652 161.45144653 C12.14495605 161.48045044 11.01122559 161.50945435 9.84313965 161.53933716 C0.89310974 161.6063979 -5.78287578 159.9184058 -13.28381348 155.01394653 C-23.60841187 144.22004821 -25.57434959 131.2763004 -25.34631348 116.82644653 C-25.33430908 115.64018677 -25.32230469 114.453927 -25.30993652 113.23171997 C-24.9693823 92.06808667 -19.92647346 75.81728619 -9.57946777 57.4380188 C-9.02428467 56.45116089 -8.46910156 55.46430298 -7.89709473 54.44754028 C-7.14359741 53.12967529 -7.14359741 53.12967529 -6.37487793 51.78518677 C-3.37703734 45.8697318 -2.64824104 40.76863827 -2.65881348 34.26394653 C-2.65752441 33.43475708 -2.65623535 32.60556763 -2.65490723 31.75125122 C-2.77373479 24.67831085 -4.12531147 18.40466848 -6.15881348 11.65457153 C-7.0690054 7.99755039 -7.2601463 4.89229918 -7.03381348 1.13894653 C-5.16418629 -0.73068065 -2.48717787 0.0100835 0 0 Z" transform="translate(128.034,61.861)"/>
+      <path d="M0 0 C13.86 0 27.72 0 42 0 C42 9.02061234 41.27147644 15.21048628 35.8125 22.4375 C32.0379622 27.66735299 32.0379622 27.66735299 33 38 C25.08 38 17.16 38 9 38 C9 32.99852013 9.02896975 31.18843928 11 27 C10.34 27 9.68 27 9 27 C1.91545473 18.83007871 0 10.59347951 0 0 Z" transform="translate(191,180)"/>
+    </svg>
+    <span class="stat-lbl">Certified Sake Adviser</span>
+  </div>
+</div>
+
+<div class="photo-strip">
+  <div class="ps-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_me_making_nigiri.jpg"><img src="assets/images/me_making_nigiri.jpg" alt="Making nigiri" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;"></picture></div>
+  <div class="ps-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_me_tuna_nigiri.jpg"><img src="assets/images/me_tuna_nigiri.JPG" alt="Tuna nigiri" style="width:100%;height:100%;object-fit:cover;object-position:center 10%;transform:scale(1.3);transform-origin:center 10%;"></picture></div>
+  <div class="ps-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_hero_sake1.jpg"><img src="assets/images/hero_sake1.jpg" alt="Sake" style="width:100%;height:100%;object-fit:cover;object-position:center center;"></picture></div>
+</div>
+
+<div id="work">
+  <span class="work-bg-char" style="top:25%">風</span>
+  <span class="work-bg-char" style="top:50%">燕</span>
+  <span class="work-bg-char" style="top:75%">命</span>
+  <div class="work-inner">
+    <p class="section-label">Work</p>
+    <h2 class="section-title">The <em>chapters.</em></h2>
+    <div class="timeline">
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <p class="tl-period">May 2026 – Present</p>
+        <h3 class="tl-role">Kumiko Room</h3>
+        <p class="tl-place">One Bryant Park, New York City &nbsp;·&nbsp; Opening Team, Sushi Chef</p>
+        <p class="tl-note">Years after leaving Kosaka, Yoshihiko Kousaka-san called me to join his most ambitious project yet — a large restaurant bringing together top-tier chefs from various Japanese fine-dining backgrounds to execute multiple concepts, one of which includes a premium sushi omakase experience. For me, it was a full-circle moment: returning to New York, returning to Kousaka-san, not as a newbie apprentice, but <em>this time as a real sushi chef.</em></p>
+        <div class="tl-img-wrap" style="max-width:480px;">
+          <picture><source media="(max-width: 900px)" srcset="assets/images/thumb_Toyoda-Woodwork-Kumiko-Screen.jpg"><img src="assets/images/Toyoda-Woodwork-Kumiko-Screen.jpg" alt="Kumiko Room space" style="width:100%;height:270px;object-fit:cover;"></picture>
+          <p class="tl-img-cap">The space. One Bryant Park.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <p class="tl-period">Nov 2023 – May 2026</p>
+        <h3 class="tl-role">Omakase @ Barracks Row</h3>
+        <p class="tl-place">Washington, D.C. &nbsp;·&nbsp; Opening Team, Sushi Chef</p>
+        <p class="tl-note">Hired onto the opening team to help execute a unique vision: an omakase where personality and precision coexisted. The team we built was extraordinary, and the result spoke for itself — a Michelin Star in the first year of opening, and held for three consecutive years. <em>The strongest culinary team I've ever been part of, and I'm proud to have been a founding member.</em></p>
+        <span class="tl-badge">★ Michelin Star — 4 consecutive years</span>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;max-width:480px;margin-top:1.4rem;">
+          <div>
+            <picture><source media="(max-width: 900px)" srcset="assets/images/thumb_omakasebr_team1a.jpg"><img src="assets/images/omakasebr_team1a.jpg" alt="Team at work" style="width:100%;height:280px;object-fit:cover;"></picture>
+          </div>
+          <div>
+            <div style="height:280px;overflow:hidden;"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_omakasebr_michelin_1a.jpg"><img src="assets/images/omakasebr_michelin_1a.jpg" alt="Michelin party" style="width:100%;height:100%;object-fit:cover;transform:rotate(-2deg) scale(1.04);transform-origin:center;"></picture></div>
+          </div>
+        </div>
+        <p class="tl-img-cap">The standard we held, every night.</p>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <p class="tl-period">Feb 2023 – Nov 2023</p>
+        <h3 class="tl-role">Perry's Restaurant</h3>
+        <p class="tl-place">Washington, D.C. &nbsp;·&nbsp; Sushi Chef / Kitchen Prep</p>
+        <p class="tl-note">Perry's was where I planted roots in DC — splitting time between both the sushi counter and kitchen prep team, I learned every corner of the restaurant kitchen simultaneously. Chef Masako Morishita ran the kitchen with such purpose and it was an honor to help her execute her vision in both the restaurant and the collaboration events she hosted. When she won the James Beard Award, I felt that win too. <em>Chef Masako is the best mentor I've had, and still today, one of my closest friends.</em></p>
+        <span class="tl-badge tl-badge-c">James Beard Award–winning kitchen</span>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;max-width:480px;margin-top:1.4rem;">
+          <div>
+            <picture><source media="(max-width: 900px)" srcset="assets/images/thumb_me_masako.jpg"><img src="assets/images/me_masako.jpg" alt="With Masako Morishita" style="width:100%;height:280px;object-fit:cover;"></picture>
+          </div>
+          <div>
+            <picture><source media="(max-width: 900px)" srcset="assets/images/thumb_me_masako_popeyes2.jpg"><img src="assets/images/me_masako_popeyes2.jpg" alt="With Masako Morishita" style="width:100%;height:280px;object-fit:cover;"></picture>
+          </div>
+        </div>
+        <p class="tl-img-cap">With Chef Morishita, on and off the clock.</p>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <p class="tl-period">Nov 2021 – Jan 2023</p>
+        <h3 class="tl-role">Private Home Omakase</h3>
+        <p class="tl-place">Washington, D.C. &nbsp;·&nbsp; Founder</p>
+        <p class="tl-note">During the pandemic, restaurants were struggling and the private chef business was booming. I rode that wave — converting my studio apartment into an intimate omakase dining room. Running it solo meant owning every part of the experience: sourcing from distributors, booking clients, managing budgets, handling my own marketing. <em>It was a crash course in running a restaurant, without the restaurant.</em></p>
+        <div class="tl-img-wrap" style="max-width:480px;">
+          <picture><source media="(max-width: 900px)" srcset="assets/images/thumb_banner_homakase1a.jpg"><img src="assets/images/banner_homakase1a.jpg" alt="A big dinner" style="width:100%;height:320px;object-fit:cover;"></picture>
+          <p class="tl-img-cap">One of the big ones.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <p class="tl-period">Feb 2018 – Jun 2019</p>
+        <h3 class="tl-role">Kosaka</h3>
+        <p class="tl-place">New York City &nbsp;·&nbsp; Under Chef Yoshi Kousaka</p>
+        <p class="tl-note">My first professional kitchen — and my leap of faith out of software engineering. I arrived thinking I knew a thing or two about sushi. Kosaka quickly taught me otherwise. This was where I learned what professional standards actually feel like: the discipline, the patience, and the relentless attention to detail. <em>The real education started here.</em></p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;max-width:480px;margin-top:1.4rem;">
+          <div>
+            <picture><source media="(max-width: 900px)" srcset="assets/images/thumb_yoshi_michelin1a.jpg"><img src="assets/images/yoshi_michelin1a.jpg" alt="With Kousaka-san at the Michelin ceremony" style="width:100%;height:280px;object-fit:cover;"></picture>
+          </div>
+          <div>
+            <picture><source media="(max-width: 900px)" srcset="assets/images/thumb_yoshi_michelin2b.jpg"><img src="assets/images/yoshi_michelin2b.jpg" alt="Michelin ceremony" style="width:100%;height:280px;object-fit:cover;"></picture>
+          </div>
+        </div>
+        <p class="tl-img-cap">With Kousaka-san. Michelin ceremony, 2022.</p>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+
+<section id="about">
+  <div class="about-left">
+    <p class="section-label fade-in">Story</p>
+    <h2 class="section-title fade-in">The detour became<br>the <em>destination.</em></h2>
+  </div>
+  <div class="about-body">
+    <p class="fade-in">Growing up as a Taiwanese-American, sushi was always a source of happiness for me. My parents often took me to our local sushi restaurant whenever we had something to celebrate as a family, and those meals became some of my fondest childhood memories. We would order an unreasonable number of specialty rolls for the table, and I looked forward to those occasions so much that I would joke with my parents that one day I wanted to make bomb-ass sushi for a living.</p>
+    <p class="fade-in">Fast forward a few years: after studying computer science and graduating from <strong>Carnegie Mellon University</strong> in 2013, I spent the next seven years working as a software engineer at startups and large companies throughout Silicon Valley. It was a rewarding career, and I learned an incredible amount about problem solving, systems thinking, and building things from the ground up. Yet no matter how much I enjoyed technology, my fascination with sushi never really went away.</p>
+    <p class="fade-in">During those years, sushi remained a serious hobby. I spent countless hours recreating dishes from my favorite restaurants and experimenting in my own kitchen. But over time, I realized I was engaging with only the surface of the craft. I could make sushi rolls, but I knew very little about the history, traditions, and philosophy behind it. I didn't just want to learn how to make better sushi — I wanted to understand the mindset, discipline, and values that had been passed down through generations of sushi chefs.</p>
+
+    <div class="about-pull fade-in">"I didn't just want to learn how to make better sushi — I wanted to understand the mindset, discipline, and values that had been passed down through generations of sushi chefs."</div>
+
+    <p class="fade-in">In 2018, one of the companies I worked at was acquired, giving me the opportunity to take a sabbatical. Most people might use that time to travel the world or search for themselves. I decided to get a job at a restaurant. That's what brought me to New York — at the time, I felt the city's omakase scene was the most vibrant in the United States, the Silicon Valley of sushi. I went from restaurant to restaurant, knocking on doors and asking if anyone would be willing to take on an apprentice. Eventually, I found an opportunity under <strong>Chef Yoshi Kosaka</strong> at Sushi Kosaka, and I accepted without hesitation. I made sure to tell my parents AFTER accepting the job.</p>
+    <p class="fade-in">It was there that I learned what it truly meant to cook professionally. The work was demanding. I was often the first person in the restaurant, receiving fish deliveries in the morning, and one of the last to leave after closing at night. The hours were long, the standards were high, and there was nowhere to hide. Every detail mattered. It was one of the most challenging experiences of my life, but also one of the most important.</p>
+
+    <div class="wl-inline fade-in">
+      <div class="wl-inline-line"></div>
+      <svg width="24" height="24" viewBox="0 0 100 110" fill="none" opacity="0.3"><path d="M50 80 C50 80 15 70 10 40 C10 40 35 38 50 65 Z" fill="var(--celadon)"/><path d="M50 80 C50 80 85 70 90 40 C90 40 65 38 50 65 Z" fill="var(--celadon)"/><path d="M50 78 C50 78 30 45 35 15 C35 15 58 28 50 72 Z" fill="var(--celadon)"/></svg>
+      <div class="wl-inline-line rev"></div>
+    </div>
+
+    <p class="fade-in">Then COVID changed everything. As the restaurant industry faced unprecedented uncertainty, I returned home to Maryland and went back to software engineering. At the time, it felt like the safer path.</p>
+    <p class="fade-in">But after a while, I found myself missing the kitchen. I missed the intensity of service, the constant pursuit of improvement, and the satisfaction of creating something tangible with my own hands. While many restaurants struggled during the pandemic, private dining and personal chef services experienced a surge in demand. I decided to take advantage of that opportunity and return to cooking.</p>
+
+    <div class="about-pull fade-in">"For the first time, I stopped treating cooking as something I might do someday and decided to fully commit to being a chef."</div>
+
+    <p class="fade-in">What started as a temporary experiment quickly became a turning point. The more I cooked, the more certain I became that this was the path I wanted to pursue. For the first time, I stopped treating cooking as something I might do someday and decided to fully commit to being a chef.</p>
+    <p class="fade-in">It has been one of the best decisions I've ever made. There is something deeply rewarding about creating memorable experiences through food. Seeing guests return, celebrating milestones with friends and family, and knowing that something you've made has become part of those memories is a feeling that's difficult to describe.</p>
+
+    <div class="wl-inline fade-in">
+      <div class="wl-inline-line"></div>
+      <svg width="24" height="24" viewBox="0 0 100 110" fill="none" opacity="0.3"><path d="M50 80 C50 80 15 70 10 40 C10 40 35 38 50 65 Z" fill="var(--celadon)"/><path d="M50 80 C50 80 85 70 90 40 C90 40 65 38 50 65 Z" fill="var(--celadon)"/><path d="M50 78 C50 78 30 45 35 15 C35 15 58 28 50 72 Z" fill="var(--celadon)"/></svg>
+      <div class="wl-inline-line rev"></div>
+    </div>
+
+    <p class="fade-in">Today, I feel more fulfilled and energized by my work than ever before. Hospitality is fundamentally human, and every service is an opportunity to connect with people in a meaningful way. As a former software engineer, I'm not ashamed to admit that part of me is relieved knowing AI probably isn't taking my job anytime soon.</p>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="gallery-inner">
+  <p class="section-label fade-in">The Table</p>
+  <h2 class="section-title fade-in">Nights at my <em>counter.</em></h2>
+  <div class="gallery-placeholder fade-in">
+    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_hero1.jpg"><img src="assets/images/hero1.jpg" style="width:100%;height:100%;object-fit:cover;"></picture></div>
+    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_me_tuna_nigiri.jpg"><img src="assets/images/me_tuna_nigiri.JPG" style="width:100%;height:100%;object-fit:cover;"></picture></div>
+    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_me_making_nigiri.jpg"><img src="assets/images/me_making_nigiri.jpg" style="width:100%;height:100%;object-fit:cover;"></picture></div>
+    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_hero_sake1.jpg"><img src="assets/images/hero_sake1.jpg" style="width:100%;height:100%;object-fit:cover;"></picture></div>
+    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_dish_fruits.jpg"><img src="assets/images/dish_fruits.jpg" style="width:100%;height:100%;object-fit:cover;"></picture></div>
+    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_dish_croquette.jpg"><img src="assets/images/dish_croquette.jpg" style="width:100%;height:100%;object-fit:cover;"></picture></div>
+    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_square_shima_aji_plate.jpg"><img src="assets/images/square_shima_aji_plate.jpeg" style="width:100%;height:100%;object-fit:cover;"></picture></div>
+    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_dish_shirako.jpg"><img src="assets/images/dish_shirako.jpg" style="width:100%;height:100%;object-fit:cover;"></picture></div>
+    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_me_strawberry.jpg"><img src="assets/images/me_strawberry.jpg" style="width:100%;height:100%;object-fit:cover;"></picture></div>
+    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_omakasebr_team2.jpg"><img src="assets/images/omakasebr_team2.JPG" style="width:100%;height:100%;object-fit:cover;"></picture></div>
+    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_me_uni.jpg"><img src="assets/images/me_uni.jpg" style="width:100%;height:100%;object-fit:cover;"></picture></div>
+    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_omakasebr_team1.jpg"><img src="assets/images/omakasebr_team1.jpg" style="width:100%;height:100%;object-fit:cover;"></picture></div>
+    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_me_masako_rm1.jpg"><img src="assets/images/me_masako_rm1.jpg" style="width:100%;height:100%;object-fit:cover;"></picture></div>
+    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_me_rice_market.jpg"><img src="assets/images/me_rice_market.jpg" style="width:100%;height:100%;object-fit:cover;"></picture></div>
+    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_me_perrys1.jpg"><img src="assets/images/me_perrys1.jpg" style="width:100%;height:100%;object-fit:cover;"></picture></div>
+    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_dinner_30eunice.jpg"><img src="assets/images/dinner_30eunice.jpg" style="width:100%;height:100%;object-fit:cover;"></picture></div>
+    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_dinner_chonky.jpg"><img src="assets/images/dinner_chonky.jpg" style="width:100%;height:100%;object-fit:cover;"></picture></div>
+    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_dinner_67.jpg"><img src="assets/images/dinner_67.jpg" style="width:100%;height:100%;object-fit:cover;"></picture></div>
+    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_dinner_albert.jpg"><img src="assets/images/dinner_albert.png" style="width:100%;height:100%;object-fit:cover;"></picture></div>
+    <div class="gallery-placeholder-cell"><picture><source media="(max-width: 900px)" srcset="assets/images/thumb_dinner_april.jpg"><img src="assets/images/dinner_april.jpeg" style="width:100%;height:100%;object-fit:cover;"></picture></div>
+  </div>
+  </div>
+</section>
+
+<section id="concept">
+
+  <!-- Left: sticky label + heading -->
+  <div class="concept-left">
+    <p class="section-label fade-in">Vision</p>
+    <h2 class="section-title fade-in">A Dining Experience<br><em>With Intention.</em></h2>
+  </div>
+
+  <!-- Right: all content -->
+  <div class="concept-right">
+    <div class="vision-body fade-in">
+      <p>The dining experiences I want to create are guided by the idea that guests should leave not only having enjoyed a meal, but having gained context, stories, and connections they can carry with them beyond the table. Each course becomes an opportunity to introduce meaning or start conversation — through ingredient origin, cultural context, or the story behind a traditional technique.</p>
+      <p>Food is also part of a much larger cultural ecosystem. Especially in Asian culture, the same philosophies that guide cuisine can be found across other crafts — from ceramics, tea ceremony, calligraphy, ikebana, tenugui, and other traditional crafts and forms of expression. My goal is to bring these disciplines into conversation, so food is not isolated, but part of a broader world of human expression.</p>
+      <p>Ultimately, I aim to create experiences that feel intentional and cohesive from start to finish. A meal should not exist as a sequence of disconnected dishes, but as a connected narrative shaped by ingredients, conversation, and collaboration with artists and makers. When done well, it becomes something guests can reflect on long after they leave — not just a meal, but a lasting connection to culture, people, and places.</p>
+    </div>
+    <div class="wl-inline fade-in">
+      <div class="wl-inline-line"></div>
+      <svg width="24" height="24" viewBox="0 0 100 110" fill="none" opacity="0.3"><path d="M50 80 C50 80 15 70 10 40 C10 40 35 38 50 65 Z" fill="var(--celadon)"/><path d="M50 80 C50 80 85 70 90 40 C90 40 65 38 50 65 Z" fill="var(--celadon)"/><path d="M50 78 C50 78 30 45 35 15 C35 15 58 28 50 72 Z" fill="var(--celadon)"/></svg>
+      <div class="wl-inline-line rev"></div>
+    </div>
+    <div class="vision-body fade-in">
+      <p>One day, I hope to return to my nesting ground like a swallow after a long journey. In East Asian folklore, swallows symbolize return and good fortune — traveling far to learn, but always coming back home, carrying something earned from the journey.</p>
+      <p>That idea sits at the center of Daini no Kaze — my "second wind." It represents not only my second life as a chef, but the next phase of my work: bringing everything I've learned across kitchens and experiences into a more intentional expression of hospitality.</p>
+      <p>Over time, I aim to continue refining this approach — creating intimate dining experiences that deepen in meaning and connection as they evolve.</p>
+    </div>
+    <div class="vision-swallow fade-in">
+      <svg width="48" height="48" viewBox="100 85 160 170" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 0 C17.25823202 5.86971292 30.26012147 23.46588915 38.53125 38.84765625 C46.79057995 55.94547648 47.17520686 72.48198256 47 91 C47.92296875 91.12761719 48.8459375 91.25523437 49.796875 91.38671875 C54.20459792 92.23063643 57.65822917 94.0544323 60.25 97.8125 C63 105.83333333 63 105.83333333 63 110 C61.02 109.01 59.04 108.02 57 107 C56.6596875 107.86625 56.6596875 107.86625 56.3125 108.75 C54.29128088 112.21494706 51.95132162 114.42585368 48.03515625 115.578125 C44.84100266 116.12535429 42.50040735 116.21267312 39.5 114.9375 C38 113 38 113 37.5625 110 C38.05006073 106.65672646 38.39606446 105.99903901 41 104 C43.26171875 103.48828125 43.26171875 103.48828125 45.6875 103.3125 C46.49574219 103.24675781 47.30398437 103.18101562 48.13671875 103.11328125 C48.75160156 103.07589844 49.36648437 103.03851563 50 103 C41.12019099 101.97540665 34.3937599 105.80570448 27.32421875 110.9453125 C20.3045102 116.86239187 12.94395025 125.16814925 10 134 C17.27907842 136.42635947 25.11299027 135.16070495 32 132 C36.74166262 128.69471022 40.60156272 124.67285126 44 120 C43.22520129 126.18762856 39.71637222 129.21740617 35 133 C28.260522 136.85427663 21.93442431 138.11944718 14.25 138.5625 C13.55261719 138.60568359 12.85523438 138.64886719 12.13671875 138.69335938 C10.42468078 138.79889596 8.71236439 138.8998991 7 139 C-0.15488103 153.72132601 -3.58062715 170.28298117 -6.359375 186.33203125 C-7 189 -7 189 -9 191 C-8.26907632 174.36518527 -6.28180419 157.84541256 -1 142 C-5.60382061 144.57442865 -9.99608475 147.3024493 -14.375 150.25 C-25.14415259 157.27735309 -36.66651941 162.39671961 -48.8125 166.5625 C-49.95090332 166.95828247 -49.95090332 166.95828247 -51.11230469 167.36206055 C-54.84601211 168.58113546 -57.25437457 169.18367353 -61 168 C-60.35417969 167.75507813 -59.70835938 167.51015625 -59.04296875 167.2578125 C-40.9163123 160.06666288 -24.10251297 150.47689437 -9.27734375 137.78515625 C-7 136 -7 136 -4 135 C-3.30605933 133.68065601 -2.64359915 132.34461978 -2 131 C-0.76203562 129.59533401 0.51238497 128.22234675 1.8125 126.875 C8.78760753 119.07406007 11.81571898 112.5200694 11.35546875 101.921875 C10.48425583 94.76069624 6.52172589 90.86685951 1.109375 86.4609375 C-2.7644523 83.45946062 -6.56815976 81.13081366 -11 79 C-10.29875 79.4846875 -9.5975 79.969375 -8.875 80.46875 C6.95819054 91.65524332 6.95819054 91.65524332 9.1875 98.8125 C9 102 9 102 7.72265625 103.6875 C6 105 6 105 2.25 105.1875 C-11.30689296 103.0767157 -24.26168445 92.10295573 -35.39746094 84.72314453 C-52.1757245 73.61423419 -68.83051499 62.70679482 -87 54 C-87 53.67 -87 53.34 -87 53 C-76.20076149 52.66549204 -65.54802899 53.65585615 -54.8125 54.6875 C-53.88136383 54.77680786 -52.95022766 54.86611572 -51.99087524 54.95812988 C-26.26451924 57.4665635 0.42525673 60.56323253 22 76 C21.401875 75.4225 20.80375 74.845 20.1875 74.25 C13.56345496 64.40856165 14.73379648 52.18538488 15.13696289 40.8425293 C15.54253268 28.41813854 13.79486251 19.12476221 6.375 9 C5.98054688 8.45472656 5.58609375 7.90945312 5.1796875 7.34765625 C4.12704506 5.89316044 3.06407358 4.44615406 2 3 C1.01 1.515 1.01 1.515 0 0 Z" fill="var(--stone-muted)" transform="translate(187,85)"/>
+      </svg>
+    </div>
+    <span class="vision-daini fade-in">第二の風</span>
+  </div>
+
+</section>
+
+<div id="contact">
+  <p class="section-label fade-in">Contact</p>
+  <h2 class="section-title fade-in">Get in touch.</h2>
+  <p class="contact-sub fade-in">Whether it's a collaboration or just a conversation,<br>I'd love to hear from you.</p>
+  <div class="contact-list fade-in">
+    <a href="mailto:aaronhsushidc@gmail.com">aaronhsushidc@gmail.com</a>
+    <a href="https://www.instagram.com/aaronscitysushi" target="_blank">@aaronscitysushi</a>
+  </div>
+</div>
+
+<footer>
+  <span>© 2026 Aaron Hsu</span>
+  <span>第二の風</span>
+</footer>
+
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.08 });
+document.querySelectorAll('.fade-in, .tl-item').forEach(el => obs.observe(el));
+
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  });
+});
+
+
+</script>
+</body>
 </html>
