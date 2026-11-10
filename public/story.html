@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Story — Aaron Hsu</title>
+<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+picture { display: contents; }
+
+:root {
+  --stone:        #2a2420;
+  --stone-soft:   #4a3e36;
+  --stone-muted:  #7a6a5a;
+  --ivory:        #f0ebe0;
+  --ivory-dark:   #e0d8c8;
+  --ivory-deep:   #c8bea8;
+  --oolong:       #c49a4a;
+  --oolong-lt:    #d4b468;
+  --oolong-pale:  #ecdba8;
+  --celadon:      #9ab8a4;
+  --celadon-lt:   #b8d0c0;
+  --celadon-pale: #e4f0e8;
+  --serif:        'Shippori Mincho', 'Cormorant Garamond', Georgia, serif;
+  --italic:       'Cormorant Garamond', Georgia, serif;
+  --sans:         'DM Sans', system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--ivory);
+  color: var(--stone);
+  font-family: var(--sans);
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+/* Subtle grain */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 180px;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 3.5rem;
+  border-bottom: 1px solid var(--ivory-dark);
+  background: rgba(240,235,224,0.95);
+  backdrop-filter: blur(10px);
+  transition: background 0.4s, border-color 0.4s;
+}
+.nav-name {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--stone);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a {
+  font-size: 0.74rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--stone-soft);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--oolong-lt); }
+
+/* ── SHARED ── */
+.section-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--celadon);
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.section-label::after {
+  content: '';
+  display: block;
+  width: 28px; height: 1px;
+  background: var(--celadon);
+  opacity: 0.42;
+}
+.section-title {
+  font-family: var(--italic);
+  font-size: clamp(2rem, 3.8vw, 3rem);
+  font-weight: 300;
+  line-height: 1.15;
+  color: var(--stone);
+}
+.section-title em { font-style: italic; color: var(--oolong); }
+
+/* ── STORY PAGE HEADER ── */
+.story-page-header {
+  padding: 8rem 3.5rem 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-bottom: 1px solid var(--ivory-dark);
+}
+.story-page-header .back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--stone-muted);
+  text-decoration: none;
+  margin-bottom: 2rem;
+  transition: color 0.2s;
+}
+.story-page-header .back-link:hover { color: var(--oolong); }
+
+/* ── ABOUT ── */
+#about {
+  display: grid;
+  grid-template-columns: 1fr 1.65fr;
+  gap: 5rem;
+  align-items: start;
+  padding: 7rem 3.5rem 5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.about-left { position: sticky; top: 7rem; }
+.about-left .section-title { margin-bottom: 1rem; }
+
+.about-body p {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--stone-soft);
+  margin-bottom: 1.6rem;
+}
+.about-body p strong { color: var(--stone); font-weight: 400; }
+.about-pull {
+  font-family: var(--italic);
+  font-size: 1.5rem;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.55;
+  color: var(--stone);
+  position: relative;
+  padding: 1.5rem 0 1.5rem 2rem;
+  margin: 2rem 0;
+}
+.about-pull::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 2px;
+  background: var(--oolong);
+}
+
+/* Inline divider */
+.wl-inline {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2.5rem 0;
+}
+.wl-inline-line {
+  flex: 1; height: 1px;
+  background: linear-gradient(to right, var(--ivory-deep), transparent);
+  opacity: 0.5;
+}
+.wl-inline-line.rev {
+  background: linear-gradient(to left, var(--ivory-deep), transparent);
+}
+
+/* ── VISION ── */
+#concept {
+  display: grid;
+  grid-template-columns: 1fr 1.65fr;
+  gap: 5rem;
+  align-items: start;
+  padding: 5rem 3.5rem 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-top: 1px solid var(--ivory-dark);
+}
+.concept-left { position: sticky; top: 7rem; }
+.concept-left .section-title { margin-bottom: 1rem; }
+.vision-body p {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--stone-soft);
+  margin-bottom: 1.4rem;
+  max-width: 62ch;
+}
+.vision-daini {
+  font-family: var(--serif);
+  font-size: 2rem;
+  letter-spacing: 0.3em;
+  color: var(--oolong);
+  margin-top: 2rem;
+  display: block;
+}
+.vision-swallow {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  opacity: 0.7;
+}
+
+/* ── STORY DARK SECTION ── */
+.story-dark {
+  background: var(--stone);
+}
+.story-dark .section-label { color: var(--celadon-lt); }
+.story-dark .section-label::after { background: var(--celadon-lt); }
+.story-dark .section-title { color: var(--ivory); }
+.story-dark .about-body p { color: rgba(240,235,224,0.62); }
+.story-dark .about-body p strong { color: var(--ivory); font-weight: 400; }
+.story-dark .about-pull { color: var(--ivory-dark); }
+.story-dark .wl-inline-line {
+  background: linear-gradient(to right, rgba(240,235,224,0.18), transparent);
+}
+.story-dark .wl-inline-line.rev {
+  background: linear-gradient(to left, rgba(240,235,224,0.18), transparent);
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--stone);
+  border-top: 1px solid rgba(196,154,74,0.08);
+  padding: 1.8rem 3.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer span { font-size: 0.68rem; color: rgba(196,154,74,0.22); letter-spacing: 0.1em; }
+
+/* ── ANIMATIONS ── */
+.fade-in {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* ── RESPONSIVE ── */
+@media (min-width: 960px) {
+  #about { grid-template-columns: 1fr 1.65fr; gap: 5rem; }
+  .about-left { position: sticky; top: 7rem; }
+  #concept { grid-template-columns: 1fr 1.65fr; gap: 5rem; }
+  .concept-left { position: sticky; top: 7rem; }
+}
+@media (max-width: 1199px) {
+  #about { grid-template-columns: 1fr; gap: 2rem; }
+  .about-left { position: static; }
+  #concept { grid-template-columns: 1fr; gap: 2rem; }
+  .concept-left { position: static; }
+  .bird-desktop { display: none; }
+  .bird-tablet { display: block !important; }
+}
+@media (max-width: 767px) {
+  nav { padding: 1rem 1.5rem; flex-direction: column; align-items: center; gap: 0.6rem; }
+  .nav-links { gap: 1.2rem; justify-content: center; flex-wrap: wrap; }
+  #about { grid-template-columns: 1fr; gap: 1.5rem; padding: 8rem 1.5rem 4rem; }
+  .about-left { position: static; }
+  #concept { grid-template-columns: 1fr; gap: 1.5rem; padding: 4rem 1.5rem 3rem; }
+  .concept-left { position: static; }
+  .story-page-header { padding: 7rem 1.5rem 3rem; }
+}
+@media (max-width: 479px) {
+  nav { padding: 1rem 1.5rem; flex-direction: column; align-items: center; gap: 0.6rem; }
+  .nav-links { gap: 1.2rem; justify-content: center; flex-wrap: wrap; }
+  #about { grid-template-columns: 1fr; gap: 2.5rem; padding: 8rem 1.5rem 5rem; }
+  .about-left { position: static; }
+  #concept { grid-template-columns: 1fr; gap: 2.5rem; padding: 5rem 1.5rem; }
+  .concept-left { position: static; }
+  footer { padding: 1.5rem; flex-direction: column; gap: 0.8rem; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="/" class="nav-name">
+    <svg width="26" height="26" viewBox="100 85 160 170" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;opacity:0.85;">
+      <path d="M0 0 C17.25823202 5.86971292 30.26012147 23.46588915 38.53125 38.84765625 C46.79057995 55.94547648 47.17520686 72.48198256 47 91 C47.92296875 91.12761719 48.8459375 91.25523437 49.796875 91.38671875 C54.20459792 92.23063643 57.65822917 94.0544323 60.25 97.8125 C63 105.83333333 63 105.83333333 63 110 C61.02 109.01 59.04 108.02 57 107 C56.6596875 107.86625 56.6596875 107.86625 56.3125 108.75 C54.29128088 112.21494706 51.95132162 114.42585368 48.03515625 115.578125 C44.84100266 116.12535429 42.50040735 116.21267312 39.5 114.9375 C38 113 38 113 37.5625 110 C38.05006073 106.65672646 38.39606446 105.99903901 41 104 C43.26171875 103.48828125 43.26171875 103.48828125 45.6875 103.3125 C46.49574219 103.24675781 47.30398437 103.18101562 48.13671875 103.11328125 C48.75160156 103.07589844 49.36648437 103.03851563 50 103 C41.12019099 101.97540665 34.3937599 105.80570448 27.32421875 110.9453125 C20.3045102 116.86239187 12.94395025 125.16814925 10 134 C17.27907842 136.42635947 25.11299027 135.16070495 32 132 C36.74166262 128.69471022 40.60156272 124.67285126 44 120 C43.22520129 126.18762856 39.71637222 129.21740617 35 133 C28.260522 136.85427663 21.93442431 138.11944718 14.25 138.5625 C13.55261719 138.60568359 12.85523438 138.64886719 12.13671875 138.69335938 C10.42468078 138.79889596 8.71236439 138.8998991 7 139 C-0.15488103 153.72132601 -3.58062715 170.28298117 -6.359375 186.33203125 C-7 189 -7 189 -9 191 C-8.26907632 174.36518527 -6.28180419 157.84541256 -1 142 C-5.60382061 144.57442865 -9.99608475 147.3024493 -14.375 150.25 C-25.14415259 157.27735309 -36.66651941 162.39671961 -48.8125 166.5625 C-49.95090332 166.95828247 -49.95090332 166.95828247 -51.11230469 167.36206055 C-54.84601211 168.58113546 -57.25437457 169.18367353 -61 168 C-60.35417969 167.75507813 -59.70835938 167.51015625 -59.04296875 167.2578125 C-40.9163123 160.06666288 -24.10251297 150.47689437 -9.27734375 137.78515625 C-7 136 -7 136 -4 135 C-3.30605933 133.68065601 -2.64359915 132.34461978 -2 131 C-0.76203562 129.59533401 0.51238497 128.22234675 1.8125 126.875 C8.78760753 119.07406007 11.81571898 112.5200694 11.35546875 101.921875 C10.48425583 94.76069624 6.52172589 90.86685951 1.109375 86.4609375 C-2.7644523 83.45946062 -6.56815976 81.13081366 -11 79 C-10.29875 79.4846875 -9.5975 79.969375 -8.875 80.46875 C6.95819054 91.65524332 6.95819054 91.65524332 9.1875 98.8125 C9 102 9 102 7.72265625 103.6875 C6 105 6 105 2.25 105.1875 C-11.30689296 103.0767157 -24.26168445 92.10295573 -35.39746094 84.72314453 C-52.1757245 73.61423419 -68.83051499 62.70679482 -87 54 C-87 53.67 -87 53.34 -87 53 C-76.20076149 52.66549204 -65.54802899 53.65585615 -54.8125 54.6875 C-53.88136383 54.77680786 -52.95022766 54.86611572 -51.99087524 54.95812988 C-26.26451924 57.4665635 0.42525673 60.56323253 22 76 C21.401875 75.4225 20.80375 74.845 20.1875 74.25 C13.56345496 64.40856165 14.73379648 52.18538488 15.13696289 40.8425293 C15.54253268 28.41813854 13.79486251 19.12476221 6.375 9 C5.98054688 8.45472656 5.58609375 7.90945312 5.1796875 7.34765625 C4.12704506 5.89316044 3.06407358 4.44615406 2 3 C1.01 1.515 1.01 1.515 0 0 Z" fill="var(--stone)" transform="translate(187,85)"/>
+    </svg>
+    Aaron Hsu
+  </a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/#work">Work</a></li>
+    <li><a href="/#gallery">Gallery</a></li>
+    <li><a href="/#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="story-dark" style="position:relative;overflow:hidden;">
+  <!-- faint background decorations -->
+  <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;user-select:none;overflow:hidden;">
+    <img src="assets/icons/daini-kaze.svg" alt="" style="position:absolute;right:2%;top:4%;width:clamp(20rem,32vw,30rem);opacity:0.06;">
+    <span style="position:absolute;right:4%;bottom:6%;font-family:'Shippori Mincho',serif;font-size:clamp(8rem,13vw,12rem);color:rgba(196,154,74,0.045);line-height:1;letter-spacing:0.8em;writing-mode:vertical-rl;text-orientation:mixed;">第二の風</span>
+  </div>
+<section id="about">
+  <div class="about-left">
+    <p class="section-label fade-in">Story</p>
+    <h2 class="section-title fade-in">The detour became<br>the <em>destination.</em></h2>
+  </div>
+  <div class="about-body">
+    <p class="fade-in">Growing up as a Taiwanese-American, sushi was always a source of happiness for me. My parents often took me to our local sushi restaurant whenever we had something to celebrate as a family, and those meals became some of my fondest childhood memories. We would order an unreasonable number of specialty rolls for the table, and I looked forward to those occasions so much that I would joke with my parents that one day I wanted to make bomb-ass sushi for a living.</p>
+    <p class="fade-in">Fast forward a few years: after studying computer science and graduating from <strong>Carnegie Mellon University</strong> in 2013, I spent the next seven years working as a software engineer at startups and large companies throughout Silicon Valley. It was a rewarding career, and I learned an incredible amount about problem solving, systems thinking, and building things from the ground up. Yet no matter how much I enjoyed technology, my fascination with sushi never really went away.</p>
+    <p class="fade-in">During those years, sushi remained a serious hobby. I spent countless hours recreating dishes from my favorite restaurants and experimenting in my own kitchen. But over time, I realized I was engaging with only the surface of the craft. I could make sushi rolls, but I knew very little about the history, traditions, and philosophy behind it. I didn't just want to learn how to make better sushi — I wanted to understand the mindset, discipline, and values that had been passed down through generations of sushi chefs.</p>
+
+    <div class="about-pull fade-in">"I didn't just want to learn how to make better sushi — I wanted to understand the mindset, discipline, and values that had been passed down through generations of sushi chefs."</div>
+
+    <p class="fade-in">In 2018, one of the companies I worked at was acquired, giving me the opportunity to take a sabbatical. Most people might use that time to travel the world or search for themselves. I decided to get a job at a restaurant. That's what brought me to New York — at the time, I felt the city's omakase scene was the most vibrant in the United States, the Silicon Valley of sushi. I went from restaurant to restaurant, knocking on doors and asking if anyone would be willing to take on an apprentice. Eventually, I found an opportunity under <strong>Chef Yoshi Kosaka</strong> at Sushi Kosaka, and I accepted without hesitation. I made sure to tell my parents AFTER accepting the job.</p>
+    <p class="fade-in">It was there that I learned what it truly meant to cook professionally. The work was demanding. I was often the first person in the restaurant, receiving fish deliveries in the morning, and one of the last to leave after closing at night. The hours were long, the standards were high, and there was nowhere to hide. Every detail mattered. It was one of the most challenging experiences of my life, but also one of the most important.</p>
+
+    <div class="wl-inline fade-in">
+      <div class="wl-inline-line"></div>
+      <svg width="24" height="24" viewBox="0 0 100 110" fill="none" opacity="0.3"><path d="M50 80 C50 80 15 70 10 40 C10 40 35 38 50 65 Z" fill="var(--celadon)"/><path d="M50 80 C50 80 85 70 90 40 C90 40 65 38 50 65 Z" fill="var(--celadon)"/><path d="M50 78 C50 78 30 45 35 15 C35 15 58 28 50 72 Z" fill="var(--celadon)"/></svg>
+      <div class="wl-inline-line rev"></div>
+    </div>
+
+    <p class="fade-in">Then COVID changed everything. As the restaurant industry faced unprecedented uncertainty, I returned home to Maryland and went back to software engineering. At the time, it felt like the safer path.</p>
+    <p class="fade-in">But after a while, I found myself missing the kitchen. I missed the intensity of service, the constant pursuit of improvement, and the satisfaction of creating something tangible with my own hands. While many restaurants struggled during the pandemic, private dining and personal chef services experienced a surge in demand. I decided to take advantage of that opportunity and return to cooking.</p>
+
+    <div class="about-pull fade-in">"For the first time, I stopped treating cooking as something I might do someday and decided to fully commit to being a chef."</div>
+
+    <p class="fade-in">What started as a temporary experiment quickly became a turning point. The more I cooked, the more certain I became that this was the path I wanted to pursue. For the first time, I stopped treating cooking as something I might do someday and decided to fully commit to being a chef.</p>
+    <p class="fade-in">It has been one of the best decisions I've ever made. There is something deeply rewarding about creating memorable experiences through food. Seeing guests return, celebrating milestones with friends and family, and knowing that something you've made has become part of those memories is a feeling that's difficult to describe.</p>
+
+    <div class="wl-inline fade-in">
+      <div class="wl-inline-line"></div>
+      <svg width="24" height="24" viewBox="0 0 100 110" fill="none" opacity="0.3"><path d="M50 80 C50 80 15 70 10 40 C10 40 35 38 50 65 Z" fill="var(--celadon)"/><path d="M50 80 C50 80 85 70 90 40 C90 40 65 38 50 65 Z" fill="var(--celadon)"/><path d="M50 78 C50 78 30 45 35 15 C35 15 58 28 50 72 Z" fill="var(--celadon)"/></svg>
+      <div class="wl-inline-line rev"></div>
+    </div>
+
+    <p class="fade-in">Today, I feel more fulfilled and energized by my work than ever before. Hospitality is fundamentally human, and every service is an opportunity to connect with people in a meaningful way. As a former software engineer, I'm not ashamed to admit that part of me is relieved knowing AI probably isn't taking my job anytime soon.</p>
+  </div>
+</section>
+</div>
+
+<section id="concept">
+  <!-- Left: sticky label + heading -->
+  <div class="concept-left">
+    <p class="section-label fade-in">Vision</p>
+    <h2 class="section-title fade-in">A Dining Experience<br><em>With Intention.</em></h2>
+    <img src="assets/icons/daini-kaze.svg" alt="Daini no Kaze" class="fade-in bird-desktop" style="width:180px;margin-top:2.5rem;opacity:0.75;filter:drop-shadow(0 4px 20px rgba(196,154,74,0.1));">
+  </div>
+
+  <!-- Right: all content -->
+  <div class="concept-right">
+    <div class="vision-body fade-in">
+      <p>The dining experiences I want to create are guided by the idea that guests should leave not only having enjoyed a meal, but having gained context, stories, and connections they can carry with them beyond the table. Each course becomes an opportunity to introduce meaning or start conversation — through ingredient origin, cultural context, or the story behind a traditional technique.</p>
+      <p>Food is also part of a much larger cultural ecosystem. Especially in Asian culture, the same philosophies that guide cuisine can be found across other crafts — from ceramics, tea ceremony, calligraphy, ikebana, tenugui, and other traditional crafts and forms of expression. My goal is to bring these disciplines into conversation, so food is not isolated, but part of a broader world of human expression.</p>
+      <p>Ultimately, I aim to create experiences that feel intentional and cohesive from start to finish. A meal should not exist as a sequence of disconnected dishes, but as a connected narrative shaped by ingredients, conversation, and collaboration with artists and makers. When done well, it becomes something guests can reflect on long after they leave — not just a meal, but a lasting connection to culture, people, and places.</p>
+    </div>
+    <div class="wl-inline fade-in">
+      <div class="wl-inline-line"></div>
+      <svg width="24" height="24" viewBox="0 0 100 110" fill="none" opacity="0.3"><path d="M50 80 C50 80 15 70 10 40 C10 40 35 38 50 65 Z" fill="var(--celadon)"/><path d="M50 80 C50 80 85 70 90 40 C90 40 65 38 50 65 Z" fill="var(--celadon)"/><path d="M50 78 C50 78 30 45 35 15 C35 15 58 28 50 72 Z" fill="var(--celadon)"/></svg>
+      <div class="wl-inline-line rev"></div>
+    </div>
+    <div class="vision-body fade-in">
+      <p>One day, I hope to return to my nesting ground like a swallow after a long journey. In East Asian folklore, swallows symbolize return and good fortune — traveling far to learn, but always coming back home, carrying something earned from the journey.</p>
+      <p>That idea sits at the center of Daini no Kaze — my "second wind." It represents not only my second life as a chef, but the next phase of my work: bringing everything I've learned across kitchens and experiences into a more intentional expression of hospitality.</p>
+      <p>Over time, I aim to continue refining this approach — creating intimate dining experiences that deepen in meaning and connection as they evolve.</p>
+    </div>
+    <span class="vision-daini fade-in">第二の風</span>
+    <div class="fade-in" style="margin-top:0.6rem;">
+      <p style="font-family:var(--serif);font-size:1.1rem;letter-spacing:0.08em;color:var(--oolong);line-height:1.7;">Daini no Kaze, My Second Wind…</p>
+      <p style="font-size:0.8rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--stone-muted);margin-top:0.4rem;">Coming Soon to Washington DC</p>
+      <img src="assets/icons/daini-kaze.svg" alt="Daini no Kaze" class="fade-in bird-tablet" style="display:none;width:160px;margin-top:2rem;opacity:0.75;filter:drop-shadow(0 4px 20px rgba(196,154,74,0.1));">
+      <div style="margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(196,154,74,0.15);">
+        <p style="font-size:0.9rem;line-height:1.8;color:var(--stone-muted);margin-bottom:1.2rem;max-width:40ch;">Follow my journey or feel free to reach out about interesting opportunities.</p>
+        <div style="display:flex;flex-direction:column;gap:0.6rem;">
+          <a href="mailto:aaronhsushidc@gmail.com" style="font-size:0.82rem;color:var(--oolong);text-decoration:none;letter-spacing:0.06em;transition:color 0.2s;" onmouseover="this.style.color='#8a6520'" onmouseout="this.style.color='var(--oolong)'">aaronhsushidc@gmail.com</a>
+          <a href="https://www.instagram.com/aaronscitysushi" target="_blank" style="font-size:0.82rem;color:var(--oolong);text-decoration:none;letter-spacing:0.06em;transition:color 0.2s;" onmouseover="this.style.color='#8a6520'" onmouseout="this.style.color='var(--oolong)'">@aaronscitysushi</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 Aaron Hsu</span>
+  <span>第二の風</span>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.08 });
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
