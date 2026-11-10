@@ -8,6 +8,10 @@ const PORT = process.env.PORT || 3000;
 app.use(compression());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.get('/story', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'story.html'));
+});
+
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
